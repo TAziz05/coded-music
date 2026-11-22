@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trivia sound test</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#0b1028;color:#fff}
+.wrap{max-width:980px;margin:0 auto;padding:20px 14px 40px;display:grid;gap:18px;grid-template-columns:1fr 1fr}
+@media(max-width:720px){.wrap{grid-template-columns:1fr}}
+header{grid-column:1/-1}
+header h1{margin:0 0 6px;font-size:22px}
+header p{margin:0;color:#b8c0e0;font-size:14px;line-height:1.5}
+.card{border-radius:16px;padding:18px}
+.fn{background:linear-gradient(180deg,#0f4fc4,#2f86f0 60%,#5aa8ff)}
+.fn h2{font:italic 900 30px/1 Impact,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.5px;margin:0 0 4px;text-shadow:0 3px 0 #0b3f8f}
+.fn h2 span{color:#ffd53d}
+.pk{background:linear-gradient(180deg,#0b1640,#1b3384 70%,#2a4fa8)}
+.pk h2{font:800 28px/1 "Trebuchet MS",sans-serif;margin:0 0 4px;color:#ffcb05;text-shadow:0 3px 0 #1f4fae}
+.sub{font-size:13px;opacity:.95;margin:0 0 14px}
+.seg{display:inline-flex;gap:4px;margin-left:4px;flex-wrap:wrap}.seg button{padding:6px 10px;font-size:12px;border-radius:8px;text-align:center;background:rgba(11,63,143,.55)}.seg button.on{background:#ffd53d;color:#0b3f8f}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+button{font:inherit;border:0;cursor:pointer;border-radius:10px;padding:11px 10px;text-align:left;color:#fff;line-height:1.2}
+button small{display:block;opacity:.75;font-size:12px;margin-top:2px}
+.fn button{background:rgba(11,63,143,.55);font-weight:700}
+.fn button:active{background:#ffd53d;color:#0b3f8f}
+.pk button{background:rgba(255,255,255,.1);font-weight:700}
+.pk button:active{background:#ffcb05;color:#1f4fae}
+.music{margin-top:12px;display:flex;gap:8px}
+.music button{flex:1;text-align:center;font-size:15px}.music button small{font:600 12px system-ui,sans-serif;text-transform:none;opacity:.75}
+.fn .music button{background:#ffd53d;color:#0b3f8f;font:italic 900 18px Impact,sans-serif;text-transform:uppercase}
+.pk .music button{background:#ffcb05;color:#1f4fae}
+.music button.on{outline:3px solid #fff}
+.vol{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px}
+.vol input{flex:1}
+footer{grid-column:1/-1;color:#8f98bd;font-size:12px;text-align:center}
+</style></head><body>
+<div class="wrap">
+<header><h1>Trivia sound test</h1><p>Every sound here is made live by code in your browser, so there are no audio files and nothing copied from Fortnite or Pokémon. Tap each one to hear it. Turn your phone's silent switch off first.</p></header>
+
+<section class="card fn">
+<h2>Drop-In <span>Daily</span></h2>
+<p class="sub">Effects style: <span class="seg"><button data-style="A" class="on">A · current</button><button data-style="B">B · Orchestral</button><button data-style="C">C · OG lobby style</button></span></p>
+<div class="grid" id="fn-sfx"></div>
+<p class="sub" style="margin:14px 0 8px;font-weight:700">Secrets</p><div class="grid" id="fn-egg"></div>
+<div class="music"><button data-song="fnMenu">▶ Lobby music<small>Menus · current</small></button><button data-song="fnOG">▶ Lobby OG-style<small>Menus · new</small></button></div>
+<div class="music"><button data-song="fn">▶ Match music<small>Questions · current</small></button><button data-song="fnOGm">▶ Match OG-style<small>Questions · new</small></button></div>
+</section>
+
+<section class="card pk">
+<h2>Daily Poké Catch</h2>
+<p class="sub">8-bit chiptune blips and jingles.</p>
+<div class="grid" id="pk-sfx"></div>
+<p class="sub" style="margin:14px 0 8px;font-weight:700">Secrets</p><div class="grid" id="pk-egg"></div>
+<div class="music"><button data-song="pkMenu">▶ Route music<small>Menus</small></button><button data-song="pk">▶ Battle A<small>Questions · current</small></button></div>
+<p class="sub" style="margin:12px 0 0;font-weight:700">Mythic battle options</p>
+<div class="music"><button data-song="pkB">▶ Battle B<small>Legendary</small></button><button data-song="pkC">▶ Battle C<small>Champion</small></button><button data-song="pkD">▶ Battle D<small>Mysterious</small></button></div>
+</section>
+
+<div class="card" style="grid-column:1/-1;background:#151b3d">
+<div class="vol">Effects <input type="range" id="sv" min="0" max="1" step=".05" value=".7"></div>
+<div class="vol">Music&nbsp;&nbsp; <input type="range" id="mv" min="0" max="1" step=".05" value=".45"></div>
+</div>
+<footer>Prototype for Drop-In Daily and Daily Poké Catch · Coded with Claude (Opus 5.5) by Anthropic</footer>
+</div>
+<script>
+let A,master,sfxBus,musBus,noiseBuf;
+function ctx(){
+  if(A){if(A.state!=="running")A.resume();return A}
+  A=new (window.AudioContext||window.webkitAudioContext)();
+  master=A.createGain();master.gain.value=.9;
+  const comp=A.createDynamicsCompressor();comp.threshold.value=-12;comp.ratio.value=4;
+  master.connect(comp);comp.connect(A.destination);
+  sfxBus=A.createGain();sfxBus.gain.value=+document.getElementById("sv").value;sfxBus.connect(master);
+  musBus=A.createGain();musBus.gain.value=+document.getElementById("mv").value*.6;musBus.connect(master);
+  noiseBuf=A.createBuffer(1,A.sampleRate,A.sampleRate);const d=noiseBuf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+  return A;
+}
+function pulse(d){pulse.c=pulse.c||{};if(pulse.c[d])return pulse.c[d];const N=32,re=new Float32Array(N),im=new Float32Array(N);for(let k=1;k<N;k++){re[k]=Math.sin(2*Math.PI*k*d)/(k*Math.PI);im[k]=(1-Math.cos(2*Math.PI*k*d))/(k*Math.PI)}return pulse.c[d]=ctx().createPeriodicWave(re,im)}
+const hz=n=>440*Math.pow(2,(n-69)/12);
+// tone: one oscillator note with a quick attack and decay
+function tone({t=0,n,f,type="square",dur=.12,vol=.3,slide,bus=sfxBus,detune=0,att=.005,cut}){
+  const a=ctx(),s=a.currentTime+t,o=a.createOscillator(),g=a.createGain();
+  if(type.startsWith("pulse"))o.setPeriodicWave(pulse(type==="pulse"?.25:.125));else o.type=type;o.frequency.setValueAtTime(f||hz(n),s);o.detune.value=detune;
+  if(slide)o.frequency.exponentialRampToValueAtTime(slide,s+dur);
+  g.gain.setValueAtTime(0.0001,s);g.gain.exponentialRampToValueAtTime(vol,s+att);g.gain.exponentialRampToValueAtTime(0.0001,s+dur);
+  let last=o; o.connect(g);
+  if(cut){const fl=a.createBiquadFilter();fl.type="lowpass";fl.frequency.value=cut;g.connect(fl);last=fl}else last=g;
+  last.connect(bus);o.start(s);o.stop(s+dur+.05);
+}
+function noise({t=0,dur=.1,vol=.25,type="highpass",freq=6000,sweep,bus=sfxBus,q=1}){
+  const a=ctx(),s=a.currentTime+t,src=a.createBufferSource(),fl=a.createBiquadFilter(),g=a.createGain();
+  src.buffer=noiseBuf;src.loop=true;fl.type=type;fl.frequency.setValueAtTime(freq,s);fl.Q.value=q;
+  if(sweep)fl.frequency.exponentialRampToValueAtTime(sweep,s+dur);
+  g.gain.setValueAtTime(0.0001,s);g.gain.linearRampToValueAtTime(vol,s+.002);g.gain.exponentialRampToValueAtTime(0.0001,s+dur);
+  src.connect(fl);fl.connect(g);g.connect(bus);src.start(s,Math.random()*.8);src.stop(s+dur+.05);
+}
+const chord=(t,ns,o)=>ns.forEach((n,i)=>tone({...o,t,n,detune:(i%2?7:-7)}));
+
+/* ---------- Drop-In Daily ---------- */
+// reverb send so the Fortnite sounds feel big and polished
+function verb(){const a=ctx();if(verb.n)return verb.n;const len=a.sampleRate*2.2,b=a.createBuffer(2,len,a.sampleRate);
+  for(let c=0;c<2;c++){const d=b.getChannelData(c);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3)}
+  const cv=a.createConvolver();cv.buffer=b;const g=a.createGain();g.gain.value=.35;cv.connect(g);g.connect(master);
+  const send=a.createGain();send.connect(sfxBus);send.connect(cv);return verb.n=send}
+// brass: a stack of detuned saws with a filter that opens and closes, plus late vibrato
+function brass({t=0,n,dur=.4,vol=.12,bus}){const a=ctx(),s=a.currentTime+t,out=bus||verb(),fl=a.createBiquadFilter(),g=a.createGain();
+  fl.type="lowpass";fl.Q.value=2;fl.frequency.setValueAtTime(500,s);fl.frequency.linearRampToValueAtTime(3200,s+.06);fl.frequency.exponentialRampToValueAtTime(1400,s+dur);
+  g.gain.setValueAtTime(.0001,s);g.gain.exponentialRampToValueAtTime(vol,s+.04);g.gain.setValueAtTime(vol,s+dur*.8);g.gain.exponentialRampToValueAtTime(.0001,s+dur+.15);
+  const lfo=a.createOscillator(),lg=a.createGain();lfo.frequency.value=5.5;lg.gain.setValueAtTime(0,s);lg.gain.linearRampToValueAtTime(dur>.35?12:0,s+dur);lfo.connect(lg);
+  [-9,0,9].forEach(dt=>{const o=a.createOscillator();o.type="sawtooth";o.frequency.value=hz(n);o.detune.value=dt;lg.connect(o.detune);o.connect(fl);o.start(s);o.stop(s+dur+.2)});
+  lfo.start(s);lfo.stop(s+dur+.2);fl.connect(g);g.connect(out)}
+// timpani-style boom
+function boom(t=0,vol=.5){tone({t,f:110,slide:48,type:"sine",dur:.7,vol,bus:verb()});noise({t,dur:.25,vol:.12,type:"lowpass",freq:300,bus:verb()})}
+// choir "aah": saws through two vowel formants
+function aah({t=0,ns,dur=1,vol=.06}){const a=ctx(),s=a.currentTime+t,g=a.createGain(),out=verb();
+  g.gain.setValueAtTime(.0001,s);g.gain.exponentialRampToValueAtTime(vol,s+dur*.4);g.gain.exponentialRampToValueAtTime(.0001,s+dur);
+  const f1=a.createBiquadFilter();f1.type="bandpass";f1.frequency.value=750;f1.Q.value=5;const f2=a.createBiquadFilter();f2.type="bandpass";f2.frequency.value=1150;f2.Q.value=7;f1.connect(g);f2.connect(g);
+  ns.forEach((n,k)=>[-6,6].forEach(dt=>{const o=a.createOscillator();o.type="sawtooth";o.frequency.value=hz(n);o.detune.value=dt+k;o.connect(f1);o.connect(f2);o.start(s);o.stop(s+dur+.05)}));
+  g.connect(out)}
+const FN={
+ "Tap":{d:"Soft menu bloop",p(){tone({f:520,slide:880,type:"sine",dur:.07,vol:.22});noise({dur:.02,vol:.12,type:"bandpass",freq:3000,q:4})}},
+ "Correct":{d:"Crisp hit-marker ding",p(){noise({dur:.025,vol:.3,type:"highpass",freq:4000});tone({f:2093,type:"sine",dur:.5,vol:.2,bus:verb()});tone({f:3140,type:"sine",dur:.3,vol:.08,bus:verb()});tone({f:1568,type:"triangle",dur:.15,vol:.1})}},
+ "Wrong":{d:"Storm surge rumble",p(){noise({dur:.6,vol:.3,type:"lowpass",freq:1800,sweep:150,bus:verb()});tone({f:110,slide:55,type:"sawtooth",dur:.5,vol:.18,cut:400});tone({f:233,slide:117,type:"sawtooth",dur:.45,vol:.08,cut:900,detune:20})}},
+ "Next question":{d:"Whoosh as the card drops",p(){noise({dur:.4,vol:.24,type:"bandpass",freq:300,sweep:3500,q:1.5});noise({t:.38,dur:.03,vol:.25,type:"bandpass",freq:2200,q:3});tone({t:.38,f:700,slide:1000,type:"sine",dur:.06,vol:.12})}},
+ "Victory Royale":{d:"5/5 brass fanfare",p(){boom(0,.4);[[0,67,.14],[.15,72,.14],[.3,76,.14],[.45,79,.9]].forEach(([t,n,d])=>{brass({t,n,dur:d});brass({t,n:n-12,dur:d,vol:.08})});
+   boom(.45,.6);[60,64,67].forEach(n=>brass({t:.45,n,dur:1.1,vol:.06}));noise({t:.1,dur:1.6,vol:.12,freq:6000,bus:verb()});aah({t:.45,ns:[72,76,79],dur:1.6,vol:.05})}},
+ "Results (not 5/5)":{d:"'Good game' brass",p(){brass({n:72,dur:.2});brass({t:.22,n:70,dur:.2});brass({t:.44,n:65,dur:.7});brass({t:.44,n:60,dur:.7,vol:.07});boom(.44,.3)}},
+ "Achievement":{d:"XP level-up rise",p(){noise({dur:.4,vol:.12,type:"bandpass",freq:800,sweep:8000,q:3});[74,79,83,86,91].forEach((n,i)=>tone({t:.12+i*.06,n,type:"square",dur:.12,vol:.07,cut:4000,bus:verb()}));tone({t:.45,n:98,type:"sine",dur:.8,vol:.12,bus:verb()})}},
+ "Secret found":{d:"Glowing chest opening",p(){aah({ns:[67,71,74,79],dur:1.4,vol:.07});noise({dur:.6,vol:.1,type:"bandpass",freq:500,sweep:7000,q:5,bus:verb()});
+   noise({t:.6,dur:.06,vol:.35,type:"lowpass",freq:900});[91,95,98,103,98,103].forEach((n,i)=>tone({t:.62+i*.06,n,type:"sine",dur:.4,vol:.08,bus:verb()}))}},
+ "Supply drop":{d:"Crate floats down, lands, pops open",p(){const a=ctx();
+   tone({f:620,slide:420,type:"sine",dur:1.1,vol:.07,bus:verb()});tone({f:625,slide:424,type:"sine",dur:1.1,vol:.05,bus:verb()});
+   for(let k=0;k<6;k++)noise({t:k*.17,dur:.09,vol:.07,type:"bandpass",freq:900,q:2});
+   boom(1.1,.45);noise({t:1.1,dur:.18,vol:.28,type:"lowpass",freq:800});
+   noise({t:1.45,dur:.08,vol:.3,type:"bandpass",freq:2500,q:2});noise({t:1.48,dur:.5,vol:.08,type:"highpass",freq:6000,bus:verb()});
+   [84,88,91,96].forEach((n,i)=>tone({t:1.5+i*.05,n,type:"sine",dur:.6,vol:.08,bus:verb()}));aah({t:1.45,ns:[72,76,79,84],dur:1.1,vol:.05})}},
+ "Live question":{d:"Map-ping alert on Twitch",p(){[0,.14].forEach(t=>{tone({t,f:1760,type:"sine",dur:.35,vol:.16,bus:verb()});tone({t,f:2640,type:"sine",dur:.2,vol:.06,bus:verb()})});noise({dur:.02,vol:.2,type:"highpass",freq:5000})}},
+ "Timer tick":{d:"Storm countdown beeps",p(){[0,.5].forEach(t=>{tone({t,f:1320,type:"square",dur:.06,vol:.08,cut:3500});tone({t,f:660,type:"sine",dur:.08,vol:.1})})}},
+};
+/* ---------- Daily Poké Catch ---------- */
+const PK={
+ "Tap":{d:"Menu blip",p(){tone({n:84,dur:.05,vol:.15})}},
+ "Correct":{d:"Three quick rising blips",p(){[76,79,84].forEach((n,i)=>tone({t:i*.06,n,dur:.09,vol:.16}))}},
+ "Wrong":{d:"Broke free! descending blips",p(){[67,63,58].forEach((n,i)=>tone({t:i*.08,n,dur:.12,vol:.18}));tone({f:200,slide:80,type:"triangle",dur:.25,vol:.25})}},
+ "Ball wobble":{d:"Wobble, wobble, click",p(){[0,.35,.7].forEach(t=>{noise({t,dur:.05,vol:.25,type:"bandpass",freq:1800,q:5});tone({t:t+.02,f:300,slide:180,type:"triangle",dur:.08,vol:.2})});tone({t:1.05,n:96,dur:.06,vol:.15});noise({t:1.05,dur:.04,vol:.3,type:"highpass",freq:3000})}},
+ "Perfect catch":{d:"5/5 results jingle",p(){const m=[[72,.1],[72,.1],[72,.1],[79,.3],[77,.1],[76,.1],[77,.1],[84,.5]];let t=0;m.forEach(([n,d])=>{tone({t,n,dur:d*.95,vol:.14});tone({t,n:n-12,type:"triangle",dur:d*.95,vol:.2});t+=d})}},
+ "Results (not 5/5)":{d:"Short 'nice try' tune",p(){[[72,.12],[76,.12],[74,.12],[71,.35]].reduce((t,[n,d])=>{tone({t,n,dur:d*.9,vol:.14});tone({t,n:n-24,type:"triangle",dur:d*.9,vol:.2});return t+d},0)}},
+ "Achievement":{d:"Level-up style arpeggio",p(){[72,76,79,84,79,84,88].forEach((n,i)=>tone({t:i*.06,n,dur:.08,vol:.13,type:i%2?"square":"triangle"}))}},
+ "Secret found":{d:"Wishing-star twinkle",p(){[96,100,103,108,103,108].forEach((n,i)=>tone({t:i*.08,n,type:"triangle",dur:.25,vol:.12}));tone({t:.5,n:84,type:"square",dur:.4,vol:.06})}},
+ "Wild Pokémon":{d:"A wild Pokémon appeared!",p(){for(let i=0;i<8;i++)tone({t:i*.045,n:88-i*3,dur:.04,vol:.12});
+   noise({t:.36,dur:.12,vol:.15,type:"highpass",freq:3000});
+   [[.42,69,.09],[.51,72,.09],[.6,76,.09],[.69,75,.24]].forEach(([t,n,d])=>{tone({t,n,dur:d,vol:.14});tone({t,n:n-24,type:"triangle",dur:d,vol:.22})})}},
+ "Shiny Pokémon":{d:"Sparkle burst for a shiny",p(){for(let i=0;i<8;i++)tone({t:i*.045,n:88-i*3,dur:.04,vol:.1});
+   [0,.11,.22].forEach((t0,k)=>{[100,104,107].forEach((n,i)=>tone({t:.4+t0+i*.03,n:n+k*2,type:"triangle",dur:.18,vol:.1}));noise({t:.4+t0,dur:.05,vol:.08,freq:8000})});
+   [[.8,84,.1],[.9,88,.1],[1,91,.1],[1.1,96,.4]].forEach(([t,n,d])=>{tone({t,n,dur:d,vol:.12});tone({t,n:n-24,type:"triangle",dur:d,vol:.2})})}},
+ "Live question":{d:"Pops up on Twitch",p(){for(let i=0;i<6;i++)tone({t:i*.05,n:i%2?79:72,dur:.05,vol:.13});tone({t:.32,n:84,dur:.25,vol:.15})}},
+ "Timer tick":{d:"Last 5 seconds",p(){tone({n:96,dur:.03,vol:.1});tone({t:.5,n:96,dur:.03,vol:.1})}},
+};
+const FNEGG={
+ "Storm poke":{d:"Each tap on the storm",p(){noise({dur:.18,vol:.25,type:"bandpass",freq:1200,sweep:300,q:3});tone({f:880,slide:220,type:"sawtooth",dur:.15,vol:.08,cut:2500});for(let k=0;k<4;k++)noise({t:k*.03,dur:.02,vol:.15,type:"highpass",freq:5000})}},
+ "Storm surge":{d:"Poked enough: it surges",p(){tone({f:60,slide:240,type:"sawtooth",dur:.6,vol:.12,cut:1200});noise({t:.55,dur:.06,vol:.5,type:"highpass",freq:1500});noise({t:.58,dur:1.6,vol:.35,type:"lowpass",freq:2000,sweep:120,bus:verb()});boom(.58,.6);tone({t:.6,f:233,slide:110,type:"sawtooth",dur:1,vol:.08,cut:800,detune:15})}},
+ "Mythic title":{d:"Title upgrades to gold",p(){noise({dur:.5,vol:.15,type:"bandpass",freq:600,sweep:9000,q:4,bus:verb()});boom(.5,.4);[72,76,79,84].forEach(n=>brass({t:.5,n,dur:.8,vol:.05}));[96,100,103,108].forEach((n,i)=>tone({t:.5+i*.04,n,type:"sine",dur:1,vol:.07,bus:verb()}));aah({t:.5,ns:[76,79,84],dur:1.4,vol:.05})}},
+ "Thank the bus driver":{d:"Horn honks back + happy chime",p(){[0,.22].forEach(t=>[349,440,523].forEach(f=>tone({t,f,type:"sawtooth",dur:.16,vol:.07,cut:1600})));[[.55,84],[.7,79],[.85,88]].forEach(([t,n])=>{tone({t,n,type:"sine",dur:.5,vol:.15,bus:verb()});tone({t,n:n+12,type:"sine",dur:.3,vol:.04,bus:verb()})})}},
+};
+const PKEGG={
+ "Grass rustle":{d:"Tapping the tall grass",p(){[0,.09,.2].forEach(t=>noise({t,dur:.07,vol:.2,type:"bandpass",freq:2500+Math.random()*1500,q:2}))}},
+ "Wishing star":{d:"Shooting star + wish chime",p(){tone({f:3000,slide:900,type:"triangle",dur:.6,vol:.08});noise({dur:.6,vol:.06,type:"bandpass",freq:6000,sweep:1500,q:3});[[.62,84],[.72,88],[.82,91],[.92,96]].forEach(([t,n])=>tone({t,n,type:"pulse",dur:.4,vol:.08}));[96,100,103].forEach((n,i)=>tone({t:1+i*.07,n,type:"triangle",dur:.5,vol:.06}))}},
+ "Retro mode":{d:"Old screen switches on",p(){noise({dur:.03,vol:.25,type:"bandpass",freq:1500,q:4});tone({t:.05,f:60,type:"square",dur:.1,vol:.06});[[.3,84,.08],[.4,88,.08],[.5,96,.5]].forEach(([t,n,d])=>tone({t,n,type:"pulse",dur:d,vol:.1}))}},
+ "Evolution":{d:"The emblem evolves",p(){let t=0,d=.2;for(let k=0;k<14;k++){tone({t,n:k%2?76:72,type:"pulse",dur:d*.8,vol:.09});tone({t,n:k%2?64:60,type:"triangle",dur:d*.8,vol:.15});t+=d;d=Math.max(.06,d*.85)}
+   noise({t,dur:.25,vol:.2,freq:4000});[[0,72,.12],[.12,76,.12],[.24,79,.12],[.36,84,.12],[.48,83,.12],[.6,84,.6]].forEach(([o,n,dd])=>{tone({t:t+.1+o,n,dur:dd*.95,vol:.12});tone({t:t+.1+o,n:n-24,type:"triangle",dur:dd*.95,vol:.2})})}},
+};
+/* ---------- Drop-In style B: Chapter 1 / Save the World, whimsical orchestral ---------- */
+function pluck(t,n,vol=.14,dur=.3){tone({t,n,type:"triangle",dur,vol,att:.002,cut:2200,bus:verb()});tone({t,n:n+12,type:"sine",dur:dur*.4,vol:vol*.3,att:.002,bus:verb()})}
+function mallet(t,n,vol=.14){tone({t,n,type:"sine",dur:.45,vol,att:.002,bus:verb()});tone({t,f:hz(n)*4,type:"sine",dur:.06,vol:vol*.35,att:.001})}
+function glock(t,n,vol=.1){tone({t,n,type:"sine",dur:1.1,vol,att:.002,bus:verb()});tone({t,f:hz(n)*2.76,type:"sine",dur:.3,vol:vol*.25,att:.001,bus:verb()})}
+function flute({t=0,n,dur=.3,vol=.08}){const a=ctx(),s0=a.currentTime+t,o=a.createOscillator(),g=a.createGain(),l=a.createOscillator(),lg=a.createGain();
+  o.type="sine";o.frequency.value=hz(n);l.frequency.value=5.2;lg.gain.setValueAtTime(0,s0);lg.gain.linearRampToValueAtTime(dur>.3?10:3,s0+dur);l.connect(lg);lg.connect(o.detune);
+  g.gain.setValueAtTime(.0001,s0);g.gain.exponentialRampToValueAtTime(vol,s0+.05);g.gain.setValueAtTime(vol,s0+dur*.8);g.gain.exponentialRampToValueAtTime(.0001,s0+dur+.1);
+  o.connect(g);g.connect(verb());o.start(s0);l.start(s0);o.stop(s0+dur+.15);l.stop(s0+dur+.15);noise({t,dur:.06,vol:vol*.4,type:"bandpass",freq:hz(n)*2,q:3,bus:verb()})}
+function horn({t=0,n,dur=.4,vol=.1}){const a=ctx(),s0=a.currentTime+t,fl=a.createBiquadFilter(),g=a.createGain();
+  fl.type="lowpass";fl.Q.value=.7;fl.frequency.setValueAtTime(400,s0);fl.frequency.linearRampToValueAtTime(1500,s0+.08);fl.frequency.exponentialRampToValueAtTime(900,s0+dur);
+  g.gain.setValueAtTime(.0001,s0);g.gain.exponentialRampToValueAtTime(vol,s0+.07);g.gain.setValueAtTime(vol,s0+dur*.85);g.gain.exponentialRampToValueAtTime(.0001,s0+dur+.2);
+  [-5,5].forEach(dt=>{const o=a.createOscillator();o.type="sawtooth";o.frequency.value=hz(n);o.detune.value=dt;o.connect(fl);o.start(s0);o.stop(s0+dur+.25)});
+  const o2=a.createOscillator();o2.type="triangle";o2.frequency.value=hz(n);o2.connect(fl);o2.start(s0);o2.stop(s0+dur+.25);fl.connect(g);g.connect(verb())}
+function strings({t=0,ns,dur=1,vol=.03}){ns.forEach((n,k)=>[-10,10].forEach(dt=>tone({t,n,type:"sawtooth",dur,vol,att:.25,cut:1800,detune:dt+k*2,bus:verb()})))}
+function swell(t,dur,vol=.12){const a=ctx(),s0=a.currentTime+t,src=a.createBufferSource(),fl=a.createBiquadFilter(),g=a.createGain();src.buffer=noiseBuf;src.loop=true;fl.type="highpass";fl.frequency.value=5000;
+  g.gain.setValueAtTime(.0001,s0);g.gain.exponentialRampToValueAtTime(vol,s0+dur);g.gain.exponentialRampToValueAtTime(.0001,s0+dur+.8);src.connect(fl);fl.connect(g);g.connect(verb());src.start(s0);src.stop(s0+dur+.9)}
+function roll(t,dur,vol=.35){for(let k=0;k*.05<dur;k++)tone({t:t+k*.05,f:98,slide:80,type:"sine",dur:.12,vol:vol*(.3+.7*k*.05/dur),att:.003})}
+function harp(t,ns,gap=.035,vol=.1){ns.forEach((n,i)=>pluck(t+i*gap,n,vol,.6))}
+const FNB={
+ "Tap":()=>{mallet(0,84,.12);noise({dur:.015,vol:.08,type:"bandpass",freq:3500,q:5})},
+ "Correct":()=>{glock(0,84,.11);glock(.09,91,.12);pluck(0,60,.12)},
+ "Wrong":()=>{pluck(0,50,.2,.4);pluck(.16,46,.2,.5);boom(0,.25);horn({t:.05,n:50,dur:.4,vol:.06})},
+ "Next question":()=>{harp(0,[67,69,71,74,76,79,81,83],.03,.07);noise({dur:.3,vol:.08,type:"bandpass",freq:600,sweep:2500,q:1})},
+ "Victory Royale":()=>{roll(0,.55,.3);swell(0,.6,.1);[[.6,62,.18],[.8,69,.18],[1,74,.55],[1.6,72,.18],[1.8,74,.18],[2,78,1.1]].forEach(([t,n,d])=>{horn({t,n,dur:d,vol:.1});horn({t,n:n-12,dur:d,vol:.06})});
+   boom(.6,.55);boom(2,.6);strings({t:2,ns:[62,66,69,74],dur:1.6,vol:.025});[86,90,93,98].forEach((n,i)=>glock(2+i*.07,n,.07));swell(1.5,.5,.08)},
+ "Results (not 5/5)":()=>{[[0,74,.2],[.22,72,.2],[.44,69,.6]].forEach(([t,n,d])=>flute({t,n,dur:d,vol:.08}));[50,57,62].forEach((n,i)=>pluck(i*.22,n,.12))},
+ "Achievement":()=>{harp(0,[72,76,79,84,88],.05,.08);[88,91,96].forEach((n,i)=>glock(.25+i*.08,n,.08))},
+ "Secret found":()=>{const a=ctx();strings({ns:[67,71,74,79],dur:1.4,vol:.022});aah({ns:[71,74,79],dur:1.3,vol:.04});[91,95,98,103,98,103].forEach((n,i)=>glock(.55+i*.07,n,.07))},
+ "Supply drop":()=>{flute({n:84,dur:.5,vol:.06});flute({t:.5,n:79,dur:.5,vol:.06});for(let k=0;k<6;k++)noise({t:k*.17,dur:.08,vol:.05,type:"bandpass",freq:900,q:2});
+   boom(1.1,.45);noise({t:1.1,dur:.15,vol:.2,type:"lowpass",freq:700});harp(1.4,[72,76,79,84,88,91],.04,.08);glock(1.65,96,.09)},
+ "Live question":()=>{glock(0,88,.12);glock(.15,95,.12)},
+ "Timer tick":()=>{[0,.5].forEach(t=>{noise({t,dur:.03,vol:.25,type:"bandpass",freq:2200,q:8});mallet(t,91,.05)})},
+ "Skydive (start)":()=>{noise({dur:1.05,vol:.2,type:"bandpass",freq:500,sweep:1600,q:.6});harp(.2,[88,86,84,81,79,76,74,72],.06,.05);
+   noise({t:.95,dur:.12,vol:.3,type:"bandpass",freq:900,q:1.5});pluck(.97,55,.18);noise({t:1,dur:.5,vol:.06,type:"bandpass",freq:700,sweep:300,q:.8});boom(1.55,.25);glock(1.6,84,.08)},
+ "Perfect day 25/25":()=>{roll(0,.8,.35);swell(0,.85,.12);[[.85,62,.18],[1.05,66,.18],[1.25,69,.18],[1.45,74,.55],[2.05,72,.18],[2.25,74,.18],[2.45,78,.18],[2.65,81,1.4]].forEach(([t,n,d])=>{horn({t,n,dur:d,vol:.1});horn({t,n:n-12,dur:d,vol:.06})});
+   boom(.85,.5);boom(2.65,.7);strings({t:2.65,ns:[62,66,69,74,78],dur:2,vol:.025});aah({t:2.65,ns:[74,78,81],dur:2,vol:.04});for(let i=0;i<8;i++)glock(2.7+i*.09,[86,90,93,98][i%4]+(i>3?12:0),.06);swell(2.2,.45,.1)},
+ "Endless streak (every 5)":()=>{[72,76,79,84].forEach((n,i)=>mallet(i*.05,n,.12));glock(.22,91,.1)},
+ "Endless streak 10 / 25":()=>{roll(0,.3,.25);[[.3,67],[.45,72],[.6,76,.5]].forEach(([t,n,d])=>horn({t,n,dur:d||.15,vol:.1}));boom(.6,.4);[88,91,96].forEach((n,i)=>glock(.65+i*.07,n,.07))},
+ "Endless run over":()=>{[67,63,60,55].forEach((n,i)=>pluck(i*.13,n,.16,.35));horn({t:.5,n:43,dur:.8,vol:.07});boom(.5,.3)},
+ "XP bar fills":()=>{for(let k=0;k<14;k++)mallet(k*.055,72+[0,2,4,5,7,9,11][k%7]+(k>6?12:0),.08);glock(.8,96,.1)},
+ "Where Am I? reveal":()=>{harp(0,[60,64,67,72,76],.04,.07);glock(.25,88,.11)},
+ "Notification":()=>{noise({dur:.03,vol:.2,type:"bandpass",freq:1800,q:8});glock(.04,84,.08)},
+ "Copied result":()=>{mallet(0,79,.12);mallet(.09,86,.12)},
+ "Hint revealed":()=>{flute({n:79,dur:.15,vol:.07});flute({t:.16,n:84,dur:.3,vol:.07})},
+ "Tab switch":()=>{noise({dur:.1,vol:.1,type:"bandpass",freq:800,sweep:2200,q:1.2});mallet(.07,79,.08)},
+ "Storm poke":()=>{tone({f:90,slide:60,type:"sawtooth",dur:.3,vol:.08,cut:400});noise({dur:.3,vol:.15,type:"bandpass",freq:300,sweep:1200,q:2,bus:verb()});pluck(0,40,.12,.3)},
+ "Storm surge":()=>{roll(0,.6,.3);strings({t:0,ns:[38,45,50,53],dur:1.4,vol:.03});noise({t:.6,dur:1.4,vol:.3,type:"lowpass",freq:1500,sweep:120,bus:verb()});boom(.6,.6);horn({t:.6,n:38,dur:1,vol:.08})},
+ "Mythic title taps":()=>{const n=[72,76,79,84,88][(mythLvl=mythLvl%5+1)-1];glock(0,n,.11);pluck(0,n-24,.1);if(mythLvl===5)FNB["Mythic title"]()},
+ "Mythic title":()=>{swell(0,.5,.1);boom(.5,.4);[62,66,69,74].forEach(n=>horn({t:.5,n,dur:.9,vol:.05}));[86,90,93,98,102].forEach((n,i)=>glock(.5+i*.05,n,.06));strings({t:.5,ns:[74,78,81],dur:1.3,vol:.02})},
+ "Thank the bus driver":()=>{[0,.2].forEach(t=>[349,440].forEach(f=>tone({t,f,type:"sawtooth",dur:.14,vol:.05,cut:900})));[[.5,76],[.62,79],[.74,84]].forEach(([t,n])=>flute({t,n,dur:.12,vol:.07}));glock(.9,91,.08)},
+};
+/* ---------- Drop-In style C: OG lobby style, synth wubs + orchestral stabs + mallets ---------- */
+function wub(t,n,{vol=.14,dur=.22,peak=1400,type="sawtooth",slide}={}){const a=ctx(),s0=a.currentTime+t,o=a.createOscillator(),fl=a.createBiquadFilter(),g=a.createGain();o.type=type;o.frequency.setValueAtTime(hz(n),s0);if(slide)o.frequency.exponentialRampToValueAtTime(hz(slide),s0+dur);
+  fl.type="lowpass";fl.Q.value=7;fl.frequency.setValueAtTime(180,s0);fl.frequency.linearRampToValueAtTime(peak,s0+Math.min(.07,dur*.4));fl.frequency.exponentialRampToValueAtTime(200,s0+dur);
+  g.gain.setValueAtTime(.0001,s0);g.gain.linearRampToValueAtTime(vol,s0+.004);g.gain.setValueAtTime(vol,s0+dur*.7);g.gain.exponentialRampToValueAtTime(.0001,s0+dur);o.connect(fl);fl.connect(g);g.connect(sfxBus);o.start(s0);o.stop(s0+dur+.05)}
+function stab(t,ns,vol=.05,dur=.16){ns.forEach(n=>{brass({t,n,dur,vol});tone({t,n:n+12,type:"sawtooth",dur:dur*.8,vol:vol*.35,cut:3200,bus:verb()})})}
+function snare(t,vol=.2){noise({t,dur:.13,vol,type:"bandpass",freq:1900,q:.9,bus:verb()});tone({t,f:220,slide:150,type:"triangle",dur:.07,vol:vol*.8})}
+function riser(t,dur,vol=.12){const a=ctx(),s0=a.currentTime+t,src=a.createBufferSource(),fl=a.createBiquadFilter(),g=a.createGain();src.buffer=noiseBuf;src.loop=true;fl.type="bandpass";fl.Q.value=3;fl.frequency.setValueAtTime(300,s0);fl.frequency.exponentialRampToValueAtTime(7000,s0+dur);
+  g.gain.setValueAtTime(.0001,s0);g.gain.exponentialRampToValueAtTime(vol,s0+dur);g.gain.exponentialRampToValueAtTime(.0001,s0+dur+.05);src.connect(fl);fl.connect(g);g.connect(sfxBus);src.start(s0);src.stop(s0+dur+.1)}
+const FNC={
+ "Tap":()=>{wub(0,72,{vol:.1,dur:.08,peak:2500});noise({dur:.015,vol:.08,type:"bandpass",freq:3500,q:5})},
+ "Correct":()=>{stab(0,[67,71,74],.04,.14);mallet(.08,91,.12);wub(0,43,{vol:.12,dur:.2})},
+ "Wrong":()=>{wub(0,46,{vol:.16,dur:.18});wub(.17,41,{vol:.16,dur:.35,slide:36});stab(.02,[58,61,65],.03,.25)},
+ "Next question":()=>{riser(0,.3,.1);snare(.3,.18);stab(.3,[67,71,74],.035,.12);wub(.3,43,{vol:.12,dur:.18})},
+ "Victory Royale":()=>{riser(0,.5,.14);snare(.5,.22);boom(.5,.45);stab(.5,[67,71,74,79],.05,.5);wub(.5,31,{vol:.18,dur:.5,peak:900});
+   [[.95,74,.14],[1.1,79,.14],[1.25,83,.14],[1.4,86,.9]].forEach(([t,n,d])=>{brass({t,n,dur:d,vol:.09});brass({t,n:n-12,dur:d,vol:.05})});
+   snare(1.4,.2);boom(1.4,.5);stab(1.4,[67,71,74],.04,.9);[[1.4,31],[1.55,43],[1.7,31]].forEach(([t,n])=>wub(t,n,{vol:.13,dur:.16}));[91,95,98,103].forEach((n,i)=>mallet(1.45+i*.06,n,.08));swell(.9,.5,.08)},
+ "Results (not 5/5)":()=>{stab(0,[67,71,74],.04,.14);stab(.2,[65,69,72],.04,.14);wub(.4,41,{vol:.13,dur:.5,peak:800});stab(.4,[62,65,69],.035,.5)},
+ "Achievement":()=>{[79,83,86,91].forEach((n,i)=>mallet(i*.05,n,.1));stab(.22,[72,76,79],.04,.3);riser(0,.22,.06);swell(.1,.3,.05)},
+ "Secret found":()=>{wub(0,36,{vol:.14,dur:1,peak:2600,type:"sawtooth"});aah({ns:[67,71,74,79],dur:1.3,vol:.05});[91,95,98,103,98,103].forEach((n,i)=>mallet(.6+i*.06,n,.07));stab(.6,[67,71,74],.03,.4)},
+ "Supply drop":()=>{wub(0,60,{vol:.06,dur:1.05,peak:1200,slide:48});for(let k=0;k<6;k++)noise({t:k*.17,dur:.08,vol:.05,type:"bandpass",freq:900,q:2});
+   snare(1.1,.22);boom(1.1,.45);riser(1.15,.25,.08);stab(1.42,[72,76,79,84],.045,.3);[88,91,96].forEach((n,i)=>mallet(1.45+i*.06,n,.08))},
+ "Live question":()=>{snare(0,.15);stab(0,[74,78,81],.035,.1);stab(.15,[74,78,81],.04,.25)},
+ "Timer tick":()=>{[0,.5].forEach(t=>{noise({t,dur:.025,vol:.25,type:"bandpass",freq:3000,q:6});wub(t,79,{vol:.05,dur:.05,peak:3000})})},
+ "Skydive (start)":()=>{noise({dur:1.05,vol:.18,type:"bandpass",freq:500,sweep:1600,q:.6});riser(.2,.75,.08);wub(.95,55,{vol:.14,dur:.3,slide:43});snare(.95,.2);stab(.97,[67,71,74],.035,.2);noise({t:1,dur:.5,vol:.06,type:"bandpass",freq:700,sweep:300,q:.8});boom(1.55,.3);mallet(1.6,84,.08)},
+ "Perfect day 25/25":()=>{riser(0,.7,.15);[.7,.85,1].forEach((t,i)=>{snare(t,.2);stab(t,[67,71,74].map(n=>n+i*2),.045,.12)});boom(1.15,.6);stab(1.15,[67,71,74,79],.055,.7);wub(1.15,31,{vol:.18,dur:.6,peak:900});
+   [[1.6,74,.14],[1.75,79,.14],[1.9,83,.14],[2.05,86,.14],[2.2,84,.14],[2.35,86,.14],[2.5,91,1.2]].forEach(([t,n,d])=>{brass({t,n,dur:d,vol:.09});brass({t,n:n-12,dur:d,vol:.05})});
+   snare(2.5,.22);boom(2.5,.6);stab(2.5,[67,71,74,79],.045,1.2);aah({t:2.5,ns:[79,83,86],dur:1.8,vol:.04});for(let i=0;i<8;i++)mallet(2.55+i*.07,[91,95,98,103][i%4],.07);swell(2,.5,.1)},
+ "Endless streak (every 5)":()=>{stab(0,[72,76,79],.035,.12);[84,88,91].forEach((n,i)=>mallet(.06+i*.05,n,.09))},
+ "Endless streak 10 / 25":()=>{riser(0,.3,.1);[.3,.42,.54].forEach((t,i)=>{snare(t,.15);stab(t,[67,71,74].map(n=>n+i*4),.045,.12)});wub(.54,43,{vol:.14,dur:.4});[91,95,98].forEach((n,i)=>mallet(.6+i*.06,n,.08))},
+ "Endless run over":()=>{noise({dur:.05,vol:.35,type:"highpass",freq:3000});wub(.05,46,{vol:.16,dur:.7,slide:30,peak:1000});stab(.05,[58,61,65],.04,.2);stab(.3,[55,58,62],.04,.6);boom(.3,.35)},
+ "XP bar fills":()=>{wub(0,43,{vol:.08,dur:.8,peak:3500});for(let k=0;k<12;k++)mallet(k*.065,72+[0,2,4,7,9,12][k%6]+(k>5?12:0),.06);stab(.8,[72,76,79],.04,.25)},
+ "Where Am I? reveal":()=>{noise({dur:.35,vol:.15,type:"bandpass",freq:2500,sweep:400,q:1.5});snare(.35,.15);stab(.35,[72,76,79],.035,.2);mallet(.4,88,.1)},
+ "Notification":()=>{noise({dur:.02,vol:.15,type:"bandpass",freq:2500,q:6});mallet(.02,84,.09);mallet(.1,91,.07)},
+ "Copied result":()=>{stab(0,[79,83],.025,.06);mallet(.05,91,.1)},
+ "Hint revealed":()=>{mallet(0,81,.09);mallet(.1,88,.09)},
+ "Tab switch":()=>{noise({dur:.1,vol:.1,type:"bandpass",freq:800,sweep:2500,q:1.2});wub(.06,67,{vol:.07,dur:.08,peak:2500})},
+ "Storm poke":()=>{wub(0,31,{vol:.16,dur:.3,peak:700,slide:28});noise({dur:.2,vol:.12,type:"bandpass",freq:600,sweep:200,q:3})},
+ "Storm surge":()=>{riser(0,.6,.1);wub(.6,31,{vol:.2,dur:1.2,peak:600,slide:24});noise({t:.6,dur:.06,vol:.45,type:"highpass",freq:1500});noise({t:.62,dur:1.4,vol:.3,type:"lowpass",freq:1800,sweep:120,bus:verb()});boom(.6,.6);stab(.6,[50,53,57],.04,.8)},
+ "Mythic title taps":()=>{const lv=(mythLvl=mythLvl%5+1);stab(0,[60,64,67].map(n=>n+lv*3),.035,.12);mallet(.04,79+lv*3,.08);if(lv===5)FNC["Mythic title"]()},
+ "Mythic title":()=>{riser(0,.5,.12);snare(.5,.2);boom(.5,.45);stab(.5,[72,76,79,84],.05,.9);wub(.5,36,{vol:.15,dur:.6,peak:900});[96,100,103,108].forEach((n,i)=>mallet(.55+i*.05,n,.07));aah({t:.5,ns:[76,79,84],dur:1.3,vol:.04})},
+ "Thank the bus driver":()=>{[0,.2].forEach(t=>[349,440].forEach(f=>tone({t,f,type:"sawtooth",dur:.14,vol:.05,cut:1000})));wub(.45,48,{vol:.12,dur:.3,slide:60,type:"square",peak:2000});[[.5,84],[.6,88],[.7,91]].forEach(([t,n])=>mallet(t,n,.09))},
+};
+let fnStyle="A";
+document.querySelectorAll("[data-style]").forEach(x=>x.onclick=()=>{fnStyle=x.dataset.style;document.querySelectorAll("[data-style]").forEach(y=>y.classList.toggle("on",y===x))});
+const playFn=(k,v)=>{const m=fnStyle==="B"?FNB:fnStyle==="C"?FNC:null;(m&&m[k]?m[k]:v.p)()};
+function fill(id,set){const el=document.getElementById(id);for(const[k,v]of Object.entries(set)){const b=document.createElement("button");b.innerHTML=k+"<small>"+v.d+"</small>";b.onclick=()=>{ctx();id.startsWith("fn")?playFn(k,v):v.p()};el.appendChild(b)}}
+// a sub-bus that fades out, for longer effects
+function fadeBus(start,len){const a=ctx(),g=a.createGain(),s0=a.currentTime;g.gain.setValueAtTime(1,s0+start);g.gain.linearRampToValueAtTime(.0001,s0+start+len);g.connect(verb());return g}
+let mythLvl=0,evoTap=0;
+Object.assign(FN,{
+ "Skydive (start)":{d:"Wind rush, glider out, land",p(){noise({dur:1.05,vol:.05,type:"bandpass",freq:300,sweep:1400,q:.8});noise({dur:1.05,vol:.22,type:"bandpass",freq:500,sweep:1600,q:.6});
+   noise({t:.95,dur:.12,vol:.35,type:"bandpass",freq:900,q:1.5});tone({t:.95,f:140,slide:70,type:"sine",dur:.25,vol:.35});noise({t:1,dur:.55,vol:.08,type:"bandpass",freq:700,sweep:300,q:.8});
+   noise({t:1.55,dur:.1,vol:.25,type:"lowpass",freq:500});tone({t:1.6,n:88,type:"sine",dur:.3,vol:.1,bus:verb()})}},
+ "Perfect day 25/25":{d:"All five sets perfect",p(){boom(0,.5);[[0,67,.12],[.12,72,.12],[.24,76,.12],[.36,79,.4],[.8,77,.12],[.92,79,.12],[1.04,84,1.4]].forEach(([t,n,d])=>{brass({t,n,dur:d,vol:.11});brass({t,n:n-12,dur:d,vol:.07})});
+   boom(1.04,.7);[60,64,67,72].forEach(n=>brass({t:1.04,n,dur:1.5,vol:.05}));aah({t:1.04,ns:[72,76,79,84],dur:2.2,vol:.06});
+   for(let k=0;k<10;k++){const t=1.2+Math.random()*1.6;noise({t,dur:.05,vol:.25,freq:3000});noise({t:t+.05,dur:.4,vol:.06,freq:7000,bus:verb()})}}},
+ "Endless streak (every 5)":{d:"Elimination-feed pling",p(){noise({dur:.12,vol:.12,type:"bandpass",freq:2000,sweep:6000,q:2});[79,84,88].forEach((n,i)=>tone({t:.05+i*.05,n,type:"sawtooth",dur:.2,vol:.07,cut:5000,bus:verb()}));tone({t:.2,n:96,type:"sine",dur:.5,vol:.1,bus:verb()})}},
+ "Endless streak 10 / 25":{d:"Bigger 'on fire' version",p(){noise({dur:.3,vol:.15,type:"bandpass",freq:400,sweep:8000,q:3,bus:verb()});boom(.25,.4);[[.25,72],[.35,76],[.45,79],[.55,84]].forEach(([t,n])=>brass({t,n,dur:.3,vol:.08}));tone({t:.55,n:96,type:"sine",dur:.8,vol:.1,bus:verb()})}},
+ "Endless run over":{d:"Eliminated: shield breaks",p(){noise({dur:.06,vol:.4,type:"highpass",freq:3000});[2400,3100,3900].forEach((f,i)=>tone({t:.01,f,slide:f*.7,type:"triangle",dur:.35,vol:.05}));brass({t:.2,n:67,dur:.2,vol:.09});brass({t:.42,n:63,dur:.6,vol:.09});boom(.42,.35)}},
+ "XP bar fills":{d:"Results XP counting up",p(){for(let k=0;k<16;k++)tone({t:k*.05,n:72+k,type:"square",dur:.04,vol:.04,cut:3500});tone({t:.82,n:91,type:"sine",dur:.4,vol:.12,bus:verb()})}},
+ "Where Am I? reveal":{d:"Map zooms in on the spot",p(){noise({dur:.4,vol:.18,type:"bandpass",freq:2500,sweep:400,q:1.5});boom(.38,.25);tone({t:.4,f:1760,type:"sine",dur:.35,vol:.12,bus:verb()})}},
+ "Notification":{d:"Pop-up message slides in",p(){tone({f:660,slide:990,type:"sine",dur:.08,vol:.14});tone({t:.08,n:88,type:"sine",dur:.2,vol:.08,bus:verb()})}},
+ "Copied result":{d:"Share button",p(){noise({dur:.02,vol:.2,type:"bandpass",freq:3000,q:4});tone({t:.03,n:84,type:"sine",dur:.08,vol:.12});tone({t:.11,n:91,type:"sine",dur:.2,vol:.12,bus:verb()})}},
+ "Hint revealed":{d:"Achievements hint",p(){[79,83].forEach((n,i)=>tone({t:i*.08,n,type:"triangle",dur:.3,vol:.1,bus:verb()}))}},
+ "Tab switch":{d:"Changing modes",p(){noise({dur:.12,vol:.15,type:"bandpass",freq:800,sweep:2500,q:1.2});tone({t:.08,f:700,type:"sine",dur:.05,vol:.1})}},
+});
+Object.assign(FNEGG,{
+ "Lobby party":{d:"Disco for the whole party (6 s)",p(){const L=6.2,g=fadeBus(4.9,1.3),b=.5; // 120 bpm
+   noise({dur:.08,vol:.4,type:"highpass",freq:2000});tone({f:200,slide:1600,type:"sawtooth",dur:.5,vol:.05,cut:4000,bus:g});
+   const chords=[[57,60,64,67],[62,66,69,72]],bass=[45,50];
+   for(let beat=0;beat<12;beat++){const t=.4+beat*b,c=Math.floor(beat/2)%2;
+     tone({t,f:140,slide:45,type:"sine",dur:.25,vol:.5,bus:g});
+     noise({t:t+b/2,dur:.16,vol:.1,freq:7000,bus:g});noise({t,dur:.03,vol:.04,freq:9000,bus:g});
+     if(beat%2===1)noise({t,dur:.15,vol:.16,type:"bandpass",freq:1500,q:.7,bus:g});
+     [0,1,2,3].forEach(k=>tone({t:t+k*b/4,n:bass[c]+(k%2?12:0),type:"sawtooth",dur:.1,vol:.12,cut:1100,bus:g}));
+     [.75,.25].forEach(o=>{if(beat%2===(o===.75?0:1))chords[c].forEach((n,k)=>tone({t:t+o*b,n:n+12,type:"sawtooth",dur:.18,vol:.022,cut:3200,detune:k%2?8:-8,bus:g}))});
+     noise({t:t+b/4,dur:.03,vol:.06,type:"bandpass",freq:2500,q:3,bus:g});noise({t:t+3*b/4,dur:.03,vol:.06,type:"bandpass",freq:2500,q:3,bus:g});
+     if(beat===4||beat===8)tone({t,f:300,slide:1200,type:"sawtooth",dur:b*1.5,vol:.035,cut:3500,bus:g})}}},
+ "Mythic title taps":{d:"Each tap raises the rarity",p(){mythLvl=mythLvl%5+1;const n=[67,71,74,79,84][mythLvl-1];
+   noise({dur:.15,vol:.12,type:"bandpass",freq:1000,sweep:5000,q:2});tone({t:.05,n,type:"sawtooth",dur:.25,vol:.08,cut:4000,bus:verb()});tone({t:.05,n:n+12,type:"sine",dur:.35,vol:.08,bus:verb()});if(mythLvl===5)FNEGG["Mythic title"].p()}},
+});
+Object.assign(PK,{
+ "Battle start (wipe)":{d:"Flash, flash, flash, wipe",p(){[0,.14,.28].forEach(t=>{tone({t,n:96,type:"pulse",dur:.05,vol:.1});noise({t,dur:.04,vol:.08,freq:6000})});
+   for(let k=0;k<10;k++)tone({t:.42+k*.045,n:60+k*3,type:"pulse",dur:.04,vol:.08});noise({t:.42,dur:.45,vol:.08,type:"bandpass",freq:800,sweep:4000,q:1});
+   for(let k=0;k<6;k++)tone({t:.95+k*.05,n:90-k*4,type:"pulse12",dur:.04,vol:.07})}},
+ "Perfect day 25/25":{d:"All five sets perfect",p(){for(let k=0;k<12;k++)noise({t:k*.04,dur:.03,vol:.06+k*.008,type:"bandpass",freq:1800,q:2});
+   const m=[[72,.12],[76,.12],[79,.12],[84,.3],[79,.12],[84,.12],[88,.3],[86,.12],[84,.12],[86,.12],[91,.8]];let t=.5;
+   m.forEach(([n,d])=>{tone({t,n,dur:d*.95,vol:.13});tone({t,n:n-5,type:"pulse",dur:d*.95,vol:.06});tone({t,n:n-24,type:"triangle",dur:d*.95,vol:.2});t+=d});
+   [96,100,103,108].forEach((n,i)=>tone({t:t-.6+i*.06,n,type:"triangle",dur:.4,vol:.06}))}},
+ "Endless streak (every 5)":{d:"Super-effective ding",p(){[[0,79],[.06,83],[.12,86],[.18,91]].forEach(([t,n])=>tone({t,n,dur:.07,vol:.12}));tone({t:.26,n:91,type:"pulse",dur:.25,vol:.1})}},
+ "Endless streak 10 / 25":{d:"Bigger jingle",p(){[[0,72,.1],[.1,76,.1],[.2,79,.1],[.3,84,.1],[.4,88,.1],[.5,91,.4]].forEach(([t,n,d])=>{tone({t,n,dur:d,vol:.12});tone({t,n:n-24,type:"triangle",dur:d,vol:.2})});[96,103].forEach((n,i)=>tone({t:.6+i*.08,n,type:"triangle",dur:.3,vol:.07}))}},
+ "Endless run over":{d:"Fainted",p(){tone({f:900,slide:110,dur:.7,vol:.12});[[.75,60],[.9,55],[1.05,48]].forEach(([t,n])=>tone({t,n,type:"triangle",dur:.14,vol:.22}))}},
+ "Ball throw":{d:"Before the wobbles",p(){tone({f:300,slide:1400,type:"pulse",dur:.25,vol:.07});noise({dur:.25,vol:.08,type:"bandpass",freq:1000,sweep:5000,q:2});noise({t:.28,dur:.04,vol:.25,type:"bandpass",freq:1800,q:4});tone({t:.3,n:91,dur:.05,vol:.1})}},
+ "Wild question cry":{d:"Random cry each time",p(){const b=200+Math.random()*500,a=ctx(),s0=a.currentTime,o=a.createOscillator(),g=a.createGain(),l=a.createOscillator(),lg=a.createGain();
+   o.setPeriodicWave(pulse(.25));o.frequency.setValueAtTime(b,s0);o.frequency.linearRampToValueAtTime(b*(1.3+Math.random()),s0+.12);o.frequency.linearRampToValueAtTime(b*.8,s0+.45);
+   l.frequency.value=18+Math.random()*20;lg.gain.value=b*.15;l.connect(lg);lg.connect(o.frequency);
+   g.gain.setValueAtTime(.0001,s0);g.gain.exponentialRampToValueAtTime(.1,s0+.02);g.gain.setValueAtTime(.1,s0+.35);g.gain.exponentialRampToValueAtTime(.0001,s0+.5);
+   o.connect(g);g.connect(sfxBus);o.start(s0);l.start(s0);o.stop(s0+.55);l.stop(s0+.55)}},
+ "Dialog typing":{d:"Letters typing out",p(){for(let k=0;k<22;k++)if(k%5!==4)tone({t:k*.035,n:84+(k%3),type:"pulse12",dur:.02,vol:.06})}},
+ "EXP bar fills":{d:"Results EXP counting up",p(){for(let k=0;k<20;k++)tone({t:k*.04,n:60+k*1.5,type:"pulse",dur:.035,vol:.05});tone({t:.85,n:91,dur:.3,vol:.1})}},
+ "Who's That reveal":{d:"Silhouette turns to colour",p(){for(let k=0;k<14;k++)noise({t:k*.035,dur:.03,vol:.05+k*.006,type:"bandpass",freq:2000,q:2});noise({t:.5,dur:.15,vol:.25,freq:3000});[[.52,72],[.62,79],[.72,84]].forEach(([t,n])=>{tone({t,n,dur:.12,vol:.13});tone({t,n:n-12,type:"triangle",dur:.12,vol:.18})})}},
+ "Copied result":{d:"Share button",p(){tone({n:84,dur:.05,vol:.12});tone({t:.07,n:91,dur:.1,vol:.12})}},
+ "Hint revealed":{d:"Achievements hint",p(){[88,91].forEach((n,i)=>tone({t:i*.07,n,type:"triangle",dur:.2,vol:.1}))}},
+ "Tab switch":{d:"Changing modes",p(){[76,72].forEach((n,i)=>tone({t:i*.04,n,type:"pulse",dur:.04,vol:.09}))}},
+});
+Object.assign(PKEGG,{
+ "Back to colour":{d:"Leaving retro mode",p(){[96,88,84].forEach((n,i)=>tone({t:i*.08,n,type:"pulse",dur:.07,vol:.08}));noise({t:.24,dur:.4,vol:.08,type:"bandpass",freq:500,sweep:7000,q:2});
+   [[.3,"square",72],[.36,"pulse",76],[.42,"triangle",79],[.48,"pulse",84]].forEach(([t,type,n])=>tone({t,n,type,dur:.6,vol:.07}));[96,100,103,108].forEach((n,i)=>tone({t:.55+i*.05,n,type:"triangle",dur:.35,vol:.05}))}},
+ "Emblem spin taps":{d:"Each tap before it evolves",p(){evoTap++;const n=72+(evoTap%6)*2;for(let k=0;k<5;k++)tone({t:k*.03,n:n+k,type:"pulse12",dur:.025,vol:.07})}},
+});
+{const o={"Supply drop":FN["Supply drop"],"Storm poke":FNEGG["Storm poke"],"Storm surge":FNEGG["Storm surge"],"Mythic title taps":FNEGG["Mythic title taps"],"Mythic title":FNEGG["Mythic title"],"Lobby party":FNEGG["Lobby party"],"Thank the bus driver":FNEGG["Thank the bus driver"]};delete FN["Supply drop"];for(const k in FNEGG)delete FNEGG[k];Object.assign(FNEGG,o)}
+{const o={"Wild Pokémon":PK["Wild Pokémon"],"Shiny Pokémon":PK["Shiny Pokémon"],"Grass rustle":PKEGG["Grass rustle"],"Wishing star":PKEGG["Wishing star"],"Retro mode":PKEGG["Retro mode"],"Back to colour":PKEGG["Back to colour"],"Emblem spin taps":PKEGG["Emblem spin taps"],"Evolution":PKEGG["Evolution"]};delete PK["Wild Pokémon"];delete PK["Shiny Pokémon"];for(const k in PKEGG)delete PKEGG[k];Object.assign(PKEGG,o)}
+fill("fn-sfx",FN);fill("pk-sfx",PK);fill("fn-egg",FNEGG);fill("pk-egg",PKEGG);
+
+/* ---------- music loops (original, made up for these games) ---------- */
+let playing=null,timer=null,step=0,nextT=0;
+const SONGS={
+ fnMenu:{bpm:96,steps:64,play(i,t){ // chill lobby: Fmaj7 Em7 Dm7 Cmaj7, warm keys, laid-back beat
+   const bar=Math.floor(i/16),s=i%16;const ch=[[53,57,60,64],[52,55,59,62],[50,53,57,60],[48,52,55,59]][bar],r=ch[0];
+   if(s===0||s===7)ch.forEach((n,k)=>{tone({t,n:n+12,type:"sine",dur:s?.9:1.4,vol:.045,att:.01,bus:musBus});tone({t,n:n+24,type:"triangle",dur:.25,vol:.012,bus:musBus})});
+   if(s===0||s===10)tone({t,n:r-12,type:"sine",dur:.5,vol:.28,bus:musBus});
+   if(s===0||s===6||s===10)tone({t,f:120,slide:45,type:"sine",dur:.25,vol:.4,bus:musBus});
+   if(s===4||s===12)noise({t,dur:.2,vol:.1,type:"bandpass",freq:1400,q:.7,bus:musBus});
+   if(s%2===0)noise({t:t+(s%4===2?.04:0),dur:.03,vol:.035,freq:8000,bus:musBus});
+   const mel={1:[[0,76],[3,79],[6,81],[10,79],[12,76]],3:[[0,74],[3,76],[6,79],[8,76],[11,72]]}[bar];
+   if(mel)mel.forEach(([q,n])=>{if(q===s)tone({t,n,type:"triangle",dur:.35,vol:.06,bus:musBus})});
+ }},
+ pk:{bpm:166,steps:64,play(i,t){ // battle theme for questions: Am F G E, driving and tense
+   const bar=Math.floor(i/16),s=i%16;
+   const mel=[[69,72,76,0,74,72,71,72],[77,0,76,74,72,0,69,72],[74,76,79,0,77,76,74,71],[76,0,80,0,83,0,80,76]][bar];
+   if(s%2===0){const n=mel[s/2];if(n)tone({t,n,type:"pulse",dur:.13,vol:.075,bus:musBus})}
+   const root=[45,41,43,40][bar];tone({t,n:root+(s%2?12:0),type:"triangle",dur:.08,vol:.2,bus:musBus});
+   const tri=[[69,72,76],[65,69,72],[67,71,74],[64,68,71]][bar];tone({t,n:tri[s%3]+12,type:"pulse12",dur:.05,vol:.022,bus:musBus});
+   if(s%4===0)tone({t,f:130,slide:45,type:"triangle",dur:.08,vol:.3,bus:musBus});
+   if(s%8===4)noise({t,dur:.1,vol:.13,type:"highpass",freq:2000,bus:musBus});
+   if(s%2===1)noise({t,dur:.02,vol:.04,freq:9000,bus:musBus});
+   if(bar===3&&s>=12)noise({t,dur:.05,vol:.08,type:"highpass",freq:2500,bus:musBus});
+ }},
+ fnOG:{bpm:116,steps:128,play(i,t){ // OG-style lobby: bouncy drums, wobbly synth bass, orchestral stabs, mallet ostinato, horn tune (Gm Eb Bb F)
+   const bar=Math.floor(i/16)%4,half=Math.floor(i/64),s=i%16,M=musBus;
+   const roots=[43,39,46,41],r=roots[bar],ch=[[67,70,74],[67,70,75],[70,74,77],[69,72,77]][bar];
+   if([0,7,8,10].includes(s))tone({t,f:150,slide:44,type:"sine",dur:.24,vol:.55,bus:M});
+   if(s===4||s===12){noise({t,dur:.14,vol:.18,type:"bandpass",freq:1900,q:.9,bus:M});tone({t,f:210,slide:150,type:"triangle",dur:.08,vol:.18,bus:M})}
+   if(s%2===0)noise({t,dur:.03,vol:.045,freq:8500,bus:M});if(s%4===2)noise({t,dur:.1,vol:.04,freq:7000,bus:M});
+   if([0,3,6,8,11,14].includes(s)){const a=A,s0=a.currentTime+t,o=a.createOscillator(),fl=a.createBiquadFilter(),g=a.createGain();o.type="sawtooth";o.frequency.value=hz(r-12+(s===6||s===14?12:0));
+     fl.type="lowpass";fl.Q.value=6;fl.frequency.setValueAtTime(200,s0);fl.frequency.linearRampToValueAtTime(1300,s0+.06);fl.frequency.exponentialRampToValueAtTime(250,s0+.2);
+     g.gain.setValueAtTime(.0001,s0);g.gain.linearRampToValueAtTime(.16,s0+.004);g.gain.exponentialRampToValueAtTime(.0001,s0+.22);o.connect(fl);fl.connect(g);g.connect(M);o.start(s0);o.stop(s0+.26)}
+   if((s===0&&bar%2===0)||(s===6&&bar%2===1)){ch.forEach(n=>brass({t,n,dur:.14,vol:.03,bus:M}));ch.forEach(n=>tone({t,n:n+12,type:"sawtooth",dur:.12,vol:.014,cut:3000,bus:M}))}
+   if(s%2===0){const n=[...ch,ch[1]+12,ch[2]+12,ch[1]+12,ch[2],ch[1]][(s/2)%8]+12;tone({t,n,type:"sine",dur:.3,vol:.05,att:.002,bus:M});tone({t,f:hz(n)*4,type:"sine",dur:.05,vol:.012,att:.001,bus:M})}
+   if(half===1){const mel=[[67,0,70,74,0,72,70,0],[70,0,67,63,0,67,70,72],[74,0,77,74,72,70,0,69],[72,0,0,69,0,65,0,0]][bar];
+     if(s%2===0){const n=mel[s/2];if(n){const len=(mel[s/2+1]===0?2:1)*.26;brass({t,n,dur:len,vol:.045,bus:M});brass({t,n:n-12,dur:len,vol:.025,bus:M})}}}
+   if(bar===3&&half===1&&s===12)noise({t,dur:.6,vol:.06,freq:5000,bus:M});
+ }},
+ fnOGm:{bpm:128,steps:64,play(i,t){ // Match OG-style: faster, driving version of the OG lobby feel (Dm Bb C A)
+   const bar=Math.floor(i/16),s=i%16,M=musBus;const roots=[38,46,48,45],r=roots[bar],ch=[[62,65,69],[62,65,70],[64,67,72],[61,64,69]][bar];
+   if(s%4===0||s===14)tone({t,f:150,slide:44,type:"sine",dur:.22,vol:.55,bus:M});
+   if(s===4||s===12){noise({t,dur:.13,vol:.18,type:"bandpass",freq:1900,q:.9,bus:M});tone({t,f:220,slide:150,type:"triangle",dur:.07,vol:.16,bus:M})}
+   noise({t,dur:.025,vol:s%2?.045:.025,freq:9000,bus:M});
+   if(s%2===0||s===3||s===11){const a=A,s0=a.currentTime+t,o=a.createOscillator(),fl=a.createBiquadFilter(),g=a.createGain();o.type="sawtooth";o.frequency.value=hz(r-12+(s%4===2?12:0));
+     fl.type="lowpass";fl.Q.value=6;fl.frequency.setValueAtTime(200,s0);fl.frequency.linearRampToValueAtTime(1500,s0+.05);fl.frequency.exponentialRampToValueAtTime(250,s0+.15);
+     g.gain.setValueAtTime(.0001,s0);g.gain.linearRampToValueAtTime(.14,s0+.004);g.gain.exponentialRampToValueAtTime(.0001,s0+.16);o.connect(fl);fl.connect(g);g.connect(M);o.start(s0);o.stop(s0+.2)}
+   if(s===0||s===10)ch.forEach(n=>brass({t,n,dur:.12,vol:.028,bus:M}));
+   {const n=[...ch,ch[0]+12][s%4]+12;tone({t,n,type:"sine",dur:.12,vol:.035,att:.002,bus:M})}
+   const mel=[[[0,74],[3,77],[6,81],[10,79],[12,77]],[[0,77],[3,74],[6,70],[10,74],[12,77]],[[0,79],[3,76],[6,72],[10,76],[12,79]],[[0,81],[6,85],[10,88]]][bar];
+   mel.forEach(([q,n])=>{if(q===s){brass({t,n,dur:.22,vol:.04,bus:M});brass({t,n:n-12,dur:.22,vol:.022,bus:M})}});
+   if(bar===3&&s>=12)noise({t,dur:.05,vol:.1,type:"bandpass",freq:1900,q:.9,bus:M});
+ }},
+ pkB:{bpm:120,steps:64,play(i,t){ // Battle B, "legendary": slow, heavy, ominous (Dm Bb Gm A)
+   const bar=Math.floor(i/16),s=i%16;
+   const mel=[[74,0,0,0,77,0,76,0],[74,0,72,0,70,0,0,0],[70,0,72,74,75,0,74,72],[73,0,0,0,76,0,79,0]][bar];
+   if(s%2===0){const n=mel[s/2];if(n){const len=(mel[s/2+1]===0?(mel[s/2+2]===0?3:2):1)*.25;tone({t,n,type:"pulse",dur:len,vol:.08,bus:musBus});tone({t,n:n-12,type:"pulse12",dur:len,vol:.03,bus:musBus})}}
+   const root=[38,34,43,45][bar];if(s%2===0)tone({t,n:root-12+(s%4===2?12:0),type:"triangle",dur:.2,vol:.24,bus:musBus});
+   const tri=[[62,65,69],[58,62,65],[55,58,62],[57,61,64]][bar];tone({t,n:tri[s%3]+12,type:"pulse12",dur:.05,vol:.018,bus:musBus});
+   if(s%8===0)tone({t,f:110,slide:40,type:"triangle",dur:.18,vol:.35,bus:musBus});
+   if(s%8===4)noise({t,dur:.16,vol:.15,type:"highpass",freq:1500,bus:musBus});
+   if(s%4===2)noise({t,dur:.02,vol:.04,freq:9000,bus:musBus});
+   if(bar===3&&s>=8&&s%2===0)tone({t,f:180-s*6,slide:70,type:"triangle",dur:.12,vol:.25,bus:musBus});
+ }},
+ pkC:{bpm:176,steps:64,play(i,t){ // Battle C, "champion": fast and bright, running melody (Em C D B)
+   const bar=Math.floor(i/16),s=i%16;
+   const mel=[[76,79,83,79,76,79,83,88],[84,83,79,76,72,76,79,84],[86,84,81,78,74,78,81,86],[87,0,83,0,78,0,75,0]][bar];
+   if(s%2===0){const n=mel[s/2];if(n){tone({t,n,type:"pulse",dur:.1,vol:.07,bus:musBus});tone({t,n:n-12,type:"pulse12",dur:.1,vol:.025,bus:musBus})}}
+   const root=[40,36,38,35][bar];tone({t,n:root+(s%2?12:0),type:"triangle",dur:.07,vol:.2,bus:musBus});
+   if(s%4===0)tone({t,f:130,slide:45,type:"triangle",dur:.08,vol:.3,bus:musBus});
+   if(s%8===4)noise({t,dur:.1,vol:.14,type:"highpass",freq:2000,bus:musBus});
+   noise({t,dur:.015,vol:s%2?.03:.045,freq:9000,bus:musBus});
+   if(bar===3&&s>=12)noise({t,dur:.05,vol:.1,type:"highpass",freq:2500,bus:musBus});
+ }},
+ pkD:{bpm:144,steps:64,play(i,t){ // Battle D, "mysterious": eerie cascading arpeggios over a syncopated bass (Am Bb Am G#dim)
+   const bar=Math.floor(i/16),s=i%16;
+   const arp=[[69,72,76,81],[70,74,77,82],[69,72,76,81],[68,71,74,77]][bar];
+   tone({t,n:arp[(s*3)%4]+12-(s%8>3?12:0),type:"pulse12",dur:.06,vol:.035,bus:musBus});
+   const mel=[[[0,81,.5],[6,80,.2],[8,81,.5],[12,84,.4]],[[0,82,.5],[6,81,.2],[8,77,.6]],[[0,81,.5],[6,80,.2],[8,81,.3],[11,88,.5]],[[0,86,.4],[4,83,.4],[8,80,.4],[12,77,.4]]][bar];
+   mel.forEach(([q,n,d])=>{if(q===s)tone({t,n,type:"pulse",dur:d,vol:.06,bus:musBus})});
+   const root=[45,46,45,44][bar];if([0,3,6,10,12].includes(s))tone({t,n:root-12,type:"triangle",dur:.14,vol:.26,bus:musBus});
+   if(s===0||s===10)tone({t,f:120,slide:45,type:"triangle",dur:.1,vol:.3,bus:musBus});
+   if(s===4||s===12)noise({t,dur:.1,vol:.12,type:"highpass",freq:1800,bus:musBus});
+   if(s%2===1)noise({t,dur:.02,vol:.03,freq:9000,bus:musBus});
+ }},
+ fn:{bpm:128,steps:64,play(i,t){ // D minor epic lobby: Dm Bb F C, pumping pads, plucky arp, brass stabs
+   const bar=Math.floor(i/16),s=i%16,a=A,at=a.currentTime+t;
+   const roots=[50,46,53,48],tri=[[62,65,69],[58,62,65],[60,65,69],[60,64,67]][bar],r=roots[bar];
+   if(!SONGS.pad){SONGS.pad=a.createGain();SONGS.pad.connect(musBus)}
+   const pad=SONGS.pad.gain;
+   if(s%4===0){tone({t,f:160,slide:42,type:"sine",dur:.26,vol:.6,bus:musBus});pad.setTargetAtTime(.3,at,.008);pad.setTargetAtTime(1,at+.03,.07)}
+   if(s===4||s===12){noise({t,dur:.16,vol:.16,type:"bandpass",freq:1500,q:.7,bus:musBus});noise({t,dur:.08,vol:.08,freq:5000,bus:musBus})}
+   if(s%2===1)noise({t,dur:.03,vol:.05,freq:9000,bus:musBus});
+   if(s===0)tri.forEach((n,k)=>[-8,8].forEach(dt=>tone({t,n,type:"sawtooth",dur:1.8,vol:.03,cut:1600,att:.2,detune:dt+k,bus:SONGS.pad})));
+   if(s%2===0)tone({t,n:r-24,type:"sine",dur:.2,vol:.3,bus:SONGS.pad});
+   const arp=[0,1,2,1,2,0,1,2,0,2,1,2,0,1,2,1];tone({t,n:tri[arp[s]]+12,type:"square",dur:.09,vol:.035,cut:2600,bus:musBus});
+   if(s===0||(s===10&&bar%2===1))brass({t,n:tri[2]+(s?2:0),dur:s?.18:.3,vol:.05,bus:musBus});
+   const hook=[[0,74],[2,77],[4,81],[7,79],[8,77],[11,74],[12,76]];
+   if(bar===3)hook.forEach(([q,n])=>{if(q===s)brass({t,n,dur:.16,vol:.04,bus:musBus})});
+ }},
+ pkMenu:{bpm:140,steps:64,play(i,t){ // route theme, now the menu song: C Am F G chiptune
+   const bar=Math.floor(i/16),s=i%16;
+   const mel=[[76,79,84,0,83,79,76,79],[81,0,84,81,76,0,72,76],[77,81,84,86,84,81,77,0],[79,83,86,0,84,83,79,74]][bar];
+   if(s%2===0){const n=mel[s/2];if(n)tone({t,n,dur:.17,vol:.07,bus:musBus})}
+   const bass=[48,45,41,43][bar];
+   if(s%2===0)tone({t,n:bass+(s%4===2?12:0),type:"triangle",dur:.18,vol:.22,bus:musBus});
+   if(s%4===0)tone({t,f:120,slide:50,type:"triangle",dur:.08,vol:.25,bus:musBus});
+   if(s===4||s===12)noise({t,dur:.08,vol:.1,type:"highpass",freq:2500,bus:musBus});
+   if(s%2===1)noise({t,dur:.025,vol:.04,freq:9000,bus:musBus});
+ }}
+};
+function schedule(){const S=SONGS[playing],dt=60/S.bpm/4,now=A.currentTime;if(nextT<now+.02){const skip=Math.ceil((now+.05-nextT)/dt);step=(step+skip)%S.steps;nextT+=skip*dt}
+  while(nextT<now+.35){S.play(step,nextT-now);step=(step+1)%S.steps;nextT+=dt}}
+const mbtns=[...document.querySelectorAll("[data-song]")],labels=new Map(mbtns.map(x=>[x,x.innerHTML]));
+function toggle(k){ctx();clearInterval(timer);const was=playing;playing=null;
+  mbtns.forEach(x=>{x.classList.remove("on");x.innerHTML=labels.get(x)});if(was===k)return;
+  playing=k;step=0;nextT=A.currentTime+.1;timer=setInterval(schedule,40);const btn=mbtns.find(x=>x.dataset.song===k);btn.classList.add("on");btn.innerHTML="■ Stop<small>"+btn.querySelector("small").textContent+"</small>";}
+mbtns.forEach(x=>x.onclick=()=>toggle(x.dataset.song));
+document.getElementById("sv").oninput=e=>{ctx();sfxBus.gain.value=+e.target.value};
+document.getElementById("mv").oninput=e=>{ctx();musBus.gain.value=+e.target.value*.6};
+</script>
+</body></html>
