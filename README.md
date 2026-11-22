@@ -70,6 +70,7 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Kite Season | 178 BPM | Windy steady breakcore: airy guitars, flute, gusts | Mobility plays, gliding |
 | Golden Hour Groove | 114 BPM | Disco-pop with brass hooks and strings (in the style of BTS) | Feel-good highlights |
 | Blue Spark Runaway | 160 BPM | Emo pop-punk with dreamy synths (in the style of TXT) | Clutches, comebacks |
+| Off the Lines | 150 BPM | Hype rage trap: distorted synth riff, heavy 808, hi-hat rolls, beat switch (in the style of CORTIS) | Hype plays, kill montages |
 
 ```
 pip install numpy scipy
@@ -82,6 +83,7 @@ python songs6.py 16 # 16 = Shattered Overture
 python songs7.py 17 # 17 = Paper Sky
 python seasons.py all  # the nine steady breakcores (engine: breakcore_engine.py)
 python songs9.py bts  # bts = Golden Hour Groove, txt = Blue Spark Runaway
+python songs10.py cortis  # Off the Lines
 ```
 
 ## Re-recording

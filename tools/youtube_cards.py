@@ -33,6 +33,7 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ('Kite Season', '178 BPM · windy breakcore', ('#0b4f6c', '#40a8c4', '#d9f3ff', '#073446', '#ffe14d')),
     ('Golden Hour Groove', '114 BPM · BTS-style disco-pop', ('#4a1f00', '#d6801c', '#ffd27a', '#2e1300', '#ffffff')),
     ('Blue Spark Runaway', '160 BPM · TXT-style pop-punk', ('#071a3d', '#2753b8', '#8fd0ff', '#040f26', '#ffe6f5')),
+    ("Off the Lines", "150 BPM · CORTIS-style rage trap", ("#0a1f0a", "#1f7a1f", "#7dff4f", "#051005", "#f2ff3d")),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 
