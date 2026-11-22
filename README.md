@@ -16,6 +16,7 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 | `loops/` | One seamless loop of each song (see `loops/music.json` for loop lengths). |
 | `code/` | The songs themselves: `helpers.js` (the little synthesizers) and one file per song in `code/songs/`. |
 | `tools/` | `record.html` + `record.py` record the code into WAVs; `make-files.py` builds the loops and 2-minute versions; `cards.py` draws the title cards. |
+| `loop-lab/` | Loop Lab, the in-browser song maker, plus its guide and build tools. |
 | `sound-test.html` | Open in a browser to hear every sound effect and song live from code. |
 
 ## The songs
@@ -30,6 +31,10 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 | Battle | Daily Poké Catch | Questions |
 | Mythic Battle | Daily Poké Catch | Mythic-only questions |
 | Town | Daily Poké Catch | The Endless run summary |
+
+## Loop Lab
+
+`loop-lab/index.html` is a song maker that runs in the browser: build songs from sections with chords, a melody, drums and sound effects (built-in coded effects or your own uploads), load TAziz322's songs and tweak them, and save songs as code. See [`loop-lab/GUIDE.md`](loop-lab/GUIDE.md) for how to use it. `loop-lab/tools/make_presets.py` rebuilds the page from `template.html` with the built-in songs.
 
 ## YouTube gameplay tracks
 
