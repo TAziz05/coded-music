@@ -12,6 +12,10 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ("Nobody's Looking", "180 BPM · breakcore", ("#05060d", "#1e2340", "#4d5a8c", "#000000", "#ff9fc8")),
     ("Static Weather", "146 BPM · Vocaloid-style J-rock", ("#1c2a4a", "#4f7fc4", "#bfe0ff", "#13203d", "#fff3a8")),
     ("Lantern Theory", "150 BPM · jazz math rock", ("#2b1608", "#a8501c", "#f2b45c", "#1d0e04", "#fff1d6")),
+    ("Channel Plaza", "116 BPM · Wii menu style", ("#1f7fc0", "#4fb0e6", "#c9ecff", "#145a8a", "#ffffff")),
+    ("Frosty Podium", "150 BPM · winter games style", ("#0d3b6e", "#3f8fd6", "#d6f0ff", "#0a2c52", "#ffe066")),
+    ("Coastal Route", "132 BPM · GBA route style", ("#0b5d7a", "#22a6b3", "#f4d58d", "#083f53", "#ffde59")),
+    ("Homebase Rising", "112 BPM · orchestral adventure", ("#1a1033", "#4b2a7a", "#e0742b", "#100820", "#ffc640")),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 
