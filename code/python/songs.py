@@ -272,5 +272,129 @@ def dnb():
            levels={'pad': .7, 'reese': .8, 'sub': 1., 'arp': .8, 'arp_d': .4, 'drums': 1.1, 'fx': .8},
            duck=('pad', 'reese'))
 
+# =====================================================================
+# 5) NOBODY'S LOOKING — 180 BPM breakcore (D minor: Bbmaj7–Am7–Dm9–Gm7)
+#    Sad piano over a chopped, stuttering, code-built breakbeat.
+# =====================================================================
+def piano(M, bus, t, n, dur, vol, pan=0.):
+    """Additive piano: slightly stretched partials that die away faster the higher they are, plus a hammer thump."""
+    f = mtof(n); L = min(dur, 3.5) + .4; N = int(L * SR); tt = tarr(N)
+    x = np.zeros(N); bright = np.clip(1.4 - (n - 48) / 60, .5, 1.4)
+    for k in range(1, 13):
+        fk = f * k * np.sqrt(1 + .00035 * k * k)
+        if fk > 16000: break
+        tau = (3.2 / (1 + .55 * k)) * (1.6 - (n - 40) / 70)
+        a = (1 / k ** 1.25) * (bright if k > 3 else 1)
+        x += a * np.sin(2 * np.pi * fk * tt + rng.random() * 6) * np.exp(-tt / max(tau, .08))
+        x += .3 * a * np.sin(2 * np.pi * fk * 1.0015 * tt) * np.exp(-tt / max(tau, .08))
+    x += lp(noise(N), 1800) * np.exp(-tt / .012) * .25
+    damp = np.where(tt < dur, 1., np.exp(-(tt - dur) / .12))
+    x = lp(x * damp * np.clip(tt / .002, 0, 1), 7000)
+    M.add(bus, t, x * vol * .35, pan=pan)
+
+def ride(M, t, vol=1., bus='drums'):
+    N = int(.5 * SR); tt = tarr(N); x = np.zeros(N)
+    for fr in (3150, 4270, 5340, 6800, 8020, 9930):
+        x += np.sign(np.sin(2 * np.pi * fr * tt + rng.random() * 6))
+    x = hp(x, 6000) * np.exp(-tt / .18) * .08 + hp(noise(N), 9000) * np.exp(-tt / .05) * .3
+    M.add(bus, t, x * vol, pan=-.25)
+
+def make_break(st):
+    """Two bars of an 'amen-style' breakbeat built from code drums, returned as stereo 16th-note slices."""
+    BM = Mix(32 * st)
+    hits = {0: [0, 2, 10, 11], 1: [0, 2, 10]}; snr = {0: [4, 7, 9, 12, 15], 1: [4, 7, 9, 14]}
+    for bar in (0, 1):
+        o = bar * 16 * st
+        for k in hits[bar]: kick(BM, o + k * st, 1., punch=1.2)
+        for k in snr[bar]: snare(BM, o + k * st, .95 if k in (4, 12) else .6); clap(BM, o + k * st, .2)
+        for k in range(0, 16, 2): ride(BM, o + k * st, .9 if k % 4 == 0 else .6)
+        for k in (1, 3, 13): snare(BM, o + k * st, .15)
+    x = BM.buses['drums']; x = np.tanh(x * 1.8) / 1.2
+    n = int(st * SR); return [x[:, i * n:(i + 1) * n].copy() for i in range(32)], n
+
+def slice_fx(sl, n, mode, arg=None):
+    y = sl.copy()
+    if mode == 'rev': y = y[:, ::-1]
+    elif mode == 'roll':                    # repeat the first 1/arg of the slice
+        k = n // arg; y = np.tile(y[:, :k], (1, arg))[:, :n]
+    elif mode == 'pitch':                   # resample (arg > 1 = higher & shorter, < 1 = lower)
+        idx = np.arange(0, sl.shape[1], arg); idx = idx[idx < sl.shape[1] - 1].astype(int)
+        y = sl[:, idx]; y = np.pad(y, ((0, 0), (0, max(0, n - y.shape[1]))))[:, :n]
+    f = min(60, n // 8); ramp = np.linspace(0, 1, f)
+    y[:, :f] *= ramp; y[:, -f:] *= ramp[::-1]
+    return y
+
+def breakcore():
+    bpm = 180; st = 60 / bpm / 4; B = 16 * st
+    R = np.random.default_rng(1729)
+    slices, n = make_break(st)
+    chords = [[46, 53, 57, 62], [45, 52, 55, 60], [50, 53, 57, 64], [43, 53, 58, 62]]   # 2 bars each
+    melody = [[(0, 69, 12), (12, 72, 4), (16, 74, 16)], [(0, 72, 8), (8, 69, 8), (16, 67, 16)],
+              [(0, 65, 8), (8, 69, 8), (16, 76, 12), (28, 74, 4)], [(0, 74, 8), (8, 70, 8), (16, 69, 16)]]
+    secs = [('intro', 8), ('build', 4), ('dropA', 32), ('break', 8), ('build', 4), ('dropB', 32), ('outro', 8)]
+    bars = sections_to_bars(secs); M = Mix(len(bars) * B)
+    def put_slice(t, sl, gain=1.): M.add('break', t, sl[0] * gain, sl[1] * gain)
+    for b, (sec, i, nb) in enumerate(bars):
+        t0 = b * B; ci = (b // 2) % 4; ch = chords[ci]; half = b % 2
+        # ---- piano: root + gently broken chord in quarter notes ----
+        if sec != 'build' or i < 2:
+            pv = 1. if sec in ('intro', 'break', 'outro') else .75
+            if half == 0: piano(M, 'piano', t0, ch[0] - 12, 2 * B, .9 * pv, pan=-.2)
+            order = [1, 2, 3, 2] if half == 0 else [1, 3, 2, 3]
+            for q in range(4): piano(M, 'piano', t0 + q * 4 * st, ch[order[q]], 4 * st * 1.6, .5 * pv, pan=(order[q] - 2) * .25)
+        if sec in ('break', 'dropB', 'outro') and half == 0:
+            up = 12 if sec == 'dropB' else 0
+            for s16, nn, L in melody[ci]:
+                piano(M, 'piano', t0 + s16 * st, nn + up, L * st, .62, pan=.15)
+        # vinyl dust on the quiet parts
+        if sec in ('intro', 'break', 'outro'):
+            N = int(B * SR); dust = np.zeros(N); pos = R.integers(0, N, 14); dust[pos] = R.uniform(-.6, .6, 14)
+            M.add('fx', t0, lp(dust, 5000) * .25 + hp(noise(N), 3000) * .006)
+        if sec == 'break' and half == 0:
+            for nn in ch[1:]: supersaw(M, 'pad', t0, nn + 12, 2 * B, .05, cut=1100, a=.8, r=1., voices=3)
+        # ---- breaks ----
+        if sec == 'build':
+            base = (i % 2) * 16
+            for k in range(16):
+                if i < 2 and k % 2: continue
+                sl = slices[base + k]
+                if i == 3 and k >= 8: sl = slice_fx(slices[4], n, 'roll', 2 if k < 12 else 4)
+                put_slice(t0 + k * st, sl, .35 + .17 * i)
+            if i == 0: riser(M, t0, 4 * B, .6)
+        if sec in ('dropA', 'dropB'):
+            if i == 0: crash(M, t0, .8); impact(M, t0, .7)
+            p = .22 if sec == 'dropA' else .42
+            k = 0
+            while k < 16:
+                idx = (b % 2) * 16 + k; sl = slices[idx]; mode = None
+                r = R.random()
+                if r < p:
+                    m = R.choice(['swap', 'rev', 'stut', 'roll', 'pitch'], p=[.35, .15, .2, .2, .1])
+                    if m == 'swap': sl = slices[R.choice([0, 2, 4, 7, 9, 12, 15, 26, 30])]
+                    elif m == 'rev': sl = slice_fx(slices[R.integers(0, 32)], n, 'rev')
+                    elif m == 'stut' and k > 0: sl = slice_fx(slices[idx - 1], n, None)
+                    elif m == 'roll': sl = slice_fx(slices[R.choice([4, 12, 20])], n, 'roll', int(R.choice([2, 3, 4])))
+                    elif m == 'pitch': sl = slice_fx(slices[idx], n, 'pitch', float(R.choice([1.5, 2.0])))
+                put_slice(t0 + k * st, sl)
+                k += 1
+            if i % 8 == 7:  # end-of-phrase snare roll that speeds up and climbs
+                for j, (k2, div, pt) in enumerate([(12, 2, 1.), (13, 3, 1.12), (14, 4, 1.26), (15, 6, 1.5)]):
+                    put_slice(t0 + k2 * st, slice_fx(slice_fx(slices[12], n, 'pitch', pt), n, 'roll', div), .9)
+            if sec == 'dropA' and i == nb - 1:   # "tape stop" on the last beat
+                for j, k2 in enumerate(range(12, 16)): put_slice(t0 + k2 * st, slice_fx(slices[k2], n, 'pitch', .8 - .15 * j), .8)
+            # distorted sub bass on the chord roots
+            root = ch[0] - 12 if ch[0] - 12 >= 31 else ch[0]
+            for s16, L in ((0, 6), (6, 2), (10, 6)):
+                Nn = int(L * st * .97 * SR); e = env(L * st * .97, .004, .3, .9, .03)[:Nn]
+                x = np.tanh(sine(mtof(root), len(e)) * (2.5 if sec == 'dropA' else 4.)) * e
+                M.add('sub', t0 + s16 * st, lp(x, 900) * .5)
+        if sec == 'outro' and i < 2:
+            put_slice(t0, slices[0], .5)
+    M.buses['piano'] = np.array([lp(c, 6500) for c in M.buses['piano']])
+    render(M, "Nobodys_Looking_180bpm",
+           sends={'piano': .35, 'pad': .5, 'break': .06, 'fx': .1},
+           levels={'piano': 1., 'pad': .7, 'break': .95, 'sub': .9, 'fx': .8, 'drums': .9},
+           duck=(), fade=4.)
+
 if __name__ == '__main__':
-    {'1': victory_rush, '2': storm_closing, '3': lobby_loop, '4': dnb}[sys.argv[1]]()
+    {'1': victory_rush, '2': storm_closing, '3': lobby_loop, '4': dnb, '5': breakcore}[sys.argv[1]]()

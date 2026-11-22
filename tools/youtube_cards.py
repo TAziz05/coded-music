@@ -9,6 +9,7 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ("Storm Closing", "140 BPM · intense", ("#2a0b52", "#6a1fb8", "#c06cff", "#1c0838", "#7ff3ff")),
     ("Lobby Loop", "102 BPM · chill", ("#06545a", "#14a3a0", "#8fe8d6", "#043a3e", "#fff07a")),
     ("Overclocked", "174 BPM · drum & bass", ("#140f2e", "#c2183f", "#ff6a3d", "#0b0820", "#e8ff3a")),
+    ("Nobody's Looking", "180 BPM · breakcore", ("#05060d", "#1e2340", "#4d5a8c", "#000000", "#ff9fc8")),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 
