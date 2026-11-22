@@ -56,6 +56,7 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Determined Steps | 120 BPM | Solo piano (in the style of Undertale) | Calm moments, story edits |
 | Ringworld Vigil | 72 → 120 BPM | Monk-style choir chant, then driving strings, guitars and drums (in the style of Halo) | Epic intros, final circles |
 | Boundless Run | 155 BPM | Upbeat rock with crunchy guitars and a key change (in the style of Sonic Unleashed's "Endless Possibility") | Speedy plays, montages |
+| Morning Over the Valley | 90 BPM (3/4) | Cinematic orchestral waltz: harp, strings, woodwinds, horns, timpani | Story edits, calm intros, endings |
 
 ```
 pip install numpy scipy
@@ -63,6 +64,7 @@ cd code/python && python songs.py 1   # 1 = Victory Rush, 2 = Storm Closing, 3 =
 python songs2.py 6  # 6 = Static Weather, 7 = Lantern Theory  (instruments in instruments2.py)
 python songs3.py 9  # 8 = Determined Steps, 9 = Channel Plaza, 10 = Frosty Podium, 11 = Coastal Route, 12 = Homebase Rising
 python songs4.py 13 # 13 = Boundless Run (13c = clean-guitar version), 14 = Ringworld Vigil
+python songs5.py 15 # 15 = Morning Over the Valley
 ```
 
 ## Re-recording
