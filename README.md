@@ -58,6 +58,7 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Boundless Run | 155 BPM | Upbeat rock with crunchy guitars and a key change (in the style of Sonic Unleashed's "Endless Possibility") | Speedy plays, montages |
 | Morning Over the Valley | 90 BPM (3/4) | Cinematic orchestral waltz: harp, strings, woodwinds, horns, timpani | Story edits, calm intros, endings |
 | Shattered Overture | 90 → 180 BPM | Starts orchestral, switches to steady breakcore with the orchestra on top, ends back with the orchestra in D major | Montages that build, comeback clips |
+| Paper Sky | 170 BPM | Bright, dreamy steady breakcore: shimmering guitars, glockenspiel, 808, half-time breakdown | Happy montages, wins |
 
 ```
 pip install numpy scipy
@@ -67,6 +68,7 @@ python songs3.py 9  # 8 = Determined Steps, 9 = Channel Plaza, 10 = Frosty Podiu
 python songs4.py 13 # 13 = Boundless Run (13c = clean-guitar version), 14 = Ringworld Vigil
 python songs5.py 15 # 15 = Morning Over the Valley
 python songs6.py 16 # 16 = Shattered Overture
+python songs7.py 17 # 17 = Paper Sky
 ```
 
 ## Re-recording

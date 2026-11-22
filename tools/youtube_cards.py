@@ -21,6 +21,7 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ("Boundless Run", "155 BPM · upbeat rock, Sonic style", ("#0a2a8c", "#1f5fe0", "#6fc3ff", "#071d60", "#ffd400")),
     ("Morning Over the Valley", "90 BPM · orchestral waltz", ("#3a2a12", "#c27a2c", "#ffd9a0", "#2a1c08", "#fff6e0")),
     ("Shattered Overture", "orchestral → breakcore", ("#14060a", "#5a1024", "#d23b4f", "#0a0306", "#ffe6c7")),
+    ("Paper Sky", "170 BPM · bright breakcore", ("#123a6b", "#3f86d1", "#ffd3e8", "#0b2648", "#fff4a3")),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 
