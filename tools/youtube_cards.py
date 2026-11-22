@@ -40,6 +40,20 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ('Off the Lines Breaks', '170 BPM · CORTIS-style breakcore', ('#0a1f0a', '#1f7a1f', '#7dff4f', '#051005', '#ffffff')),
     ('Lanterns and Thunder Drums', '168 BPM · East Asian breakcore', ('#3a0606', '#b3201c', '#f2c14e', '#220303', '#fff4d6')),
     ('Breeze Breaks', '172 BPM · Fujii Kaze-style breakcore', ('#2b1d10', '#8a5a2b', '#e8c99a', '#1b1209', '#fff7e8')),
+    ('Schoolyard Riot', '96 BPM · BTS School-era boom-bap', ('#1a0b0b', '#6b1a1a', '#d94141', '#0d0505', '#ffd23f')),
+    ('Dark and Wild Run', '140 BPM · BTS Dark & Wild-era rock-rap', ('#050505', '#3a0d0d', '#a31f1f', '#000000', '#ffffff')),
+    ('Youth in Bloom', '128 BPM · BTS HYYH-era synth-pop', ('#3a1a4d', '#c25a9b', '#ffc2d9', '#240f30', '#ffffff')),
+    ('Velvet Wings', '93 BPM · BTS Wings-era moombahton', ('#0a0a14', '#2b1f4a', '#7a5fb3', '#05050a', '#f2d7ff')),
+    ('Double Helix', '128 BPM · BTS LY Her-era pop', ('#0f3d5c', '#4fb0d9', '#ffd1e6', '#08263a', '#ffffff')),
+    ('Fragile Mask', '78 BPM · BTS LY Tear-era emo hip-hop', ('#0d0d1a', '#2a2a4a', '#6b6bb3', '#05050d', '#ff9fb3')),
+    ('Eolssu Groove', '126 BPM · BTS LY Answer-era gugak x gqom', ('#1a0f05', '#a3361c', '#f2b23d', '#0d0702', '#ffffff')),
+    ('Light Up the Persona', '120 BPM · BTS MOTS Persona-era funk-pop', ('#5c1a4d', '#ff6fa8', '#ffe08a', '#3a0f30', '#ffffff')),
+    ('March of Seven', '106 BPM · BTS MOTS 7-era march', ('#0b0b0b', '#3a3a3a', '#9a9a9a', '#000000', '#ffd23f')),
+    ('Life Goes Slow', '82 BPM · BTS BE-era acoustic lo-fi', ('#2b2014', '#8a6a45', '#e8d2b0', '#1a130b', '#ffffff')),
+    ('Yet to Bloom', '90 BPM · BTS Proof-era mellow hip-hop', ('#1f2a3d', '#5a78a8', '#d9e6ff', '#121a26', '#fff3c4')),
+    ('Arirang Dawn', '94 BPM · BTS ARIRANG-era', ('#0b1622', '#2e5a7a', '#f0c987', '#060d14', '#ffffff')),
+    ('Riverbank Evening', '96 BPM · Bengali folk style', ('#0d3b2e', '#2f8f6b', '#f2d16b', '#06241b', '#ffffff')),
+    ('Monsoon Breaks', '172 BPM · Bengali breakcore', ('#0d2433', '#2f6f8f', '#bfe3f2', '#061520', '#ffe48a')),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 

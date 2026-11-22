@@ -77,6 +77,20 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Off the Lines Breaks | 170 BPM | Steady breakcore with a rage-synth riff and 808 (CORTIS style) | Hype edits |
 | Lanterns and Thunder Drums | 168 BPM | East Asian-themed steady breakcore: koto-style plucks, bamboo-flute lead, taiko, gong | Dramatic moments |
 | Breeze Breaks | 172 BPM | Steady breakcore with jazzy piano and a singing synth (Fujii Kaze style) | Smooth highlight reels |
+| Schoolyard Riot | 96 BPM | Hard 90s boom-bap, horn stabs, scratches (BTS School trilogy era) | Hype intros |
+| Dark and Wild Run | 140 BPM | Rock-rap with crunchy guitars (BTS Dark & Wild era) | Aggressive plays |
+| Youth in Bloom | 128 BPM | Emotional synth-pop with piano (BTS The Most Beautiful Moment in Life era) | Montages |
+| Velvet Wings | 93 BPM | Dark moombahton, pan flute, strings (BTS Wings era) | Moody clips |
+| Double Helix | 128 BPM | Bright pop with acoustic guitar, whistle and future-bass chorus (BTS Love Yourself: Her era) | Happy highlights |
+| Fragile Mask | 78 BPM | Emo hip-hop with dark guitar and trap drums (BTS Love Yourself: Tear era) | Emotional edits |
+| Eolssu Groove | 126 BPM | Korean traditional instruments over gqom/house (BTS Love Yourself: Answer era) | Big moments |
+| Light Up the Persona | 120 BPM | Bright funk-pop (BTS Map of the Soul: Persona era) | Feel-good edits |
+| March of Seven | 106 BPM | Marching drums, orchestra and 808 (BTS Map of the Soul: 7 era) | Epic intros |
+| Life Goes Slow | 82 BPM | Warm acoustic lo-fi pop (BTS BE era) | Chill streams |
+| Yet to Bloom | 90 BPM | Nostalgic mellow hip-hop (BTS Proof era) | Recaps |
+| Arirang Dawn | 94 BPM | Temple bell, gayageum, 808, vocoder, guitar surge (BTS ARIRANG era) | Comebacks |
+| Riverbank Evening | 96 BPM | Bengali Baul-folk style: dotara, ektara, harmonium, bansuri, tabla, tihai ending | Calm intros, story edits |
+| Monsoon Breaks | 172 BPM | Steady breakcore with tabla, harmonium and bansuri | Upbeat montages |
 
 ```
 pip install numpy scipy
@@ -90,6 +104,8 @@ python songs7.py 17 # 17 = Paper Sky
 python seasons.py all  # the nine steady breakcores (engine: breakcore_engine.py)
 python songs9.py bts  # bts = Golden Hour Groove, txt = Blue Spark Runaway
 python songs10.py cortis  # Off the Lines (kaze = Breeze in the Alley)
+python bts_albums.py all  # the 12 BTS-era songs (engine: popkit.py)
+python southasia.py song  # Riverbank Evening (breaks = Monsoon Breaks)
 python styles_breakcore.py all  # Golden Hour Breaks, Blue Spark Breaks, Off the Lines Breaks, Lanterns and Thunder Drums, Breeze Breaks
 ```
 

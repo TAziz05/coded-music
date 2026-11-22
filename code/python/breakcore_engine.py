@@ -155,6 +155,7 @@ def chick(M, t, notes, vol, pan=.4):
     M.add('keys', t, hp(y, 300) * np.exp(-tarr(L) / .03) * vol, pan=pan)
 
 def play_keys(M, kind, t0, st, tones, root, vol, bar_in_chord):
+    if callable(kind): return kind(M, t0, st, tones, root, vol, bar_in_chord)   # a song can bring its own instrument
     arp = [tones[0], tones[1], tones[2], tones[-1], tones[1] + 12, tones[2] + 12, tones[-1], tones[1]]
     if kind == 'piano':
         if bar_in_chord == 0: piano(M, 'keys', t0, root + 12, 16 * st * 2, .7 * vol, pan=-.2)
@@ -181,6 +182,7 @@ def play_keys(M, kind, t0, st, tones, root, vol, bar_in_chord):
         for k in range(8): glock(M, t0 + k * 2 * st, arp[k] + 24, .25 * vol, pan=(-.4 if k % 2 else .4))
 
 def play_mel(M, kind, t, n, dur, vol):
+    if callable(kind): return kind(M, t, n, dur, vol)
     if kind == 'piano': piano(M, 'mel', t, n, dur, .62 * vol, pan=.15)
     elif kind == 'glock': glock(M, t, n, .8 * vol, pan=.15)
     elif kind == 'flute': flute(M, 'mel', t, n, dur * .95, 1.1 * vol, pan=.1)
@@ -222,6 +224,7 @@ def build(cfg):
             for s, nn, L in mel:
                 play_mel(M, mk, t0 + s * st, nn + (cfg.get('upB', 0) if sec == 'dropB' else 0), L * st, mv)
                 if sec == 'dropB' and cfg.get('layerB'): play_mel(M, cfg['layerB'], t0 + s * st, nn - 12, L * st, .7)
+        if cfg.get('extra'): cfg['extra'](M, sec, i, t0, st, tones, root)   # per-bar extras (e.g. tabla)
         # ---- breaks ----
         if sec == 'build':
             fc = 400 * (12 ** ((i + .5) / 4))
@@ -290,7 +293,8 @@ def build(cfg):
     if 'mel' in M.buses: M.buses['mel_d'] = pingpong(M.buses['mel'], 3 * st, .3)
     levels = {'perc': .9, 'keys': 1., 'pad': .8, 'mel': 1.1, 'mel_d': .35, 'break': .75, 'sub': .7, 'amb': 1., 'fx': .7, 'glock': 1.1, 'harp': .9, 'drums': .8}
     levels.update(cfg.get('levels', {}))
-    sends = {'perc': .25, 'keys': .3, 'pad': .5, 'mel': .35, 'glock': .45, 'harp': .4, 'break': .05, 'fx': .25, 'amb': .1}
+    sends = {'tabla': .12, 'harm': .25, 'dotara': .2, 'flute': .35, 'drone': .3, 'perc': .25, 'keys': .3, 'pad': .5, 'mel': .35, 'glock': .45, 'harp': .4, 'break': .05, 'fx': .25, 'amb': .1}
+    sends.update(cfg.get('sends', {}))
     out = np.zeros((2, M.n)); send = np.zeros((2, M.n))
     for k, x in M.buses.items(): out += x * levels.get(k, 1.); send += x * levels.get(k, 1.) * sends.get(k, 0.)
     ir = reverb_ir(cfg.get('verb', 2.2), cfg.get('decay', .55)); out += np.array([ss.fftconvolve(send[c], ir[c])[:M.n] for c in range(2)])
@@ -303,6 +307,7 @@ def build(cfg):
         r = 20 * np.log10(np.sqrt((seg ** 2).mean()) + 1e-9)
         g[a:bnd] = 10 ** ((TARGET[sec] - r) / 20); acc += nb
     g[int(acc * B * SR):] = g[int(acc * B * SR) - 1]
+    from scipy.ndimage import minimum_filter1d; g = minimum_filter1d(g, int(.6 * SR))   # lean to the quieter side at boundaries (no spikes)
     g = ss.filtfilt(*ss.butter(1, 1.2, fs=SR), g)       # smooth ~0.5 s transitions between sections
     out = out * g
     if cfg.get('lofi'):   # tape wobble + warm top end
