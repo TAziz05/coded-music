@@ -203,5 +203,74 @@ def lobby_loop():
            levels={'keys': 1., 'lead': .9, 'lead_d': .35, 'pad': .7, 'bass': .95, 'drums': .9, 'fx': .7},
            duck=('pad',), fade=5.)
 
+# =====================================================================
+# 4) OVERCLOCKED — 174 BPM drum & bass (F minor: F–Db–Ab–Eb)
+# =====================================================================
+def reese(M, t, n, dur, vol, lfo_rate=.35, bright=1.):
+    """Classic DnB 'reese': detuned saws through a slowly moving filter, plus a clean sine sub."""
+    N = int((dur + .05) * SR); tt = tarr(N); f = mtof(n)
+    x = saw(f * 2 ** (-.14 / 12), N) + saw(f * 2 ** (.14 / 12), N) + .5 * saw(f * 2 ** (.05 / 12), N)
+    lo = lp(lp(x, 260), 260); hi = lp(lp(x, 1400 * bright), 1400 * bright)
+    m = .5 + .5 * np.sin(2 * np.pi * lfo_rate * (tt + t))
+    y = np.tanh((lo + (hi - lo) * m) * 1.4) * .6
+    e = env(dur, .01, .3, .9, .05)[:N]
+    M.add('reese', t, y[:len(e)] * e * vol * .9, y[:len(e)] * e * vol * .9)
+    se = env(dur, .005, .3, .95, .04)[:N]; sub = sine(f / 2, len(se)) * se
+    M.add('sub', t, sub * vol)
+
+def dnb():
+    bpm = 174; st = 60 / bpm / 4; B = 16 * st
+    roots = [41, 37, 44, 39]                    # F2, Db2, Ab2, Eb2
+    pads = [[65, 68, 72], [61, 65, 68], [60, 63, 68], [63, 67, 70]]
+    secs = [('intro', 8), ('build', 4), ('drop', 32), ('break', 8), ('build', 4), ('drop2', 32), ('outro', 8)]
+    bars = sections_to_bars(secs); M = Mix(len(bars) * B)
+    def beat(t0, i, v=1., ghosts=True):
+        kick(M, t0, v, punch=1.1); kick(M, t0 + 10 * st, v * .9, punch=1.1)
+        snare(M, t0 + 4 * st, v * .85); snare(M, t0 + 12 * st, v * .85); clap(M, t0 + 12 * st, v * .25)
+        if ghosts:
+            for s, g in ((7, .18), (9, .12), (15, .2)): snare(M, t0 + s * st, v * g, pan=.2)
+        for k in range(0, 16, 2): hat(M, t0 + k * st, v * (.32 if k % 4 == 2 else .2), pan=.3)
+        for k in range(16): shaker(M, t0 + k * st, v * (.5 if k % 2 else .25))
+        if i % 4 == 3:  # fill
+            for s, nn in zip(range(12, 16), (55, 52, 48, 45)): tom(M, t0 + s * st, nn, v * .55, pan=.3 - (s - 12) * .2)
+            snare(M, t0 + 14 * st, v * .5); snare(M, t0 + 15 * st, v * .6)
+    for b, (sec, i, n) in enumerate(bars):
+        t0 = b * B; root = roots[b % 4]; pd = pads[b % 4]
+        # pad (sits far back)
+        if sec in ('intro', 'break', 'drop', 'drop2', 'outro'):
+            for nn in pd: supersaw(M, 'pad', t0, nn, B, .06 if sec.startswith('drop') else .1, cut=1300, a=.4, r=.8, voices=3)
+        if sec == 'intro':
+            for k in range(0, 16, 2): hat(M, t0 + k * st, .12 + .02 * i)
+            if i >= 4: snare(M, t0 + 12 * st, .3); kick(M, t0, .5)
+            if i == n - 1: riser(M, t0, B, .5)
+        if sec == 'build':
+            if i == 0: riser(M, t0, 4 * B, .8)
+            for s in np.arange(0, 16, [4, 2, 1, .5][i]): snare(M, t0 + s * st, .25 + .14 * i + .015 * s)
+            sine_len = B * .95; M.add('sub', t0, sine(mtof(root) / 2, int(sine_len * SR)) * env(sine_len, .01, .3, .9, .05)[:int(sine_len * SR)] * .4 * (i + 1) / 4)
+        if sec in ('drop', 'drop2'):
+            if i == 0: crash(M, t0, .9); impact(M, t0, .8)
+            if i == 16: crash(M, t0, .6)
+            beat(t0, i)
+            # rolling reese bassline: long note, pickup, octave stab
+            for s, L, o in ((0, 6, 0), (6, 2, 0), (8, 3, 12), (11, 1, 0), (12, 4, 0)):
+                reese(M, t0 + s * st, root + o, L * st * .95, .55 if o == 0 else .4, bright=1.3 if sec == 'drop2' else 1.)
+            if sec == 'drop2' and i % 2 == 1:   # little stabs on top for the second drop
+                for s in (3, 6, 14): pluck(M, 'arp', t0 + s * st, pd[(s // 3) % 3] + 12, st * 1.5, .12, pan=(s % 2) * .6 - .3, dec=.08)
+        if sec == 'break':
+            if i == 0: crash(M, t0, .5)
+            M.add('sub', t0, sine(mtof(root) / 2, int(B * SR)) * env(B * .97, .05, .3, .9, .1)[:int(B * SR)] * .45)
+            for k in range(0, 16, 2): hat(M, t0 + k * st, .15)
+            if i >= 4: kick(M, t0, .55); snare(M, t0 + 12 * st, .35)
+            for k, nn in enumerate((0, 3, 7, 12)): pluck(M, 'arp', t0 + k * 4 * st, pd[0] + nn - 12, st * 3, .14, dec=.25, cut=3000)
+        if sec == 'outro':
+            if i < 4: beat(t0, i, .7, ghosts=False)
+            M.add('sub', t0, sine(mtof(root) / 2, int(B * SR)) * env(B * .97, .02, .3, .9, .1)[:int(B * SR)] * .4)
+            if i == 4: crash(M, t0, .5)
+    M.buses['arp_d'] = pingpong(M.buses['arp'], 3 * st, .4)
+    render(M, 'Overclocked_174bpm',
+           sends={'pad': .45, 'arp': .35, 'drums': .05, 'fx': .3},
+           levels={'pad': .7, 'reese': .8, 'sub': 1., 'arp': .8, 'arp_d': .4, 'drums': 1.1, 'fx': .8},
+           duck=('pad', 'reese'))
+
 if __name__ == '__main__':
-    {'1': victory_rush, '2': storm_closing, '3': lobby_loop}[sys.argv[1]]()
+    {'1': victory_rush, '2': storm_closing, '3': lobby_loop, '4': dnb}[sys.argv[1]]()

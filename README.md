@@ -40,10 +40,11 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Victory Rush | 128 BPM | Upbeat, heroic brass | Wins, highlights, montages |
 | Storm Closing | 140 BPM | Tense, minor key, driving | Late-game fights |
 | Lobby Loop | 102 BPM | Chill electric-piano groove | Intros, looting, commentary |
+| Overclocked | 174 BPM | Drum & bass: fast breakbeat, rolling reese bass | Fast-paced fights, edits with lots of cuts |
 
 ```
 pip install numpy scipy
-cd code/python && python songs.py 1   # 1 = Victory Rush, 2 = Storm Closing, 3 = Lobby Loop (needs ffmpeg)
+cd code/python && python songs.py 1   # 1 = Victory Rush, 2 = Storm Closing, 3 = Lobby Loop, 4 = Overclocked (needs ffmpeg)
 ```
 
 ## Re-recording

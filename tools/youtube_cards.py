@@ -8,7 +8,9 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ("Victory Rush", "128 BPM · upbeat", ("#0f4fc4", "#2f86f0", "#7cc4ff", "#0b3f8f", "#ffd53d")),
     ("Storm Closing", "140 BPM · intense", ("#2a0b52", "#6a1fb8", "#c06cff", "#1c0838", "#7ff3ff")),
     ("Lobby Loop", "102 BPM · chill", ("#06545a", "#14a3a0", "#8fe8d6", "#043a3e", "#fff07a")),
+    ("Overclocked", "174 BPM · drum & bass", ("#140f2e", "#c2183f", "#ff6a3d", "#0b0820", "#e8ff3a")),
 ]
+ONLY = None  # set to a song title to rebuild just that one
 
 def card(title, line, c):
     top, mid, bot, sh, acc = c
@@ -29,6 +31,7 @@ async def run():
         b = await p.chromium.launch(executable_path="/usr/bin/google-chrome")
         pg = await b.new_page(viewport={"width": 1920, "height": 1080})
         for title, line, c in SONGS:
+            if ONLY and title != ONLY: continue
             with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as f: f.write(card(title, line, c))
             await pg.goto("file://" + f.name); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(300)
             png = f"cards/YouTube - {title}.png"; await pg.screenshot(path=png); os.remove(f.name)
