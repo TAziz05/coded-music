@@ -59,6 +59,17 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Morning Over the Valley | 90 BPM (3/4) | Cinematic orchestral waltz: harp, strings, woodwinds, horns, timpani | Story edits, calm intros, endings |
 | Shattered Overture | 90 → 180 BPM | Starts orchestral, switches to steady breakcore with the orchestra on top, ends back with the orchestra in D major | Montages that build, comeback clips |
 | Paper Sky | 170 BPM | Bright, dreamy steady breakcore: shimmering guitars, glockenspiel, 808, half-time breakdown | Happy montages, wins |
+| Last Light | 174 BPM | Sad steady breakcore: piano and strings, dusty breaks | Emotional edits, losses |
+| First Bloom | 172 BPM | Spring steady breakcore: picked guitars, flute, birdsong | Fresh starts, chill wins |
+| Heatwave Arcade | 180 BPM | Summer steady breakcore: bright synths, 808, cicadas | Hype montages |
+| Amber Leaves | 168 BPM | Autumn lo-fi breakcore: e-piano, vibraphone, rustling leaves | Relaxed gameplay |
+| Frostline | 176 BPM | Winter steady breakcore: harp, glockenspiel, sleigh bells, wind | Winter seasons, festive clips |
+| Window Seat | 165 BPM | Rainy lo-fi breakcore: mellow keys, rain on the window | Late-night sessions |
+| Lightning Over the City | 185 BPM | Thunderstorm breakcore: heavy breaks, reese bass, thunder | Intense endgames |
+| Lantern in the Fog | 160 BPM | Foggy lo-fi breakcore: muffled breaks, foghorn, drone | Mysterious or stealthy moments |
+| Kite Season | 178 BPM | Windy steady breakcore: airy guitars, flute, gusts | Mobility plays, gliding |
+| Golden Hour Groove | 114 BPM | Disco-pop with brass hooks and strings (in the style of BTS) | Feel-good highlights |
+| Blue Spark Runaway | 160 BPM | Emo pop-punk with dreamy synths (in the style of TXT) | Clutches, comebacks |
 
 ```
 pip install numpy scipy
@@ -69,6 +80,8 @@ python songs4.py 13 # 13 = Boundless Run (13c = clean-guitar version), 14 = Ring
 python songs5.py 15 # 15 = Morning Over the Valley
 python songs6.py 16 # 16 = Shattered Overture
 python songs7.py 17 # 17 = Paper Sky
+python seasons.py all  # the nine steady breakcores (engine: breakcore_engine.py)
+python songs9.py bts  # bts = Golden Hour Groove, txt = Blue Spark Runaway
 ```
 
 ## Re-recording

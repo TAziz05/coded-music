@@ -22,6 +22,17 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ("Morning Over the Valley", "90 BPM · orchestral waltz", ("#3a2a12", "#c27a2c", "#ffd9a0", "#2a1c08", "#fff6e0")),
     ("Shattered Overture", "orchestral → breakcore", ("#14060a", "#5a1024", "#d23b4f", "#0a0306", "#ffe6c7")),
     ("Paper Sky", "170 BPM · bright breakcore", ("#123a6b", "#3f86d1", "#ffd3e8", "#0b2648", "#fff4a3")),
+    ('Last Light', '174 BPM · sad breakcore', ('#0d0d1a', '#2b2b4f', '#7a7ab8', '#05050d', '#c9c9ff')),
+    ('First Bloom', '172 BPM · spring breakcore', ('#1f5c2e', '#5fbf6a', '#ffe0ef', '#123a1c', '#fff7b0')),
+    ('Heatwave Arcade', '180 BPM · summer breakcore', ('#7a1500', '#ff5a1f', '#ffd23f', '#4d0d00', '#ffffff')),
+    ('Amber Leaves', '168 BPM · autumn lo-fi breakcore', ('#3d1a05', '#b5531a', '#f2b56b', '#2a1204', '#fff0d9')),
+    ('Frostline', '176 BPM · winter breakcore', ('#0b2a4a', '#5aa7e0', '#eaf6ff', '#071c33', '#ffffff')),
+    ('Window Seat', '165 BPM · rainy lo-fi breakcore', ('#1b2530', '#46586b', '#9fb2c4', '#10171e', '#e3eef8')),
+    ('Lightning Over the City', '185 BPM · thunderstorm breakcore', ('#07060f', '#2a1f4f', '#8a6cff', '#030208', '#fff36b')),
+    ('Lantern in the Fog', '160 BPM · foggy breakcore', ('#2a2e33', '#6b737c', '#c9ced3', '#1a1d20', '#ffd27a')),
+    ('Kite Season', '178 BPM · windy breakcore', ('#0b4f6c', '#40a8c4', '#d9f3ff', '#073446', '#ffe14d')),
+    ('Golden Hour Groove', '114 BPM · BTS-style disco-pop', ('#4a1f00', '#d6801c', '#ffd27a', '#2e1300', '#ffffff')),
+    ('Blue Spark Runaway', '160 BPM · TXT-style pop-punk', ('#071a3d', '#2753b8', '#8fd0ff', '#040f26', '#ffe6f5')),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 
