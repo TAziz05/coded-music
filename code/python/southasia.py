@@ -48,11 +48,11 @@ def bansuri(M, t, n, dur, vol, prev=None, pan=.1):
     f = mtof(n + meend + vib); x = sine(f, N) + .25 * sine(2 * f, N) + .08 * sine(3 * f, N)
     x += bp(noise(N), 1200, 6000) * (.06 + .1 * np.exp(-tt / .08))
     M.add('flute', t, x * envN(N, dur, .05, .3, .85, .1) * vol * .32, pan=pan)
-def tanpura(M, T, vol=1.):                      # drone: Pa, Sa, Sa, low Sa, plucked over and over with the buzzing 'jawari'
+def tanpura(M, T, vol=1., step=.9):                      # drone: Pa, Sa, Sa, low Sa, plucked over and over with the buzzing 'jawari'
     t = 0.; seq = [SA - 5, SA, SA, SA - 12]; k = 0
     while t < T:
         y = ks(mtof(seq[k % 4] - 12), 2.5, .5, .9995); y = y + .3 * bp(np.tanh(y * 4), 1500, 4500)
-        M.add('drone', t, y * vol * .22, pan=(-.3, .3)[k % 2]); t += .9; k += 1
+        M.add('drone', t, y * vol * .22, pan=(-.3, .3)[k % 2]); t += step; k += 1
 
 def chordtones(name):
     return {'D': [57, 62, 66], 'C': [55, 60, 64], 'G': [55, 59, 62], 'A': [57, 61, 64], 'Em': [55, 59, 64]}[name]

@@ -91,6 +91,28 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Arirang Dawn | 94 BPM | Temple bell, gayageum, 808, vocoder, guitar surge (BTS ARIRANG era) | Comebacks |
 | Riverbank Evening | 96 BPM | Bengali Baul-folk style: dotara, ektara, harmonium, bansuri, tabla, tihai ending | Calm intros, story edits |
 | Monsoon Breaks | 172 BPM | Steady breakcore with tabla, harmonium and bansuri | Upbeat montages |
+| Sky-Piercing Promise | 176 BPM | Fast J-rock anime-opening style: piano runs, strings, crunchy guitars, last chorus up a key | Intros, hype montages |
+| Sky-Piercing Breaks | 180 BPM | Steady breakcore with the anime hook on strings and crunch guitar | Montages |
+| Arcade Heartbreak 2005 | 150 BPM | Y2K pop-punk with nu-metal chugs and glitchy synths (in the style of South Arcade) | Hype plays, funny clips |
+| Iron Storm Rising | 168 BPM | Heavy metal: double kick, chugs, tremolo picking, guitar solo | Intense endgames |
+| Iron Storm Breaks | 176 BPM | Steady breakcore with metal guitars and reese bass | Aggressive montages |
+| Respawn Lounge | 84 BPM | Laid-back lo-fi: e-piano, guitar, boom-bap | Commentary, chill streams |
+| Final Circle | 140 BPM | Dark trap-EDM with heavy 808 and synth drops | Endgames, clutch moments |
+| Pallet Path | 132 BPM | Route music crunched to Game Boy quality (in the style of Pokémon Gen 1) | Exploring, looting |
+| Johto Morning | 128 BPM | Bright Game Boy Color route (in the style of Pokémon Gen 2) | Exploring, chill rotations |
+| Snowpoint Trail | 120 BPM | DS-quality route with trumpet and strings (in the style of Pokémon Gen 4) | Winter maps, exploring |
+| Island Breeze | 104 BPM | Relaxed tropical route: steel drum, ukulele, jazzy chords (in the style of Pokémon Gen 7) | Chill gameplay |
+| Stadium Highlands | 128 BPM | Brass and marching drums with crowd hey chants (in the style of Pokémon Gen 8) | Big wins, tournaments |
+| Sunlit Plaza | 132 BPM | Spanish guitar, trumpet and castanets (in the style of Pokémon Gen 9) | Upbeat exploring |
+| Emerald Shore Zone | 142 BPM | FM-synth lead and slap bass crunched to 16-bit (in the style of classic Genesis Sonic) | Speedy plays |
+| Time Warp Zone | 126 BPM | 90s Japanese house with organ stabs and shouts (in the style of Sonic CD) | Rotations, movement clips |
+| Treasure Hunt Flow | 92 BPM | Boom-bap with scratches and horn stabs (in the style of Sonic Adventure 2) | Looting, chill highlights |
+| Rush Hour Boost | 152 BPM | Breakbeat jazz-funk with slap bass and shouts (in the style of Sonic Rush) | Fast-paced clips |
+| Moonlit Night Stage | 140 BPM | Swinging jazz with sax and walking bass (in the style of Sonic Unleashed night stages) | Stealthy or night clips |
+| Starlight Carnival Run | 128 BPM | Bright EDM-pop with bells and future-bass chords (in the style of Sonic Colors) | Happy highlights |
+| Lime Green Afterparty | 132 BPM | Abrasive club pop: distorted rave stabs, heavy 808, vocoder hook (in the style of Charli xcx’s Brat era) | Hype edits |
+| Red 40 Sugar Rush | 162 BPM | Hyperpop: chipmunk vocal chops, glitchy synths, distorted 808, cartoon sound effects | Chaotic or funny clips |
+| Padma to Kyoto | 100 BPM | Bangladesh meets Japan: koto, harmonium, ektara, tabla and taiko, bansuri and shakuhachi trading phrases | Calm intros, story edits |
 
 ```
 pip install numpy scipy
@@ -107,6 +129,12 @@ python songs10.py cortis  # Off the Lines (kaze = Breeze in the Alley)
 python bts_albums.py all  # the 12 BTS-era songs (engine: popkit.py)
 python southasia.py song  # Riverbank Evening (breaks = Monsoon Breaks)
 python styles_breakcore.py all  # Golden Hour Breaks, Blue Spark Breaks, Off the Lines Breaks, Lanterns and Thunder Drums, Breeze Breaks
+python batch_a.py all  # anime, anime_bc, south, south_bc, metal, metal_bc (Sky-Piercing, Arcade Heartbreak, Iron Storm)
+python bgm.py all  # lounge, levelup, menu, final (YouTube / gaming BGM)
+python pokemon_gens.py all  # g1 g2 g4 g5 g6 g7 g8 g9 route-style songs (Gen 3 = Coastal Route)
+python sonic_styles.py all  # genesis cd adventure hiphop rush jazz colors frontiers
+python batch_c.py all  # flutes (Winds of the World), mello, mello_bc, charli, charli_bc
+python batch_d.py all  # red, red_bc, aero, aero_bc, bdjp, bdjp_bc
 ```
 
 ## Re-recording

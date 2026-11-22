@@ -205,7 +205,9 @@ TARGET = {'intro': -18., 'build': -16.5, 'dropA': -12.5, 'half': -14.5, 'dropB':
 def build(cfg):
     st = 60 / cfg['bpm'] / 4; B = 16 * st; R = np.random.default_rng(cfg.get('seed', 7))
     slices, n = make_kit(st, cfg['kit'])
-    plan = [(s, i, nb) for s, nb in SECTIONS for i in range(nb)]
+    SECS = cfg.get('sections', SECTIONS); TG = dict(TARGET, **cfg.get('targets', {}))
+    end = cfg.get('ending', 'button'); full_out = end in ('dropout', 'tapestop'); te = None
+    plan = [(s, i, nb) for s, nb in SECS for i in range(nb)]
     T = len(plan) * B + 5; M = Mix(T)
     put = lambda t, sl, g=1.: M.add('break', t, sl[0] * g, sl[1] * g)
     ch = [chord(c) for c in cfg['chords']]          # 4 chords, 2 bars each
@@ -213,13 +215,15 @@ def build(cfg):
     for b, (sec, i, nb) in enumerate(plan):
         t0 = b * B; starts.setdefault(sec, t0)
         ci = (b // 2) % 4; tones, root = ch[ci]; half = b % 2
-        kv = {'intro': 1.2, 'build': 1., 'dropA': .7, 'half': 1., 'dropB': .7, 'outro': 1.2}[sec]
+        kv = {'intro': 1.2, 'build': 1., 'dropA': .85, 'half': 1., 'dropB': .85, 'outro': 1.2}[sec]
+        if sec == 'outro' and full_out: kv = .85
         play_keys(M, cfg['keys'], t0, st, tones, root, kv, half)
-        if cfg.get('pad') and half == 0:
+        if cfg.get('pad') and half == 0 and not (sec == 'outro' and end == 'dropout' and i >= 4):
             for nn in tones[1:4]: supersaw(M, 'pad', t0, nn + 12, 2 * B, cfg['pad'] * (1.4 if sec in ('intro', 'outro', 'half') else 1.), cut=cfg.get('padcut', 1400), a=.5, r=.8, voices=3)
         mel = cfg['melody'][ci]
-        if half == 0 and (sec in ('dropA', 'dropB', 'half') or (sec == 'intro' and i >= 4)):
-            mk = cfg['mel'] if sec != 'dropB' else cfg.get('melB', cfg['mel'])
+        out_mel = sec == 'outro' and full_out and (end == 'tapestop' or i < 2)
+        if half == 0 and (sec in ('dropA', 'dropB', 'half') or (sec == 'intro' and i >= 4) or out_mel):
+            mk = cfg['mel'] if sec not in ('dropB', 'outro') else cfg.get('melB', cfg['mel'])
             mv = .75 if sec in ('intro', 'half') else 1.
             for s, nn, L in mel:
                 play_mel(M, mk, t0 + s * st, nn + (cfg.get('upB', 0) if sec == 'dropB' else 0), L * st, mv)
@@ -236,15 +240,17 @@ def build(cfg):
         if cfg.get('taiko') and sec in ('build', 'dropA', 'dropB', 'half'):
             for s in ((0, 8) if sec != 'build' else (0, 4, 8, 12)): taiko(M, t0 + s * st, .9 if s == 0 else .6)
         if cfg.get('gong') and sec in ('dropA', 'dropB', 'half') and i == 0: gong(M, t0, .9)
-        if sec in ('dropA', 'dropB'):
-            if i == 0: crash(M, t0, .85); impact(M, t0, .6)
+        out_brk = sec == 'outro' and full_out and (end == 'tapestop' or i < 6)
+        if sec in ('dropA', 'dropB') or out_brk:
+            if i == 0 and sec != 'outro': crash(M, t0, .85); impact(M, t0, .6)
             if i == 8: crash(M, t0, .5)
             pat = PATS[cfg['patA'] if sec == 'dropA' else cfg['patB']]
+            if sec == 'outro' and end == 'dropout' and i >= 4: pat = [0 if k_ % 8 == 0 else (2 if k_ % 2 == 0 else 3) for k_ in range(32)]   # thinned: just kick and hats
             for k in range(16):
                 sl = slices[pat[(b % 2) * 16 + k]]
                 if half == 1 and i % 4 == 3 and k >= 14: sl = slice_fx(slices[12], n, 'roll', 2 if k == 14 else 4)
                 put(t0 + k * st, sl)
-            bk = cfg['bass']
+            bk = cfg['bass'] if not (sec == 'outro' and end == 'dropout' and i >= 4) else None
             if bk == '808':
                 for s, L in ((0, 7), (7, 3), (10, 6)): b808(M, t0 + s * st, root, L * st * .95, .55, glide=prev if (s == 0 and half == 0 and prev and prev != root) else None)
             elif bk == 'sub':
@@ -256,12 +262,19 @@ def build(cfg):
             for k in range(0, 16, 2): put(t0 + k * st, stretch2(slices[HALF[(b % 2) * 8 + k // 2]], n), .85)
             subbass(M, t0, root, B * .95, .45, 1.5)
             if i == nb - 1: riser(M, t0, B, .45)
-        if sec == 'outro' and i < 4:
+        if sec == 'outro' and i < 4 and not full_out:
             for k in range(0, 16, 4): put(t0 + k * st, np.array([lp(c, 1500 - 300 * i) for c in slices[(b % 2) * 16 + k]]), .45 - .08 * i)
         if sec == 'outro' and i == nb - 1 and cfg.get('ending') == 'roll':   # rolled-chord ending (plucked, harp-like)
             tones0, r0 = ch[0]; play_mel(M, cfg['mel'], t0 + B, tones0[0] + 12, 3., .8)
             for j, nn in enumerate([r0 + 12] + tones0): piano(M, 'keys', t0 + B + j * .04, nn, 3., .3) if cfg['keys'] == 'piano' else guitar(M, 'keys', t0 + B + j * .04, nn + 12, 3., .35, bright=.5)
-        elif sec == 'outro' and i == nb - 1:   # the ending: one 'button' hit with the whole band, then let it ring
+        elif sec == 'outro' and end == 'custom' and i == 0: cfg['ending_fn'](M, t0, st, B, nb, ch)
+        elif sec == 'outro' and end == 'tapestop' and i == 0: te = t0 + cfg.get('stop_bar', 4) * B
+        elif sec == 'outro' and end == 'dropout' and i == nb - 1:   # last one standing: a soft final chord on the keys alone
+            tones0, r0 = ch[0]
+            for nn in [r0 + 12] + tones0:
+                if cfg['keys'] == 'piano': piano(M, 'keys', t0 + B, nn, 3.5, .26)
+                else: epiano(M, 'keys', t0 + B, nn + 12, 3., .08)
+        elif sec == 'outro' and i == nb - 1 and end == 'button':   # the ending: one 'button' hit with the whole band, then let it ring
             tones0, r0 = ch[0]; te = t0 + B
             kick(M, te, .8, punch=1.2); crash(M, te, .6); impact(M, te, .35)
             subbass(M, te, r0, 2.2, .55, 1.6)
@@ -295,27 +308,54 @@ def build(cfg):
     levels.update(cfg.get('levels', {}))
     sends = {'tabla': .12, 'harm': .25, 'dotara': .2, 'flute': .35, 'drone': .3, 'perc': .25, 'keys': .3, 'pad': .5, 'mel': .35, 'glock': .45, 'harp': .4, 'break': .05, 'fx': .25, 'amb': .1}
     sends.update(cfg.get('sends', {}))
+    # balance: keep the keys/melody within a few dB of the breaks in the drops, so they never get buried
+    DRUMISH = {'break', 'drums', 'perc', 'sub', 'fx', 'amb', 'tabla', 'bass'}
+    acc = 0
+    for sec_, nb_ in SECS:
+        if sec_ == 'dropA': a0, a1 = int(acc * B * SR), int((acc + nb_) * B * SR)
+        acc += nb_
+    lv = lambda ks_: 20 * np.log10(np.sqrt((sum(M.buses[k][:, a0:a1] * levels.get(k, 1.) for k in ks_) ** 2).mean()) + 1e-9)
+    mk_ = [k for k in M.buses if k not in DRUMISH]; dk_ = [k for k in M.buses if k in ('break', 'sub', 'drums')]
+    if mk_ and dk_:
+        gap = lv(dk_) - lv(mk_)
+        if cfg.get('debug'): print('music gap', round(gap, 1))
+        if gap > cfg.get('mus_gap', 6.):
+            f_ = 10 ** ((gap - cfg.get('mus_gap', 6.)) / 20)
+            for k in mk_: levels[k] = levels.get(k, 1.) * f_
     out = np.zeros((2, M.n)); send = np.zeros((2, M.n))
     for k, x in M.buses.items(): out += x * levels.get(k, 1.); send += x * levels.get(k, 1.) * sends.get(k, 0.)
     ir = reverb_ir(cfg.get('verb', 2.2), cfg.get('decay', .55)); out += np.array([ss.fftconvolve(send[c], ir[c])[:M.n] for c in range(2)])
     out = np.array([hp(c, 28) for c in out])
     # automatic section leveling, so quiet parts never vanish under the loud ones
-    g = np.ones(M.n); acc = 0
-    ref = None
-    for sec, nb in SECTIONS:
-        a, bnd = int(acc * B * SR), int((acc + nb) * B * SR); seg = out[:, a:bnd]
-        r = 20 * np.log10(np.sqrt((seg ** 2).mean()) + 1e-9)
-        g[a:bnd] = 10 ** ((TARGET[sec] - r) / 20); acc += nb
+    # ...and so the music never seems to fade away when the breaks come in: the intro, build, breakdown and outro
+    # may not have their keys/melody louder than in the neighbouring drop (they start low instead)
+    DRUMISH = {'break', 'drums', 'perc', 'sub', 'fx', 'amb', 'tabla', 'bass'}
+    mus = sum(x * levels.get(k, 1.) for k, x in M.buses.items() if k not in DRUMISH)
+    g = np.ones(M.n); acc = 0; gs, rm, span = {}, {}, {}
+    for sec, nb in SECS:
+        a, bnd = int(acc * B * SR), int((acc + nb) * B * SR); span[sec] = (a, bnd)
+        r = 20 * np.log10(np.sqrt((out[:, a:bnd] ** 2).mean()) + 1e-9)
+        rm[sec] = 20 * np.log10(np.sqrt((mus[:, a:bnd] ** 2).mean()) + 1e-9)
+        gs[sec] = 10 ** ((TG[sec] - r) / 20); acc += nb
+    for s_, ref_ in (('intro', 'dropA'), ('build', 'dropA'), ('half', 'dropB'), ('outro', 'dropB')):
+        if s_ in gs and ref_ in gs: gs[s_] = min(gs[s_], gs[ref_] * 10 ** ((rm[ref_] - rm[s_] + cfg.get('cont_tol', 1.5)) / 20))
+    if cfg.get("debug"): print({k: (round(rm[k], 1), round(20 * np.log10(gs[k]), 1)) for k in gs}, sorted((k, round(float(np.sqrt((x ** 2).mean())), 4)) for k, x in M.buses.items()))
+    for sec, (a, bnd) in span.items(): g[a:bnd] = gs[sec]
     g[int(acc * B * SR):] = g[int(acc * B * SR) - 1]
     from scipy.ndimage import minimum_filter1d; g = minimum_filter1d(g, int(.6 * SR))   # lean to the quieter side at boundaries (no spikes)
     g = ss.filtfilt(*ss.butter(1, 1.2, fs=SR), g)       # smooth ~0.5 s transitions between sections
     out = out * g
+    if te is not None:   # tape stop: the whole band slows down to a halt
+        a = int(te * SR); D = int(cfg.get('stop_len', 1.8) * SR); rate = np.linspace(1, 0, D) ** 1.3
+        pos = a + np.cumsum(rate); seg = np.array([np.interp(pos, np.arange(out.shape[1]), c) for c in out]) * np.linspace(1, 0, D) ** .4
+        out = np.concatenate([out[:, :a], seg, np.zeros((2, int(.6 * SR)))], axis=1)
     if cfg.get('lofi'):   # tape wobble + warm top end
         t = np.arange(out.shape[1]); d = .0012 * SR * np.sin(2 * np.pi * .55 * t / SR) + .0004 * SR * np.sin(2 * np.pi * 3.1 * t / SR)
         out = np.array([np.interp(t - d - 60, t, c) for c in out]); out = np.array([lp(c, 7000) for c in out])
     nz = np.nonzero(np.abs(out).max(0) > 1e-4)[0]; out = out[:, :nz[-1] + int(.3 * SR)]
-    f = int(1.5 * SR); out[:, -f:] *= np.linspace(1, 0, f) ** 2
-    body = int(len(plan) * B * SR)          # set loudness from the song itself, not the final hit
+    f = int(1.5 * SR)
+    if te is None: out[:, -f:] *= np.linspace(1, 0, f) ** 2
+    body = min(int(len(plan) * B * SR), int(te * SR) if te else 10 ** 12)          # set loudness from the song itself, not the final hit
     out = out / np.abs(out[:, :body]).max() * 1.15; out = np.tanh(out) / np.tanh(1.15) * .89
     a_ = np.abs(out); out = np.where(a_ > .93, np.sign(out) * (.93 + .05 * np.tanh((a_ - .93) / .05)), out)   # gentle limiter for the ending
     name = cfg['file']
@@ -323,7 +363,7 @@ def build(cfg):
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', f'{name}.wav', '-b:a', '320k', f'{name}.mp3'], check=True)
     # report
     acc = 0; rep = []
-    for sec, nb in SECTIONS:
+    for sec, nb in SECS:
         seg = out[:, int(acc * B * SR):int((acc + nb) * B * SR)]; rep.append(f"{sec} {20 * np.log10(np.sqrt((seg ** 2).mean())):.1f}"); acc += nb
     a = int((12 + 2) * B * SR); seg = out[:, a:a + int(12 * B * SR)].mean(0); w = int(.1 * SR)
     spread = np.std([20 * np.log10(np.sqrt((seg[i:i + w] ** 2).mean()) + 1e-9) for i in range(0, len(seg) - w, w)])

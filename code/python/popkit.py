@@ -95,7 +95,10 @@ def crunch_lead_hot(M, t, n, dur, vol):
     y = ks(mtof(n), dur + .05, .65, .9994); y = np.tanh(y * 7) * .5; y = lp(hp(y, 100), 4500) + .3 * bp(y, 1500, 3000)
     M.add('lead', t, y * vol * .4)
 
+EXTRA_KEYS, EXTRA_DRUMS, EXTRA_BASS = {}, {}, {}   # other song files can register their own styles here
+
 def keys_bar(M, style, t0, st, S, tones, root, v):
+    if style in EXTRA_KEYS: return EXTRA_KEYS[style](M, t0, st, S, tones, root, v)
     T = tones; arp = T + [T[0] + 12, T[1] + 12]
     if style == 'piano':
         piano(M, 'keys', t0, root + 12, 8 * st, .5 * v, pan=-.2)
@@ -162,6 +165,7 @@ def keys_bar(M, style, t0, st, S, tones, root, v):
         for j, c in enumerate(T): horn(M, t0, c, 16 * st * .97, .5 * v, pan=(j - 1) * .3)
 
 def drums_bar(M, style, t0, st, S, i, n, fill=True):
+    if style in EXTRA_DRUMS: return EXTRA_DRUMS[style](M, t0, st, S, i, n, fill)
     last = (i == n - 1) and fill
     if style == 'boombap':
         for s in (0, 7, 10): boom_kick(M, t0 + S(s), 1. if s == 0 else .8)
@@ -241,6 +245,7 @@ def rim_(M, t, v=1.):
     M.add('drums', t, (bp(noise(N), 1500, 5000) * .5 + np.sin(2 * np.pi * 820 * tt)) * np.exp(-tt / .012) * v * .3, pan=-.2)
 
 def bass_bar(M, style, t0, st, S, root):
+    if style in EXTRA_BASS: return EXTRA_BASS[style](M, t0, st, S, root)
     r = root if root < 44 else root - 12
     if style == '808':
         for s, L in ((0, 6), (7, 3), (10, 6)): b808(M, t0 + S(s), r, L * st * .95, .55)
@@ -320,14 +325,25 @@ def build(cfg):
     for k, x in M.buses.items(): out += x * levels.get(k, 1.); send += x * levels.get(k, 1.) * sends.get(k, 0.)
     ir = reverb_ir(cfg.get('verb', 2.2), cfg.get('decay', .55)); out += np.array([ss.fftconvolve(send[c], ir[c])[:M.n] for c in range(2)])
     out = np.array([hp(c, 28) for c in out])
-    g = np.ones(M.n)
+    g = np.ones(M.n); TG = dict(TARGET, **cfg.get('targets', {}))
+    mus = sum(x * levels.get(k, 1.) for k, x in M.buses.items() if k not in ('drums', 'perc', 'bass', 'sub', 'fx'))
+    gl, rl = [], []
     for name, t0, nb in marks:
         a, bnd = int(t0 * SR), int((t0 + nb * B) * SR); seg = out[:, a:bnd]
         r = 20 * np.log10(np.sqrt((seg ** 2).mean()) + 1e-9); kind = secs[name].get('kind', name.rstrip('0123456789'))
-        g[a:bnd] = 10 ** ((TARGET.get(kind, -15.) - r) / 20)
+        gl.append(10 ** ((TG.get(kind, -15.) - r) / 20)); rl.append(20 * np.log10(np.sqrt((mus[:, a:bnd] ** 2).mean()) + 1e-9))
+    # keep the music continuous: the intro and outro (no drums) may not have their keys/lead louder than the section next to them
+    tol = cfg.get('cont_tol', 1.5)
+    if len(marks) > 1:
+        gl[0] = min(gl[0], gl[1] * 10 ** ((rl[1] - rl[0] + tol) / 20)); gl[-1] = min(gl[-1], gl[-2] * 10 ** ((rl[-2] - rl[-1] + tol) / 20))
+    for (name, t0, nb), gg in zip(marks, gl): g[int(t0 * SR):int((t0 + nb * B) * SR)] = gg
     body = int(len(plan) * B * SR); g[body:] = g[body - 1]
     from scipy.ndimage import minimum_filter1d; g = minimum_filter1d(g, int(.6 * SR))   # lean to the quieter side at boundaries (no spikes)
     g = ss.filtfilt(*ss.butter(1, 1.2, fs=SR), g); out = out * g
+    if cfg.get('ride'):   # gentle gain riding inside sections, for an even, steady level (background music)
+        w = int(2 * B * SR); e = np.sqrt(ss.filtfilt(*ss.butter(1, .5, fs=SR), (out ** 2).mean(0)) + 1e-12)
+        ref = np.median(e[:body]); gr = np.clip((ref / e) ** cfg['ride'], 10 ** (-3 / 20), 10 ** (3 / 20)); gr[body:] = gr[body - 1]
+        out = out * ss.filtfilt(*ss.butter(1, .4, fs=SR), gr)
     nz = np.nonzero(np.abs(out).max(0) > 1e-4)[0]; out = out[:, :nz[-1] + int(.3 * SR)]
     f = int(1.2 * SR); out[:, -f:] *= np.linspace(1, 0, f) ** 2
     out = out / np.abs(out[:, :body]).max() * 1.15; out = np.tanh(out) / np.tanh(1.15) * .89
