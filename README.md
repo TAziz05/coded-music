@@ -33,7 +33,7 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
 ## YouTube gameplay tracks
 
-Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3, each about 2 to 2.5 minutes with a fade-out). These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments and `code/python/songs.py` holds the songs.
+Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3, each about 2 to 2.5 minutes with a fade-out). These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments and `code/python/songs.py` holds the songs. Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
 
 | Song | Tempo | Feel | Good for |
 |---|---|---|---|
