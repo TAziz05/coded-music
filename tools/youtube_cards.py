@@ -10,6 +10,8 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ("Lobby Loop", "102 BPM · chill", ("#06545a", "#14a3a0", "#8fe8d6", "#043a3e", "#fff07a")),
     ("Overclocked", "174 BPM · drum & bass", ("#140f2e", "#c2183f", "#ff6a3d", "#0b0820", "#e8ff3a")),
     ("Nobody's Looking", "180 BPM · breakcore", ("#05060d", "#1e2340", "#4d5a8c", "#000000", "#ff9fc8")),
+    ("Static Weather", "146 BPM · Vocaloid-style J-rock", ("#1c2a4a", "#4f7fc4", "#bfe0ff", "#13203d", "#fff3a8")),
+    ("Lantern Theory", "150 BPM · jazz math rock", ("#2b1608", "#a8501c", "#f2b45c", "#1d0e04", "#fff1d6")),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 
@@ -32,7 +34,7 @@ async def run():
         b = await p.chromium.launch(executable_path="/usr/bin/google-chrome")
         pg = await b.new_page(viewport={"width": 1920, "height": 1080})
         for title, line, c in SONGS:
-            if ONLY and title != ONLY: continue
+            if ONLY and title not in ([ONLY] if isinstance(ONLY, str) else ONLY): continue
             with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as f: f.write(card(title, line, c))
             await pg.goto("file://" + f.name); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(300)
             png = f"cards/YouTube - {title}.png"; await pg.screenshot(path=png); os.remove(f.name)

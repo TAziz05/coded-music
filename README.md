@@ -42,10 +42,13 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Lobby Loop | 102 BPM | Chill electric-piano groove | Intros, looting, commentary |
 | Overclocked | 174 BPM | Drum & bass: fast breakbeat, rolling reese bass | Fast-paced fights, edits with lots of cuts |
 | Nobody's Looking | 180 BPM | Breakcore: sad piano over chopped, stuttering breakbeats | Clutch moments, emotional edits, losses |
+| Static Weather | 146 BPM | Vocaloid-style J-rock (in the style of inabakumori): chorused guitars, singing synth lead | Chill wins, recap edits |
+| Lantern Theory | 150 BPM | Instrumental jazz / math rock (in the style of Nouvelle Story): 7/8 tapped guitar, sax | Creative builds, highlight reels |
 
 ```
 pip install numpy scipy
 cd code/python && python songs.py 1   # 1 = Victory Rush, 2 = Storm Closing, 3 = Lobby Loop, 4 = Overclocked, 5 = Nobody's Looking (needs ffmpeg)
+python songs2.py 6  # 6 = Static Weather, 7 = Lantern Theory  (instruments in instruments2.py)
 ```
 
 ## Re-recording
