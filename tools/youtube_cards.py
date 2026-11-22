@@ -34,6 +34,12 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ('Golden Hour Groove', '114 BPM · BTS-style disco-pop', ('#4a1f00', '#d6801c', '#ffd27a', '#2e1300', '#ffffff')),
     ('Blue Spark Runaway', '160 BPM · TXT-style pop-punk', ('#071a3d', '#2753b8', '#8fd0ff', '#040f26', '#ffe6f5')),
     ("Off the Lines", "150 BPM · CORTIS-style rage trap", ("#0a1f0a", "#1f7a1f", "#7dff4f", "#051005", "#f2ff3d")),
+    ('Breeze in the Alley', '98 BPM · Fujii Kaze-style J-pop soul', ('#2b1d10', '#8a5a2b', '#e8c99a', '#1b1209', '#ffffff')),
+    ('Golden Hour Breaks', '172 BPM · BTS-style breakcore', ('#4a1f00', '#d6801c', '#ffd27a', '#2e1300', '#fff3c4')),
+    ('Blue Spark Breaks', '176 BPM · TXT-style breakcore', ('#071a3d', '#2753b8', '#8fd0ff', '#040f26', '#ffffff')),
+    ('Off the Lines Breaks', '170 BPM · CORTIS-style breakcore', ('#0a1f0a', '#1f7a1f', '#7dff4f', '#051005', '#ffffff')),
+    ('Lanterns and Thunder Drums', '168 BPM · East Asian breakcore', ('#3a0606', '#b3201c', '#f2c14e', '#220303', '#fff4d6')),
+    ('Breeze Breaks', '172 BPM · Fujii Kaze-style breakcore', ('#2b1d10', '#8a5a2b', '#e8c99a', '#1b1209', '#fff7e8')),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 

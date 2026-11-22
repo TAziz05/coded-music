@@ -122,6 +122,38 @@ def reese(M, t, n, dur, vol):
     m = .5 + .5 * np.sin(2 * np.pi * .4 * (tt + t)); y = np.tanh((lo + (hi - lo) * m) * 1.4) * .5 * envN(N, dur, .01, .3, .9, .05)
     M.add('sub', t, y * vol + sine(f / 2, N) * envN(N, dur, .005, .3, .95, .04) * vol * .9)
 
+def taiko(M, t, vol=1., n=36):
+    N = int(1.2 * SR); tt = tarr(N); f = mtof(n) * (1 + .4 * np.exp(-tt / .03))
+    x = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt / .35) + lp(noise(N), 900) * np.exp(-tt / .04) * .8
+    M.add('perc', t, np.tanh(x * 1.5) * vol * .8)
+def gong(M, t, vol=1.):
+    N = int(4 * SR); tt = tarr(N); x = np.zeros(N)
+    for r, a, d in ((1, 1, 2.5), (1.48, .6, 1.8), (2.1, .45, 1.2), (2.76, .3, .9), (3.4, .2, .6)):
+        x += a * np.sin(2 * np.pi * 110 * r * tt * (1 + .002 * np.sin(2 * np.pi * 3 * tt))) * np.exp(-tt / d)
+    M.add('perc', t, x * np.clip(tt / .05, 0, 1) * vol * .3)
+def koto(M, t, n, dur, vol, pan=0.):
+    y = ks(mtof(n), min(dur, 2.) + .3, .85, .9975); N = len(y); tt = tarr(N)
+    bend = np.interp(np.clip(np.cumsum(1 + .003 * np.exp(-tt / .05)), 0, N - 1), np.arange(N), y)
+    M.add('keys', t, lp(bend, 6500) * vol * .5, pan=pan)
+def shaku(M, t, n, dur, vol, pan=0.):
+    N = int((dur + .15) * SR); tt = tarr(N)
+    bend = -1.2 * np.exp(-tt / .08) + np.clip((tt - .3) / .3, 0, 1) * .25 * np.sin(2 * np.pi * 4.5 * tt)
+    f = mtof(n + bend); x = sine(f, N) + .2 * sine(2 * f, N) + bp(noise(N), 800, 4500) * (.12 + .15 * np.exp(-tt / .1))
+    M.add('mel', t, x * envN(N, dur, .06, .3, .85, .12) * vol * .35, pan=pan)
+def rage(M, t, n, dur, vol, bus='mel'):
+    N = int((dur + .05) * SR); x = np.zeros(N)
+    for d in (-.3, -.18, -.06, .06, .18, .3, 0): x += saw(mtof(n + d), N)
+    x = np.tanh(x * .9) ; x = lp(hp(x, 180), 6000) * envN(N, dur, .003, .2, .85, .04)
+    M.add(bus, t, x * vol * .25)
+def crunch_lead(M, t, n, dur, vol):
+    y = ks(mtof(n), dur + .05, .6, .9993); y = np.tanh(y * 2.8) * .5; y = lp(hp(y, 90), 3800)
+    M.add('mel', t, y * vol * .5)
+def chick(M, t, notes, vol, pan=.4):
+    L = int(.12 * SR); y = np.zeros(L)
+    for j, n in enumerate(notes):
+        k = ks(mtof(n), .08, .7, .97); o = int(j * .003 * SR); y[o:o + len(k)] += k[:L - o]
+    M.add('keys', t, hp(y, 300) * np.exp(-tarr(L) / .03) * vol, pan=pan)
+
 def play_keys(M, kind, t0, st, tones, root, vol, bar_in_chord):
     arp = [tones[0], tones[1], tones[2], tones[-1], tones[1] + 12, tones[2] + 12, tones[-1], tones[1]]
     if kind == 'piano':
@@ -139,6 +171,12 @@ def play_keys(M, kind, t0, st, tones, root, vol, bar_in_chord):
         for k in range(16): pluck(M, 'keys', t0 + k * st, arp[pat[k]] + 12, st * .9, .13 * vol, pan=(-.4, .4)[k % 2], dec=.07)
     elif kind == 'harp':
         for k in range(8): harp(M, t0 + k * 2 * st, arp[k] + 12, .9 * vol, pan=-.35 + k * .1)
+    elif kind == 'funk':
+        for k in range(16):
+            if k % 4 in (1, 3) or k % 4 == 2: chick(M, t0 + k * st, tones + [tones[0] + 12], (.18 if k % 2 else .11) * vol)
+    elif kind == 'koto':
+        pat = [0, 2, 4, 3, 1, 3, 5, 4]
+        for k in range(8): koto(M, t0 + k * 2 * st, arp[pat[k] % 8] + 12, 2 * st * 3, .9 * vol, pan=(-.35 if k % 2 else .35))
     elif kind == 'celesta':
         for k in range(8): glock(M, t0 + k * 2 * st, arp[k] + 24, .25 * vol, pan=(-.4 if k % 2 else .4))
 
@@ -153,6 +191,10 @@ def play_mel(M, kind, t, n, dur, vol):
     elif kind == 'strings': violins(M, t, n, dur * .97, .7 * vol, att=.08, bus='mel')
     elif kind == 'brass': brass(M, 'mel', t, n, dur * .92, .45 * vol)
     elif kind == 'guitar': guitar(M, 'mel', t, n, dur * 1.3, .5 * vol, bright=.7, decay=.999)
+    elif kind == 'crunch': crunch_lead(M, t, n, dur * .95, vol)
+    elif kind == 'rage': rage(M, t, n, dur * .95, vol)
+    elif kind == 'shaku': shaku(M, t, n, dur * .95, 1.1 * vol)
+    elif kind == 'koto': koto(M, t, n, dur, 1.1 * vol, pan=.15)
 
 # ---------------- the builder ----------------
 SECTIONS = [('intro', 8), ('build', 4), ('dropA', 16), ('half', 8), ('dropB', 16), ('outro', 8)]
@@ -188,6 +230,9 @@ def build(cfg):
                 if i == 3 and k >= 12: sl = slice_fx(slices[4], n, 'roll', 2 if k < 14 else 4)
                 put(t0 + k * st, np.array([lp(c, fc) for c in sl]), .55 + .12 * i)
             if i == 0: riser(M, t0, 4 * B, .5)
+        if cfg.get('taiko') and sec in ('build', 'dropA', 'dropB', 'half'):
+            for s in ((0, 8) if sec != 'build' else (0, 4, 8, 12)): taiko(M, t0 + s * st, .9 if s == 0 else .6)
+        if cfg.get('gong') and sec in ('dropA', 'dropB', 'half') and i == 0: gong(M, t0, .9)
         if sec in ('dropA', 'dropB'):
             if i == 0: crash(M, t0, .85); impact(M, t0, .6)
             if i == 8: crash(M, t0, .5)
@@ -210,9 +255,18 @@ def build(cfg):
             if i == nb - 1: riser(M, t0, B, .45)
         if sec == 'outro' and i < 4:
             for k in range(0, 16, 4): put(t0 + k * st, np.array([lp(c, 1500 - 300 * i) for c in slices[(b % 2) * 16 + k]]), .45 - .08 * i)
-        if sec == 'outro' and i == nb - 1:
+        if sec == 'outro' and i == nb - 1 and cfg.get('ending') == 'roll':   # rolled-chord ending (plucked, harp-like)
             tones0, r0 = ch[0]; play_mel(M, cfg['mel'], t0 + B, tones0[0] + 12, 3., .8)
             for j, nn in enumerate([r0 + 12] + tones0): piano(M, 'keys', t0 + B + j * .04, nn, 3., .3) if cfg['keys'] == 'piano' else guitar(M, 'keys', t0 + B + j * .04, nn + 12, 3., .35, bright=.5)
+        elif sec == 'outro' and i == nb - 1:   # the ending: one 'button' hit with the whole band, then let it ring
+            tones0, r0 = ch[0]; te = t0 + B
+            kick(M, te, .8, punch=1.2); crash(M, te, .6); impact(M, te, .35)
+            subbass(M, te, r0, 2.2, .55, 1.6)
+            for nn in tones0: supersaw(M, 'pad', te, nn + 12, 2.5, cfg.get('pad', .06) * 2.2, cut=cfg.get('padcut', 1400), a=.02, r=1.2, voices=3)
+            for nn in [r0 + 12] + tones0:
+                if cfg['keys'] == 'piano': piano(M, 'keys', te, nn, 3., .32)
+                else: epiano(M, 'keys', te, nn + 12, 2.5, .09)
+            play_mel(M, cfg['mel'], te, tones0[-1] + 12 if tones0[-1] < 72 else tones0[-1], 2.5, .8)
     # ---- ambience ----
     Ttot = len(plan) * B + 4
     for a in cfg.get('amb', []):
@@ -234,9 +288,9 @@ def build(cfg):
         M.buses['break'] = np.array([lp(c, 6000) for c in x])
     if cfg['keys'] in ('guitar', 'nylon'): M.buses['keys'] = chorus(M.buses['keys'], mix=.3)
     if 'mel' in M.buses: M.buses['mel_d'] = pingpong(M.buses['mel'], 3 * st, .3)
-    levels = {'keys': 1., 'pad': .8, 'mel': 1.1, 'mel_d': .35, 'break': .75, 'sub': .7, 'amb': 1., 'fx': .7, 'glock': 1.1, 'harp': .9, 'drums': .8}
+    levels = {'perc': .9, 'keys': 1., 'pad': .8, 'mel': 1.1, 'mel_d': .35, 'break': .75, 'sub': .7, 'amb': 1., 'fx': .7, 'glock': 1.1, 'harp': .9, 'drums': .8}
     levels.update(cfg.get('levels', {}))
-    sends = {'keys': .3, 'pad': .5, 'mel': .35, 'glock': .45, 'harp': .4, 'break': .05, 'fx': .25, 'amb': .1}
+    sends = {'perc': .25, 'keys': .3, 'pad': .5, 'mel': .35, 'glock': .45, 'harp': .4, 'break': .05, 'fx': .25, 'amb': .1}
     out = np.zeros((2, M.n)); send = np.zeros((2, M.n))
     for k, x in M.buses.items(): out += x * levels.get(k, 1.); send += x * levels.get(k, 1.) * sends.get(k, 0.)
     ir = reverb_ir(cfg.get('verb', 2.2), cfg.get('decay', .55)); out += np.array([ss.fftconvolve(send[c], ir[c])[:M.n] for c in range(2)])
@@ -256,7 +310,9 @@ def build(cfg):
         out = np.array([np.interp(t - d - 60, t, c) for c in out]); out = np.array([lp(c, 7000) for c in out])
     nz = np.nonzero(np.abs(out).max(0) > 1e-4)[0]; out = out[:, :nz[-1] + int(.3 * SR)]
     f = int(1.5 * SR); out[:, -f:] *= np.linspace(1, 0, f) ** 2
-    out = out / np.abs(out).max() * 1.15; out = np.tanh(out) / np.tanh(1.15); out = out / np.abs(out).max() * .89
+    body = int(len(plan) * B * SR)          # set loudness from the song itself, not the final hit
+    out = out / np.abs(out[:, :body]).max() * 1.15; out = np.tanh(out) / np.tanh(1.15) * .89
+    a_ = np.abs(out); out = np.where(a_ > .93, np.sign(out) * (.93 + .05 * np.tanh((a_ - .93) / .05)), out)   # gentle limiter for the ending
     name = cfg['file']
     wavfile.write(f'{name}.wav', SR, (out.T * 32767).astype(np.int16))
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', f'{name}.wav', '-b:a', '320k', f'{name}.mp3'], check=True)

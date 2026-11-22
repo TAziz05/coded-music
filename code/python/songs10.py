@@ -147,8 +147,12 @@ def kaze_style():
                 if sec == 'chorus': piano(M, 'piano', t0 + S(s), nn + 12, L * st, .25, pan=.2)
         if sec == 'bridge':   # piano takes a flowing run up the scale
             for k, nn in enumerate([69, 71, 73, 76, 78, 80, 81, 83, 85, 88, 85, 83, 81, 80, 78, 76]): piano(M, 'piano', t0 + S(k), nn + (i % 2) * 2, st * 2, .32, pan=.2)
-        if sec == 'outro' and i == n - 1:
-            for j, nn in enumerate([45, 57, 64, 68, 71, 73, 76, 80]): piano(M, 'piano', t0 + B + j * .05, nn, 4., .45)
+        if sec == 'outro' and i == n - 1:   # soulful ending: a held chord struck together, organ swell, the vocal's last note
+            te = t0 + B
+            for nn in (33, 45, 57, 64, 68, 71, 73, 76): piano(M, 'piano', te, nn, 4., .42)
+            for nn in (57, 64, 68, 71): organ(M, te, nn + 12, 3.5, .5, pan=.25)
+            for j, c in enumerate((64, 68, 71)): violins(M, te, c + 12, 3.5, .35, att=.4, pan=(j - 1) * .3)
+            voice(M, 'vox', te, 76, 3., .7); fbass(M, te, 33, 3., .6)
     M.buses['vox_d'] = pingpong(M.buses['vox'], 3 * st, .25)
     render(M, 'Breeze_in_the_Alley_98bpm', sends={'piano': .25, 'keys': .3, 'organ': .3, 'str': .4, 'vox': .3, 'drums': .05},
            levels={'piano': 1., 'keys': .8, 'organ': .6, 'str': .7, 'vox': 1.1, 'vox_d': .3, 'bass': .85, 'drums': .8}, duck=(), fade=0.)

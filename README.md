@@ -71,6 +71,12 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Golden Hour Groove | 114 BPM | Disco-pop with brass hooks and strings (in the style of BTS) | Feel-good highlights |
 | Blue Spark Runaway | 160 BPM | Emo pop-punk with dreamy synths (in the style of TXT) | Clutches, comebacks |
 | Off the Lines | 150 BPM | Hype rage trap: distorted synth riff, heavy 808, hi-hat rolls, beat switch (in the style of CORTIS) | Hype plays, kill montages |
+| Breeze in the Alley | 98 BPM | Piano-led J-pop soul with jazzy chords, gospel organ and trap touches (in the style of Fujii Kaze) | Chill highlights, story edits |
+| Golden Hour Breaks | 172 BPM | Steady breakcore with funk guitar and brass (BTS style) | Upbeat montages |
+| Blue Spark Breaks | 176 BPM | Steady breakcore with dreamy synths and crunchy lead guitar (TXT style) | Emotional clutches |
+| Off the Lines Breaks | 170 BPM | Steady breakcore with a rage-synth riff and 808 (CORTIS style) | Hype edits |
+| Lanterns and Thunder Drums | 168 BPM | East Asian-themed steady breakcore: koto-style plucks, bamboo-flute lead, taiko, gong | Dramatic moments |
+| Breeze Breaks | 172 BPM | Steady breakcore with jazzy piano and a singing synth (Fujii Kaze style) | Smooth highlight reels |
 
 ```
 pip install numpy scipy
@@ -83,7 +89,8 @@ python songs6.py 16 # 16 = Shattered Overture
 python songs7.py 17 # 17 = Paper Sky
 python seasons.py all  # the nine steady breakcores (engine: breakcore_engine.py)
 python songs9.py bts  # bts = Golden Hour Groove, txt = Blue Spark Runaway
-python songs10.py cortis  # Off the Lines
+python songs10.py cortis  # Off the Lines (kaze = Breeze in the Alley)
+python styles_breakcore.py all  # Golden Hour Breaks, Blue Spark Breaks, Off the Lines Breaks, Lanterns and Thunder Drums, Breeze Breaks
 ```
 
 ## Re-recording

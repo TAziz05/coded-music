@@ -43,6 +43,8 @@ SONGS = {
            [(0, 82, 4), (4, 86, 4), (8, 89, 8), (16, 87, 4), (20, 86, 4), (24, 82, 8)], [(0, 79, 4), (4, 82, 4), (8, 87, 8), (16, 86, 8), (24, 84, 8)]]),
 }
 
+for _c in SONGS.values(): _c.setdefault('ending', 'roll')   # these were released with the rolled-chord ending
+
 if __name__ == '__main__':
     names = list(SONGS) if sys.argv[1] == 'all' else sys.argv[1:]
     for k in names: build(SONGS[k])
