@@ -20,6 +20,7 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ("Ringworld Vigil", "Halo style · chant & strings", ("#0b1a12", "#1f4a36", "#7fb39a", "#06100b", "#d9f2e6")),
     ("Boundless Run", "155 BPM · upbeat rock, Sonic style", ("#0a2a8c", "#1f5fe0", "#6fc3ff", "#071d60", "#ffd400")),
     ("Morning Over the Valley", "90 BPM · orchestral waltz", ("#3a2a12", "#c27a2c", "#ffd9a0", "#2a1c08", "#fff6e0")),
+    ("Shattered Overture", "orchestral → breakcore", ("#14060a", "#5a1024", "#d23b4f", "#0a0306", "#ffe6c7")),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 
