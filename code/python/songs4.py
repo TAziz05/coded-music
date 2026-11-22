@@ -1,5 +1,5 @@
 """More game-themed originals.
-python songs4.py 13  -> Boundless Run   (Sonic pop-punk style, like Sonic Unleashed's theme)
+python songs4.py 13  -> Boundless Run   (Sonic Unleashed theme style, upbeat rock with clean guitars)
 python songs4.py 14  -> Ringworld Vigil (Halo style: monk chant, then strings, guitars and drums)"""
 import sys
 from songs import sections_to_bars, ride, piano
@@ -7,26 +7,45 @@ from songs3 import render2, bars8, play, strings, stacc, timpani
 from instruments2 import *
 
 # ---------- rock instruments ----------
-def cab(x):
-    x = hp(x, 90); x = lp(x, 5200, 4); return x + .4 * bp(x, 1800, 3200)
+def cab(x, warm=False):
+    x = hp(x, 90); x = lp(x, 3800 if warm else 5200, 4); return x + (.2 if warm else .4) * bp(x, 1800, 3200)
 
-def dist_gtr(M, bus, t, notes, dur, vol, mute=False, pan=0., gain=9.):
+def dist_gtr(M, bus, t, notes, dur, vol, mute=False, pan=0., gain=9., warm=False):
     """Distorted guitar: plucked strings -> heavy saturation -> speaker 'cab'. mute = palm-muted chug."""
     L = int((dur + .25) * SR); y = np.zeros(L)
     for j, n in enumerate(notes):
         k = ks(mtof(n), dur, .35 if mute else .55, .985 if mute else .9985); o = int(j * .004 * SR)
         y[o:o + len(k)] += k[:L - o]
-    y = cab(np.tanh(y * gain) * .5)
+    y = cab(np.tanh(y * gain) * .5, warm)
     if mute: y *= np.exp(-tarr(L) / .09)
     M.add(bus, t, y * vol, pan=pan)
 
 def power(root): return [root, root + 7, root + 12]
 
-def lead_gtr(M, t, n, dur, vol, pan=0.):
+def clean_gtr(M, bus, t, notes, dur, vol, mute=False, pan=0.):
+    """Clean electric guitar chord: plucked strings strummed a few ms apart, no distortion."""
+    L = int((dur + .25) * SR); y = np.zeros(L)
+    for j, n in enumerate(notes):
+        k = ks(mtof(n), dur, .4 if mute else .6, .99 if mute else .998); o = int(j * .007 * SR)
+        y[o:o + len(k)] += k[:L - o] * (1 - .05 * j)
+    y = lp(hp(y, 90), 7500)
+    if mute: y *= np.exp(-tarr(L) / .14)
+    M.add(bus, t, y * vol, pan=pan)
+
+def chord_shape(root, minor):
+    return [root, root + 7, root + 12, root + (15 if minor else 16), root + 19]
+
+def clean_lead(M, t, n, dur, vol, pan=0.):
+    N = int((dur + .2) * SR); y = ks(mtof(n), dur + .05, .7, .9995)[:N]
+    tt = tarr(len(y)); vib = 1 + .004 * np.clip((tt - .25) / .2, 0, 1) * np.sin(2 * np.pi * 5.5 * tt)
+    idx = np.clip(np.cumsum(vib), 0, len(y) - 1); y = np.interp(idx, np.arange(len(y)), y)
+    M.add('lead', t, lp(hp(y, 150), 8000) * vol, pan=pan)
+
+def lead_gtr(M, t, n, dur, vol, pan=0., gain=6., warm=False):
     N = int((dur + .2) * SR); y = ks(mtof(n), dur + .05, .6, .9993)[:N]
     tt = tarr(len(y)); vib = 1 + .004 * np.clip((tt - .25) / .2, 0, 1) * np.sin(2 * np.pi * 5.5 * tt)
     idx = np.clip(np.cumsum(vib), 0, len(y) - 1); y = np.interp(idx, np.arange(len(y)), y)
-    y = cab(np.tanh(y * 6) * .5); M.add('lead', t, y * vol, pan=pan)
+    y = cab(np.tanh(y * gain) * .5, warm); M.add('lead', t, y * vol, pan=pan)
 
 def monk(M, t, n, dur, vol, pan=0.):
     """Male choir voice singing 'oh': a few slightly detuned saws through vowel formants, slow swell."""
@@ -39,9 +58,9 @@ def monk(M, t, n, dur, vol, pan=0.):
     M.add('choir', t, y * e * vol * .12, pan=pan)
 
 # =====================================================================
-# 13) BOUNDLESS RUN — 155 BPM, E major pop-punk (Sonic style)
+# 13) BOUNDLESS RUN — 155 BPM, E major upbeat rock with clean guitars (Sonic style)
 # =====================================================================
-def boundless_run():
+def boundless_run(tone='crunch'):
     bpm = 155; st = 60 / bpm / 4; B = 16 * st
     V = [('E', 40), ('B', 47), ('C#m', 37), ('A', 45)]; PRE = [('A', 45), ('B', 47), ('C#m', 37), ('B', 47)]
     CH = [('E', 40), ('B', 47), ('C#m', 37), ('A', 45), ('E', 40), ('B', 47), ('A', 45), ('B', 47)]
@@ -53,26 +72,28 @@ def boundless_run():
     secs = [('intro', 4), ('verse', 8), ('pre', 4), ('chorus', 8), ('verse', 8), ('pre', 4), ('chorus', 8), ('bridge', 8), ('chorus', 8), ('outro', 4)]
     bars = sections_to_bars(secs); M = Mix(len(bars) * B + 3)
     ch_count = 0
+    G = clean_gtr if tone == 'clean' else (lambda *a, **k: dist_gtr(*a, gain=3.2, warm=True, **k))
+    LD = clean_lead if tone == 'clean' else (lambda *a, **k: lead_gtr(*a, gain=2.8, warm=True, **k))
     for b, (sec, i, n) in enumerate(bars):
         t0 = b * B
         if sec == 'chorus' and i == 0: ch_count += 1
         key = 1 if (sec == 'chorus' and ch_count == 3) or sec == 'outro' else 0   # last chorus jumps up a key
         prog = {'verse': V, 'intro': V, 'pre': PRE, 'chorus': CH, 'bridge': BR, 'outro': CH}[sec]
         name, root = prog[i % len(prog)]; root += key; r2 = root if root < 44 else root - 12
-        pc = power(r2 + 12)
+        pc = chord_shape(r2 + 12, name.endswith('m')) if tone == 'clean' else power(r2 + 12)
         # guitars
         if sec in ('verse',):
-            for k in range(8): dist_gtr(M, 'gtrL', t0 + k * 2 * st, pc[:2], 2 * st * .9, .32, mute=True, pan=-.6)
-            for k in range(8): dist_gtr(M, 'gtrR', t0 + k * 2 * st + .006, pc[:2], 2 * st * .9, .32, mute=True, pan=.6)
+            for k in range(8): G(M, 'gtrL', t0 + k * 2 * st, (pc[:3] if tone == 'clean' else pc[:2]), 2 * st * .9, .3, mute=True, pan=-.6)
+            for k in range(8): G(M, 'gtrR', t0 + k * 2 * st + .006, (pc[:3] if tone == 'clean' else pc[:2]), 2 * st * .9, .3, mute=True, pan=.6)
         elif sec == 'bridge':
             if i % 2 == 0:
-                dist_gtr(M, 'gtrL', t0, pc, 2 * B * .95, .3, pan=-.6); dist_gtr(M, 'gtrR', t0 + .008, pc, 2 * B * .95, .3, pan=.6)
+                G(M, 'gtrL', t0, pc, 2 * B * .95, .3, pan=-.6); G(M, 'gtrR', t0 + .008, pc, 2 * B * .95, .3, pan=.6)
         elif sec != 'outro' or i < n - 1:
             for s, L in ((0, 3), (3, 3), (6, 2), (8, 3), (11, 3), (14, 2)) if sec != 'intro' or i >= 2 else ((0, 8), (8, 8)):
-                dist_gtr(M, 'gtrL', t0 + s * st, pc, L * st * .92, .3, pan=-.6)
-                dist_gtr(M, 'gtrR', t0 + s * st + .007, pc, L * st * .92, .3, pan=.6)
+                G(M, 'gtrL', t0 + s * st, pc, L * st * .92, .3, pan=-.6)
+                G(M, 'gtrR', t0 + s * st + .007, pc, L * st * .92, .3, pan=.6)
         if sec == 'outro' and i == n - 1:
-            dist_gtr(M, 'gtrL', t0, power(40 + key + 12), 3., .34, pan=-.6); dist_gtr(M, 'gtrR', t0 + .01, power(40 + key + 12), 3., .34, pan=.6)
+            G(M, 'gtrL', t0, (chord_shape(40 + key + 12, False) if tone == 'clean' else power(40 + key + 12)), 3., .34, pan=-.6); G(M, 'gtrR', t0 + .01, (chord_shape(40 + key + 12, False) if tone == 'clean' else power(40 + key + 12)), 3., .34, pan=.6)
             crash(M, t0, .8); kick(M, t0, 1.)
             continue
         # bass
@@ -99,14 +120,17 @@ def boundless_run():
                 for s, nn in zip(range(10, 16), (52, 52, 48, 48, 43, 43)): tom(M, t0 + s * st, nn, .6, pan=.3 - (s - 10) * .12)
         # lead melody (the 'vocal' line, played on lead guitar)
         mel = {'verse': vm, 'pre': pm, 'chorus': cm}.get(sec)
-        if mel: play(mel, i, t0, st, lambda t, nn, d: lead_gtr(M, t, nn + key, d * .95, .42, pan=.1))
+        if mel: play(mel, i, t0, st, lambda t, nn, d: LD(M, t, nn + key, d * .95, .42, pan=.1))
         if sec == 'chorus':
-            play(mel, i, t0, st, lambda t, nn, d: lead_gtr(M, t, nn + key - 12, d * .95, .2, pan=-.15))
+            play(mel, i, t0, st, lambda t, nn, d: LD(M, t, nn + key - 12, d * .95, .2, pan=-.15))
         if sec == 'bridge' and i % 2 == 0:
-            lead_gtr(M, t0, [80, 81, 83, 82][i // 2 % 4] - 1 + key, 2 * B * .9, .38)
-    M.buses['lead_d'] = pingpong(M.buses['lead'], 3 * st, .2)
-    render2(M, 'Boundless_Run_155bpm', sends={'lead': .15, 'drums': .05, 'fx': .2},
-            levels={'gtrL': .9, 'gtrR': .9, 'lead': 1., 'lead_d': .25, 'bass': .9, 'drums': 1., 'fx': .7}, duck=(), fade=0.)
+            LD(M, t0, [80, 81, 83, 82][i // 2 % 4] - 1 + key, 2 * B * .9, .38)
+    if tone == 'clean': M.buses['gtrL'] = chorus(M.buses['gtrL'], mix=.3); M.buses['gtrR'] = chorus(M.buses['gtrR'], mix=.3)
+    lv = {'gtrL': 1.9, 'gtrR': 1.9, 'lead': 3.2, 'lead_d': .7, 'bass': .8, 'drums': .7, 'fx': .6} if tone == 'clean' else \
+         {'gtrL': 2.2, 'gtrR': 2.2, 'lead': 2.2, 'lead_d': .5, 'bass': .85, 'drums': .75, 'fx': .6}
+    M.buses['lead_d'] = pingpong(M.buses['lead'], 3 * st, .25)
+    render2(M, 'Boundless_Run_155bpm_' + tone, sends={'lead': .25, 'gtrL': .15, 'gtrR': .15, 'drums': .05, 'fx': .2},
+            levels=lv, duck=(), fade=0.)
 
 # =====================================================================
 # 14) RINGWORLD VIGIL — monk chant at 72 BPM, then strings/guitars/drums at 120 BPM (Halo style)
@@ -173,4 +197,4 @@ def ringworld_vigil():
             levels={'choir': 1., 'str': .85, 'brass': .9, 'gtrL': .7, 'gtrR': .7, 'bass': .8, 'drums': .9, 'fx': .7}, duck=(), fade=3.)
 
 if __name__ == '__main__':
-    {'13': boundless_run, '14': ringworld_vigil}[sys.argv[1]]()
+    {'13': boundless_run, '13c': lambda: boundless_run('clean'), '14': ringworld_vigil}[sys.argv[1]]()

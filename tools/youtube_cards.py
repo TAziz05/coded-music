@@ -18,6 +18,7 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ("Homebase Rising", "112 BPM · orchestral adventure", ("#1a1033", "#4b2a7a", "#e0742b", "#100820", "#ffc640")),
     ("Determined Steps", "120 BPM · solo piano", ("#000000", "#14141c", "#2a2a3a", "#000000", "#ff2a2a")),
     ("Ringworld Vigil", "Halo style · chant & strings", ("#0b1a12", "#1f4a36", "#7fb39a", "#06100b", "#d9f2e6")),
+    ("Boundless Run", "155 BPM · upbeat rock, Sonic style", ("#0a2a8c", "#1f5fe0", "#6fc3ff", "#071d60", "#ffd400")),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 
