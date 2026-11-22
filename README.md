@@ -31,6 +31,21 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 | Mythic Battle | Daily Poké Catch | Mythic-only questions |
 | Town | Daily Poké Catch | The Endless run summary |
 
+## YouTube gameplay tracks
+
+Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3, each about 2 to 2.5 minutes with a fade-out). These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments and `code/python/songs.py` holds the songs.
+
+| Song | Tempo | Feel | Good for |
+|---|---|---|---|
+| Victory Rush | 128 BPM | Upbeat, heroic brass | Wins, highlights, montages |
+| Storm Closing | 140 BPM | Tense, minor key, driving | Late-game fights |
+| Lobby Loop | 102 BPM | Chill electric-piano groove | Intros, looting, commentary |
+
+```
+pip install numpy scipy
+cd code/python && python songs.py 1   # 1 = Victory Rush, 2 = Storm Closing, 3 = Lobby Loop (needs ffmpeg)
+```
+
 ## Re-recording
 
 ```
