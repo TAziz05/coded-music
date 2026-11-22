@@ -16,6 +16,8 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ("Frosty Podium", "150 BPM · winter games style", ("#0d3b6e", "#3f8fd6", "#d6f0ff", "#0a2c52", "#ffe066")),
     ("Coastal Route", "132 BPM · GBA route style", ("#0b5d7a", "#22a6b3", "#f4d58d", "#083f53", "#ffde59")),
     ("Homebase Rising", "112 BPM · orchestral adventure", ("#1a1033", "#4b2a7a", "#e0742b", "#100820", "#ffc640")),
+    ("Determined Steps", "120 BPM · solo piano", ("#000000", "#14141c", "#2a2a3a", "#000000", "#ff2a2a")),
+    ("Ringworld Vigil", "Halo style · chant & strings", ("#0b1a12", "#1f4a36", "#7fb39a", "#06100b", "#d9f2e6")),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 

@@ -1,5 +1,5 @@
 """Game-themed songs: original melodies written in the *style* of each game's soundtrack and sound hardware.
-python songs3.py 8   -> Determined Steps   (Undertale style: chiptune pulses + piano)
+python songs3.py 8   -> Determined Steps   (Undertale style: solo piano)
 python songs3.py 9   -> Channel Plaza      (Wii menu style: bossa nova, e-piano, marimba)
 python songs3.py 10  -> Frosty Podium      (Mario & Sonic Winter Games DS style: fanfare, sleigh bells, DS crunch)
 python songs3.py 11  -> Coastal Route      (Pokemon Ruby/Sapphire style: GBA trumpet lead, 18 kHz crunch)
@@ -76,7 +76,8 @@ def choir(M, t, n, dur, vol):
 # 8) DETERMINED STEPS — 128 BPM, D minor (Undertale style)
 # =====================================================================
 def determined_steps():
-    bpm = 128; st = 60 / bpm / 4; B = 16 * st
+    """All-piano version: left hand bass + broken chords, right hand melody (octaves in the last section)."""
+    bpm = 120; st = 60 / bpm / 4; B = 16 * st
     CA = [([62, 65, 69], 38), ([58, 62, 65], 46), ([60, 64, 67], 48), ([57, 61, 64], 45)] * 2
     CB = [([55, 58, 62], 43), ([62, 65, 69], 38), ([58, 62, 65], 46), ([57, 61, 64], 45), ([53, 57, 60], 41), ([60, 64, 67], 48), ([58, 62, 65], 46), ([57, 61, 64], 45)]
     A = bars8([[74,-1,77,74,76,-1,72,-1],[74,-1,70,-1,72,74,-1,77],[79,-1,77,76,-1,72,-1,76],[76,-1,-1,73,-1,-1,69,-1],
@@ -85,28 +86,26 @@ def determined_steps():
                 [72,-1,-1,77,-1,-1,81,-1],[79,-1,77,76,-1,-1,72,-1],[74,-1,77,-1,79,-1,82,-1],[81,-1,-1,-1,-1,-1,0,0]])
     secs = [('intro', 4), ('A', 16), ('B', 16), ('A2', 16), ('outro', 4)]
     bars = sections_to_bars(secs); M = Mix(len(bars) * B)
+    P = lambda t, nn, d, v, pan=0.: piano(M, 'piano', t, nn, d, v, pan=pan)
     for b, (sec, i, n) in enumerate(bars):
-        t0 = b * B
-        ch, root = (CB if sec == 'B' else CA)[i % 8]
+        t0 = b * B; ch, root = (CB if sec == 'B' else CA)[i % 8]
+        lo = root - 12 if root > 40 else root
         if sec in ('intro', 'outro'):
-            piano(M, 'piano', t0, root - 12 if root > 40 else root, B * 1.2, .7)
-            for q in range(4): piano(M, 'piano', t0 + q * 4 * st, ch[[0, 1, 2, 1][q]], 4 * st * 1.5, .4)
-            play(A, i, t0, st, lambda t, nn, d: piano(M, 'piano', t, nn, d, .55))
-            if sec == 'outro' and i == n - 1: piano(M, 'piano', t0 + B, 50, 3., .6); piano(M, 'piano', t0 + B, 62, 3., .5)
+            P(t0, lo, B * 1.1, .7, -.3)
+            for q in range(4): P(t0 + q * 4 * st, ch[[0, 1, 2, 1][q]], 4 * st * 1.5, .38)
+            play(A, i, t0, st, lambda t, nn, d: P(t, nn, d, .5, .2))
+            if sec == 'outro' and i == n - 1:
+                for nn, v in ((38, .6), (50, .5), (62, .45), (65, .4), (69, .4), (74, .45)): P(t0 + B, nn, 3.5, v)
             continue
+        # left hand: bass octave on 1 and 3, broken chord 8ths in between
+        P(t0, lo, 8 * st * 1.2, .65, -.3); P(t0 + 8 * st, lo + (7 if sec != 'B' else 12), 8 * st * 1.2, .5, -.3)
+        broken = [ch[0], ch[1], ch[2], ch[1]] if sec != 'A2' else [ch[0], ch[2], ch[1] + 12, ch[2]]
+        for k in range(8): P(t0 + k * 2 * st, broken[k % 4] - (12 if sec == 'B' else 0), 2 * st * 1.6, .28 if k % 2 else .34, -.1)
         mel = Bm if sec == 'B' else A
-        play(mel, i, t0, st, lambda t, nn, d: chip(M, 'lead', t, nn, d * .92, .9, pw=.25), up=12 if sec == 'A2' else 0)
-        if sec == 'A2': play(mel, i, t0, st, lambda t, nn, d: chip(M, 'harm', t, nn - 3, d * .9, .45, pw=.5, pan=.3, vib=False))
-        for k in range(8): tribass(M, t0 + k * 2 * st, root - 12 + (12 if k % 2 else 0), 2 * st * .9, 1.)
-        for k in range(16): chip(M, 'arp', t0 + k * st, ch[k % 3] + 12, st * .7, .25, pw=.125, pan=-.35, vib=False)
-        for s in (0, 6, 8): chipkick(M, t0 + s * st)
-        chipsnare(M, t0 + 4 * st); chipsnare(M, t0 + 12 * st)
-        for k in range(0, 16, 2): chiphat(M, t0 + k * st, .7 if k % 4 else .4)
-        if i % 4 == 3:
-            for s in (13, 14, 15): chipsnare(M, t0 + s * st, .7)
-    M.buses['lead_d'] = pingpong(M.buses['lead'], 3 * st, .25)
-    render2(M, 'Determined_Steps_128bpm', sends={'piano': .3, 'lead': .12, 'arp': .1},
-            levels={'piano': 1., 'lead': 1., 'lead_d': .3, 'harm': .8, 'arp': .7, 'bass': .9, 'drums': .9})
+        play(mel, i, t0, st, lambda t, nn, d: P(t, nn, d, .62, .2))
+        if sec == 'A2': play(mel, i, t0, st, lambda t, nn, d: P(t, nn + 12, d, .38, .3))
+        if sec == 'B' and i >= 8: play(mel, i, t0, st, lambda t, nn, d: P(t, nn - 12, d, .3, .1))
+    render2(M, 'Determined_Steps_piano_120bpm', sends={'piano': .32}, levels={'piano': 1.}, fade=0.)
 
 # =====================================================================
 # 9) CHANNEL PLAZA — 116 BPM, F major bossa nova (Wii menu style)
