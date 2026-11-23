@@ -220,7 +220,7 @@ def build(cfg):
         play_keys(M, cfg['keys'], t0, st, tones, root, kv, half)
         if cfg.get('pad') and half == 0 and not (sec == 'outro' and end == 'dropout' and i >= 4):
             for nn in tones[1:4]: supersaw(M, 'pad', t0, nn + 12, 2 * B, cfg['pad'] * (1.4 if sec in ('intro', 'outro', 'half') else 1.), cut=cfg.get('padcut', 1400), a=.5, r=.8, voices=3)
-        mel = cfg['melody'][ci]
+        mel = (cfg['melodyB'] if cfg.get('melodyB') and sec in ('dropB', 'outro') else cfg['melody'])[ci]
         out_mel = sec == 'outro' and full_out and (end == 'tapestop' or i < 2)
         if half == 0 and (sec in ('dropA', 'dropB', 'half') or (sec == 'intro' and i >= 4) or out_mel):
             mk = cfg['mel'] if sec not in ('dropB', 'outro') else cfg.get('melB', cfg['mel'])

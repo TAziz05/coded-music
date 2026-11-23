@@ -10,7 +10,7 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
 | Folder | What it is |
 |---|---|
-| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 97 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
+| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 117 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
 | `videos/` | The same songs as 1080p videos with a title card, ready to upload to YouTube. |
 | `cards/` | The title card images. |
 | `loops/` | One seamless loop of each song (see `loops/music.json` for loop lengths). |
@@ -21,7 +21,7 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
 ## The songs
 
-8 game songs, plus 97 YouTube gameplay tracks (below): 105 songs in all.
+8 game songs, plus 117 YouTube gameplay tracks (below): 125 songs in all.
 
 | Song | Game | Plays during |
 |---|---|---|
@@ -38,7 +38,7 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
 `loop-lab/index.html` is a song maker that runs in the browser: build songs from sections with chords, a melody, drums and sound effects (built-in coded effects or your own uploads), load TAziz322's songs and tweak them, and save songs as code. See [`loop-lab/GUIDE.md`](loop-lab/GUIDE.md) for how to use it. `loop-lab/tools/make_presets.py` rebuilds the page from `template.html` with the built-in songs.
 
-## YouTube gameplay tracks (97 songs)
+## YouTube gameplay tracks (117 songs)
 
 Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3). They run from 1 to about 2½ minutes; most are around 1½ minutes. These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments, and the songs live in the other files in `code/python/` (see the commands below). Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
 
@@ -141,6 +141,26 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Bitcrushed Daydream | 150 BPM | Glitchcore: crushed, stuttering synths over emo guitar verses | Montages, edits |
 | Static Tears | 140 BPM | Sad acoustic verses that blow up into a huge distorted chorus | Emotional edits |
 | Nightcore Rush | 172 BPM | Nightcore: sped-up trance energy, gated supersaws, four on the floor | Hype montages |
+| Menu Drift | 100 BPM | Calm, steady background music with soft bells and pads | Commentary, menus, chill streams |
+| Skyscraper Sprint | 150 BPM | Fast city route with synth lead and trumpet (in the style of Pokémon Gen 5) | Fast-paced clips |
+| Red 40 Breaks | 178 BPM | Steady breakcore with glitches, chipmunk chops and cartoon sound effects | Chaotic montages |
+| Aqua Tomorrow | 116 BPM | Optimistic late-2000s pop-rock with glossy bells and bubbles (Meet the Robinsons / Frutiger Aero style) | Happy highlights, intros |
+| Aqua Tomorrow Breaks | 172 BPM | Steady breakcore with plucks, bells and bubbles | Upbeat montages |
+| Pixel Heart DnB | 174 BPM | Hyper drum & bass with chipmunk hooks and supersaw chords | Fast montages |
+| Midnight Drift | 130 BPM | Drift phonk: cowbell melody, distorted 808, triplet hats, dark shouts | Edits, montages, clutch plays |
+| Neon Horizon | 104 BPM | Synthwave: gated snares, 16th arpeggios, big 80s saw lead | Driving, retro edits |
+| Turbo Corner | 156 BPM | Eurobeat: racing lead, supersaw stabs, offbeat octave bass | Fast rotations, chases |
+| Checkerboard Skank | 168 BPM | Ska: offbeat guitar, horn section, fast walking bass | Funny, upbeat clips |
+| Island Time | 76 BPM | Reggae: one-drop drums, skank and organ bubble, melodica-style lead | Chill gameplay |
+| Log Drum Sunset | 112 BPM | Amapiano: log drum bass, shakers, jazzy piano and sax | Chill, groovy clips |
+| Holler Hoedown | 150 BPM | Bluegrass: banjo rolls, fiddle, boom-chuck guitar | Funny clips, farming maps |
+| Tokyo Sunset Drive | 112 BPM | City pop: Rhodes chords, slap bass, funky guitar, brass | Chill highlights |
+| Squeak Sprint | 140 BPM | Jersey club: bouncing kicks, bed squeaks, vocal chops | Hype edits |
+| Indigo Fields | 86 BPM | Warm alt-folk hip-hop with acoustic guitar and muted trumpet (in the style of RM’s solo work) | Chill, reflective clips |
+| Starlit Orbit | 126 BPM | Anthemic pop-rock with driving piano and a soaring chorus (in the style of Jin’s solo work) | Big wins, highlights |
+| Street Neuron | 100 BPM | Old-school funky hip-hop with horns and scratches; ends with a tape stop (in the style of j-hope’s solo work) | Dance emotes, upbeat clips |
+| Velvet Layover | 76 BPM | Late-night jazzy R&B with Rhodes and muted trumpet (in the style of V’s solo work) | Chill streams, night clips |
+| Infinite Series | 120 BPM | A song built from math: pi and e as melodies, Fibonacci bass, Euclidean drums, prime-number bells, a Zeno ending | Smart plays, building, puzzles |
 
 ```
 pip install numpy scipy

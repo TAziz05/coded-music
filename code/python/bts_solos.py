@@ -42,7 +42,7 @@ def big_hit_piano(M, t0, st, S, i, n, tones, root):   # one big band hit, then t
     for c in tones[:4]: piano(M, 'keys', t0 + 8 * st, c + 12, 3.5, .28)
 def acapella(M, t0, st, S, i, n, tones, root):   # the band drops out; three vocal chops finish it
     if i: return
-    for s, c in ((0, tones[2]), (3, tones[1]), (6, tones[0])): chopv(M, t0 + S(s), c + 12, st * 2.5, 1., 12)
+    for s, c in ((0, tones[2]), (3, tones[1]), (6, tones[0])): chopv(M, t0 + S(s), c + 12, st * 2.5, .6, 12)
 
 def solo(file, title, bpm, ch, chB, V, C, kv, kc, drums, bass, lv, lc, ending, swing=0., verb=2.2, levels=None, intro=None,
          flags=None, flagsC=None, dV=None, bV=None, outro=None, fadeout=None, tapestop=False, gap=None):
@@ -72,11 +72,11 @@ SONGS = {
    [[83,-1,-1,81,-1,78,-1,81],[81,-1,-1,-1,76,-1,-1,-1],[78,-1,81,83,-1,85,-1,86],[86,-1,-1,-1,-1,-1,0,0]],
    ['pianoriff', 'guitar'], ['pianoriff', 'guitar', 'strings', 'pad'], 'rock', 'octave', 'voice', 'voice+synth', big_hit_piano, dV='halfpop', verb=2.6),
  # SUGA / Agust D (D-Day, 'Haegeum', 'Daechwita'): hard hip-hop over Korean royal-procession instruments
- 'suga': solo('Royal_Procession', 'Royal Procession', 92, ['Em', 'C', 'Am', 'B7'], ['Em', 'C', 'Am', 'B7'],
+ 'suga': solo('Royal_Procession', 'Royal Procession', 102, ['Em', 'C', 'Am', 'B7'], ['Em', 'C', 'Am', 'B7'],
    [[76,-1,-1,79,-1,76,74,-1],[72,-1,-1,-1,71,-1,-1,-1],[69,-1,72,76,-1,74,-1,72],[71,-1,-1,-1,-1,-1,0,0]],
    [[83,-1,83,-1,81,79,-1,81],[79,-1,-1,76,-1,-1,0,0],[81,-1,79,76,-1,74,-1,72],[71,-1,-1,-1,-1,-1,0,0]],
-   ['gayageum', 'stabs'], ['gayageum', 'stabs', 'strings'], 'trap', 'heavy808', 'haegeum', 'reed+haegeum', gong_stop,
-   flags=dict(janggu=True), flagsC=dict(janggu=True, kkwaeng=True), intro=['gayageum'],
+   ['gayageum', 'stabs'], ['gayageum', 'stabs', 'horns', 'strings'], 'trap', 'heavy808', 'haegeum', 'reed+haegeum+brass2', gong_stop,
+   flags=dict(janggu=True, kkwaeng=True), flagsC=dict(janggu=True, kkwaeng=True, hey=True, heystep=12), intro=['gayageum'], levels={'drums': 1.25, 'sub': 1.15},
    outro=dict(keys=['gayageum'], drums='trap', bass='heavy808', lead='haegeum', mel=[[76,-1,-1,79,-1,76,74,-1],[72,-1,-1,-1,71,-1,-1,-1],[0] * 8, [0] * 8], janggu=True)),
  # j-hope (Jack in the Box / HOPE ON THE STREET): old-school funky hip-hop for dancing, horn stabs and scratches
  'jhope': solo('Street_Neuron', 'Street Neuron', 100, ['Gm7', 'C7', 'Gm7', 'D7'], ['Ebmaj7', 'D7', 'Gm7', 'C7'],
@@ -88,7 +88,8 @@ SONGS = {
  'jimin': solo('Midnight_Mirage', 'Midnight Mirage', 118, ['F#m', 'D', 'A', 'E'], ['D', 'E', 'C#m', 'F#m'],
    [[73,-1,-1,76,-1,73,-1,71],[69,-1,-1,-1,66,-1,-1,-1],[69,-1,-1,73,-1,76,-1,78],[76,-1,-1,-1,-1,-1,0,0]],
    [[78,-1,-1,76,-1,73,-1,76],[76,-1,-1,73,-1,71,-1,-1],[73,-1,76,78,-1,81,-1,80],[78,-1,-1,-1,-1,-1,0,0]],
-   ['synthwave'], ['synthwave', 'ep'], 'fourfloor', 'synth8', 'falsetto', 'falsetto+saw80s', None, dV='halfpop', fadeout=9., verb=2.8, gap=3.),
+   ['synthwave'], ['synthwave', 'ep'], 'fourfloor', 'synth8', 'falsetto', 'falsetto+saw80s', ring('ep'), dV='halfpop', verb=2.8, gap=3.,
+   outro=dict(keys=['synthwave'], lead='falsetto', mel=[[73,-1,-1,76,-1,73,-1,71],[69,-1,-1,-1,-1,-1,-1,-1],[0] * 8, [0] * 8], fill=False)),
  # V (Layover / FRI(END)S): mellow late-night jazz R&B, Rhodes, brushed swing, muted trumpet
  'v': solo('Velvet_Layover', 'Velvet Layover', 76, ['Dm9', 'G7', 'Cmaj9', 'A7'], ['Fmaj7', 'Em7', 'Dm7', 'G7'],
    [[69,-1,-1,72,-1,74,-1,-1],[71,-1,-1,-1,67,-1,-1,-1],[67,-1,-1,71,-1,74,-1,76],[73,-1,-1,-1,-1,-1,0,0]],
@@ -100,6 +101,9 @@ SONGS = {
    [[81,-1,79,-1,76,-1,79,-1],[81,-1,-1,79,-1,76,-1,-1],[77,-1,76,74,-1,76,-1,79],[76,-1,-1,-1,0,0,0,0]],
    ['chick', 'ep'], ['chick', 'ep', 'pad'], '2step', 'sub', 'voice', 'voice+chop', acapella),
 }
+
+SONGS['jimin'].update(cont_buses=['keys'], cont_tol=0., targets={'intro': -15., 'outro': -16.})   # the arpeggio keeps one level from the intro on
+SONGS['jk'].update(cont_buses=['keys'], cont_tol=-1., targets={'outro': -19.})                       # the ending no longer jumps back up
 
 if __name__ == '__main__':
     names = list(SONGS) if sys.argv[1] == 'all' else sys.argv[1:]

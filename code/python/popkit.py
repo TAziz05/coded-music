@@ -337,7 +337,8 @@ def build(cfg):
     ir = reverb_ir(cfg.get('verb', 2.2), cfg.get('decay', .55)); out += np.array([ss.fftconvolve(send[c], ir[c])[:M.n] for c in range(2)])
     out = np.array([hp(c, 28) for c in out])
     g = np.ones(M.n); TG = dict(TARGET, **cfg.get('targets', {}))
-    mus = sum(x * levels.get(k, 1.) for k, x in M.buses.items() if k not in ('drums', 'perc', 'bass', 'sub', 'fx'))
+    cb = cfg.get('cont_buses')   # which buses must keep a steady level across intro/outro (default: all non-drum buses)
+    mus = sum(x * levels.get(k, 1.) for k, x in M.buses.items() if (k in cb if cb else k not in ('drums', 'perc', 'bass', 'sub', 'fx')))
     gl, rl = [], []
     for name, t0, nb in marks:
         a, bnd = int(t0 * SR), int((t0 + nb * B) * SR); seg = out[:, a:bnd]
