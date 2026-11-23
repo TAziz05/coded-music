@@ -1,0 +1,8948 @@
+{
+"count": 125,
+"songs": [
+{
+"id": "drop-in-daily-lobby",
+"title": "Lobby",
+"file": "songs/drop-in-daily/Drop-In Daily - Lobby.mp3",
+"video": "videos/Drop-In Daily - Lobby.mp4",
+"card": "cards/Drop-In Daily - Lobby.png",
+"tempo": null,
+"style": "Drop-In Daily theme",
+"feel": "Plays during: Menus",
+"good": "Menus, quizzes, background",
+"colors": [
+"#140b2a",
+"#4a2a8f",
+"#ffd23f",
+"#0a0515",
+"#ffffff"
+],
+"order": 0,
+"groups": [
+"Game themes (Drop-In Daily)"
+],
+"genres": [
+"Chiptune & retro"
+],
+"moods": [
+"Chill"
+],
+"duration": 124.0,
+"loop": [
+10.0005,
+20.0011
+],
+"tempo_est": 96,
+"energy": 0.943,
+"thumb": "site/thumbs/drop-in-daily-lobby.jpg",
+"similar": [
+"daily-poke-catch-town",
+"drop-in-daily-endless-summary-og-lobby-style",
+"daily-poke-catch-route",
+"daily-poke-catch-battle",
+"drop-in-daily-match",
+"winds-of-the-world"
+],
+"shape": [
+"daily-poke-catch-mythic-battle",
+"daily-poke-catch-battle",
+"daily-poke-catch-route",
+"drop-in-daily-mythic-match-og-style",
+"drop-in-daily-match",
+"coastal-route"
+],
+"versions": [],
+"arc": [
+0.98,
+0.95,
+0.93,
+0.98,
+0.98,
+0.99,
+0.97,
+0.94,
+0.95,
+0.98,
+1.0,
+0.94,
+0.94,
+0.98,
+0.99,
+0.59
+]
+},
+{
+"id": "drop-in-daily-match",
+"title": "Match",
+"file": "songs/drop-in-daily/Drop-In Daily - Match.mp3",
+"video": "videos/Drop-In Daily - Match.mp4",
+"card": "cards/Drop-In Daily - Match.png",
+"tempo": null,
+"style": "Drop-In Daily theme",
+"feel": "Plays during: Questions",
+"good": "Menus, quizzes, background",
+"colors": [
+"#140b2a",
+"#4a2a8f",
+"#ffd23f",
+"#0a0515",
+"#ffffff"
+],
+"order": 1,
+"groups": [
+"Game themes (Drop-In Daily)"
+],
+"genres": [
+"Chiptune & retro"
+],
+"moods": [
+"Hype"
+],
+"duration": 124.0,
+"loop": [
+7.5,
+15.0001
+],
+"tempo_est": 172,
+"energy": 0.963,
+"thumb": "site/thumbs/drop-in-daily-match.jpg",
+"similar": [
+"drop-in-daily-mythic-match-og-style",
+"daily-poke-catch-battle",
+"drop-in-daily-endless-summary-og-lobby-style",
+"drop-in-daily-lobby",
+"daily-poke-catch-town",
+"off-the-lines"
+],
+"shape": [
+"drop-in-daily-mythic-match-og-style",
+"daily-poke-catch-mythic-battle",
+"daily-poke-catch-battle",
+"daily-poke-catch-route",
+"coastal-route",
+"drop-in-daily-lobby"
+],
+"versions": [],
+"arc": [
+0.98,
+0.99,
+0.97,
+0.99,
+0.97,
+0.99,
+0.98,
+1.0,
+0.98,
+0.99,
+0.97,
+1.0,
+0.98,
+1.0,
+0.97,
+0.63
+]
+},
+{
+"id": "drop-in-daily-mythic-match-og-style",
+"title": "Mythic Match (OG style)",
+"file": "songs/drop-in-daily/Drop-In Daily - Mythic Match (OG style).mp3",
+"video": "videos/Drop-In Daily - Mythic Match (OG style).mp4",
+"card": "cards/Drop-In Daily - Mythic Match (OG style).png",
+"tempo": null,
+"style": "Drop-In Daily theme",
+"feel": "Plays during: Mythic-only questions",
+"good": "Menus, quizzes, background",
+"colors": [
+"#140b2a",
+"#4a2a8f",
+"#ffd23f",
+"#0a0515",
+"#ffffff"
+],
+"order": 2,
+"groups": [
+"Game themes (Drop-In Daily)"
+],
+"genres": [
+"Chiptune & retro"
+],
+"moods": [
+"Hype"
+],
+"duration": 124.0,
+"loop": [
+7.5,
+15.0001
+],
+"tempo_est": 129,
+"energy": 0.964,
+"thumb": "site/thumbs/drop-in-daily-mythic-match-og-style.jpg",
+"similar": [
+"drop-in-daily-match",
+"daily-poke-catch-battle",
+"daily-poke-catch-mythic-battle",
+"drop-in-daily-endless-summary-og-lobby-style",
+"emerald-shore-zone",
+"daily-poke-catch-route"
+],
+"shape": [
+"drop-in-daily-match",
+"daily-poke-catch-battle",
+"daily-poke-catch-mythic-battle",
+"daily-poke-catch-route",
+"coastal-route",
+"drop-in-daily-lobby"
+],
+"versions": [],
+"arc": [
+0.97,
+1.0,
+0.97,
+0.99,
+0.98,
+1.0,
+0.99,
+1.0,
+0.97,
+0.99,
+0.98,
+0.99,
+0.98,
+1.0,
+0.99,
+0.61
+]
+},
+{
+"id": "drop-in-daily-endless-summary-og-lobby-style",
+"title": "Endless Summary (OG lobby style)",
+"file": "songs/drop-in-daily/Drop-In Daily - Endless Summary (OG lobby style).mp3",
+"video": "videos/Drop-In Daily - Endless Summary (OG lobby style).mp4",
+"card": "cards/Drop-In Daily - Endless Summary (OG lobby style).png",
+"tempo": null,
+"style": "Drop-In Daily theme",
+"feel": "Plays during: The Endless run summary",
+"good": "Menus, quizzes, background",
+"colors": [
+"#140b2a",
+"#4a2a8f",
+"#ffd23f",
+"#0a0515",
+"#ffffff"
+],
+"order": 3,
+"groups": [
+"Game themes (Drop-In Daily)"
+],
+"genres": [
+"Chiptune & retro"
+],
+"moods": [
+"Chill"
+],
+"duration": 124.0,
+"loop": [
+16.5529,
+33.1059
+],
+"tempo_est": 117,
+"energy": 0.845,
+"thumb": "site/thumbs/drop-in-daily-endless-summary-og-lobby-style.jpg",
+"similar": [
+"daily-poke-catch-town",
+"drop-in-daily-lobby",
+"daily-poke-catch-route",
+"drop-in-daily-mythic-match-og-style",
+"daily-poke-catch-battle",
+"drop-in-daily-match"
+],
+"shape": [
+"drop-in-daily-mythic-match-og-style",
+"drop-in-daily-match",
+"daily-poke-catch-route",
+"daily-poke-catch-mythic-battle",
+"daily-poke-catch-battle",
+"drop-in-daily-lobby"
+],
+"versions": [],
+"arc": [
+0.76,
+0.98,
+0.75,
+0.98,
+0.81,
+0.92,
+0.81,
+0.9,
+0.89,
+0.83,
+0.9,
+0.82,
+0.97,
+0.73,
+1.0,
+0.47
+]
+},
+{
+"id": "daily-poke-catch-route",
+"title": "Route",
+"file": "songs/daily-poke-catch/Daily Poke Catch - Route (Menus).mp3",
+"video": "videos/Daily Poke Catch - Route (Menus).mp4",
+"card": "cards/Daily Poke Catch - Route (Menus).png",
+"tempo": null,
+"style": "Daily Poké Catch theme",
+"feel": "Plays during: Menus",
+"good": "Menus, quizzes, background",
+"colors": [
+"#140b2a",
+"#4a2a8f",
+"#ffd23f",
+"#0a0515",
+"#ffffff"
+],
+"order": 4,
+"groups": [
+"Game themes (Daily Poké Catch)"
+],
+"genres": [
+"Chiptune & retro"
+],
+"moods": [
+"Chill"
+],
+"duration": 124.0,
+"loop": [
+6.8571,
+13.7143
+],
+"tempo_est": 72,
+"energy": 0.965,
+"thumb": "site/thumbs/daily-poke-catch-route.jpg",
+"similar": [
+"drop-in-daily-endless-summary-og-lobby-style",
+"drop-in-daily-lobby",
+"daily-poke-catch-town",
+"daily-poke-catch-battle",
+"drop-in-daily-mythic-match-og-style",
+"pallet-path"
+],
+"shape": [
+"daily-poke-catch-battle",
+"daily-poke-catch-mythic-battle",
+"drop-in-daily-match",
+"drop-in-daily-mythic-match-og-style",
+"coastal-route",
+"drop-in-daily-lobby"
+],
+"versions": [],
+"arc": [
+0.98,
+0.99,
+1.0,
+1.0,
+0.98,
+0.98,
+0.99,
+0.97,
+0.99,
+0.99,
+1.0,
+0.99,
+0.98,
+0.99,
+0.99,
+0.61
+]
+},
+{
+"id": "daily-poke-catch-battle",
+"title": "Battle",
+"file": "songs/daily-poke-catch/Daily Poke Catch - Battle.mp3",
+"video": "videos/Daily Poke Catch - Battle.mp4",
+"card": "cards/Daily Poke Catch - Battle.png",
+"tempo": null,
+"style": "Daily Poké Catch theme",
+"feel": "Plays during: Questions",
+"good": "Menus, quizzes, background",
+"colors": [
+"#140b2a",
+"#4a2a8f",
+"#ffd23f",
+"#0a0515",
+"#ffffff"
+],
+"order": 5,
+"groups": [
+"Game themes (Daily Poké Catch)"
+],
+"genres": [
+"Chiptune & retro"
+],
+"moods": [
+"Hype"
+],
+"duration": 124.0,
+"loop": [
+5.7832,
+11.5664
+],
+"tempo_est": 117,
+"energy": 0.968,
+"thumb": "site/thumbs/daily-poke-catch-battle.jpg",
+"similar": [
+"drop-in-daily-match",
+"drop-in-daily-mythic-match-og-style",
+"daily-poke-catch-route",
+"daily-poke-catch-town",
+"drop-in-daily-endless-summary-og-lobby-style",
+"off-the-lines"
+],
+"shape": [
+"daily-poke-catch-route",
+"drop-in-daily-mythic-match-og-style",
+"daily-poke-catch-mythic-battle",
+"drop-in-daily-match",
+"coastal-route",
+"drop-in-daily-lobby"
+],
+"versions": [],
+"arc": [
+0.99,
+0.98,
+0.99,
+0.98,
+0.98,
+1.0,
+1.0,
+0.99,
+0.99,
+0.99,
+0.99,
+0.98,
+0.99,
+0.99,
+1.0,
+0.62
+]
+},
+{
+"id": "daily-poke-catch-mythic-battle",
+"title": "Mythic Battle",
+"file": "songs/daily-poke-catch/Daily Poke Catch - Mythic Battle.mp3",
+"video": "videos/Daily Poke Catch - Mythic Battle.mp4",
+"card": "cards/Daily Poke Catch - Mythic Battle.png",
+"tempo": null,
+"style": "Daily Poké Catch theme",
+"feel": "Plays during: Mythic-only questions",
+"good": "Menus, quizzes, background",
+"colors": [
+"#140b2a",
+"#4a2a8f",
+"#ffd23f",
+"#0a0515",
+"#ffffff"
+],
+"order": 6,
+"groups": [
+"Game themes (Daily Poké Catch)"
+],
+"genres": [
+"Chiptune & retro"
+],
+"moods": [
+"Hype"
+],
+"duration": 124.0,
+"loop": [
+8.0007,
+16.0015
+],
+"tempo_est": 83,
+"energy": 0.963,
+"thumb": "site/thumbs/daily-poke-catch-mythic-battle.jpg",
+"similar": [
+"drop-in-daily-mythic-match-og-style",
+"coastal-route",
+"emerald-shore-zone",
+"highway-escape",
+"daily-poke-catch-battle",
+"storm-closing"
+],
+"shape": [
+"daily-poke-catch-route",
+"daily-poke-catch-battle",
+"drop-in-daily-match",
+"drop-in-daily-mythic-match-og-style",
+"coastal-route",
+"drop-in-daily-lobby"
+],
+"versions": [],
+"arc": [
+1.0,
+0.99,
+0.97,
+1.0,
+0.99,
+0.97,
+1.0,
+0.99,
+0.98,
+0.99,
+0.99,
+0.98,
+0.99,
+0.99,
+0.98,
+0.62
+]
+},
+{
+"id": "daily-poke-catch-town",
+"title": "Town",
+"file": "songs/daily-poke-catch/Daily Poke Catch - Town (Endless Summary).mp3",
+"video": "videos/Daily Poke Catch - Town (Endless Summary).mp4",
+"card": "cards/Daily Poke Catch - Town (Endless Summary).png",
+"tempo": null,
+"style": "Daily Poké Catch theme",
+"feel": "Plays during: The Endless run summary",
+"good": "Menus, quizzes, background",
+"colors": [
+"#140b2a",
+"#4a2a8f",
+"#ffd23f",
+"#0a0515",
+"#ffffff"
+],
+"order": 7,
+"groups": [
+"Game themes (Daily Poké Catch)"
+],
+"genres": [
+"Chiptune & retro"
+],
+"moods": [
+"Chill"
+],
+"duration": 124.0,
+"loop": [
+9.2314,
+18.4628
+],
+"tempo_est": 103,
+"energy": 0.918,
+"thumb": "site/thumbs/daily-poke-catch-town.jpg",
+"similar": [
+"drop-in-daily-lobby",
+"drop-in-daily-endless-summary-og-lobby-style",
+"daily-poke-catch-route",
+"daily-poke-catch-battle",
+"winds-of-the-world",
+"drop-in-daily-match"
+],
+"shape": [
+"daily-poke-catch-mythic-battle",
+"daily-poke-catch-battle",
+"daily-poke-catch-route",
+"coastal-route",
+"drop-in-daily-mythic-match-og-style",
+"drop-in-daily-match"
+],
+"versions": [],
+"arc": [
+0.95,
+0.93,
+0.94,
+0.93,
+0.96,
+0.92,
+1.0,
+0.91,
+0.92,
+0.96,
+0.92,
+0.96,
+0.95,
+0.93,
+0.95,
+0.57
+]
+},
+{
+"id": "victory-rush",
+"title": "Victory Rush",
+"file": "songs/youtube/Victory Rush.mp3",
+"video": "videos/YouTube - Victory Rush.mp4",
+"card": "cards/YouTube - Victory Rush.png",
+"tempo": 128,
+"style": "upbeat",
+"feel": "Upbeat, heroic brass",
+"good": "Wins, highlights, montages",
+"colors": [
+"#0f4fc4",
+"#2f86f0",
+"#7cc4ff",
+"#0b3f8f",
+"#ffd53d"
+],
+"order": 9,
+"groups": [],
+"genres": [
+"Other"
+],
+"moods": [
+"Happy",
+"Epic"
+],
+"duration": 152.8,
+"loop": [
+15.0,
+135.0
+],
+"energy": 0.734,
+"thumb": "site/thumbs/victory-rush.jpg",
+"similar": [
+"storm-closing",
+"static-weather",
+"golden-hour-groove",
+"overclocked",
+"lobby-loop",
+"red-40-sugar-rush"
+],
+"shape": [
+"storm-closing",
+"starlight-carnival-run",
+"yet-to-bloom",
+"fragile-mask",
+"light-up-the-persona",
+"respawn-lounge"
+],
+"versions": [],
+"arc": [
+0.11,
+0.49,
+0.95,
+0.94,
+0.9,
+0.86,
+0.98,
+0.99,
+0.69,
+0.26,
+0.65,
+1.0,
+0.98,
+0.98,
+0.89,
+0.06
+]
+},
+{
+"id": "storm-closing",
+"title": "Storm Closing",
+"file": "songs/youtube/Storm Closing.mp3",
+"video": "videos/YouTube - Storm Closing.mp4",
+"card": "cards/YouTube - Storm Closing.png",
+"tempo": 140,
+"style": "intense",
+"feel": "Tense, minor key, driving",
+"good": "Late-game fights",
+"colors": [
+"#2a0b52",
+"#6a1fb8",
+"#c06cff",
+"#1c0838",
+"#7ff3ff"
+],
+"order": 10,
+"groups": [],
+"genres": [
+"Other"
+],
+"moods": [
+"Hype"
+],
+"duration": 139.8,
+"loop": [
+13.7143,
+123.4283
+],
+"energy": 0.705,
+"thumb": "site/thumbs/storm-closing.jpg",
+"similar": [
+"overclocked",
+"lime-green-afterparty",
+"skyscraper-sprint",
+"red-40-sugar-rush",
+"daily-poke-catch-mythic-battle",
+"drop-in-daily-mythic-match-og-style"
+],
+"shape": [
+"victory-rush",
+"fragile-mask",
+"march-of-seven",
+"snowpoint-trail",
+"starlight-carnival-run",
+"time-warp-zone"
+],
+"versions": [],
+"arc": [
+0.16,
+0.62,
+0.77,
+0.78,
+0.72,
+0.83,
+0.99,
+0.97,
+0.78,
+0.33,
+0.56,
+1.0,
+0.99,
+0.97,
+0.76,
+0.04
+]
+},
+{
+"id": "lobby-loop",
+"title": "Lobby Loop",
+"file": "songs/youtube/Lobby Loop.mp3",
+"video": "videos/YouTube - Lobby Loop.mp4",
+"card": "cards/YouTube - Lobby Loop.png",
+"tempo": 102,
+"style": "chill",
+"feel": "Chill electric-piano groove",
+"good": "Intros, looting, commentary",
+"colors": [
+"#06545a",
+"#14a3a0",
+"#8fe8d6",
+"#043a3e",
+"#fff07a"
+],
+"order": 11,
+"groups": [
+"Background music"
+],
+"genres": [
+"Lo-fi & chill",
+"Piano"
+],
+"moods": [
+"Chill"
+],
+"duration": 134.5,
+"loop": [
+9.4118,
+103.5302
+],
+"energy": 0.874,
+"thumb": "site/thumbs/lobby-loop.jpg",
+"similar": [
+"respawn-lounge",
+"yet-to-bloom",
+"channel-plaza",
+"youth-in-bloom",
+"amber-leaves",
+"midnight-drift"
+],
+"shape": [
+"channel-plaza",
+"static-weather",
+"pixel-heart-dnb",
+"coral-waltz",
+"arcade-heartbreak-2005",
+"golden-hour-groove"
+],
+"versions": [],
+"arc": [
+0.15,
+0.92,
+0.96,
+0.97,
+0.99,
+0.95,
+0.99,
+0.95,
+0.98,
+0.99,
+0.96,
+0.97,
+0.98,
+1.0,
+0.88,
+0.36
+]
+},
+{
+"id": "overclocked",
+"title": "Overclocked",
+"file": "songs/youtube/Overclocked.mp3",
+"video": "videos/YouTube - Overclocked.mp4",
+"card": "cards/YouTube - Overclocked.png",
+"tempo": 174,
+"style": "drum & bass",
+"feel": "Drum & bass: fast breakbeat, rolling reese bass",
+"good": "Fast-paced fights, edits with lots of cuts",
+"colors": [
+"#140f2e",
+"#c2183f",
+"#ff6a3d",
+"#0b0820",
+"#e8ff3a"
+],
+"order": 12,
+"groups": [],
+"genres": [
+"Drum & bass"
+],
+"moods": [
+"Hype"
+],
+"duration": 135.4,
+"loop": [
+23.4483,
+111.7241
+],
+"energy": 0.791,
+"thumb": "site/thumbs/overclocked.jpg",
+"similar": [
+"storm-closing",
+"red-40-sugar-rush",
+"heatwave-arcade",
+"off-the-lines",
+"lime-green-afterparty",
+"daily-poke-catch-battle"
+],
+"shape": [
+"nobody-s-looking",
+"arcade-heartbreak-2005",
+"off-the-lines",
+"static-weather",
+"paper-sky",
+"coral-waltz"
+],
+"versions": [],
+"arc": [
+0.14,
+0.45,
+0.98,
+0.99,
+0.99,
+1.0,
+0.99,
+0.63,
+0.49,
+1.0,
+0.98,
+0.98,
+0.99,
+1.0,
+0.81,
+0.24
+]
+},
+{
+"id": "nobody-s-looking",
+"title": "Nobody's Looking",
+"file": "songs/youtube/Nobody's Looking.mp3",
+"video": "videos/YouTube - Nobody's Looking.mp4",
+"card": "cards/YouTube - Nobody's Looking.png",
+"tempo": 180,
+"style": "breakcore",
+"feel": "Breakcore: sad piano over chopped, stuttering breakbeats",
+"good": "Clutch moments, emotional edits, losses",
+"colors": [
+"#05060d",
+"#1e2340",
+"#4d5a8c",
+"#000000",
+"#ff9fc8"
+],
+"order": 13,
+"groups": [
+"Breakcore"
+],
+"genres": [
+"Breakcore",
+"Piano"
+],
+"moods": [
+"Emotional"
+],
+"duration": 130.9,
+"loop": [
+13.3333,
+72.0
+],
+"energy": 0.784,
+"thumb": "site/thumbs/nobody-s-looking.jpg",
+"similar": [
+"last-light",
+"sky-piercing-breaks",
+"sky-piercing-promise",
+"blue-spark-breaks",
+"titan-undefeated",
+"sugar-cloud-breaks"
+],
+"shape": [
+"overclocked",
+"paper-sky",
+"sugar-cloud-breaks",
+"red-40-breaks",
+"off-the-lines",
+"lime-green-breaks"
+],
+"versions": [],
+"arc": [
+0.47,
+0.5,
+0.92,
+0.93,
+0.93,
+0.93,
+0.92,
+0.61,
+0.5,
+0.92,
+0.96,
+1.0,
+0.97,
+0.97,
+0.69,
+0.33
+]
+},
+{
+"id": "static-weather",
+"title": "Static Weather",
+"file": "songs/youtube/Static Weather.mp3",
+"video": "videos/YouTube - Static Weather.mp4",
+"card": "cards/YouTube - Static Weather.png",
+"tempo": 146,
+"style": "Vocaloid-style J-rock",
+"feel": "Vocaloid-style J-rock (in the style of inabakumori): chorused guitars, singing synth lead",
+"good": "Chill wins, recap edits",
+"colors": [
+"#1c2a4a",
+"#4f7fc4",
+"#bfe0ff",
+"#13203d",
+"#fff3a8"
+],
+"order": 14,
+"groups": [
+"K-pop & J-pop styles"
+],
+"genres": [
+"Rock & metal"
+],
+"moods": [
+"Chill",
+"Emotional",
+"Happy"
+],
+"duration": 147.7,
+"loop": [
+52.6027,
+118.356
+],
+"energy": 0.808,
+"thumb": "site/thumbs/static-weather.jpg",
+"similar": [
+"lantern-theory",
+"tokyo-sunset-drive",
+"starlit-orbit",
+"victory-rush",
+"aqua-tomorrow",
+"golden-hour-breaks"
+],
+"shape": [
+"starlight-carnival-run",
+"lobby-loop",
+"respawn-lounge",
+"pixel-heart-dnb",
+"yet-to-bloom",
+"light-up-the-persona"
+],
+"versions": [],
+"arc": [
+0.09,
+0.57,
+0.88,
+0.88,
+0.92,
+0.98,
+0.98,
+0.99,
+0.95,
+0.9,
+0.92,
+0.98,
+0.97,
+1.0,
+0.86,
+0.05
+]
+},
+{
+"id": "lantern-theory",
+"title": "Lantern Theory",
+"file": "songs/youtube/Lantern Theory.mp3",
+"video": "videos/YouTube - Lantern Theory.mp4",
+"card": "cards/YouTube - Lantern Theory.png",
+"tempo": 150,
+"style": "jazz math rock",
+"feel": "Instrumental jazz / math rock (in the style of Nouvelle Story): 7/8 tapped guitar, sax",
+"good": "Creative builds, highlight reels",
+"colors": [
+"#2b1608",
+"#a8501c",
+"#f2b45c",
+"#1d0e04",
+"#fff1d6"
+],
+"order": 15,
+"groups": [
+"Math"
+],
+"genres": [
+"Rock & metal",
+"Jazz, funk & soul"
+],
+"moods": [
+"Emotional"
+],
+"duration": 113.2,
+"loop": [
+17.6,
+78.4006
+],
+"energy": 0.801,
+"thumb": "site/thumbs/lantern-theory.jpg",
+"similar": [
+"static-weather",
+"golden-hour-breaks",
+"blue-spark-breaks",
+"checkerboard-skank",
+"lightning-over-the-city",
+"moonlit-night-stage"
+],
+"shape": [
+"frosty-podium",
+"homebase-rising",
+"menu-drift",
+"coral-waltz",
+"paper-sky",
+"skyscraper-sprint"
+],
+"versions": [],
+"arc": [
+0.27,
+0.9,
+0.95,
+0.97,
+0.97,
+0.97,
+0.94,
+0.87,
+0.77,
+0.89,
+1.0,
+0.98,
+0.98,
+0.93,
+0.39,
+0.04
+]
+},
+{
+"id": "channel-plaza",
+"title": "Channel Plaza",
+"file": "songs/youtube/Channel Plaza.mp3",
+"video": "videos/YouTube - Channel Plaza.mp4",
+"card": "cards/YouTube - Channel Plaza.png",
+"tempo": 116,
+"style": "Wii menu style",
+"feel": "Bossa nova with e-piano and marimba (in the style of Wii menu music)",
+"good": "Menus, chill commentary",
+"colors": [
+"#1f7fc0",
+"#4fb0e6",
+"#c9ecff",
+"#145a8a",
+"#ffffff"
+],
+"order": 16,
+"groups": [
+"Video game styles",
+"Background music"
+],
+"genres": [
+"Jazz, funk & soul",
+"Lo-fi & chill",
+"Piano"
+],
+"moods": [
+"Hype",
+"Chill",
+"Epic"
+],
+"duration": 119.9,
+"loop": [
+8.2759,
+57.9291
+],
+"energy": 0.876,
+"thumb": "site/thumbs/channel-plaza.jpg",
+"similar": [
+"lobby-loop",
+"lime-green-afterparty",
+"magma-fortress",
+"march-of-seven",
+"storm-closing",
+"shellfire-castle"
+],
+"shape": [
+"lobby-loop",
+"golden-hour-groove",
+"static-weather",
+"arcade-heartbreak-2005",
+"pixel-heart-dnb",
+"coral-waltz"
+],
+"versions": [],
+"arc": [
+0.12,
+0.92,
+0.96,
+0.99,
+0.99,
+0.96,
+0.98,
+0.97,
+0.96,
+0.99,
+0.98,
+1.0,
+0.9,
+0.96,
+0.89,
+0.45
+]
+},
+{
+"id": "frosty-podium",
+"title": "Frosty Podium",
+"file": "songs/youtube/Frosty Podium.mp3",
+"video": "videos/YouTube - Frosty Podium.mp4",
+"card": "cards/YouTube - Frosty Podium.png",
+"tempo": 150,
+"style": "winter games style",
+"feel": "Winter sports fanfare with sleigh bells, crunched to DS quality (in the style of Mario & Sonic Winter Games DS)",
+"good": "Wins, upbeat edits",
+"colors": [
+"#0d3b6e",
+"#3f8fd6",
+"#d6f0ff",
+"#0a2c52",
+"#ffe066"
+],
+"order": 17,
+"groups": [
+"Sonic-style",
+"Video game styles"
+],
+"genres": [
+"Orchestral & cinematic",
+"Chiptune & retro"
+],
+"moods": [
+"Happy"
+],
+"duration": 93.6,
+"loop": [
+6.4,
+70.4
+],
+"energy": 0.851,
+"thumb": "site/thumbs/frosty-podium.jpg",
+"similar": [
+"stadium-highlands",
+"coastal-route",
+"checkerboard-skank",
+"rush-hour-boost",
+"johto-morning",
+"arcade-heartbreak-2005"
+],
+"shape": [
+"lantern-theory",
+"homebase-rising",
+"menu-drift",
+"skyscraper-sprint",
+"coral-waltz",
+"lobby-loop"
+],
+"versions": [],
+"arc": [
+0.39,
+0.92,
+0.94,
+0.96,
+0.93,
+0.92,
+1.0,
+0.98,
+0.97,
+0.98,
+0.96,
+0.95,
+1.0,
+0.99,
+0.56,
+0.18
+]
+},
+{
+"id": "coastal-route",
+"title": "Coastal Route",
+"file": "songs/youtube/Coastal Route.mp3",
+"video": "videos/YouTube - Coastal Route.mp4",
+"card": "cards/YouTube - Coastal Route.png",
+"tempo": 132,
+"style": "GBA route style",
+"feel": "Route music with a GBA trumpet lead, crunched to GBA quality (in the style of Pokémon Ruby/Sapphire)",
+"good": "Exploring, looting",
+"colors": [
+"#0b5d7a",
+"#22a6b3",
+"#f4d58d",
+"#083f53",
+"#ffde59"
+],
+"order": 18,
+"groups": [
+"Pokémon-style",
+"Video game styles"
+],
+"genres": [
+"Chiptune & retro"
+],
+"moods": [
+"Chill"
+],
+"duration": 98.3,
+"loop": [
+5.4545,
+78.1819
+],
+"energy": 0.926,
+"thumb": "site/thumbs/coastal-route.jpg",
+"similar": [
+"daily-poke-catch-mythic-battle",
+"frosty-podium",
+"pallet-path",
+"snowpoint-trail",
+"highway-escape",
+"coconut-cove"
+],
+"shape": [
+"daily-poke-catch-route",
+"daily-poke-catch-mythic-battle",
+"daily-poke-catch-battle",
+"drop-in-daily-mythic-match-og-style",
+"drop-in-daily-match",
+"daily-poke-catch-town"
+],
+"versions": [],
+"arc": [
+0.91,
+0.95,
+0.98,
+0.98,
+1.0,
+0.93,
+0.99,
+0.94,
+0.97,
+0.96,
+1.0,
+0.98,
+0.96,
+0.97,
+0.93,
+0.38
+]
+},
+{
+"id": "homebase-rising",
+"title": "Homebase Rising",
+"file": "songs/youtube/Homebase Rising.mp3",
+"video": "videos/YouTube - Homebase Rising.mp4",
+"card": "cards/YouTube - Homebase Rising.png",
+"tempo": 112,
+"style": "orchestral adventure",
+"feel": "Orchestral adventure: string ostinato, horns, choir (in the style of Fortnite Save the World)",
+"good": "Big moments, intros",
+"colors": [
+"#1a1033",
+"#4b2a7a",
+"#e0742b",
+"#100820",
+"#ffc640"
+],
+"order": 19,
+"groups": [
+"Video game styles",
+"Orchestral & cinematic"
+],
+"genres": [
+"Orchestral & cinematic",
+"World & folk"
+],
+"moods": [
+"Epic"
+],
+"duration": 106.0,
+"loop": [
+8.5714,
+25.7141
+],
+"energy": 0.836,
+"thumb": "site/thumbs/homebase-rising.jpg",
+"similar": [
+"stadium-highlands",
+"magma-fortress",
+"march-of-seven",
+"titan-undefeated",
+"shellfire-castle",
+"cliffside-climb"
+],
+"shape": [
+"menu-drift",
+"frosty-podium",
+"lantern-theory",
+"skyscraper-sprint",
+"velvet-layover",
+"paper-sky"
+],
+"versions": [],
+"arc": [
+0.52,
+0.84,
+0.96,
+0.88,
+0.98,
+0.95,
+0.95,
+0.99,
+0.93,
+0.95,
+0.92,
+0.99,
+1.0,
+0.87,
+0.46,
+0.19
+]
+},
+{
+"id": "determined-steps",
+"title": "Determined Steps",
+"file": "songs/youtube/Determined Steps.mp3",
+"video": "videos/YouTube - Determined Steps.mp4",
+"card": "cards/YouTube - Determined Steps.png",
+"tempo": 120,
+"style": "solo piano",
+"feel": "Solo piano (in the style of Undertale)",
+"good": "Calm moments, story edits",
+"colors": [
+"#000000",
+"#14141c",
+"#2a2a3a",
+"#000000",
+"#ff2a2a"
+],
+"order": 20,
+"groups": [
+"Video game styles"
+],
+"genres": [
+"Piano"
+],
+"moods": [
+"Chill",
+"Emotional"
+],
+"duration": 116.0,
+"loop": [
+8.0,
+24.0061
+],
+"energy": 0.878,
+"thumb": "site/thumbs/determined-steps.jpg",
+"similar": [
+"breeze-in-the-alley",
+"last-light",
+"riverbank-evening",
+"morning-over-the-valley",
+"padma-to-kyoto",
+"breeze-breaks"
+],
+"shape": [
+"drop-in-daily-match",
+"daily-poke-catch-route",
+"coastal-route",
+"drop-in-daily-mythic-match-og-style",
+"daily-poke-catch-mythic-battle",
+"daily-poke-catch-battle"
+],
+"versions": [],
+"arc": [
+0.88,
+0.87,
+0.88,
+0.89,
+0.87,
+0.84,
+0.82,
+0.89,
+0.88,
+0.87,
+0.88,
+1.0,
+0.99,
+0.95,
+0.88,
+0.66
+]
+},
+{
+"id": "ringworld-vigil",
+"title": "Ringworld Vigil",
+"file": "songs/youtube/Ringworld Vigil.mp3",
+"video": "videos/YouTube - Ringworld Vigil.mp4",
+"card": "cards/YouTube - Ringworld Vigil.png",
+"tempo": null,
+"style": "chant & strings",
+"feel": "Monk-style choir chant, then driving strings, guitars and drums (in the style of Halo)",
+"good": "Epic intros, final circles",
+"colors": [
+"#0b1a12",
+"#1f4a36",
+"#7fb39a",
+"#06100b",
+"#d9f2e6"
+],
+"order": 21,
+"groups": [
+"Video game styles",
+"Orchestral & cinematic"
+],
+"genres": [
+"Orchestral & cinematic"
+],
+"moods": [
+"Epic"
+],
+"duration": 107.2,
+"loop": [
+55.1706,
+79.6864
+],
+"tempo_est": 117,
+"energy": 0.653,
+"thumb": "site/thumbs/ringworld-vigil.jpg",
+"similar": [
+"shellfire-castle",
+"homebase-rising",
+"shattered-overture",
+"youth-in-bloom",
+"lobby-loop",
+"stadium-highlands"
+],
+"shape": [
+"morning-over-the-valley",
+"iron-storm-rising",
+"determined-steps",
+"skyscraper-sprint",
+"arirang-dawn",
+"sugar-cloud-breaks"
+],
+"versions": [],
+"arc": [
+0.45,
+0.5,
+0.54,
+0.47,
+0.54,
+0.64,
+0.41,
+0.83,
+0.92,
+0.95,
+0.96,
+1.0,
+0.98,
+0.64,
+0.51,
+0.1
+]
+},
+{
+"id": "boundless-run",
+"title": "Boundless Run",
+"file": "songs/youtube/Boundless Run.mp3",
+"video": "videos/YouTube - Boundless Run.mp4",
+"card": "cards/YouTube - Boundless Run.png",
+"tempo": 155,
+"style": "upbeat rock, Sonic style",
+"feel": "Upbeat rock with crunchy guitars and a key change (in the style of Sonic Unleashed's \"Endless Possibility\")",
+"good": "Speedy plays, montages",
+"colors": [
+"#0a2a8c",
+"#1f5fe0",
+"#6fc3ff",
+"#071d60",
+"#ffd400"
+],
+"order": 22,
+"groups": [
+"Sonic-style",
+"Video game styles"
+],
+"genres": [
+"Rock & metal"
+],
+"moods": [
+"Hype",
+"Happy"
+],
+"duration": 103.1,
+"loop": [
+10.8387,
+41.8067
+],
+"energy": 0.814,
+"thumb": "site/thumbs/boundless-run.jpg",
+"similar": [
+"dark-and-wild-run",
+"arcade-heartbreak-2005",
+"iron-storm-rising",
+"blue-spark-runaway",
+"highway-escape",
+"iron-storm-breaks"
+],
+"shape": [
+"moonlit-night-stage",
+"highway-escape",
+"rush-hour-boost",
+"emerald-shore-zone",
+"final-circle",
+"infinite-series"
+],
+"versions": [],
+"arc": [
+0.71,
+0.79,
+0.76,
+0.99,
+0.99,
+0.93,
+0.77,
+0.79,
+0.97,
+1.0,
+0.79,
+0.53,
+0.78,
+1.0,
+0.91,
+0.32
+]
+},
+{
+"id": "morning-over-the-valley",
+"title": "Morning Over the Valley",
+"file": "songs/youtube/Morning Over the Valley.mp3",
+"video": "videos/YouTube - Morning Over the Valley.mp4",
+"card": "cards/YouTube - Morning Over the Valley.png",
+"tempo": 90,
+"style": "orchestral waltz",
+"feel": "Cinematic orchestral waltz: harp, strings, woodwinds, horns, timpani",
+"good": "Story edits, calm intros, endings",
+"colors": [
+"#3a2a12",
+"#c27a2c",
+"#ffd9a0",
+"#2a1c08",
+"#fff6e0"
+],
+"order": 23,
+"groups": [
+"Orchestral & cinematic"
+],
+"genres": [
+"Orchestral & cinematic"
+],
+"moods": [
+"Chill",
+"Emotional"
+],
+"duration": 115.0,
+"loop": [
+5.3333,
+98.6693
+],
+"energy": 0.669,
+"thumb": "site/thumbs/morning-over-the-valley.jpg",
+"similar": [
+"riverbank-evening",
+"indigo-fields",
+"padma-to-kyoto",
+"shattered-overture",
+"determined-steps",
+"life-goes-slow"
+],
+"shape": [
+"ringworld-vigil",
+"lightning-over-the-city",
+"last-light",
+"heatwave-arcade",
+"lantern-in-the-fog",
+"monsoon-breaks"
+],
+"versions": [],
+"arc": [
+0.45,
+0.44,
+0.69,
+0.71,
+0.67,
+0.67,
+0.55,
+0.61,
+0.93,
+0.99,
+1.0,
+0.95,
+0.94,
+0.53,
+0.43,
+0.17
+]
+},
+{
+"id": "shattered-overture",
+"title": "Shattered Overture",
+"file": "songs/youtube/Shattered Overture.mp3",
+"video": "videos/YouTube - Shattered Overture.mp4",
+"card": "cards/YouTube - Shattered Overture.png",
+"tempo": null,
+"style": "orchestral → breakcore",
+"feel": "Starts orchestral, switches to steady breakcore with the orchestra on top, ends back with the orchestra in D major",
+"good": "Montages that build, comeback clips",
+"colors": [
+"#14060a",
+"#5a1024",
+"#d23b4f",
+"#0a0306",
+"#ffe6c7"
+],
+"order": 24,
+"groups": [
+"Breakcore",
+"Orchestral & cinematic"
+],
+"genres": [
+"Breakcore",
+"Orchestral & cinematic"
+],
+"moods": [
+"Emotional"
+],
+"duration": 97.9,
+"loop": [
+16.1611,
+80.8167
+],
+"tempo_est": 89,
+"energy": 0.642,
+"thumb": "site/thumbs/shattered-overture.jpg",
+"similar": [
+"last-light",
+"morning-over-the-valley",
+"sky-piercing-breaks",
+"indigo-fields",
+"ringworld-vigil",
+"sugar-cloud-breaks"
+],
+"shape": [
+"padma-to-kyoto-breaks",
+"lantern-in-the-fog",
+"frostline",
+"lightning-over-the-city",
+"heatwave-arcade",
+"monsoon-breaks"
+],
+"versions": [],
+"arc": [
+0.39,
+0.4,
+0.44,
+0.47,
+0.81,
+0.9,
+0.92,
+0.92,
+0.97,
+1.0,
+0.98,
+0.64,
+0.4,
+0.49,
+0.44,
+0.12
+]
+},
+{
+"id": "paper-sky",
+"title": "Paper Sky",
+"file": "songs/youtube/Paper Sky.mp3",
+"video": "videos/YouTube - Paper Sky.mp4",
+"card": "cards/YouTube - Paper Sky.png",
+"tempo": 170,
+"style": "bright breakcore",
+"feel": "Bright, dreamy steady breakcore: shimmering guitars, glockenspiel, 808, half-time breakdown",
+"good": "Happy montages, wins",
+"colors": [
+"#123a6b",
+"#3f86d1",
+"#ffd3e8",
+"#0b2648",
+"#fff4a3"
+],
+"order": 25,
+"groups": [
+"Breakcore"
+],
+"genres": [
+"Breakcore"
+],
+"moods": [
+"Happy"
+],
+"duration": 110.8,
+"loop": [
+18.3529,
+86.1176
+],
+"energy": 0.816,
+"thumb": "site/thumbs/paper-sky.jpg",
+"similar": [
+"aqua-tomorrow-breaks",
+"first-bloom",
+"frostline",
+"golden-hour-breaks",
+"lanterns-and-thunder-drums",
+"kite-season"
+],
+"shape": [
+"red-40-breaks",
+"sugar-cloud-breaks",
+"aqua-tomorrow-breaks",
+"lantern-in-the-fog",
+"menu-drift",
+"lime-green-breaks"
+],
+"versions": [],
+"arc": [
+0.5,
+0.57,
+0.8,
+0.99,
+0.98,
+0.99,
+0.98,
+0.86,
+0.76,
+0.99,
+0.98,
+1.0,
+0.97,
+0.93,
+0.49,
+0.25
+]
+},
+{
+"id": "last-light",
+"title": "Last Light",
+"file": "songs/youtube/Last Light.mp3",
+"video": "videos/YouTube - Last Light.mp4",
+"card": "cards/YouTube - Last Light.png",
+"tempo": 174,
+"style": "sad breakcore",
+"feel": "Sad steady breakcore: piano and strings, dusty breaks",
+"good": "Emotional edits, losses",
+"colors": [
+"#0d0d1a",
+"#2b2b4f",
+"#7a7ab8",
+"#05050d",
+"#c9c9ff"
+],
+"order": 26,
+"groups": [
+"Breakcore"
+],
+"genres": [
+"Breakcore",
+"Piano"
+],
+"moods": [
+"Emotional"
+],
+"duration": 88.5,
+"loop": [
+16.5517,
+60.6896
+],
+"energy": 0.747,
+"thumb": "site/thumbs/last-light.jpg",
+"similar": [
+"breeze-breaks",
+"nobody-s-looking",
+"sky-piercing-breaks",
+"sugar-cloud-breaks",
+"determined-steps",
+"shattered-overture"
+],
+"shape": [
+"monsoon-breaks",
+"breeze-breaks",
+"heatwave-arcade",
+"sky-piercing-breaks",
+"iron-storm-breaks",
+"lantern-in-the-fog"
+],
+"versions": [],
+"arc": [
+0.45,
+0.55,
+0.62,
+0.94,
+0.92,
+0.95,
+0.92,
+0.75,
+0.76,
+1.0,
+0.99,
+0.99,
+0.96,
+0.5,
+0.49,
+0.15
+]
+},
+{
+"id": "first-bloom",
+"title": "First Bloom",
+"file": "songs/youtube/First Bloom.mp3",
+"video": "videos/YouTube - First Bloom.mp4",
+"card": "cards/YouTube - First Bloom.png",
+"tempo": 172,
+"style": "spring breakcore",
+"feel": "Spring steady breakcore: picked guitars, flute, birdsong",
+"good": "Fresh starts, chill wins",
+"colors": [
+"#1f5c2e",
+"#5fbf6a",
+"#ffe0ef",
+"#123a1c",
+"#fff7b0"
+],
+"order": 27,
+"groups": [
+"Breakcore",
+"Seasons & weather"
+],
+"genres": [
+"Breakcore",
+"World & folk"
+],
+"moods": [
+"Chill",
+"Happy"
+],
+"duration": 89.1,
+"loop": [
+16.7442,
+27.9146
+],
+"energy": 0.765,
+"thumb": "site/thumbs/first-bloom.jpg",
+"similar": [
+"lanterns-and-thunder-drums",
+"aqua-tomorrow-breaks",
+"paper-sky",
+"kite-season",
+"frostline",
+"winds-of-the-world"
+],
+"shape": [
+"lanterns-and-thunder-drums",
+"kite-season",
+"amber-leaves",
+"golden-hour-breaks",
+"blue-spark-breaks",
+"window-seat"
+],
+"versions": [],
+"arc": [
+0.28,
+0.64,
+0.6,
+0.95,
+0.96,
+0.94,
+0.96,
+0.76,
+0.77,
+0.98,
+1.0,
+0.98,
+1.0,
+0.5,
+0.44,
+0.48
+]
+},
+{
+"id": "heatwave-arcade",
+"title": "Heatwave Arcade",
+"file": "songs/youtube/Heatwave Arcade.mp3",
+"video": "videos/YouTube - Heatwave Arcade.mp4",
+"card": "cards/YouTube - Heatwave Arcade.png",
+"tempo": 180,
+"style": "summer breakcore",
+"feel": "Summer steady breakcore: bright synths, 808, cicadas",
+"good": "Hype montages",
+"colors": [
+"#7a1500",
+"#ff5a1f",
+"#ffd23f",
+"#4d0d00",
+"#ffffff"
+],
+"order": 28,
+"groups": [
+"Breakcore",
+"Seasons & weather"
+],
+"genres": [
+"Breakcore"
+],
+"moods": [
+"Hype",
+"Happy"
+],
+"duration": 86.4,
+"loop": [
+1.3333,
+75.9986
+],
+"energy": 0.743,
+"thumb": "site/thumbs/heatwave-arcade.jpg",
+"similar": [
+"lightning-over-the-city",
+"off-the-lines-breaks",
+"aqua-tomorrow-breaks",
+"monsoon-breaks",
+"padma-to-kyoto-breaks",
+"blue-spark-breaks"
+],
+"shape": [
+"lightning-over-the-city",
+"last-light",
+"lantern-in-the-fog",
+"iron-storm-breaks",
+"sky-piercing-breaks",
+"monsoon-breaks"
+],
+"versions": [],
+"arc": [
+0.43,
+0.5,
+0.65,
+0.96,
+0.96,
+0.95,
+0.94,
+0.77,
+0.79,
+1.0,
+0.98,
+1.0,
+0.94,
+0.49,
+0.41,
+0.12
+]
+},
+{
+"id": "amber-leaves",
+"title": "Amber Leaves",
+"file": "songs/youtube/Amber Leaves.mp3",
+"video": "videos/YouTube - Amber Leaves.mp4",
+"card": "cards/YouTube - Amber Leaves.png",
+"tempo": 168,
+"style": "autumn lo-fi breakcore",
+"feel": "Autumn lo-fi breakcore: e-piano, vibraphone, rustling leaves",
+"good": "Relaxed gameplay",
+"colors": [
+"#3d1a05",
+"#b5531a",
+"#f2b56b",
+"#2a1204",
+"#fff0d9"
+],
+"order": 29,
+"groups": [
+"Breakcore",
+"Seasons & weather"
+],
+"genres": [
+"Breakcore",
+"Hip-hop & trap",
+"Lo-fi & chill",
+"Piano"
+],
+"moods": [
+"Chill"
+],
+"duration": 91.2,
+"loop": [
+17.1429,
+62.8556
+],
+"energy": 0.733,
+"thumb": "site/thumbs/amber-leaves.jpg",
+"similar": [
+"respawn-lounge",
+"window-seat",
+"last-light",
+"breeze-breaks",
+"lobby-loop",
+"yet-to-bloom"
+],
+"shape": [
+"lanterns-and-thunder-drums",
+"kite-season",
+"window-seat",
+"first-bloom",
+"aqua-tomorrow-breaks",
+"frostline"
+],
+"versions": [],
+"arc": [
+0.2,
+0.63,
+0.58,
+0.92,
+0.94,
+0.91,
+0.94,
+0.74,
+0.75,
+0.95,
+1.0,
+0.98,
+0.98,
+0.51,
+0.41,
+0.26
+]
+},
+{
+"id": "frostline",
+"title": "Frostline",
+"file": "songs/youtube/Frostline.mp3",
+"video": "videos/YouTube - Frostline.mp4",
+"card": "cards/YouTube - Frostline.png",
+"tempo": 176,
+"style": "winter breakcore",
+"feel": "Winter steady breakcore: harp, glockenspiel, sleigh bells, wind",
+"good": "Winter seasons, festive clips",
+"colors": [
+"#0b2a4a",
+"#5aa7e0",
+"#eaf6ff",
+"#071c33",
+"#ffffff"
+],
+"order": 30,
+"groups": [
+"Breakcore",
+"Seasons & weather"
+],
+"genres": [
+"Breakcore"
+],
+"moods": [],
+"duration": 88.9,
+"loop": [
+16.3636,
+27.2727
+],
+"energy": 0.728,
+"thumb": "site/thumbs/frostline.jpg",
+"similar": [
+"kite-season",
+"paper-sky",
+"lanterns-and-thunder-drums",
+"first-bloom",
+"golden-hour-breaks",
+"aqua-tomorrow-breaks"
+],
+"shape": [
+"monsoon-breaks",
+"window-seat",
+"last-light",
+"heatwave-arcade",
+"lantern-in-the-fog",
+"breeze-breaks"
+],
+"versions": [],
+"arc": [
+0.33,
+0.59,
+0.61,
+0.93,
+0.95,
+0.92,
+0.93,
+0.73,
+0.81,
+0.99,
+1.0,
+0.99,
+0.9,
+0.43,
+0.46,
+0.07
+]
+},
+{
+"id": "window-seat",
+"title": "Window Seat",
+"file": "songs/youtube/Window Seat.mp3",
+"video": "videos/YouTube - Window Seat.mp4",
+"card": "cards/YouTube - Window Seat.png",
+"tempo": 165,
+"style": "rainy lo-fi breakcore",
+"feel": "Rainy lo-fi breakcore: mellow keys, rain on the window",
+"good": "Late-night sessions",
+"colors": [
+"#1b2530",
+"#46586b",
+"#9fb2c4",
+"#10171e",
+"#e3eef8"
+],
+"order": 31,
+"groups": [
+"Breakcore",
+"Seasons & weather"
+],
+"genres": [
+"Breakcore",
+"Lo-fi & chill"
+],
+"moods": [
+"Chill",
+"Spooky & sneaky"
+],
+"duration": 93.8,
+"loop": [
+1.4545,
+82.9098
+],
+"energy": 0.736,
+"thumb": "site/thumbs/window-seat.jpg",
+"similar": [
+"amber-leaves",
+"menu-drift",
+"golden-hour-breaks",
+"life-goes-slow",
+"lantern-in-the-fog",
+"frostline"
+],
+"shape": [
+"frostline",
+"breeze-breaks",
+"heatwave-arcade",
+"last-light",
+"monsoon-breaks",
+"lantern-in-the-fog"
+],
+"versions": [],
+"arc": [
+0.32,
+0.58,
+0.59,
+0.96,
+0.96,
+0.93,
+0.96,
+0.75,
+0.78,
+0.98,
+1.0,
+0.98,
+0.95,
+0.46,
+0.42,
+0.16
+]
+},
+{
+"id": "lightning-over-the-city",
+"title": "Lightning Over the City",
+"file": "songs/youtube/Lightning Over the City.mp3",
+"video": "videos/YouTube - Lightning Over the City.mp4",
+"card": "cards/YouTube - Lightning Over the City.png",
+"tempo": 185,
+"style": "thunderstorm breakcore",
+"feel": "Thunderstorm breakcore: heavy breaks, reese bass, thunder",
+"good": "Intense endgames",
+"colors": [
+"#07060f",
+"#2a1f4f",
+"#8a6cff",
+"#030208",
+"#fff36b"
+],
+"order": 32,
+"groups": [
+"Breakcore",
+"Seasons & weather"
+],
+"genres": [
+"Breakcore"
+],
+"moods": [
+"Hype"
+],
+"duration": 84.3,
+"loop": [
+15.5676,
+25.9459
+],
+"energy": 0.727,
+"thumb": "site/thumbs/lightning-over-the-city.jpg",
+"similar": [
+"off-the-lines-breaks",
+"heatwave-arcade",
+"blue-spark-breaks",
+"lime-green-breaks",
+"iron-storm-breaks",
+"checkerboard-skank"
+],
+"shape": [
+"heatwave-arcade",
+"sky-piercing-breaks",
+"iron-storm-breaks",
+"last-light",
+"monsoon-breaks",
+"lantern-in-the-fog"
+],
+"versions": [],
+"arc": [
+0.45,
+0.43,
+0.63,
+0.93,
+0.95,
+0.92,
+0.95,
+0.75,
+0.79,
+0.98,
+1.0,
+0.98,
+0.93,
+0.42,
+0.41,
+0.12
+]
+},
+{
+"id": "lantern-in-the-fog",
+"title": "Lantern in the Fog",
+"file": "songs/youtube/Lantern in the Fog.mp3",
+"video": "videos/YouTube - Lantern in the Fog.mp4",
+"card": "cards/YouTube - Lantern in the Fog.png",
+"tempo": 160,
+"style": "foggy breakcore",
+"feel": "Foggy lo-fi breakcore: muffled breaks, foghorn, drone",
+"good": "Mysterious or stealthy moments",
+"colors": [
+"#2a2e33",
+"#6b737c",
+"#c9ced3",
+"#1a1d20",
+"#ffd27a"
+],
+"order": 33,
+"groups": [
+"Breakcore",
+"Seasons & weather"
+],
+"genres": [
+"Breakcore",
+"Lo-fi & chill"
+],
+"moods": [
+"Chill",
+"Spooky & sneaky"
+],
+"duration": 97.5,
+"loop": [
+18.0,
+66.0019
+],
+"energy": 0.725,
+"thumb": "site/thumbs/lantern-in-the-fog.jpg",
+"similar": [
+"window-seat",
+"determined-steps",
+"padma-to-kyoto-breaks",
+"coastal-route",
+"titan-undefeated",
+"sky-piercing-promise"
+],
+"shape": [
+"heatwave-arcade",
+"last-light",
+"breeze-breaks",
+"monsoon-breaks",
+"lightning-over-the-city",
+"window-seat"
+],
+"versions": [],
+"arc": [
+0.41,
+0.52,
+0.6,
+0.92,
+0.92,
+0.93,
+0.9,
+0.78,
+0.75,
+0.99,
+1.0,
+0.98,
+0.88,
+0.53,
+0.38,
+0.1
+]
+},
+{
+"id": "kite-season",
+"title": "Kite Season",
+"file": "songs/youtube/Kite Season.mp3",
+"video": "videos/YouTube - Kite Season.mp4",
+"card": "cards/YouTube - Kite Season.png",
+"tempo": 178,
+"style": "windy breakcore",
+"feel": "Windy steady breakcore: airy guitars, flute, gusts",
+"good": "Mobility plays, gliding",
+"colors": [
+"#0b4f6c",
+"#40a8c4",
+"#d9f3ff",
+"#073446",
+"#ffe14d"
+],
+"order": 34,
+"groups": [
+"Breakcore",
+"Seasons & weather"
+],
+"genres": [
+"Breakcore",
+"World & folk"
+],
+"moods": [],
+"duration": 87.4,
+"loop": [
+1.3483,
+76.854
+],
+"energy": 0.749,
+"thumb": "site/thumbs/kite-season.jpg",
+"similar": [
+"frostline",
+"lanterns-and-thunder-drums",
+"first-bloom",
+"snowcap-slide",
+"golden-hour-breaks",
+"holler-hoedown"
+],
+"shape": [
+"amber-leaves",
+"first-bloom",
+"lanterns-and-thunder-drums",
+"window-seat",
+"breeze-breaks",
+"frostline"
+],
+"versions": [],
+"arc": [
+0.3,
+0.61,
+0.6,
+0.93,
+0.94,
+0.93,
+0.93,
+0.75,
+0.78,
+0.99,
+1.0,
+0.98,
+0.92,
+0.46,
+0.51,
+0.37
+]
+},
+{
+"id": "golden-hour-groove",
+"title": "Golden Hour Groove",
+"file": "songs/youtube/Golden Hour Groove.mp3",
+"video": "videos/YouTube - Golden Hour Groove.mp4",
+"card": "cards/YouTube - Golden Hour Groove.png",
+"tempo": 114,
+"style": "BTS-style disco-pop",
+"feel": "Disco-pop with brass hooks and strings (in the style of BTS)",
+"good": "Feel-good highlights",
+"colors": [
+"#4a1f00",
+"#d6801c",
+"#ffd27a",
+"#2e1300",
+"#ffffff"
+],
+"order": 35,
+"groups": [
+"K-pop & J-pop styles"
+],
+"genres": [
+"Pop"
+],
+"moods": [
+"Happy"
+],
+"duration": 116.4,
+"loop": [
+8.4211,
+58.9467
+],
+"energy": 0.836,
+"thumb": "site/thumbs/golden-hour-groove.jpg",
+"similar": [
+"lime-green-afterparty",
+"storm-closing",
+"final-circle",
+"red-40-sugar-rush",
+"channel-plaza",
+"victory-rush"
+],
+"shape": [
+"channel-plaza",
+"lobby-loop",
+"arcade-heartbreak-2005",
+"static-tears",
+"titan-undefeated",
+"pixel-heart-dnb"
+],
+"versions": [
+"golden-hour-breaks"
+],
+"arc": [
+0.08,
+0.86,
+0.94,
+0.89,
+0.9,
+0.97,
+0.94,
+0.93,
+0.97,
+0.96,
+0.94,
+0.76,
+0.7,
+1.0,
+0.97,
+0.57
+]
+},
+{
+"id": "blue-spark-runaway",
+"title": "Blue Spark Runaway",
+"file": "songs/youtube/Blue Spark Runaway.mp3",
+"video": "videos/YouTube - Blue Spark Runaway.mp4",
+"card": "cards/YouTube - Blue Spark Runaway.png",
+"tempo": 160,
+"style": "TXT-style pop-punk",
+"feel": "Emo pop-punk with dreamy synths (in the style of TXT)",
+"good": "Clutches, comebacks",
+"colors": [
+"#071a3d",
+"#2753b8",
+"#8fd0ff",
+"#040f26",
+"#ffe6f5"
+],
+"order": 36,
+"groups": [
+"K-pop & J-pop styles"
+],
+"genres": [
+"Pop",
+"Rock & metal"
+],
+"moods": [
+"Emotional"
+],
+"duration": 101.5,
+"loop": [
+27.0,
+81.0
+],
+"energy": 0.723,
+"thumb": "site/thumbs/blue-spark-runaway.jpg",
+"similar": [
+"boundless-run",
+"arcade-heartbreak-2005",
+"dark-and-wild-run",
+"bitcrushed-daydream",
+"static-tears",
+"iron-storm-breaks"
+],
+"shape": [
+"highway-escape",
+"titan-undefeated",
+"breeze-in-the-alley",
+"final-circle",
+"red-40-sugar-rush",
+"frosty-podium"
+],
+"versions": [
+"blue-spark-breaks"
+],
+"arc": [
+0.2,
+0.66,
+0.68,
+0.87,
+0.99,
+0.89,
+0.66,
+0.74,
+0.92,
+1.0,
+0.73,
+0.7,
+0.88,
+1.0,
+0.55,
+0.1
+]
+},
+{
+"id": "off-the-lines",
+"title": "Off the Lines",
+"file": "songs/youtube/Off the Lines.mp3",
+"video": "videos/YouTube - Off the Lines.mp4",
+"card": "cards/YouTube - Off the Lines.png",
+"tempo": 150,
+"style": "CORTIS-style rage trap",
+"feel": "Hype rage trap: distorted synth riff, heavy 808, hi-hat rolls, beat switch (in the style of CORTIS)",
+"good": "Hype plays, kill montages",
+"colors": [
+"#0a1f0a",
+"#1f7a1f",
+"#7dff4f",
+"#051005",
+"#f2ff3d"
+],
+"order": 37,
+"groups": [
+"K-pop & J-pop styles"
+],
+"genres": [
+"Hip-hop & trap"
+],
+"moods": [
+"Hype"
+],
+"duration": 85.7,
+"loop": [
+14.4,
+68.8
+],
+"energy": 0.745,
+"thumb": "site/thumbs/off-the-lines.jpg",
+"similar": [
+"daily-poke-catch-battle",
+"final-circle",
+"red-40-sugar-rush",
+"overclocked",
+"storm-closing",
+"drop-in-daily-match"
+],
+"shape": [
+"overclocked",
+"street-neuron",
+"victory-rush",
+"nobody-s-looking",
+"neon-horizon",
+"arcade-heartbreak-breaks"
+],
+"versions": [
+"off-the-lines-breaks"
+],
+"arc": [
+0.1,
+0.27,
+0.83,
+0.99,
+0.98,
+0.99,
+0.99,
+0.58,
+0.51,
+0.43,
+0.92,
+1.0,
+0.99,
+0.99,
+0.95,
+0.42
+]
+},
+{
+"id": "breeze-in-the-alley",
+"title": "Breeze in the Alley",
+"file": "songs/youtube/Breeze in the Alley.mp3",
+"video": "videos/YouTube - Breeze in the Alley.mp4",
+"card": "cards/YouTube - Breeze in the Alley.png",
+"tempo": 98,
+"style": "Fujii Kaze-style J-pop soul",
+"feel": "Piano-led J-pop soul with jazzy chords, gospel organ and trap touches (in the style of Fujii Kaze)",
+"good": "Chill highlights, story edits",
+"colors": [
+"#2b1d10",
+"#8a5a2b",
+"#e8c99a",
+"#1b1209",
+"#ffffff"
+],
+"order": 38,
+"groups": [
+"K-pop & J-pop styles"
+],
+"genres": [
+"Pop",
+"Hip-hop & trap",
+"Jazz, funk & soul",
+"Piano"
+],
+"moods": [
+"Chill",
+"Emotional"
+],
+"duration": 153.4,
+"loop": [
+44.0816,
+122.4488
+],
+"energy": 0.836,
+"thumb": "site/thumbs/breeze-in-the-alley.jpg",
+"similar": [
+"determined-steps",
+"youth-in-bloom",
+"treasure-hunt-flow",
+"padma-to-kyoto",
+"riverbank-evening",
+"street-neuron"
+],
+"shape": [
+"blue-spark-runaway",
+"paper-sky",
+"lantern-theory",
+"frosty-podium",
+"red-40-breaks",
+"sugar-cloud-breaks"
+],
+"versions": [
+"breeze-breaks"
+],
+"arc": [
+0.56,
+0.79,
+0.81,
+0.85,
+0.97,
+1.0,
+0.82,
+0.87,
+0.84,
+1.0,
+1.0,
+0.85,
+0.96,
+0.99,
+0.61,
+0.46
+]
+},
+{
+"id": "golden-hour-breaks",
+"title": "Golden Hour Breaks",
+"file": "songs/youtube/Golden Hour Breaks.mp3",
+"video": "videos/YouTube - Golden Hour Breaks.mp4",
+"card": "cards/YouTube - Golden Hour Breaks.png",
+"tempo": 172,
+"style": "BTS-style breakcore",
+"feel": "Steady breakcore with funk guitar and brass (BTS style)",
+"good": "Upbeat montages",
+"colors": [
+"#4a1f00",
+"#d6801c",
+"#ffd27a",
+"#2e1300",
+"#fff3c4"
+],
+"order": 39,
+"groups": [
+"Breakcore",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Breakcore",
+"Jazz, funk & soul"
+],
+"moods": [
+"Happy"
+],
+"duration": 89.7,
+"loop": [
+1.3953,
+78.1346
+],
+"energy": 0.772,
+"thumb": "site/thumbs/golden-hour-breaks.jpg",
+"similar": [
+"frostline",
+"paper-sky",
+"kite-season",
+"first-bloom",
+"lightning-over-the-city",
+"holler-hoedown"
+],
+"shape": [
+"blue-spark-breaks",
+"first-bloom",
+"off-the-lines-breaks",
+"lanterns-and-thunder-drums",
+"kite-season",
+"amber-leaves"
+],
+"versions": [
+"golden-hour-groove"
+],
+"arc": [
+0.31,
+0.58,
+0.6,
+0.95,
+0.94,
+0.95,
+0.94,
+0.75,
+0.76,
+1.0,
+0.99,
+0.99,
+0.98,
+0.48,
+0.49,
+0.66
+]
+},
+{
+"id": "blue-spark-breaks",
+"title": "Blue Spark Breaks",
+"file": "songs/youtube/Blue Spark Breaks.mp3",
+"video": "videos/YouTube - Blue Spark Breaks.mp4",
+"card": "cards/YouTube - Blue Spark Breaks.png",
+"tempo": 176,
+"style": "TXT-style breakcore",
+"feel": "Steady breakcore with dreamy synths and crunchy lead guitar (TXT style)",
+"good": "Emotional clutches",
+"colors": [
+"#071a3d",
+"#2753b8",
+"#8fd0ff",
+"#040f26",
+"#ffffff"
+],
+"order": 40,
+"groups": [
+"Breakcore",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Breakcore"
+],
+"moods": [
+"Emotional"
+],
+"duration": 87.7,
+"loop": [
+16.3636,
+27.2727
+],
+"energy": 0.77,
+"thumb": "site/thumbs/blue-spark-breaks.jpg",
+"similar": [
+"off-the-lines-breaks",
+"lightning-over-the-city",
+"heatwave-arcade",
+"lime-green-breaks",
+"nobody-s-looking",
+"aqua-tomorrow-breaks"
+],
+"shape": [
+"golden-hour-breaks",
+"first-bloom",
+"lanterns-and-thunder-drums",
+"kite-season",
+"off-the-lines-breaks",
+"amber-leaves"
+],
+"versions": [
+"blue-spark-runaway"
+],
+"arc": [
+0.41,
+0.51,
+0.6,
+0.93,
+0.94,
+0.93,
+0.94,
+0.75,
+0.76,
+0.98,
+1.0,
+0.98,
+0.99,
+0.47,
+0.51,
+0.61
+]
+},
+{
+"id": "off-the-lines-breaks",
+"title": "Off the Lines Breaks",
+"file": "songs/youtube/Off the Lines Breaks.mp3",
+"video": "videos/YouTube - Off the Lines Breaks.mp4",
+"card": "cards/YouTube - Off the Lines Breaks.png",
+"tempo": 170,
+"style": "CORTIS-style breakcore",
+"feel": "Steady breakcore with a rage-synth riff and 808 (CORTIS style)",
+"good": "Hype edits",
+"colors": [
+"#0a1f0a",
+"#1f7a1f",
+"#7dff4f",
+"#051005",
+"#ffffff"
+],
+"order": 41,
+"groups": [
+"Breakcore",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Breakcore"
+],
+"moods": [
+"Hype"
+],
+"duration": 90.6,
+"loop": [
+16.9412,
+28.2354
+],
+"energy": 0.775,
+"thumb": "site/thumbs/off-the-lines-breaks.jpg",
+"similar": [
+"lightning-over-the-city",
+"lime-green-breaks",
+"heatwave-arcade",
+"blue-spark-breaks",
+"aqua-tomorrow-breaks",
+"lanterns-and-thunder-drums"
+],
+"shape": [
+"golden-hour-breaks",
+"blue-spark-breaks",
+"first-bloom",
+"lanterns-and-thunder-drums",
+"kite-season",
+"amber-leaves"
+],
+"versions": [
+"off-the-lines"
+],
+"arc": [
+0.24,
+0.62,
+0.59,
+0.94,
+0.93,
+0.94,
+0.92,
+0.74,
+0.76,
+0.99,
+0.99,
+0.99,
+1.0,
+0.46,
+0.45,
+0.84
+]
+},
+{
+"id": "lanterns-and-thunder-drums",
+"title": "Lanterns and Thunder Drums",
+"file": "songs/youtube/Lanterns and Thunder Drums.mp3",
+"video": "videos/YouTube - Lanterns and Thunder Drums.mp4",
+"card": "cards/YouTube - Lanterns and Thunder Drums.png",
+"tempo": 168,
+"style": "East Asian breakcore",
+"feel": "East Asian-themed steady breakcore: koto-style plucks, bamboo-flute lead, taiko, gong",
+"good": "Dramatic moments",
+"colors": [
+"#3a0606",
+"#b3201c",
+"#f2c14e",
+"#220303",
+"#fff4d6"
+],
+"order": 42,
+"groups": [
+"Breakcore",
+"World music"
+],
+"genres": [
+"Breakcore",
+"World & folk"
+],
+"moods": [
+"Epic"
+],
+"duration": 91.7,
+"loop": [
+1.4286,
+81.4279
+],
+"energy": 0.755,
+"thumb": "site/thumbs/lanterns-and-thunder-drums.jpg",
+"similar": [
+"first-bloom",
+"kite-season",
+"frostline",
+"aqua-tomorrow-breaks",
+"paper-sky",
+"off-the-lines-breaks"
+],
+"shape": [
+"first-bloom",
+"amber-leaves",
+"kite-season",
+"golden-hour-breaks",
+"window-seat",
+"blue-spark-breaks"
+],
+"versions": [],
+"arc": [
+0.28,
+0.65,
+0.61,
+0.93,
+0.95,
+0.9,
+0.95,
+0.77,
+0.74,
+0.97,
+1.0,
+0.95,
+1.0,
+0.5,
+0.43,
+0.45
+]
+},
+{
+"id": "breeze-breaks",
+"title": "Breeze Breaks",
+"file": "songs/youtube/Breeze Breaks.mp3",
+"video": "videos/YouTube - Breeze Breaks.mp4",
+"card": "cards/YouTube - Breeze Breaks.png",
+"tempo": 172,
+"style": "Fujii Kaze-style breakcore",
+"feel": "Steady breakcore with jazzy piano and a singing synth (Fujii Kaze style)",
+"good": "Smooth highlight reels",
+"colors": [
+"#2b1d10",
+"#8a5a2b",
+"#e8c99a",
+"#1b1209",
+"#fff7e8"
+],
+"order": 43,
+"groups": [
+"Breakcore",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Breakcore",
+"Jazz, funk & soul",
+"Piano"
+],
+"moods": [],
+"duration": 89.5,
+"loop": [
+5.5814,
+72.5663
+],
+"energy": 0.737,
+"thumb": "site/thumbs/breeze-breaks.jpg",
+"similar": [
+"last-light",
+"sky-piercing-breaks",
+"sugar-cloud-breaks",
+"nobody-s-looking",
+"amber-leaves",
+"youth-in-bloom"
+],
+"shape": [
+"last-light",
+"iron-storm-breaks",
+"sky-piercing-breaks",
+"monsoon-breaks",
+"heatwave-arcade",
+"window-seat"
+],
+"versions": [
+"breeze-in-the-alley"
+],
+"arc": [
+0.44,
+0.54,
+0.6,
+0.92,
+0.89,
+0.93,
+0.9,
+0.75,
+0.73,
+1.0,
+0.95,
+0.98,
+0.93,
+0.51,
+0.48,
+0.24
+]
+},
+{
+"id": "schoolyard-riot",
+"title": "Schoolyard Riot",
+"file": "songs/youtube/Schoolyard Riot.mp3",
+"video": "videos/YouTube - Schoolyard Riot.mp4",
+"card": "cards/YouTube - Schoolyard Riot.png",
+"tempo": 96,
+"style": "BTS School-era boom-bap",
+"feel": "Hard 90s boom-bap, horn stabs, scratches (BTS School trilogy era)",
+"good": "Hype intros",
+"colors": [
+"#1a0b0b",
+"#6b1a1a",
+"#d94141",
+"#0d0505",
+"#ffd23f"
+],
+"order": 44,
+"groups": [
+"BTS album eras",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Hip-hop & trap"
+],
+"moods": [
+"Hype"
+],
+"duration": 92.1,
+"loop": [
+5.0,
+55.0
+],
+"energy": 0.815,
+"thumb": "site/thumbs/schoolyard-riot.jpg",
+"similar": [
+"treasure-hunt-flow",
+"street-neuron",
+"dark-and-wild-run",
+"respawn-lounge",
+"fragile-mask",
+"yet-to-bloom"
+],
+"shape": [
+"holler-hoedown",
+"turbo-corner",
+"checkerboard-skank",
+"grassland-hop",
+"magma-fortress",
+"march-of-seven"
+],
+"versions": [],
+"arc": [
+0.59,
+0.76,
+0.74,
+0.76,
+0.91,
+0.99,
+0.98,
+0.94,
+0.78,
+0.74,
+0.74,
+0.93,
+0.98,
+1.0,
+0.87,
+0.32
+]
+},
+{
+"id": "dark-and-wild-run",
+"title": "Dark and Wild Run",
+"file": "songs/youtube/Dark and Wild Run.mp3",
+"video": "videos/YouTube - Dark and Wild Run.mp4",
+"card": "cards/YouTube - Dark and Wild Run.png",
+"tempo": 140,
+"style": "BTS Dark & Wild-era rock-rap",
+"feel": "Rock-rap with crunchy guitars (BTS Dark & Wild era)",
+"good": "Aggressive plays",
+"colors": [
+"#050505",
+"#3a0d0d",
+"#a31f1f",
+"#000000",
+"#ffffff"
+],
+"order": 45,
+"groups": [
+"BTS album eras",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Rock & metal",
+"Hip-hop & trap"
+],
+"moods": [
+"Hype"
+],
+"duration": 88.2,
+"loop": [
+6.8571,
+41.1429
+],
+"energy": 0.827,
+"thumb": "site/thumbs/dark-and-wild-run.jpg",
+"similar": [
+"boundless-run",
+"iron-storm-rising",
+"highway-escape",
+"arcade-heartbreak-2005",
+"iron-storm-breaks",
+"titan-undefeated"
+],
+"shape": [
+"red-40-sugar-rush",
+"lime-green-afterparty",
+"infinite-series",
+"midnight-drift",
+"arcade-heartbreak-2005",
+"moonlit-night-stage"
+],
+"versions": [],
+"arc": [
+0.5,
+0.75,
+0.78,
+0.84,
+0.99,
+0.98,
+0.85,
+0.78,
+0.84,
+1.0,
+0.98,
+0.78,
+0.91,
+0.97,
+0.96,
+0.31
+]
+},
+{
+"id": "youth-in-bloom",
+"title": "Youth in Bloom",
+"file": "songs/youtube/Youth in Bloom.mp3",
+"video": "videos/YouTube - Youth in Bloom.mp4",
+"card": "cards/YouTube - Youth in Bloom.png",
+"tempo": 128,
+"style": "BTS HYYH-era synth-pop",
+"feel": "Emotional synth-pop with piano (BTS The Most Beautiful Moment in Life era)",
+"good": "Montages",
+"colors": [
+"#3a1a4d",
+"#c25a9b",
+"#ffc2d9",
+"#240f30",
+"#ffffff"
+],
+"order": 46,
+"groups": [
+"BTS album eras",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Pop",
+"Piano"
+],
+"moods": [
+"Emotional"
+],
+"duration": 92.4,
+"loop": [
+7.5,
+52.5003
+],
+"energy": 0.771,
+"thumb": "site/thumbs/youth-in-bloom.jpg",
+"similar": [
+"breeze-in-the-alley",
+"last-light",
+"lobby-loop",
+"grassland-hop",
+"breeze-breaks",
+"determined-steps"
+],
+"shape": [
+"sunlit-plaza",
+"stadium-highlands",
+"eolssu-groove",
+"island-breeze",
+"march-of-seven",
+"schoolyard-riot"
+],
+"versions": [],
+"arc": [
+0.5,
+0.68,
+0.72,
+0.71,
+0.83,
+0.93,
+1.0,
+0.94,
+0.73,
+0.73,
+0.76,
+0.86,
+0.97,
+0.99,
+0.69,
+0.29
+]
+},
+{
+"id": "velvet-wings",
+"title": "Velvet Wings",
+"file": "songs/youtube/Velvet Wings.mp3",
+"video": "videos/YouTube - Velvet Wings.mp4",
+"card": "cards/YouTube - Velvet Wings.png",
+"tempo": 93,
+"style": "BTS Wings-era moombahton",
+"feel": "Dark moombahton, pan flute, strings (BTS Wings era)",
+"good": "Moody clips",
+"colors": [
+"#0a0a14",
+"#2b1f4a",
+"#7a5fb3",
+"#05050a",
+"#f2d7ff"
+],
+"order": 47,
+"groups": [
+"BTS album eras",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Electronic & dance",
+"World & folk"
+],
+"moods": [],
+"duration": 101.0,
+"loop": [
+30.9677,
+82.5807
+],
+"energy": 0.802,
+"thumb": "site/thumbs/velvet-wings.jpg",
+"similar": [
+"winds-of-the-world",
+"arirang-dawn",
+"island-time",
+"snowcap-slide",
+"first-bloom",
+"fragile-mask"
+],
+"shape": [
+"treasure-hunt-flow",
+"march-of-seven",
+"boulevard-cafe",
+"light-up-the-persona",
+"time-warp-zone",
+"padma-to-kyoto"
+],
+"versions": [],
+"arc": [
+0.55,
+0.6,
+0.75,
+0.77,
+0.8,
+0.99,
+0.99,
+0.99,
+0.81,
+0.74,
+0.76,
+0.9,
+1.0,
+1.0,
+0.9,
+0.27
+]
+},
+{
+"id": "double-helix",
+"title": "Double Helix",
+"file": "songs/youtube/Double Helix.mp3",
+"video": "videos/YouTube - Double Helix.mp4",
+"card": "cards/YouTube - Double Helix.png",
+"tempo": 128,
+"style": "BTS LY Her-era pop",
+"feel": "Bright pop with acoustic guitar, whistle and future-bass chorus (BTS Love Yourself: Her era)",
+"good": "Happy highlights",
+"colors": [
+"#0f3d5c",
+"#4fb0d9",
+"#ffd1e6",
+"#08263a",
+"#ffffff"
+],
+"order": 48,
+"groups": [
+"BTS album eras",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Pop"
+],
+"moods": [
+"Happy"
+],
+"duration": 88.9,
+"loop": [
+30.0,
+75.0
+],
+"energy": 0.783,
+"thumb": "site/thumbs/double-helix.jpg",
+"similar": [
+"light-up-the-persona",
+"arcade-heartbreak-2005",
+"starlit-orbit",
+"aqua-tomorrow",
+"tokyo-sunset-drive",
+"blue-spark-runaway"
+],
+"shape": [
+"shellfire-castle",
+"cliffside-climb",
+"yet-to-bloom",
+"velvet-wings",
+"squeak-sprint",
+"magma-fortress"
+],
+"versions": [],
+"arc": [
+0.55,
+0.6,
+0.74,
+0.73,
+0.82,
+0.89,
+0.99,
+1.0,
+0.79,
+0.7,
+0.73,
+0.8,
+0.95,
+0.99,
+0.97,
+0.28
+]
+},
+{
+"id": "fragile-mask",
+"title": "Fragile Mask",
+"file": "songs/youtube/Fragile Mask.mp3",
+"video": "videos/YouTube - Fragile Mask.mp4",
+"card": "cards/YouTube - Fragile Mask.png",
+"tempo": 78,
+"style": "BTS LY Tear-era emo hip-hop",
+"feel": "Emo hip-hop with dark guitar and trap drums (BTS Love Yourself: Tear era)",
+"good": "Emotional edits",
+"colors": [
+"#0d0d1a",
+"#2a2a4a",
+"#6b6bb3",
+"#05050d",
+"#ff9fb3"
+],
+"order": 49,
+"groups": [
+"BTS album eras",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Hip-hop & trap"
+],
+"moods": [
+"Emotional"
+],
+"duration": 120.2,
+"loop": [
+15.3846,
+76.9231
+],
+"energy": 0.777,
+"thumb": "site/thumbs/fragile-mask.jpg",
+"similar": [
+"yet-to-bloom",
+"indigo-fields",
+"midnight-drift",
+"padma-to-kyoto",
+"respawn-lounge",
+"schoolyard-riot"
+],
+"shape": [
+"treasure-hunt-flow",
+"march-of-seven",
+"yet-to-bloom",
+"light-up-the-persona",
+"sugar-cloud-smile",
+"time-warp-zone"
+],
+"versions": [],
+"arc": [
+0.45,
+0.65,
+0.74,
+0.72,
+0.76,
+0.95,
+1.0,
+0.95,
+0.78,
+0.71,
+0.74,
+0.88,
+0.94,
+0.97,
+0.89,
+0.29
+]
+},
+{
+"id": "eolssu-groove",
+"title": "Eolssu Groove",
+"file": "songs/youtube/Eolssu Groove.mp3",
+"video": "videos/YouTube - Eolssu Groove.mp4",
+"card": "cards/YouTube - Eolssu Groove.png",
+"tempo": 126,
+"style": "BTS LY Answer-era gugak x gqom",
+"feel": "Korean traditional instruments over gqom/house (BTS Love Yourself: Answer era)",
+"good": "Big moments",
+"colors": [
+"#1a0f05",
+"#a3361c",
+"#f2b23d",
+"#0d0702",
+"#ffffff"
+],
+"order": 50,
+"groups": [
+"BTS album eras",
+"K-pop & J-pop styles",
+"World music"
+],
+"genres": [
+"Electronic & dance",
+"World & folk"
+],
+"moods": [
+"Epic"
+],
+"duration": 75.4,
+"loop": [
+7.619,
+45.7142
+],
+"energy": 0.782,
+"thumb": "site/thumbs/eolssu-groove.jpg",
+"similar": [
+"time-warp-zone",
+"coastal-route",
+"magma-fortress",
+"squeak-sprint",
+"monsoon-breaks",
+"homebase-rising"
+],
+"shape": [
+"sunlit-plaza",
+"checkerboard-skank",
+"holler-hoedown",
+"boulevard-cafe",
+"velvet-wings",
+"stadium-highlands"
+],
+"versions": [],
+"arc": [
+0.51,
+0.58,
+0.77,
+0.74,
+0.82,
+0.96,
+1.0,
+0.97,
+0.79,
+0.75,
+0.76,
+0.93,
+0.97,
+0.96,
+0.81,
+0.18
+]
+},
+{
+"id": "light-up-the-persona",
+"title": "Light Up the Persona",
+"file": "songs/youtube/Light Up the Persona.mp3",
+"video": "videos/YouTube - Light Up the Persona.mp4",
+"card": "cards/YouTube - Light Up the Persona.png",
+"tempo": 120,
+"style": "BTS MOTS Persona-era funk-pop",
+"feel": "Bright funk-pop (BTS Map of the Soul: Persona era)",
+"good": "Feel-good edits",
+"colors": [
+"#5c1a4d",
+"#ff6fa8",
+"#ffe08a",
+"#3a0f30",
+"#ffffff"
+],
+"order": 51,
+"groups": [
+"BTS album eras",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Pop",
+"Jazz, funk & soul"
+],
+"moods": [
+"Happy"
+],
+"duration": 78.2,
+"loop": [
+10.0,
+50.0
+],
+"energy": 0.785,
+"thumb": "site/thumbs/light-up-the-persona.jpg",
+"similar": [
+"tokyo-sunset-drive",
+"double-helix",
+"street-neuron",
+"rush-hour-boost",
+"starlit-orbit",
+"island-breeze"
+],
+"shape": [
+"treasure-hunt-flow",
+"respawn-lounge",
+"velvet-wings",
+"starlight-carnival-run",
+"march-of-seven",
+"desert-dunes"
+],
+"versions": [],
+"arc": [
+0.46,
+0.58,
+0.75,
+0.75,
+0.79,
+1.0,
+0.95,
+0.97,
+0.79,
+0.74,
+0.77,
+0.9,
+0.98,
+0.96,
+0.88,
+0.28
+]
+},
+{
+"id": "march-of-seven",
+"title": "March of Seven",
+"file": "songs/youtube/March of Seven.mp3",
+"video": "videos/YouTube - March of Seven.mp4",
+"card": "cards/YouTube - March of Seven.png",
+"tempo": 106,
+"style": "BTS MOTS 7-era march",
+"feel": "Marching drums, orchestra and 808 (BTS Map of the Soul: 7 era)",
+"good": "Epic intros",
+"colors": [
+"#0b0b0b",
+"#3a3a3a",
+"#9a9a9a",
+"#000000",
+"#ffd23f"
+],
+"order": 52,
+"groups": [
+"BTS album eras",
+"K-pop & J-pop styles",
+"Orchestral & cinematic"
+],
+"genres": [
+"Jazz, funk & soul",
+"Orchestral & cinematic"
+],
+"moods": [
+"Epic"
+],
+"duration": 88.8,
+"loop": [
+9.0566,
+54.3398
+],
+"energy": 0.782,
+"thumb": "site/thumbs/march-of-seven.jpg",
+"similar": [
+"stadium-highlands",
+"homebase-rising",
+"magma-fortress",
+"daily-poke-catch-mythic-battle",
+"eolssu-groove",
+"shellfire-castle"
+],
+"shape": [
+"velvet-wings",
+"treasure-hunt-flow",
+"time-warp-zone",
+"sunlit-plaza",
+"boulevard-cafe",
+"fragile-mask"
+],
+"versions": [],
+"arc": [
+0.51,
+0.61,
+0.73,
+0.75,
+0.77,
+0.98,
+0.99,
+0.97,
+0.78,
+0.72,
+0.73,
+0.91,
+0.96,
+1.0,
+0.84,
+0.27
+]
+},
+{
+"id": "life-goes-slow",
+"title": "Life Goes Slow",
+"file": "songs/youtube/Life Goes Slow.mp3",
+"video": "videos/YouTube - Life Goes Slow.mp4",
+"card": "cards/YouTube - Life Goes Slow.png",
+"tempo": 82,
+"style": "BTS BE-era acoustic lo-fi",
+"feel": "Warm acoustic lo-fi pop (BTS BE era)",
+"good": "Chill streams",
+"colors": [
+"#2b2014",
+"#8a6a45",
+"#e8d2b0",
+"#1a130b",
+"#ffffff"
+],
+"order": 53,
+"groups": [
+"BTS album eras",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Pop",
+"Lo-fi & chill"
+],
+"moods": [
+"Chill"
+],
+"duration": 119.8,
+"loop": [
+35.122,
+93.6587
+],
+"energy": 0.759,
+"thumb": "site/thumbs/life-goes-slow.jpg",
+"similar": [
+"menu-drift",
+"island-time",
+"tokyo-sunset-drive",
+"indigo-fields",
+"island-breeze",
+"morning-over-the-valley"
+],
+"shape": [
+"aqua-tomorrow",
+"indigo-fields",
+"youth-in-bloom",
+"velvet-layover",
+"starlight-carnival-run",
+"sunlit-plaza"
+],
+"versions": [],
+"arc": [
+0.46,
+0.65,
+0.72,
+0.75,
+0.8,
+1.0,
+0.9,
+0.9,
+0.75,
+0.74,
+0.72,
+0.98,
+0.95,
+0.96,
+0.53,
+0.33
+]
+},
+{
+"id": "yet-to-bloom",
+"title": "Yet to Bloom",
+"file": "songs/youtube/Yet to Bloom.mp3",
+"video": "videos/YouTube - Yet to Bloom.mp4",
+"card": "cards/YouTube - Yet to Bloom.png",
+"tempo": 90,
+"style": "BTS Proof-era mellow hip-hop",
+"feel": "Nostalgic mellow hip-hop (BTS Proof era)",
+"good": "Recaps",
+"colors": [
+"#1f2a3d",
+"#5a78a8",
+"#d9e6ff",
+"#121a26",
+"#fff3c4"
+],
+"order": 54,
+"groups": [
+"BTS album eras",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Hip-hop & trap",
+"Lo-fi & chill"
+],
+"moods": [
+"Chill",
+"Emotional"
+],
+"duration": 103.8,
+"loop": [
+10.6667,
+64.0
+],
+"energy": 0.765,
+"thumb": "site/thumbs/yet-to-bloom.jpg",
+"similar": [
+"respawn-lounge",
+"velvet-layover",
+"indigo-fields",
+"lobby-loop",
+"fragile-mask",
+"treasure-hunt-flow"
+],
+"shape": [
+"respawn-lounge",
+"fragile-mask",
+"treasure-hunt-flow",
+"squeak-sprint",
+"light-up-the-persona",
+"desert-dunes"
+],
+"versions": [],
+"arc": [
+0.39,
+0.56,
+0.73,
+0.73,
+0.77,
+0.92,
+1.0,
+0.97,
+0.81,
+0.72,
+0.73,
+0.86,
+0.96,
+0.92,
+0.95,
+0.21
+]
+},
+{
+"id": "arirang-dawn",
+"title": "Arirang Dawn",
+"file": "songs/youtube/Arirang Dawn.mp3",
+"video": "videos/YouTube - Arirang Dawn.mp4",
+"card": "cards/YouTube - Arirang Dawn.png",
+"tempo": 94,
+"style": "BTS ARIRANG-era",
+"feel": "Temple bell, gayageum, 808, vocoder, guitar surge (BTS ARIRANG era)",
+"good": "Comebacks",
+"colors": [
+"#0b1622",
+"#2e5a7a",
+"#f0c987",
+"#060d14",
+"#ffffff"
+],
+"order": 55,
+"groups": [
+"BTS album eras",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Other"
+],
+"moods": [
+"Emotional"
+],
+"duration": 93.0,
+"loop": [
+2.5532,
+53.6169
+],
+"energy": 0.772,
+"thumb": "site/thumbs/arirang-dawn.jpg",
+"similar": [
+"fragile-mask",
+"velvet-wings",
+"drop-in-daily-endless-summary-og-lobby-style",
+"daily-poke-catch-route",
+"daily-poke-catch-battle",
+"sugar-cloud-smile"
+],
+"shape": [
+"aqua-tomorrow",
+"stadium-highlands",
+"eolssu-groove",
+"cloudtop-athletic",
+"checkerboard-skank",
+"sunlit-plaza"
+],
+"versions": [],
+"arc": [
+0.59,
+0.54,
+0.76,
+0.75,
+0.76,
+0.88,
+0.98,
+0.99,
+0.94,
+0.75,
+0.78,
+0.99,
+0.97,
+1.0,
+0.57,
+0.11
+]
+},
+{
+"id": "riverbank-evening",
+"title": "Riverbank Evening",
+"file": "songs/youtube/Riverbank Evening.mp3",
+"video": "videos/YouTube - Riverbank Evening.mp4",
+"card": "cards/YouTube - Riverbank Evening.png",
+"tempo": 96,
+"style": "Bengali folk style",
+"feel": "Bengali Baul-folk style: dotara, ektara, harmonium, bansuri, tabla, tihai ending",
+"good": "Calm intros, story edits",
+"colors": [
+"#0d3b2e",
+"#2f8f6b",
+"#f2d16b",
+"#06241b",
+"#ffffff"
+],
+"order": 56,
+"groups": [
+"World music"
+],
+"genres": [
+"World & folk"
+],
+"moods": [
+"Chill",
+"Emotional"
+],
+"duration": 146.3,
+"loop": [
+35.0,
+95.0
+],
+"energy": 0.771,
+"thumb": "site/thumbs/riverbank-evening.jpg",
+"similar": [
+"padma-to-kyoto",
+"morning-over-the-valley",
+"indigo-fields",
+"winds-of-the-world",
+"determined-steps",
+"desert-dunes"
+],
+"shape": [
+"lime-green-breaks",
+"youth-in-bloom",
+"starlight-carnival-run",
+"sunlit-plaza",
+"holler-hoedown",
+"checkerboard-skank"
+],
+"versions": [],
+"arc": [
+0.48,
+0.55,
+0.56,
+0.8,
+0.88,
+0.91,
+0.99,
+0.89,
+0.67,
+0.82,
+0.89,
+0.84,
+0.97,
+1.0,
+0.78,
+0.32
+]
+},
+{
+"id": "monsoon-breaks",
+"title": "Monsoon Breaks",
+"file": "songs/youtube/Monsoon Breaks.mp3",
+"video": "videos/YouTube - Monsoon Breaks.mp4",
+"card": "cards/YouTube - Monsoon Breaks.png",
+"tempo": 172,
+"style": "Bengali breakcore",
+"feel": "Steady breakcore with tabla, harmonium and bansuri",
+"good": "Upbeat montages",
+"colors": [
+"#0d2433",
+"#2f6f8f",
+"#bfe3f2",
+"#061520",
+"#ffe48a"
+],
+"order": 57,
+"groups": [
+"Breakcore",
+"World music"
+],
+"genres": [
+"Breakcore",
+"World & folk"
+],
+"moods": [
+"Happy"
+],
+"duration": 90.4,
+"loop": [
+1.3953,
+79.5451
+],
+"energy": 0.747,
+"thumb": "site/thumbs/monsoon-breaks.jpg",
+"similar": [
+"padma-to-kyoto-breaks",
+"heatwave-arcade",
+"rush-hour-boost",
+"eolssu-groove",
+"stadium-highlands",
+"aqua-tomorrow-breaks"
+],
+"shape": [
+"last-light",
+"frostline",
+"sky-piercing-breaks",
+"heatwave-arcade",
+"breeze-breaks",
+"iron-storm-breaks"
+],
+"versions": [],
+"arc": [
+0.44,
+0.56,
+0.62,
+0.95,
+0.92,
+0.95,
+0.91,
+0.75,
+0.79,
+1.0,
+0.98,
+1.0,
+0.91,
+0.48,
+0.53,
+0.16
+]
+},
+{
+"id": "sky-piercing-promise",
+"title": "Sky-Piercing Promise",
+"file": "songs/youtube/Sky-Piercing Promise.mp3",
+"video": "videos/YouTube - Sky-Piercing Promise.mp4",
+"card": "cards/YouTube - Sky-Piercing Promise.png",
+"tempo": 176,
+"style": "anime opening style",
+"feel": "Fast J-rock anime-opening style: piano runs, strings, crunchy guitars, last chorus up a key",
+"good": "Intros, hype montages",
+"colors": [
+"#0b1d4a",
+"#2a5bd7",
+"#ffb3c7",
+"#060f2a",
+"#ffffff"
+],
+"order": 58,
+"groups": [
+"K-pop & J-pop styles"
+],
+"genres": [
+"Rock & metal",
+"Piano"
+],
+"moods": [
+"Hype"
+],
+"duration": 87.3,
+"loop": [
+5.4545,
+38.182
+],
+"energy": 0.796,
+"thumb": "site/thumbs/sky-piercing-promise.jpg",
+"similar": [
+"highway-escape",
+"titan-undefeated",
+"iron-storm-rising",
+"skyscraper-sprint",
+"rush-hour-boost",
+"dark-and-wild-run"
+],
+"shape": [
+"lime-green-afterparty",
+"nightcore-rush",
+"dark-and-wild-run",
+"red-40-sugar-rush",
+"midnight-drift",
+"infinite-series"
+],
+"versions": [
+"sky-piercing-breaks"
+],
+"arc": [
+0.54,
+0.74,
+0.74,
+0.78,
+1.0,
+0.99,
+0.73,
+0.78,
+0.79,
+0.98,
+1.0,
+0.72,
+0.67,
+0.99,
+0.98,
+0.29
+]
+},
+{
+"id": "sky-piercing-breaks",
+"title": "Sky-Piercing Breaks",
+"file": "songs/youtube/Sky-Piercing Breaks.mp3",
+"video": "videos/YouTube - Sky-Piercing Breaks.mp4",
+"card": "cards/YouTube - Sky-Piercing Breaks.png",
+"tempo": 180,
+"style": "anime breakcore",
+"feel": "Steady breakcore with the anime hook on strings and crunch guitar",
+"good": "Montages",
+"colors": [
+"#140b3a",
+"#5a2ad7",
+"#ffd1e0",
+"#0a0620",
+"#ffffff"
+],
+"order": 59,
+"groups": [
+"Breakcore",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Breakcore"
+],
+"moods": [],
+"duration": 85.8,
+"loop": [
+5.3333,
+69.3406
+],
+"energy": 0.746,
+"thumb": "site/thumbs/sky-piercing-breaks.jpg",
+"similar": [
+"sugar-cloud-breaks",
+"breeze-breaks",
+"last-light",
+"nobody-s-looking",
+"shattered-overture",
+"iron-storm-breaks"
+],
+"shape": [
+"iron-storm-breaks",
+"last-light",
+"lightning-over-the-city",
+"monsoon-breaks",
+"breeze-breaks",
+"heatwave-arcade"
+],
+"versions": [
+"sky-piercing-promise"
+],
+"arc": [
+0.51,
+0.49,
+0.61,
+0.94,
+0.92,
+0.94,
+0.91,
+0.74,
+0.76,
+1.0,
+0.97,
+0.99,
+0.92,
+0.5,
+0.51,
+0.22
+]
+},
+{
+"id": "arcade-heartbreak-2005",
+"title": "Arcade Heartbreak 2005",
+"file": "songs/youtube/Arcade Heartbreak 2005.mp3",
+"video": "videos/YouTube - Arcade Heartbreak 2005.mp4",
+"card": "cards/YouTube - Arcade Heartbreak 2005.png",
+"tempo": 150,
+"style": "South Arcade-style pop-punk",
+"feel": "Y2K pop-punk with nu-metal chugs and glitchy synths (in the style of South Arcade)",
+"good": "Hype plays, funny clips",
+"colors": [
+"#1a0a2e",
+"#7a1fa8",
+"#39ff14",
+"#0d0518",
+"#ffffff"
+],
+"order": 60,
+"groups": [],
+"genres": [
+"Pop",
+"Rock & metal"
+],
+"moods": [
+"Hype",
+"Happy",
+"Funny"
+],
+"duration": 82.5,
+"loop": [
+19.2,
+70.4002
+],
+"energy": 0.795,
+"thumb": "site/thumbs/arcade-heartbreak-2005.jpg",
+"similar": [
+"boundless-run",
+"iron-storm-rising",
+"checkerboard-skank",
+"dark-and-wild-run",
+"rush-hour-boost",
+"blue-spark-runaway"
+],
+"shape": [
+"midnight-drift",
+"dark-and-wild-run",
+"red-40-sugar-rush",
+"lime-green-afterparty",
+"titan-undefeated",
+"nightcore-rush"
+],
+"versions": [
+"arcade-heartbreak-breaks"
+],
+"arc": [
+0.24,
+0.7,
+0.76,
+0.81,
+0.99,
+0.97,
+0.8,
+0.76,
+0.81,
+0.98,
+1.0,
+0.8,
+0.89,
+1.0,
+0.92,
+0.3
+]
+},
+{
+"id": "iron-storm-rising",
+"title": "Iron Storm Rising",
+"file": "songs/youtube/Iron Storm Rising.mp3",
+"video": "videos/YouTube - Iron Storm Rising.mp4",
+"card": "cards/YouTube - Iron Storm Rising.png",
+"tempo": 168,
+"style": "heavy metal",
+"feel": "Heavy metal: double kick, chugs, tremolo picking, guitar solo",
+"good": "Intense endgames",
+"colors": [
+"#0a0a0a",
+"#3a3a3a",
+"#c0c0c0",
+"#000000",
+"#ff3b2f"
+],
+"order": 61,
+"groups": [],
+"genres": [
+"Rock & metal"
+],
+"moods": [
+"Hype"
+],
+"duration": 79.7,
+"loop": [
+17.1429,
+62.857
+],
+"energy": 0.849,
+"thumb": "site/thumbs/iron-storm-rising.jpg",
+"similar": [
+"highway-escape",
+"sky-piercing-promise",
+"titan-undefeated",
+"dark-and-wild-run",
+"boundless-run",
+"arcade-heartbreak-2005"
+],
+"shape": [
+"final-circle",
+"red-40-sugar-rush",
+"rush-hour-boost",
+"highway-escape",
+"dark-and-wild-run",
+"emerald-shore-zone"
+],
+"versions": [
+"iron-storm-breaks"
+],
+"arc": [
+0.56,
+0.74,
+0.76,
+0.91,
+0.99,
+0.92,
+0.76,
+0.76,
+1.0,
+0.99,
+1.0,
+0.99,
+0.98,
+0.99,
+0.96,
+0.28
+]
+},
+{
+"id": "iron-storm-breaks",
+"title": "Iron Storm Breaks",
+"file": "songs/youtube/Iron Storm Breaks.mp3",
+"video": "videos/YouTube - Iron Storm Breaks.mp4",
+"card": "cards/YouTube - Iron Storm Breaks.png",
+"tempo": 176,
+"style": "metal breakcore",
+"feel": "Steady breakcore with metal guitars and reese bass",
+"good": "Aggressive montages",
+"colors": [
+"#120404",
+"#5a0f0f",
+"#ff4f2f",
+"#080202",
+"#ffffff"
+],
+"order": 62,
+"groups": [
+"Breakcore"
+],
+"genres": [
+"Breakcore",
+"Rock & metal"
+],
+"moods": [
+"Hype"
+],
+"duration": 87.5,
+"loop": [
+25.9091,
+58.636
+],
+"energy": 0.743,
+"thumb": "site/thumbs/iron-storm-breaks.jpg",
+"similar": [
+"dark-and-wild-run",
+"lightning-over-the-city",
+"boundless-run",
+"arcade-heartbreak-2005",
+"lime-green-breaks",
+"iron-storm-rising"
+],
+"shape": [
+"sky-piercing-breaks",
+"breeze-breaks",
+"last-light",
+"lightning-over-the-city",
+"heatwave-arcade",
+"monsoon-breaks"
+],
+"versions": [
+"iron-storm-rising"
+],
+"arc": [
+0.45,
+0.48,
+0.6,
+0.95,
+0.93,
+0.95,
+0.92,
+0.73,
+0.75,
+1.0,
+0.98,
+1.0,
+0.97,
+0.47,
+0.47,
+0.21
+]
+},
+{
+"id": "respawn-lounge",
+"title": "Respawn Lounge",
+"file": "songs/youtube/Respawn Lounge.mp3",
+"video": "videos/YouTube - Respawn Lounge.mp4",
+"card": "cards/YouTube - Respawn Lounge.png",
+"tempo": 84,
+"style": "chill lo-fi BGM",
+"feel": "Laid-back lo-fi: e-piano, guitar, boom-bap",
+"good": "Commentary, chill streams",
+"colors": [
+"#1d2433",
+"#4a5a7a",
+"#d9c7a6",
+"#10141d",
+"#ffffff"
+],
+"order": 63,
+"groups": [
+"Background music"
+],
+"genres": [
+"Hip-hop & trap",
+"Lo-fi & chill",
+"Piano"
+],
+"moods": [
+"Chill"
+],
+"duration": 110.9,
+"loop": [
+11.4286,
+68.5714
+],
+"energy": 0.794,
+"thumb": "site/thumbs/respawn-lounge.jpg",
+"similar": [
+"yet-to-bloom",
+"lobby-loop",
+"velvet-layover",
+"treasure-hunt-flow",
+"amber-leaves",
+"indigo-fields"
+],
+"shape": [
+"light-up-the-persona",
+"treasure-hunt-flow",
+"yet-to-bloom",
+"squeak-sprint",
+"velvet-wings",
+"starlight-carnival-run"
+],
+"versions": [],
+"arc": [
+0.43,
+0.54,
+0.77,
+0.77,
+0.79,
+1.0,
+0.99,
+1.0,
+0.84,
+0.76,
+0.77,
+0.9,
+0.97,
+0.99,
+0.91,
+0.27
+]
+},
+{
+"id": "final-circle",
+"title": "Final Circle",
+"file": "songs/youtube/Final Circle.mp3",
+"video": "videos/YouTube - Final Circle.mp4",
+"card": "cards/YouTube - Final Circle.png",
+"tempo": 140,
+"style": "trap EDM BGM",
+"feel": "Dark trap-EDM with heavy 808 and synth drops",
+"good": "Endgames, clutch moments",
+"colors": [
+"#1a0510",
+"#7a0f3a",
+"#ff5fa2",
+"#0d0208",
+"#ffffff"
+],
+"order": 64,
+"groups": [
+"Background music"
+],
+"genres": [
+"Hip-hop & trap",
+"Electronic & dance"
+],
+"moods": [
+"Hype"
+],
+"duration": 95.4,
+"loop": [
+8.5714,
+70.2858
+],
+"energy": 0.795,
+"thumb": "site/thumbs/final-circle.jpg",
+"similar": [
+"lime-green-afterparty",
+"off-the-lines",
+"midnight-drift",
+"storm-closing",
+"squeak-sprint",
+"sugar-cloud-smile"
+],
+"shape": [
+"rush-hour-boost",
+"highway-escape",
+"emerald-shore-zone",
+"moonlit-night-stage",
+"titan-undefeated",
+"red-40-sugar-rush"
+],
+"versions": [],
+"arc": [
+0.45,
+0.72,
+0.76,
+0.88,
+1.0,
+0.9,
+0.75,
+0.75,
+1.0,
+0.96,
+0.83,
+0.75,
+0.85,
+0.97,
+0.95,
+0.18
+]
+},
+{
+"id": "pallet-path",
+"title": "Pallet Path",
+"file": "songs/youtube/Pallet Path.mp3",
+"video": "videos/YouTube - Pallet Path.mp4",
+"card": "cards/YouTube - Pallet Path.png",
+"tempo": 132,
+"style": "Game Boy route style",
+"feel": "Route music crunched to Game Boy quality (in the style of Pokémon Gen 1)",
+"good": "Exploring, looting",
+"colors": [
+"#2f3d1f",
+"#8bac0f",
+"#e0f8d0",
+"#1a2310",
+"#0f380f"
+],
+"order": 65,
+"groups": [
+"Pokémon-style",
+"Video game styles"
+],
+"genres": [
+"Chiptune & retro"
+],
+"moods": [
+"Chill"
+],
+"duration": 69.4,
+"loop": [
+7.2727,
+43.6363
+],
+"energy": 0.799,
+"thumb": "site/thumbs/pallet-path.jpg",
+"similar": [
+"johto-morning",
+"coastal-route",
+"daily-poke-catch-route",
+"daily-poke-catch-town",
+"checkerboard-skank",
+"coral-waltz"
+],
+"shape": [
+"johto-morning",
+"sugar-cloud-smile",
+"squeak-sprint",
+"treasure-hunt-flow",
+"yet-to-bloom",
+"neon-horizon"
+],
+"versions": [],
+"arc": [
+0.52,
+0.61,
+0.75,
+0.73,
+0.73,
+0.98,
+0.96,
+1.0,
+0.79,
+0.74,
+0.75,
+0.78,
+1.0,
+0.96,
+0.98,
+0.47
+]
+},
+{
+"id": "johto-morning",
+"title": "Johto Morning",
+"file": "songs/youtube/Johto Morning.mp3",
+"video": "videos/YouTube - Johto Morning.mp4",
+"card": "cards/YouTube - Johto Morning.png",
+"tempo": 128,
+"style": "Game Boy Color route style",
+"feel": "Bright Game Boy Color route (in the style of Pokémon Gen 2)",
+"good": "Exploring, chill rotations",
+"colors": [
+"#3a1f4a",
+"#c06fd9",
+"#ffe08a",
+"#200f2a",
+"#ffffff"
+],
+"order": 66,
+"groups": [
+"Pokémon-style",
+"Video game styles"
+],
+"genres": [
+"Chiptune & retro"
+],
+"moods": [
+"Chill",
+"Happy"
+],
+"duration": 71.5,
+"loop": [
+7.5,
+45.0
+],
+"energy": 0.807,
+"thumb": "site/thumbs/johto-morning.jpg",
+"similar": [
+"pallet-path",
+"frosty-podium",
+"holler-hoedown",
+"checkerboard-skank",
+"first-bloom",
+"sunlit-plaza"
+],
+"shape": [
+"pallet-path",
+"sugar-cloud-smile",
+"squeak-sprint",
+"neon-horizon",
+"treasure-hunt-flow",
+"yet-to-bloom"
+],
+"versions": [],
+"arc": [
+0.53,
+0.61,
+0.75,
+0.75,
+0.74,
+0.98,
+0.99,
+0.99,
+0.8,
+0.75,
+0.75,
+0.79,
+1.0,
+0.97,
+0.99,
+0.49
+]
+},
+{
+"id": "snowpoint-trail",
+"title": "Snowpoint Trail",
+"file": "songs/youtube/Snowpoint Trail.mp3",
+"video": "videos/YouTube - Snowpoint Trail.mp4",
+"card": "cards/YouTube - Snowpoint Trail.png",
+"tempo": 120,
+"style": "DS route style",
+"feel": "DS-quality route with trumpet and strings (in the style of Pokémon Gen 4)",
+"good": "Winter maps, exploring",
+"colors": [
+"#123a5c",
+"#5fa8d9",
+"#eaf6ff",
+"#0a2238",
+"#ffffff"
+],
+"order": 67,
+"groups": [
+"Pokémon-style",
+"Video game styles"
+],
+"genres": [
+"Other"
+],
+"moods": [
+"Chill"
+],
+"duration": 79.0,
+"loop": [
+8.0,
+48.0
+],
+"energy": 0.783,
+"thumb": "site/thumbs/snowpoint-trail.jpg",
+"similar": [
+"skyscraper-sprint",
+"coastal-route",
+"cliffside-climb",
+"frosty-podium",
+"sunlit-plaza",
+"rush-hour-boost"
+],
+"shape": [
+"boulevard-cafe",
+"time-warp-zone",
+"sunlit-plaza",
+"island-breeze",
+"cloudtop-athletic",
+"eolssu-groove"
+],
+"versions": [],
+"arc": [
+0.5,
+0.63,
+0.77,
+0.77,
+0.77,
+0.97,
+0.99,
+1.0,
+0.81,
+0.72,
+0.76,
+0.86,
+1.0,
+0.96,
+0.83,
+0.17
+]
+},
+{
+"id": "island-breeze",
+"title": "Island Breeze",
+"file": "songs/youtube/Island Breeze.mp3",
+"video": "videos/YouTube - Island Breeze.mp4",
+"card": "cards/YouTube - Island Breeze.png",
+"tempo": 104,
+"style": "tropical route style",
+"feel": "Relaxed tropical route: steel drum, ukulele, jazzy chords (in the style of Pokémon Gen 7)",
+"good": "Chill gameplay",
+"colors": [
+"#0b4a5c",
+"#1fb3c9",
+"#ffe7a3",
+"#062a35",
+"#ffffff"
+],
+"order": 68,
+"groups": [
+"Pokémon-style",
+"Video game styles"
+],
+"genres": [
+"Jazz, funk & soul",
+"World & folk"
+],
+"moods": [
+"Chill"
+],
+"duration": 90.5,
+"loop": [
+9.2308,
+55.3846
+],
+"energy": 0.767,
+"thumb": "site/thumbs/island-breeze.jpg",
+"similar": [
+"island-time",
+"coral-waltz",
+"boulevard-cafe",
+"winds-of-the-world",
+"padma-to-kyoto",
+"desert-dunes"
+],
+"shape": [
+"boulevard-cafe",
+"snowpoint-trail",
+"cloudtop-athletic",
+"turbo-corner",
+"sunlit-plaza",
+"march-of-seven"
+],
+"versions": [],
+"arc": [
+0.51,
+0.64,
+0.74,
+0.73,
+0.73,
+1.0,
+0.96,
+0.93,
+0.77,
+0.73,
+0.75,
+0.84,
+0.94,
+1.0,
+0.81,
+0.18
+]
+},
+{
+"id": "stadium-highlands",
+"title": "Stadium Highlands",
+"file": "songs/youtube/Stadium Highlands.mp3",
+"video": "videos/YouTube - Stadium Highlands.mp4",
+"card": "cards/YouTube - Stadium Highlands.png",
+"tempo": 128,
+"style": "stadium march style",
+"feel": "Brass and marching drums with crowd hey chants (in the style of Pokémon Gen 8)",
+"good": "Big wins, tournaments",
+"colors": [
+"#3a0b0b",
+"#b32a2a",
+"#ffd23f",
+"#200505",
+"#ffffff"
+],
+"order": 69,
+"groups": [
+"Pokémon-style",
+"Video game styles"
+],
+"genres": [
+"Orchestral & cinematic"
+],
+"moods": [
+"Happy",
+"Epic"
+],
+"duration": 74.5,
+"loop": [
+7.5,
+45.0001
+],
+"energy": 0.768,
+"thumb": "site/thumbs/stadium-highlands.jpg",
+"similar": [
+"march-of-seven",
+"homebase-rising",
+"frosty-podium",
+"magma-fortress",
+"cliffside-climb",
+"rush-hour-boost"
+],
+"shape": [
+"sunlit-plaza",
+"checkerboard-skank",
+"eolssu-groove",
+"boulevard-cafe",
+"cloudtop-athletic",
+"holler-hoedown"
+],
+"versions": [],
+"arc": [
+0.55,
+0.59,
+0.73,
+0.75,
+0.78,
+0.96,
+0.93,
+1.0,
+0.74,
+0.75,
+0.76,
+0.89,
+0.94,
+0.98,
+0.76,
+0.18
+]
+},
+{
+"id": "sunlit-plaza",
+"title": "Sunlit Plaza",
+"file": "songs/youtube/Sunlit Plaza.mp3",
+"video": "videos/YouTube - Sunlit Plaza.mp4",
+"card": "cards/YouTube - Sunlit Plaza.png",
+"tempo": 132,
+"style": "Spanish guitar route style",
+"feel": "Spanish guitar, trumpet and castanets (in the style of Pokémon Gen 9)",
+"good": "Upbeat exploring",
+"colors": [
+"#5c2a0b",
+"#d9772a",
+"#ffe0a3",
+"#351705",
+"#ffffff"
+],
+"order": 70,
+"groups": [
+"Pokémon-style",
+"Video game styles"
+],
+"genres": [
+"World & folk"
+],
+"moods": [
+"Chill",
+"Happy"
+],
+"duration": 72.0,
+"loop": [
+7.2727,
+43.6366
+],
+"energy": 0.783,
+"thumb": "site/thumbs/sunlit-plaza.jpg",
+"similar": [
+"starry-road",
+"rush-hour-boost",
+"arcade-heartbreak-2005",
+"boulevard-cafe",
+"cliffside-climb",
+"holler-hoedown"
+],
+"shape": [
+"eolssu-groove",
+"time-warp-zone",
+"march-of-seven",
+"snowpoint-trail",
+"stadium-highlands",
+"boulevard-cafe"
+],
+"versions": [],
+"arc": [
+0.52,
+0.62,
+0.74,
+0.75,
+0.79,
+0.99,
+0.98,
+0.99,
+0.76,
+0.76,
+0.75,
+0.9,
+1.0,
+0.95,
+0.8,
+0.23
+]
+},
+{
+"id": "emerald-shore-zone",
+"title": "Emerald Shore Zone",
+"file": "songs/youtube/Emerald Shore Zone.mp3",
+"video": "videos/YouTube - Emerald Shore Zone.mp4",
+"card": "cards/YouTube - Emerald Shore Zone.png",
+"tempo": 142,
+"style": "16-bit FM zone style",
+"feel": "FM-synth lead and slap bass crunched to 16-bit (in the style of classic Genesis Sonic)",
+"good": "Speedy plays",
+"colors": [
+"#0b3a2a",
+"#1fb36f",
+"#7fe0ff",
+"#06221a",
+"#ffffff"
+],
+"order": 71,
+"groups": [
+"Sonic-style",
+"Video game styles"
+],
+"genres": [
+"Chiptune & retro"
+],
+"moods": [
+"Hype"
+],
+"duration": 93.6,
+"loop": [
+6.7606,
+67.6056
+],
+"energy": 0.812,
+"thumb": "site/thumbs/emerald-shore-zone.jpg",
+"similar": [
+"daily-poke-catch-mythic-battle",
+"drop-in-daily-mythic-match-og-style",
+"turbo-corner",
+"cloudtop-athletic",
+"daily-poke-catch-battle",
+"boundless-run"
+],
+"shape": [
+"rush-hour-boost",
+"moonlit-night-stage",
+"final-circle",
+"highway-escape",
+"titan-undefeated",
+"lime-green-afterparty"
+],
+"versions": [],
+"arc": [
+0.51,
+0.73,
+0.75,
+0.9,
+0.98,
+0.94,
+0.75,
+0.74,
+0.99,
+0.97,
+0.86,
+0.73,
+0.83,
+0.98,
+1.0,
+0.32
+]
+},
+{
+"id": "time-warp-zone",
+"title": "Time Warp Zone",
+"file": "songs/youtube/Time Warp Zone.mp3",
+"video": "videos/YouTube - Time Warp Zone.mp4",
+"card": "cards/YouTube - Time Warp Zone.png",
+"tempo": 126,
+"style": "90s house zone style",
+"feel": "90s Japanese house with organ stabs and shouts (in the style of Sonic CD)",
+"good": "Rotations, movement clips",
+"colors": [
+"#2a0b4a",
+"#8a2ad9",
+"#5fffd7",
+"#16052a",
+"#ffffff"
+],
+"order": 72,
+"groups": [
+"Sonic-style",
+"Video game styles"
+],
+"genres": [
+"Electronic & dance"
+],
+"moods": [],
+"duration": 74.9,
+"loop": [
+7.619,
+45.7144
+],
+"energy": 0.782,
+"thumb": "site/thumbs/time-warp-zone.jpg",
+"similar": [
+"neon-horizon",
+"skyscraper-sprint",
+"eolssu-groove",
+"turbo-corner",
+"squeak-sprint",
+"highway-escape"
+],
+"shape": [
+"snowpoint-trail",
+"march-of-seven",
+"sunlit-plaza",
+"velvet-wings",
+"boulevard-cafe",
+"treasure-hunt-flow"
+],
+"versions": [],
+"arc": [
+0.54,
+0.63,
+0.74,
+0.77,
+0.75,
+0.92,
+1.0,
+0.97,
+0.79,
+0.75,
+0.74,
+0.87,
+0.98,
+0.96,
+0.83,
+0.27
+]
+},
+{
+"id": "treasure-hunt-flow",
+"title": "Treasure Hunt Flow",
+"file": "songs/youtube/Treasure Hunt Flow.mp3",
+"video": "videos/YouTube - Treasure Hunt Flow.mp4",
+"card": "cards/YouTube - Treasure Hunt Flow.png",
+"tempo": 92,
+"style": "hip-hop stage style",
+"feel": "Boom-bap with scratches and horn stabs (in the style of Sonic Adventure 2)",
+"good": "Looting, chill highlights",
+"colors": [
+"#2a1a05",
+"#a8701f",
+"#ffd27f",
+"#170e02",
+"#ffffff"
+],
+"order": 73,
+"groups": [
+"Sonic-style",
+"Video game styles"
+],
+"genres": [
+"Hip-hop & trap"
+],
+"moods": [
+"Chill"
+],
+"duration": 101.4,
+"loop": [
+10.4348,
+62.609
+],
+"energy": 0.809,
+"thumb": "site/thumbs/treasure-hunt-flow.jpg",
+"similar": [
+"schoolyard-riot",
+"respawn-lounge",
+"yet-to-bloom",
+"indigo-fields",
+"breeze-in-the-alley",
+"fragile-mask"
+],
+"shape": [
+"light-up-the-persona",
+"velvet-wings",
+"march-of-seven",
+"fragile-mask",
+"desert-dunes",
+"respawn-lounge"
+],
+"versions": [],
+"arc": [
+0.54,
+0.64,
+0.77,
+0.76,
+0.79,
+1.0,
+0.99,
+0.99,
+0.81,
+0.76,
+0.78,
+0.89,
+0.98,
+0.98,
+0.91,
+0.34
+]
+},
+{
+"id": "rush-hour-boost",
+"title": "Rush Hour Boost",
+"file": "songs/youtube/Rush Hour Boost.mp3",
+"video": "videos/YouTube - Rush Hour Boost.mp4",
+"card": "cards/YouTube - Rush Hour Boost.png",
+"tempo": 152,
+"style": "breakbeat jazz-funk",
+"feel": "Breakbeat jazz-funk with slap bass and shouts (in the style of Sonic Rush)",
+"good": "Fast-paced clips",
+"colors": [
+"#4a0b0b",
+"#e03a1f",
+"#ffd400",
+"#2a0505",
+"#ffffff"
+],
+"order": 74,
+"groups": [
+"Sonic-style",
+"Video game styles"
+],
+"genres": [
+"Jazz, funk & soul"
+],
+"moods": [
+"Hype",
+"Happy"
+],
+"duration": 87.8,
+"loop": [
+6.3158,
+63.1579
+],
+"energy": 0.812,
+"thumb": "site/thumbs/rush-hour-boost.jpg",
+"similar": [
+"checkerboard-skank",
+"highway-escape",
+"iron-storm-rising",
+"titan-undefeated",
+"arcade-heartbreak-2005",
+"skyscraper-sprint"
+],
+"shape": [
+"emerald-shore-zone",
+"final-circle",
+"highway-escape",
+"moonlit-night-stage",
+"titan-undefeated",
+"red-40-sugar-rush"
+],
+"versions": [],
+"arc": [
+0.53,
+0.72,
+0.75,
+0.92,
+0.98,
+0.92,
+0.76,
+0.76,
+1.0,
+0.97,
+0.85,
+0.74,
+0.87,
+0.95,
+0.99,
+0.29
+]
+},
+{
+"id": "moonlit-night-stage",
+"title": "Moonlit Night Stage",
+"file": "songs/youtube/Moonlit Night Stage.mp3",
+"video": "videos/YouTube - Moonlit Night Stage.mp4",
+"card": "cards/YouTube - Moonlit Night Stage.png",
+"tempo": 140,
+"style": "swing jazz stage style",
+"feel": "Swinging jazz with sax and walking bass (in the style of Sonic Unleashed night stages)",
+"good": "Stealthy or night clips",
+"colors": [
+"#0b0f2a",
+"#2a3a7a",
+"#f2d16b",
+"#05071a",
+"#ffffff"
+],
+"order": 75,
+"groups": [
+"Sonic-style",
+"Video game styles"
+],
+"genres": [
+"Jazz, funk & soul"
+],
+"moods": [
+"Spooky & sneaky"
+],
+"duration": 95.0,
+"loop": [
+8.5714,
+70.2859
+],
+"energy": 0.815,
+"thumb": "site/thumbs/moonlit-night-stage.jpg",
+"similar": [
+"boulevard-cafe",
+"haunted-manor",
+"golden-hour-breaks",
+"window-seat",
+"checkerboard-skank",
+"sunlit-plaza"
+],
+"shape": [
+"emerald-shore-zone",
+"rush-hour-boost",
+"final-circle",
+"highway-escape",
+"titan-undefeated",
+"lime-green-afterparty"
+],
+"versions": [],
+"arc": [
+0.56,
+0.76,
+0.75,
+0.84,
+0.99,
+0.94,
+0.75,
+0.79,
+0.97,
+1.0,
+0.88,
+0.73,
+0.83,
+0.97,
+1.0,
+0.29
+]
+},
+{
+"id": "starlight-carnival-run",
+"title": "Starlight Carnival Run",
+"file": "songs/youtube/Starlight Carnival Run.mp3",
+"video": "videos/YouTube - Starlight Carnival Run.mp4",
+"card": "cards/YouTube - Starlight Carnival Run.png",
+"tempo": 128,
+"style": "space carnival EDM-pop",
+"feel": "Bright EDM-pop with bells and future-bass chords (in the style of Sonic Colors)",
+"good": "Happy highlights",
+"colors": [
+"#1a0b4a",
+"#6f2ad9",
+"#ffd1ff",
+"#0d052a",
+"#ffffff"
+],
+"order": 76,
+"groups": [
+"Sonic-style",
+"Video game styles"
+],
+"genres": [
+"Pop",
+"Electronic & dance"
+],
+"moods": [
+"Happy"
+],
+"duration": 73.9,
+"loop": [
+7.5,
+45.0
+],
+"energy": 0.781,
+"thumb": "site/thumbs/starlight-carnival-run.jpg",
+"similar": [
+"glitter-overload",
+"aqua-tomorrow",
+"red-40-sugar-rush",
+"turbo-corner",
+"overclocked",
+"paper-sky"
+],
+"shape": [
+"light-up-the-persona",
+"respawn-lounge",
+"sunlit-plaza",
+"treasure-hunt-flow",
+"march-of-seven",
+"fragile-mask"
+],
+"versions": [],
+"arc": [
+0.38,
+0.6,
+0.76,
+0.76,
+0.82,
+1.0,
+0.98,
+0.97,
+0.77,
+0.78,
+0.76,
+0.92,
+0.97,
+0.97,
+0.82,
+0.25
+]
+},
+{
+"id": "lime-green-afterparty",
+"title": "Lime Green Afterparty",
+"file": "songs/youtube/Lime Green Afterparty.mp3",
+"video": "videos/YouTube - Lime Green Afterparty.mp4",
+"card": "cards/YouTube - Lime Green Afterparty.png",
+"tempo": 132,
+"style": "Charli xcx Brat-style club",
+"feel": "Abrasive club pop: distorted rave stabs, heavy 808, vocoder hook (in the style of Charli xcx’s Brat era)",
+"good": "Hype edits",
+"colors": [
+"#0f1a05",
+"#5a8a0f",
+"#8ace00",
+"#070d02",
+"#000000"
+],
+"order": 77,
+"groups": [],
+"genres": [
+"Pop",
+"Electronic & dance"
+],
+"moods": [
+"Hype"
+],
+"duration": 93.4,
+"loop": [
+21.8182,
+80.0
+],
+"energy": 0.823,
+"thumb": "site/thumbs/lime-green-afterparty.jpg",
+"similar": [
+"final-circle",
+"storm-closing",
+"red-40-sugar-rush",
+"sugar-cloud-smile",
+"golden-hour-groove",
+"channel-plaza"
+],
+"shape": [
+"dark-and-wild-run",
+"red-40-sugar-rush",
+"midnight-drift",
+"infinite-series",
+"sky-piercing-promise",
+"moonlit-night-stage"
+],
+"versions": [
+"lime-green-breaks"
+],
+"arc": [
+0.54,
+0.71,
+0.76,
+0.84,
+1.0,
+1.0,
+0.81,
+0.77,
+0.84,
+1.0,
+1.0,
+0.75,
+0.86,
+1.0,
+0.97,
+0.33
+]
+},
+{
+"id": "red-40-sugar-rush",
+"title": "Red 40 Sugar Rush",
+"file": "songs/youtube/Red 40 Sugar Rush.mp3",
+"video": "videos/YouTube - Red 40 Sugar Rush.mp4",
+"card": "cards/YouTube - Red 40 Sugar Rush.png",
+"tempo": 162,
+"style": "sugar-rush hyperpop",
+"feel": "Hyperpop: chipmunk vocal chops, glitchy synths, distorted 808, cartoon sound effects",
+"good": "Chaotic or funny clips",
+"colors": [
+"#4a0505",
+"#e01f1f",
+"#ffd1d1",
+"#2a0202",
+"#ffffff"
+],
+"order": 78,
+"groups": [
+"Hyperpop"
+],
+"genres": [
+"Hyperpop",
+"Pop",
+"Chiptune & retro"
+],
+"moods": [
+"Hype",
+"Happy",
+"Funny"
+],
+"duration": 76.5,
+"loop": [
+17.7778,
+65.1852
+],
+"energy": 0.794,
+"thumb": "site/thumbs/red-40-sugar-rush.jpg",
+"similar": [
+"overclocked",
+"red-40-breaks",
+"lime-green-afterparty",
+"glitter-overload",
+"storm-closing",
+"off-the-lines"
+],
+"shape": [
+"dark-and-wild-run",
+"lime-green-afterparty",
+"infinite-series",
+"midnight-drift",
+"arcade-heartbreak-2005",
+"moonlit-night-stage"
+],
+"versions": [
+"red-40-breaks"
+],
+"arc": [
+0.42,
+0.65,
+0.76,
+0.82,
+1.0,
+0.99,
+0.78,
+0.77,
+0.83,
+0.99,
+0.98,
+0.74,
+0.9,
+0.99,
+0.93,
+0.16
+]
+},
+{
+"id": "padma-to-kyoto",
+"title": "Padma to Kyoto",
+"file": "songs/youtube/Padma to Kyoto.mp3",
+"video": "videos/YouTube - Padma to Kyoto.mp4",
+"card": "cards/YouTube - Padma to Kyoto.png",
+"tempo": 100,
+"style": "Bangladesh x Japan",
+"feel": "Bangladesh meets Japan: koto, harmonium, ektara, tabla and taiko, bansuri and shakuhachi trading phrases",
+"good": "Calm intros, story edits",
+"colors": [
+"#0b3a2e",
+"#2f8f6b",
+"#ffb3a7",
+"#06221b",
+"#ffffff"
+],
+"order": 79,
+"groups": [
+"World music"
+],
+"genres": [
+"World & folk"
+],
+"moods": [
+"Chill",
+"Emotional"
+],
+"duration": 93.7,
+"loop": [
+9.6,
+57.6
+],
+"energy": 0.794,
+"thumb": "site/thumbs/padma-to-kyoto.jpg",
+"similar": [
+"riverbank-evening",
+"winds-of-the-world",
+"island-time",
+"morning-over-the-valley",
+"indigo-fields",
+"island-breeze"
+],
+"shape": [
+"velvet-wings",
+"boulevard-cafe",
+"magma-fortress",
+"shellfire-castle",
+"cliffside-climb",
+"starry-road"
+],
+"versions": [
+"padma-to-kyoto-breaks"
+],
+"arc": [
+0.6,
+0.55,
+0.78,
+0.75,
+0.78,
+0.98,
+1.0,
+0.98,
+0.76,
+0.77,
+0.77,
+0.88,
+0.97,
+0.99,
+0.91,
+0.23
+]
+},
+{
+"id": "arcade-heartbreak-breaks",
+"title": "Arcade Heartbreak Breaks",
+"file": "songs/youtube/Arcade Heartbreak Breaks.mp3",
+"video": "videos/YouTube - Arcade Heartbreak Breaks.mp4",
+"card": "cards/YouTube - Arcade Heartbreak Breaks.png",
+"tempo": 172,
+"style": "pop-punk breakcore",
+"feel": "Steady breakcore with the pop-punk hook; ends with a tape stop",
+"good": "Hype montages",
+"colors": [
+"#1a0a2e",
+"#5a1f8a",
+"#39ff14",
+"#0d0518",
+"#ffffff"
+],
+"order": 80,
+"groups": [
+"Breakcore"
+],
+"genres": [
+"Breakcore",
+"Pop",
+"Rock & metal"
+],
+"moods": [
+"Hype"
+],
+"duration": 80.2,
+"loop": [
+16.7442,
+27.9067
+],
+"energy": 0.807,
+"thumb": "site/thumbs/arcade-heartbreak-breaks.jpg",
+"similar": [
+"red-40-breaks",
+"iron-storm-breaks",
+"pixel-heart-dnb",
+"off-the-lines-breaks",
+"glitter-overload",
+"blue-spark-runaway"
+],
+"shape": [
+"street-neuron",
+"island-time",
+"off-the-lines",
+"neon-horizon",
+"riverbank-evening",
+"arcade-heartbreak-2005"
+],
+"versions": [
+"arcade-heartbreak-2005"
+],
+"arc": [
+0.18,
+0.6,
+0.53,
+0.86,
+0.92,
+0.92,
+0.92,
+0.88,
+0.74,
+0.74,
+1.0,
+0.97,
+0.97,
+0.95,
+0.95,
+0.78
+]
+},
+{
+"id": "boulevard-cafe",
+"title": "Boulevard Café",
+"file": "songs/youtube/Boulevard Café.mp3",
+"video": "videos/YouTube - Boulevard Café.mp4",
+"card": "cards/YouTube - Boulevard Café.png",
+"tempo": 116,
+"style": "French café route style",
+"feel": "Accordion over jazzy piano and walking bass (in the style of Pokémon Gen 6)",
+"good": "Chill exploring",
+"colors": [
+"#3a1f0b",
+"#a8602a",
+"#ffe3b3",
+"#200f05",
+"#ffffff"
+],
+"order": 81,
+"groups": [
+"Pokémon-style",
+"Video game styles"
+],
+"genres": [
+"Jazz, funk & soul",
+"World & folk",
+"Piano"
+],
+"moods": [
+"Chill"
+],
+"duration": 81.5,
+"loop": [
+8.2759,
+49.6553
+],
+"energy": 0.785,
+"thumb": "site/thumbs/boulevard-cafe.jpg",
+"similar": [
+"moonlit-night-stage",
+"island-time",
+"island-breeze",
+"sunlit-plaza",
+"indigo-fields",
+"morning-over-the-valley"
+],
+"shape": [
+"island-breeze",
+"snowpoint-trail",
+"cloudtop-athletic",
+"velvet-wings",
+"time-warp-zone",
+"turbo-corner"
+],
+"versions": [],
+"arc": [
+0.55,
+0.61,
+0.78,
+0.74,
+0.76,
+0.99,
+0.99,
+0.97,
+0.79,
+0.74,
+0.76,
+0.86,
+0.96,
+1.0,
+0.85,
+0.2
+]
+},
+{
+"id": "highway-escape",
+"title": "Highway Escape",
+"file": "songs/youtube/Highway Escape.mp3",
+"video": "videos/YouTube - Highway Escape.mp4",
+"card": "cards/YouTube - Highway Escape.png",
+"tempo": 160,
+"style": "punk-rock stage style",
+"feel": "Fast punk rock with strings and pads behind the guitars (in the style of Sonic Adventure)",
+"good": "Chases, fast clips",
+"colors": [
+"#0b1a3a",
+"#1f4fb3",
+"#ff3b2f",
+"#050d20",
+"#ffffff"
+],
+"order": 82,
+"groups": [
+"Sonic-style",
+"Video game styles"
+],
+"genres": [
+"Rock & metal"
+],
+"moods": [
+"Hype"
+],
+"duration": 83.8,
+"loop": [
+6.0,
+60.0001
+],
+"energy": 0.805,
+"thumb": "site/thumbs/highway-escape.jpg",
+"similar": [
+"iron-storm-rising",
+"sky-piercing-promise",
+"titan-undefeated",
+"dark-and-wild-run",
+"rush-hour-boost",
+"skyscraper-sprint"
+],
+"shape": [
+"final-circle",
+"rush-hour-boost",
+"emerald-shore-zone",
+"moonlit-night-stage",
+"titan-undefeated",
+"red-40-sugar-rush"
+],
+"versions": [],
+"arc": [
+0.53,
+0.73,
+0.76,
+0.9,
+0.98,
+0.91,
+0.74,
+0.76,
+0.96,
+1.0,
+0.8,
+0.77,
+0.86,
+0.98,
+0.91,
+0.3
+]
+},
+{
+"id": "titan-undefeated",
+"title": "Titan Undefeated",
+"file": "songs/youtube/Titan Undefeated.mp3",
+"video": "videos/YouTube - Titan Undefeated.mp4",
+"card": "cards/YouTube - Titan Undefeated.png",
+"tempo": 150,
+"style": "epic rock boss style",
+"feel": "Epic rock boss theme with strings and piano (in the style of Sonic Frontiers)",
+"good": "Boss fights, final circles",
+"colors": [
+"#1a0505",
+"#7a1a0f",
+"#ffb347",
+"#0d0202",
+"#ffffff"
+],
+"order": 83,
+"groups": [
+"Sonic-style",
+"Video game styles"
+],
+"genres": [
+"Rock & metal",
+"Piano"
+],
+"moods": [
+"Hype",
+"Epic"
+],
+"duration": 89.2,
+"loop": [
+11.2,
+62.4001
+],
+"energy": 0.797,
+"thumb": "site/thumbs/titan-undefeated.jpg",
+"similar": [
+"sky-piercing-promise",
+"highway-escape",
+"iron-storm-rising",
+"rush-hour-boost",
+"dark-and-wild-run",
+"arcade-heartbreak-2005"
+],
+"shape": [
+"emerald-shore-zone",
+"final-circle",
+"highway-escape",
+"rush-hour-boost",
+"moonlit-night-stage",
+"arcade-heartbreak-2005"
+],
+"versions": [],
+"arc": [
+0.34,
+0.71,
+0.76,
+0.86,
+1.0,
+0.94,
+0.75,
+0.75,
+0.98,
+0.98,
+0.85,
+0.75,
+0.82,
+1.0,
+0.95,
+0.3
+]
+},
+{
+"id": "winds-of-the-world",
+"title": "Winds of the World",
+"file": "songs/youtube/Winds of the World.mp3",
+"video": "videos/YouTube - Winds of the World.mp4",
+"card": "cards/YouTube - Winds of the World.png",
+"tempo": 104,
+"style": "world flutes",
+"feel": "A tour of flutes from different cultures, each with its own instruments and rhythm",
+"good": "Calm intros, travel edits",
+"colors": [
+"#0b3a3a",
+"#2a8f8f",
+"#f2e6b3",
+"#062020",
+"#ffffff"
+],
+"order": 84,
+"groups": [
+"World music"
+],
+"genres": [
+"World & folk"
+],
+"moods": [
+"Chill"
+],
+"duration": 158.8,
+"loop": [
+2.3077,
+48.4605
+],
+"energy": 0.832,
+"thumb": "site/thumbs/winds-of-the-world.jpg",
+"similar": [
+"island-time",
+"desert-dunes",
+"coral-waltz",
+"first-bloom",
+"riverbank-evening",
+"padma-to-kyoto"
+],
+"shape": [
+"double-helix",
+"johto-morning",
+"pallet-path",
+"yet-to-bloom",
+"island-time",
+"fragile-mask"
+],
+"versions": [],
+"arc": [
+0.7,
+0.79,
+0.79,
+0.81,
+0.86,
+0.81,
+0.96,
+0.98,
+0.8,
+0.79,
+0.81,
+0.8,
+0.81,
+0.91,
+1.0,
+0.69
+]
+},
+{
+"id": "sugar-cloud-smile",
+"title": "Sugar Cloud Smile",
+"file": "songs/youtube/Sugar Cloud Smile.mp3",
+"video": "videos/YouTube - Sugar Cloud Smile.mp4",
+"card": "cards/YouTube - Sugar Cloud Smile.png",
+"tempo": 128,
+"style": "Marshmello-style future bass",
+"feel": "Happy future bass with bright chords and vocal chops (in the style of Marshmello)",
+"good": "Happy highlights",
+"colors": [
+"#2a1a4a",
+"#8a6fe0",
+"#ffffff",
+"#150d2a",
+"#ffc7f0"
+],
+"order": 85,
+"groups": [],
+"genres": [
+"Electronic & dance"
+],
+"moods": [
+"Happy"
+],
+"duration": 81.2,
+"loop": [
+7.5,
+48.7458
+],
+"energy": 0.756,
+"thumb": "site/thumbs/sugar-cloud-smile.jpg",
+"similar": [
+"lime-green-afterparty",
+"neon-horizon",
+"midnight-drift",
+"lobby-loop",
+"red-40-sugar-rush",
+"final-circle"
+],
+"shape": [
+"treasure-hunt-flow",
+"fragile-mask",
+"desert-dunes",
+"light-up-the-persona",
+"march-of-seven",
+"respawn-lounge"
+],
+"versions": [
+"sugar-cloud-breaks"
+],
+"arc": [
+0.39,
+0.59,
+0.72,
+0.74,
+0.67,
+0.99,
+0.98,
+1.0,
+0.76,
+0.72,
+0.66,
+0.82,
+0.96,
+0.97,
+0.9,
+0.21
+]
+},
+{
+"id": "sugar-cloud-breaks",
+"title": "Sugar Cloud Breaks",
+"file": "songs/youtube/Sugar Cloud Breaks.mp3",
+"video": "videos/YouTube - Sugar Cloud Breaks.mp4",
+"card": "cards/YouTube - Sugar Cloud Breaks.png",
+"tempo": 172,
+"style": "future-bass breakcore",
+"feel": "Steady breakcore with the future-bass hook; instruments drop out one by one at the end",
+"good": "Montages",
+"colors": [
+"#1a0d3a",
+"#6f4fd0",
+"#ffe0ff",
+"#0d0620",
+"#ffffff"
+],
+"order": 86,
+"groups": [
+"Breakcore"
+],
+"genres": [
+"Breakcore"
+],
+"moods": [],
+"duration": 88.9,
+"loop": [
+16.7442,
+27.9105
+],
+"energy": 0.77,
+"thumb": "site/thumbs/sugar-cloud-breaks.jpg",
+"similar": [
+"sky-piercing-breaks",
+"last-light",
+"breeze-breaks",
+"nobody-s-looking",
+"shattered-overture",
+"youth-in-bloom"
+],
+"shape": [
+"red-40-breaks",
+"paper-sky",
+"lime-green-breaks",
+"lantern-in-the-fog",
+"last-light",
+"aqua-tomorrow-breaks"
+],
+"versions": [
+"sugar-cloud-smile"
+],
+"arc": [
+0.51,
+0.49,
+0.61,
+0.91,
+0.95,
+0.93,
+0.94,
+0.74,
+0.77,
+0.98,
+1.0,
+0.97,
+0.97,
+0.92,
+0.55,
+0.09
+]
+},
+{
+"id": "lime-green-breaks",
+"title": "Lime Green Breaks",
+"file": "songs/youtube/Lime Green Breaks.mp3",
+"video": "videos/YouTube - Lime Green Breaks.mp4",
+"card": "cards/YouTube - Lime Green Breaks.png",
+"tempo": 176,
+"style": "club breakcore",
+"feel": "Steady breakcore with rave stabs and 808; winds down and stops",
+"good": "Hype edits",
+"colors": [
+"#0a1405",
+"#3a6a0a",
+"#8ace00",
+"#050a02",
+"#000000"
+],
+"order": 87,
+"groups": [
+"Breakcore"
+],
+"genres": [
+"Breakcore",
+"Electronic & dance"
+],
+"moods": [
+"Hype"
+],
+"duration": 81.2,
+"loop": [
+34.0909,
+66.8161
+],
+"energy": 0.778,
+"thumb": "site/thumbs/lime-green-breaks.jpg",
+"similar": [
+"off-the-lines-breaks",
+"lightning-over-the-city",
+"heatwave-arcade",
+"blue-spark-breaks",
+"iron-storm-breaks",
+"pixel-heart-dnb"
+],
+"shape": [
+"red-40-breaks",
+"riverbank-evening",
+"sugar-cloud-breaks",
+"indigo-fields",
+"paper-sky",
+"velvet-layover"
+],
+"versions": [
+"lime-green-afterparty"
+],
+"arc": [
+0.4,
+0.5,
+0.54,
+0.89,
+0.97,
+0.94,
+0.98,
+0.89,
+0.77,
+0.78,
+0.99,
+0.99,
+1.0,
+0.99,
+0.61,
+0.21
+]
+},
+{
+"id": "padma-to-kyoto-breaks",
+"title": "Padma to Kyoto Breaks",
+"file": "songs/youtube/Padma to Kyoto Breaks.mp3",
+"video": "videos/YouTube - Padma to Kyoto Breaks.mp4",
+"card": "cards/YouTube - Padma to Kyoto Breaks.png",
+"tempo": 172,
+"style": "Bangladesh x Japan breakcore",
+"feel": "Steady breakcore with tabla, taiko and flutes; ends with a traditional tihai",
+"good": "Upbeat montages",
+"colors": [
+"#06221b",
+"#1f6f55",
+"#ffb3a7",
+"#03140f",
+"#ffffff"
+],
+"order": 88,
+"groups": [
+"Breakcore",
+"World music"
+],
+"genres": [
+"Breakcore",
+"World & folk"
+],
+"moods": [
+"Happy"
+],
+"duration": 91.8,
+"loop": [
+1.3953,
+78.1397
+],
+"energy": 0.733,
+"thumb": "site/thumbs/padma-to-kyoto-breaks.jpg",
+"similar": [
+"monsoon-breaks",
+"heatwave-arcade",
+"rush-hour-boost",
+"eolssu-groove",
+"titan-undefeated",
+"lantern-in-the-fog"
+],
+"shape": [
+"monsoon-breaks",
+"frostline",
+"sky-piercing-breaks",
+"last-light",
+"heatwave-arcade",
+"lightning-over-the-city"
+],
+"versions": [
+"padma-to-kyoto"
+],
+"arc": [
+0.46,
+0.56,
+0.62,
+0.94,
+0.92,
+0.94,
+0.88,
+0.75,
+0.82,
+1.0,
+0.98,
+0.98,
+0.78,
+0.42,
+0.58,
+0.09
+]
+},
+{
+"id": "grassland-hop",
+"title": "Grassland Hop",
+"file": "songs/youtube/Grassland Hop.mp3",
+"video": "videos/YouTube - Grassland Hop.mp4",
+"card": "cards/YouTube - Grassland Hop.png",
+"tempo": 150,
+"style": "NSMB Wii World 1 style",
+"feel": "Bouncy grassland world with steel drum, stride piano, bongos and \"bah!\" hits (in the style of New Super Mario Bros. Wii)",
+"good": "Fun, lighthearted clips",
+"colors": [
+"#0f3a0b",
+"#3fae2a",
+"#ffe14d",
+"#082005",
+"#ffffff"
+],
+"order": 89,
+"groups": [
+"Mario-style worlds",
+"Video game styles"
+],
+"genres": [
+"World & folk",
+"Piano"
+],
+"moods": [
+"Happy"
+],
+"duration": 63.8,
+"loop": [
+6.4,
+38.4
+],
+"energy": 0.785,
+"thumb": "site/thumbs/grassland-hop.jpg",
+"similar": [
+"coconut-cove",
+"magma-fortress",
+"sky-piercing-promise",
+"youth-in-bloom",
+"pipe-cavern",
+"rush-hour-boost"
+],
+"shape": [
+"starry-road",
+"turbo-corner",
+"shellfire-castle",
+"magma-fortress",
+"pipe-cavern",
+"cloudtop-athletic"
+],
+"versions": [],
+"arc": [
+0.55,
+0.64,
+0.75,
+0.73,
+0.79,
+0.96,
+1.0,
+0.96,
+0.77,
+0.75,
+0.74,
+0.92,
+0.98,
+0.98,
+0.94,
+0.1
+]
+},
+{
+"id": "desert-dunes",
+"title": "Desert Dunes",
+"file": "songs/youtube/Desert Dunes.mp3",
+"video": "videos/YouTube - Desert Dunes.mp4",
+"card": "cards/YouTube - Desert Dunes.png",
+"tempo": 120,
+"style": "NSMB Wii World 2 style",
+"feel": "Desert world with oud, oboe and darbuka",
+"good": "Desert maps, exploring",
+"colors": [
+"#5c3a0b",
+"#d99a2a",
+"#fff0b3",
+"#352005",
+"#ffffff"
+],
+"order": 90,
+"groups": [
+"Mario-style worlds",
+"Video game styles"
+],
+"genres": [
+"World & folk"
+],
+"moods": [
+"Chill"
+],
+"duration": 78.6,
+"loop": [
+10.0,
+50.0
+],
+"energy": 0.767,
+"thumb": "site/thumbs/desert-dunes.jpg",
+"similar": [
+"winds-of-the-world",
+"coconut-cove",
+"island-breeze",
+"island-time",
+"padma-to-kyoto",
+"riverbank-evening"
+],
+"shape": [
+"mushroom-woods",
+"pipe-cavern",
+"treasure-hunt-flow",
+"shellfire-castle",
+"log-drum-sunset",
+"cliffside-climb"
+],
+"versions": [],
+"arc": [
+0.47,
+0.57,
+0.76,
+0.72,
+0.72,
+1.0,
+0.97,
+0.97,
+0.72,
+0.73,
+0.73,
+0.88,
+0.93,
+0.95,
+0.93,
+0.21
+]
+},
+{
+"id": "snowcap-slide",
+"title": "Snowcap Slide",
+"file": "songs/youtube/Snowcap Slide.mp3",
+"video": "videos/YouTube - Snowcap Slide.mp4",
+"card": "cards/YouTube - Snowcap Slide.png",
+"tempo": 112,
+"style": "NSMB Wii World 3 style",
+"feel": "Snow world with celesta, pizzicato strings and sleigh bells",
+"good": "Winter maps",
+"colors": [
+"#123a5c",
+"#7fc4f2",
+"#ffffff",
+"#0a2238",
+"#1f4f8f"
+],
+"order": 91,
+"groups": [
+"Mario-style worlds",
+"Video game styles"
+],
+"genres": [
+"World & folk"
+],
+"moods": [],
+"duration": 84.4,
+"loop": [
+8.5714,
+51.4286
+],
+"energy": 0.762,
+"thumb": "site/thumbs/snowcap-slide.jpg",
+"similar": [
+"kite-season",
+"holler-hoedown",
+"winds-of-the-world",
+"cloudtop-athletic",
+"lanterns-and-thunder-drums",
+"first-bloom"
+],
+"shape": [
+"mushroom-woods",
+"desert-dunes",
+"magma-fortress",
+"island-breeze",
+"coconut-cove",
+"cliffside-climb"
+],
+"versions": [],
+"arc": [
+0.47,
+0.63,
+0.76,
+0.71,
+0.73,
+1.0,
+0.94,
+0.94,
+0.73,
+0.72,
+0.78,
+0.83,
+0.89,
+0.97,
+0.89,
+0.2
+]
+},
+{
+"id": "coconut-cove",
+"title": "Coconut Cove",
+"file": "songs/youtube/Coconut Cove.mp3",
+"video": "videos/YouTube - Coconut Cove.mp4",
+"card": "cards/YouTube - Coconut Cove.png",
+"tempo": 124,
+"style": "NSMB Wii World 4 style",
+"feel": "Beach world: steel drum, ukulele, congas",
+"good": "Chill gameplay",
+"colors": [
+"#0b4a5c",
+"#1fc9b3",
+"#ffe7a3",
+"#062a35",
+"#ffffff"
+],
+"order": 92,
+"groups": [
+"Mario-style worlds",
+"Video game styles"
+],
+"genres": [
+"World & folk"
+],
+"moods": [
+"Chill"
+],
+"duration": 76.2,
+"loop": [
+9.6774,
+48.3871
+],
+"energy": 0.747,
+"thumb": "site/thumbs/coconut-cove.jpg",
+"similar": [
+"desert-dunes",
+"grassland-hop",
+"coastal-route",
+"island-breeze",
+"time-warp-zone",
+"log-drum-sunset"
+],
+"shape": [
+"holler-hoedown",
+"snowcap-slide",
+"magma-fortress",
+"mushroom-woods",
+"island-breeze",
+"boulevard-cafe"
+],
+"versions": [],
+"arc": [
+0.51,
+0.59,
+0.72,
+0.68,
+0.74,
+1.0,
+0.89,
+0.92,
+0.69,
+0.72,
+0.73,
+0.87,
+0.86,
+0.98,
+0.82,
+0.22
+]
+},
+{
+"id": "mushroom-woods",
+"title": "Mushroom Woods",
+"file": "songs/youtube/Mushroom Woods.mp3",
+"video": "videos/YouTube - Mushroom Woods.mp4",
+"card": "cards/YouTube - Mushroom Woods.png",
+"tempo": 116,
+"style": "NSMB Wii World 5 style",
+"feel": "Forest world with clarinet, marimba and pizzicato",
+"good": "Sneaky or funny clips",
+"colors": [
+"#2a0b3a",
+"#6f2a8f",
+"#9fff6f",
+"#150520",
+"#ffffff"
+],
+"order": 93,
+"groups": [
+"Mario-style worlds",
+"Video game styles"
+],
+"genres": [
+"World & folk"
+],
+"moods": [
+"Happy",
+"Funny",
+"Spooky & sneaky"
+],
+"duration": 81.2,
+"loop": [
+10.3448,
+51.7242
+],
+"energy": 0.778,
+"thumb": "site/thumbs/mushroom-woods.jpg",
+"similar": [
+"pipe-cavern",
+"cloudtop-athletic",
+"grassland-hop",
+"haunted-manor",
+"island-breeze",
+"tokyo-sunset-drive"
+],
+"shape": [
+"desert-dunes",
+"magma-fortress",
+"snowcap-slide",
+"log-drum-sunset",
+"coconut-cove",
+"shellfire-castle"
+],
+"versions": [],
+"arc": [
+0.5,
+0.61,
+0.78,
+0.68,
+0.76,
+1.0,
+0.97,
+0.96,
+0.7,
+0.75,
+0.76,
+0.91,
+0.93,
+0.97,
+0.94,
+0.23
+]
+},
+{
+"id": "cliffside-climb",
+"title": "Cliffside Climb",
+"file": "songs/youtube/Cliffside Climb.mp3",
+"video": "videos/YouTube - Cliffside Climb.mp4",
+"card": "cards/YouTube - Cliffside Climb.png",
+"tempo": 132,
+"style": "NSMB Wii World 6 style",
+"feel": "Heroic mountain world with brass and strings",
+"good": "Climbs, comebacks",
+"colors": [
+"#3a2a1a",
+"#8f6f4a",
+"#ffd27f",
+"#20150a",
+"#ffffff"
+],
+"order": 94,
+"groups": [
+"Mario-style worlds",
+"Video game styles"
+],
+"genres": [
+"World & folk"
+],
+"moods": [
+"Emotional",
+"Epic"
+],
+"duration": 71.9,
+"loop": [
+7.2727,
+43.6366
+],
+"energy": 0.792,
+"thumb": "site/thumbs/cliffside-climb.jpg",
+"similar": [
+"stadium-highlands",
+"homebase-rising",
+"snowpoint-trail",
+"sunlit-plaza",
+"rush-hour-boost",
+"titan-undefeated"
+],
+"shape": [
+"shellfire-castle",
+"magma-fortress",
+"pipe-cavern",
+"starry-road",
+"velvet-wings",
+"turbo-corner"
+],
+"versions": [],
+"arc": [
+0.54,
+0.61,
+0.75,
+0.77,
+0.77,
+0.99,
+0.96,
+1.0,
+0.78,
+0.71,
+0.77,
+0.9,
+0.96,
+1.0,
+0.96,
+0.19
+]
+},
+{
+"id": "cloudtop-athletic",
+"title": "Cloudtop Athletic",
+"file": "songs/youtube/Cloudtop Athletic.mp3",
+"video": "videos/YouTube - Cloudtop Athletic.mp4",
+"card": "cards/YouTube - Cloudtop Athletic.png",
+"tempo": 160,
+"style": "NSMB Wii World 7 style",
+"feel": "Light, bouncy sky world with flute, strings and tuba",
+"good": "Movement clips",
+"colors": [
+"#1f5fb3",
+"#7fc4ff",
+"#ffffff",
+"#0f3060",
+"#ffe14d"
+],
+"order": 95,
+"groups": [
+"Mario-style worlds",
+"Video game styles"
+],
+"genres": [
+"World & folk"
+],
+"moods": [],
+"duration": 60.2,
+"loop": [
+6.0,
+36.0
+],
+"energy": 0.779,
+"thumb": "site/thumbs/cloudtop-athletic.jpg",
+"similar": [
+"snowcap-slide",
+"starry-road",
+"mushroom-woods",
+"emerald-shore-zone",
+"grassland-hop",
+"coconut-cove"
+],
+"shape": [
+"turbo-corner",
+"boulevard-cafe",
+"checkerboard-skank",
+"island-breeze",
+"snowpoint-trail",
+"grassland-hop"
+],
+"versions": [],
+"arc": [
+0.54,
+0.63,
+0.77,
+0.73,
+0.78,
+0.99,
+0.98,
+0.97,
+0.8,
+0.71,
+0.77,
+0.92,
+0.98,
+1.0,
+0.83,
+0.05
+]
+},
+{
+"id": "magma-fortress",
+"title": "Magma Fortress",
+"file": "songs/youtube/Magma Fortress.mp3",
+"video": "videos/YouTube - Magma Fortress.mp4",
+"card": "cards/YouTube - Magma Fortress.png",
+"tempo": 132,
+"style": "NSMB Wii World 8 style",
+"feel": "Lava world: organ, choir, brass and timpani",
+"good": "Boss fights, endgames",
+"colors": [
+"#2a0505",
+"#b32a0b",
+"#ffb000",
+"#150202",
+"#ffffff"
+],
+"order": 96,
+"groups": [
+"Mario-style worlds",
+"Video game styles",
+"Orchestral & cinematic"
+],
+"genres": [
+"Orchestral & cinematic",
+"World & folk"
+],
+"moods": [
+"Hype",
+"Epic"
+],
+"duration": 71.9,
+"loop": [
+7.2727,
+43.6364
+],
+"energy": 0.782,
+"thumb": "site/thumbs/magma-fortress.jpg",
+"similar": [
+"shellfire-castle",
+"homebase-rising",
+"stadium-highlands",
+"march-of-seven",
+"grassland-hop",
+"highway-escape"
+],
+"shape": [
+"shellfire-castle",
+"starry-road",
+"cliffside-climb",
+"turbo-corner",
+"pipe-cavern",
+"grassland-hop"
+],
+"versions": [],
+"arc": [
+0.54,
+0.62,
+0.74,
+0.73,
+0.79,
+0.99,
+0.96,
+0.97,
+0.73,
+0.75,
+0.75,
+0.88,
+0.96,
+1.0,
+0.92,
+0.18
+]
+},
+{
+"id": "starry-road",
+"title": "Starry Road",
+"file": "songs/youtube/Starry Road.mp3",
+"video": "videos/YouTube - Starry Road.mp4",
+"card": "cards/YouTube - Starry Road.png",
+"tempo": 140,
+"style": "NSMB Wii World 9 style",
+"feel": "Sparkly star world with celesta and bright synths",
+"good": "Big wins",
+"colors": [
+"#0b0b3a",
+"#4a2ab3",
+"#ffe14d",
+"#05051f",
+"#ffffff"
+],
+"order": 97,
+"groups": [
+"Mario-style worlds",
+"Video game styles"
+],
+"genres": [
+"World & folk"
+],
+"moods": [
+"Happy"
+],
+"duration": 68.2,
+"loop": [
+6.8571,
+41.143
+],
+"energy": 0.794,
+"thumb": "site/thumbs/starry-road.jpg",
+"similar": [
+"sunlit-plaza",
+"boundless-run",
+"holler-hoedown",
+"arcade-heartbreak-2005",
+"blue-spark-runaway",
+"cloudtop-athletic"
+],
+"shape": [
+"grassland-hop",
+"turbo-corner",
+"shellfire-castle",
+"magma-fortress",
+"cliffside-climb",
+"pipe-cavern"
+],
+"versions": [],
+"arc": [
+0.54,
+0.62,
+0.76,
+0.75,
+0.79,
+0.99,
+0.99,
+1.0,
+0.76,
+0.75,
+0.75,
+0.95,
+0.98,
+1.0,
+0.95,
+0.11
+]
+},
+{
+"id": "pipe-cavern",
+"title": "Pipe Cavern",
+"file": "songs/youtube/Pipe Cavern.mp3",
+"video": "videos/YouTube - Pipe Cavern.mp4",
+"card": "cards/YouTube - Pipe Cavern.png",
+"tempo": 120,
+"style": "NSMB Wii underground style",
+"feel": "Underground: slap bass, xylophone and \"bah!\" hits",
+"good": "Sneaky clips",
+"colors": [
+"#0b1a1a",
+"#1f4a4a",
+"#5fd9ff",
+"#050d0d",
+"#ffffff"
+],
+"order": 98,
+"groups": [
+"Mario-style worlds",
+"Video game styles"
+],
+"genres": [
+"Other"
+],
+"moods": [
+"Spooky & sneaky"
+],
+"duration": 78.2,
+"loop": [
+10.0,
+50.0
+],
+"energy": 0.781,
+"thumb": "site/thumbs/pipe-cavern.jpg",
+"similar": [
+"grassland-hop",
+"mushroom-woods",
+"treasure-hunt-flow",
+"youth-in-bloom",
+"infinite-series",
+"shellfire-castle"
+],
+"shape": [
+"shellfire-castle",
+"cliffside-climb",
+"starry-road",
+"magma-fortress",
+"desert-dunes",
+"log-drum-sunset"
+],
+"versions": [],
+"arc": [
+0.53,
+0.6,
+0.73,
+0.76,
+0.76,
+1.0,
+0.98,
+0.96,
+0.76,
+0.74,
+0.73,
+0.9,
+0.97,
+0.95,
+0.98,
+0.17
+]
+},
+{
+"id": "coral-waltz",
+"title": "Coral Waltz",
+"file": "songs/youtube/Coral Waltz.mp3",
+"video": "videos/YouTube - Coral Waltz.mp4",
+"card": "cards/YouTube - Coral Waltz.png",
+"tempo": 150,
+"style": "NSMB Wii underwater style",
+"feel": "Underwater waltz in 3/4 with harp, strings, flute and celesta",
+"good": "Calm moments, water maps",
+"colors": [
+"#062a4a",
+"#1f6fb3",
+"#9ff2ff",
+"#03152a",
+"#ffffff"
+],
+"order": 99,
+"groups": [
+"Mario-style worlds",
+"Video game styles",
+"Orchestral & cinematic"
+],
+"genres": [
+"Orchestral & cinematic",
+"World & folk"
+],
+"moods": [
+"Chill"
+],
+"duration": 87.6,
+"loop": [
+4.8,
+43.2115
+],
+"energy": 0.88,
+"thumb": "site/thumbs/coral-waltz.jpg",
+"similar": [
+"winds-of-the-world",
+"island-breeze",
+"island-time",
+"menu-drift",
+"first-bloom",
+"holler-hoedown"
+],
+"shape": [
+"lantern-theory",
+"frosty-podium",
+"lobby-loop",
+"blue-spark-runaway",
+"channel-plaza",
+"static-weather"
+],
+"versions": [],
+"arc": [
+0.51,
+0.93,
+0.94,
+0.95,
+0.99,
+0.99,
+1.0,
+0.76,
+0.92,
+0.94,
+0.94,
+0.99,
+0.99,
+1.0,
+0.76,
+0.47
+]
+},
+{
+"id": "haunted-manor",
+"title": "Haunted Manor",
+"file": "songs/youtube/Haunted Manor.mp3",
+"video": "videos/YouTube - Haunted Manor.mp4",
+"card": "cards/YouTube - Haunted Manor.png",
+"tempo": 96,
+"style": "NSMB Wii ghost house style",
+"feel": "Spooky swing with theremin and harpsichord",
+"good": "Spooky or funny clips",
+"colors": [
+"#1a0b2a",
+"#4a2a6f",
+"#c7ffd9",
+"#0d0515",
+"#ffffff"
+],
+"order": 100,
+"groups": [
+"Mario-style worlds",
+"Video game styles"
+],
+"genres": [
+"Electronic & dance",
+"Jazz, funk & soul"
+],
+"moods": [
+"Happy",
+"Funny",
+"Spooky & sneaky"
+],
+"duration": 97.5,
+"loop": [
+10.0,
+60.0
+],
+"energy": 0.737,
+"thumb": "site/thumbs/haunted-manor.jpg",
+"similar": [
+"holler-hoedown",
+"winds-of-the-world",
+"island-time",
+"moonlit-night-stage",
+"first-bloom",
+"frostline"
+],
+"shape": [
+"light-up-the-persona",
+"treasure-hunt-flow",
+"desert-dunes",
+"sunlit-plaza",
+"sugar-cloud-smile",
+"mushroom-woods"
+],
+"versions": [],
+"arc": [
+0.42,
+0.56,
+0.73,
+0.66,
+0.69,
+1.0,
+0.88,
+1.0,
+0.64,
+0.71,
+0.73,
+0.82,
+0.98,
+0.89,
+0.8,
+0.29
+]
+},
+{
+"id": "shellfire-castle",
+"title": "Shellfire Castle",
+"file": "songs/youtube/Shellfire Castle.mp3",
+"video": "videos/YouTube - Shellfire Castle.mp4",
+"card": "cards/YouTube - Shellfire Castle.png",
+"tempo": 112,
+"style": "NSMB Wii castle style",
+"feel": "Castle theme with organ, choir and timpani",
+"good": "Final circles, boss fights",
+"colors": [
+"#1a0505",
+"#5a0f0f",
+"#ff6f2f",
+"#0d0202",
+"#ffd27f"
+],
+"order": 101,
+"groups": [
+"Mario-style worlds",
+"Video game styles",
+"Orchestral & cinematic"
+],
+"genres": [
+"Orchestral & cinematic"
+],
+"moods": [
+"Hype",
+"Epic"
+],
+"duration": 84.6,
+"loop": [
+8.5714,
+51.4286
+],
+"energy": 0.791,
+"thumb": "site/thumbs/shellfire-castle.jpg",
+"similar": [
+"magma-fortress",
+"ringworld-vigil",
+"homebase-rising",
+"stadium-highlands",
+"march-of-seven",
+"titan-undefeated"
+],
+"shape": [
+"cliffside-climb",
+"starry-road",
+"magma-fortress",
+"pipe-cavern",
+"grassland-hop",
+"turbo-corner"
+],
+"versions": [],
+"arc": [
+0.53,
+0.61,
+0.74,
+0.76,
+0.79,
+0.97,
+0.98,
+1.0,
+0.77,
+0.75,
+0.75,
+0.91,
+0.96,
+1.0,
+0.96,
+0.18
+]
+},
+{
+"id": "glitter-overload",
+"title": "Glitter Overload",
+"file": "songs/youtube/Glitter Overload.mp3",
+"video": "videos/YouTube - Glitter Overload.mp4",
+"card": "cards/YouTube - Glitter Overload.png",
+"tempo": 136,
+"style": "bubblegum hyperpop",
+"feel": "Bubblegum hyperpop: glossy bell synths, metallic clanks, chipmunk hooks",
+"good": "Funny, chaotic clips",
+"colors": [
+"#4a0b3a",
+"#e02ab3",
+"#ffe0ff",
+"#2a0520",
+"#ffffff"
+],
+"order": 102,
+"groups": [
+"Hyperpop"
+],
+"genres": [
+"Hyperpop",
+"Pop",
+"Rock & metal",
+"Chiptune & retro"
+],
+"moods": [
+"Hype",
+"Happy",
+"Funny"
+],
+"duration": 105.1,
+"loop": [
+28.2353,
+91.7647
+],
+"energy": 0.792,
+"thumb": "site/thumbs/glitter-overload.jpg",
+"similar": [
+"pixel-heart-dnb",
+"starlight-carnival-run",
+"red-40-sugar-rush",
+"aqua-tomorrow",
+"holler-hoedown",
+"snowcap-slide"
+],
+"shape": [
+"static-tears",
+"nightcore-rush",
+"bitcrushed-daydream",
+"sky-piercing-promise",
+"arcade-heartbreak-2005",
+"midnight-drift"
+],
+"versions": [],
+"arc": [
+0.4,
+0.73,
+0.77,
+0.74,
+0.93,
+1.0,
+0.87,
+0.74,
+0.75,
+0.86,
+0.99,
+0.86,
+0.62,
+1.0,
+1.0,
+0.43
+]
+},
+{
+"id": "bitcrushed-daydream",
+"title": "Bitcrushed Daydream",
+"file": "songs/youtube/Bitcrushed Daydream.mp3",
+"video": "videos/YouTube - Bitcrushed Daydream.mp4",
+"card": "cards/YouTube - Bitcrushed Daydream.png",
+"tempo": 150,
+"style": "glitchcore hyperpop",
+"feel": "Glitchcore: crushed, stuttering synths over emo guitar verses",
+"good": "Montages, edits",
+"colors": [
+"#0b1a2a",
+"#2a5a8f",
+"#c7e0ff",
+"#050d15",
+"#ffffff"
+],
+"order": 103,
+"groups": [
+"Hyperpop"
+],
+"genres": [
+"Hyperpop",
+"Pop"
+],
+"moods": [],
+"duration": 95.7,
+"loop": [
+25.6,
+83.1997
+],
+"energy": 0.797,
+"thumb": "site/thumbs/bitcrushed-daydream.jpg",
+"similar": [
+"static-tears",
+"blue-spark-runaway",
+"pixel-heart-dnb",
+"aqua-tomorrow",
+"red-40-breaks",
+"nightcore-rush"
+],
+"shape": [
+"nightcore-rush",
+"glitter-overload",
+"static-tears",
+"dark-and-wild-run",
+"lime-green-afterparty",
+"sky-piercing-promise"
+],
+"versions": [],
+"arc": [
+0.5,
+0.75,
+0.77,
+0.72,
+0.89,
+0.98,
+0.85,
+0.73,
+0.77,
+0.8,
+0.99,
+0.93,
+0.75,
+1.0,
+0.99,
+0.34
+]
+},
+{
+"id": "static-tears",
+"title": "Static Tears",
+"file": "songs/youtube/Static Tears.mp3",
+"video": "videos/YouTube - Static Tears.mp4",
+"card": "cards/YouTube - Static Tears.png",
+"tempo": 140,
+"style": "emo hyperpop",
+"feel": "Sad acoustic verses that blow up into a huge distorted chorus",
+"good": "Emotional edits",
+"colors": [
+"#1a0b1f",
+"#5a2a6f",
+"#ffc7d9",
+"#0d0510",
+"#ffffff"
+],
+"order": 104,
+"groups": [
+"Hyperpop"
+],
+"genres": [
+"Hyperpop",
+"Pop"
+],
+"moods": [
+"Emotional"
+],
+"duration": 102.2,
+"loop": [
+30.8571,
+85.7141
+],
+"energy": 0.788,
+"thumb": "site/thumbs/static-tears.jpg",
+"similar": [
+"bitcrushed-daydream",
+"aqua-tomorrow",
+"pixel-heart-dnb",
+"blue-spark-runaway",
+"life-goes-slow",
+"menu-drift"
+],
+"shape": [
+"glitter-overload",
+"nightcore-rush",
+"bitcrushed-daydream",
+"arcade-heartbreak-2005",
+"midnight-drift",
+"sky-piercing-promise"
+],
+"versions": [],
+"arc": [
+0.34,
+0.73,
+0.76,
+0.77,
+0.96,
+0.98,
+0.82,
+0.73,
+0.76,
+0.87,
+0.97,
+0.89,
+0.65,
+0.95,
+1.0,
+0.43
+]
+},
+{
+"id": "nightcore-rush",
+"title": "Nightcore Rush",
+"file": "songs/youtube/Nightcore Rush.mp3",
+"video": "videos/YouTube - Nightcore Rush.mp4",
+"card": "cards/YouTube - Nightcore Rush.png",
+"tempo": 172,
+"style": "nightcore",
+"feel": "Nightcore: sped-up trance energy, gated supersaws, four on the floor",
+"good": "Hype montages",
+"colors": [
+"#1a0b4a",
+"#8a2ae0",
+"#7ff2ff",
+"#0d052a",
+"#ffffff"
+],
+"order": 105,
+"groups": [
+"Hyperpop"
+],
+"genres": [
+"Hyperpop",
+"Electronic & dance"
+],
+"moods": [
+"Hype",
+"Spooky & sneaky"
+],
+"duration": 84.1,
+"loop": [
+22.3256,
+66.9767
+],
+"energy": 0.791,
+"thumb": "site/thumbs/nightcore-rush.jpg",
+"similar": [
+"squeak-sprint",
+"pixel-heart-dnb",
+"turbo-corner",
+"lime-green-breaks",
+"off-the-lines-breaks",
+"bitcrushed-daydream"
+],
+"shape": [
+"bitcrushed-daydream",
+"glitter-overload",
+"static-tears",
+"sky-piercing-promise",
+"dark-and-wild-run",
+"lime-green-afterparty"
+],
+"versions": [],
+"arc": [
+0.43,
+0.77,
+0.76,
+0.76,
+0.95,
+1.0,
+0.83,
+0.77,
+0.72,
+0.9,
+0.98,
+0.82,
+0.73,
+0.98,
+0.97,
+0.3
+]
+},
+{
+"id": "menu-drift",
+"title": "Menu Drift",
+"file": "songs/youtube/Menu Drift.mp3",
+"video": "videos/YouTube - Menu Drift.mp4",
+"card": "cards/YouTube - Menu Drift.png",
+"tempo": 100,
+"style": "calm menu BGM",
+"feel": "Calm, steady background music with soft bells and pads",
+"good": "Commentary, menus, chill streams",
+"colors": [
+"#1d2a3a",
+"#4a6f9a",
+"#d9ecff",
+"#0f1720",
+"#ffffff"
+],
+"order": 106,
+"groups": [
+"Background music"
+],
+"genres": [
+"Lo-fi & chill"
+],
+"moods": [
+"Chill"
+],
+"duration": 98.9,
+"loop": [
+9.6,
+57.6
+],
+"energy": 0.863,
+"thumb": "site/thumbs/menu-drift.jpg",
+"similar": [
+"life-goes-slow",
+"island-time",
+"winds-of-the-world",
+"coral-waltz",
+"window-seat",
+"indigo-fields"
+],
+"shape": [
+"homebase-rising",
+"skyscraper-sprint",
+"frosty-podium",
+"lantern-theory",
+"paper-sky",
+"arirang-dawn"
+],
+"versions": [],
+"arc": [
+0.59,
+0.77,
+0.96,
+0.95,
+0.94,
+0.97,
+1.0,
+0.98,
+0.99,
+0.95,
+0.94,
+0.97,
+0.97,
+0.94,
+0.59,
+0.29
+]
+},
+{
+"id": "skyscraper-sprint",
+"title": "Skyscraper Sprint",
+"file": "songs/youtube/Skyscraper Sprint.mp3",
+"video": "videos/YouTube - Skyscraper Sprint.mp4",
+"card": "cards/YouTube - Skyscraper Sprint.png",
+"tempo": 150,
+"style": "city route style",
+"feel": "Fast city route with synth lead and trumpet (in the style of Pokémon Gen 5)",
+"good": "Fast-paced clips",
+"colors": [
+"#1a1a2a",
+"#4a4a7a",
+"#ffd23f",
+"#0d0d15",
+"#ffffff"
+],
+"order": 107,
+"groups": [
+"Pokémon-style",
+"Video game styles"
+],
+"genres": [
+"Other"
+],
+"moods": [
+"Hype"
+],
+"duration": 63.7,
+"loop": [
+8.0,
+39.9999
+],
+"energy": 0.856,
+"thumb": "site/thumbs/skyscraper-sprint.jpg",
+"similar": [
+"iron-storm-rising",
+"highway-escape",
+"snowpoint-trail",
+"turbo-corner",
+"sky-piercing-promise",
+"rush-hour-boost"
+],
+"shape": [
+"menu-drift",
+"frosty-podium",
+"homebase-rising",
+"static-weather",
+"lantern-theory",
+"arirang-dawn"
+],
+"versions": [],
+"arc": [
+0.58,
+0.73,
+0.97,
+0.97,
+0.94,
+0.94,
+0.95,
+0.98,
+1.0,
+0.96,
+0.96,
+0.93,
+0.96,
+0.96,
+0.71,
+0.15
+]
+},
+{
+"id": "red-40-breaks",
+"title": "Red 40 Breaks",
+"file": "songs/youtube/Red 40 Breaks.mp3",
+"video": "videos/YouTube - Red 40 Breaks.mp4",
+"card": "cards/YouTube - Red 40 Breaks.png",
+"tempo": 178,
+"style": "hyperpop breakcore",
+"feel": "Steady breakcore with glitches, chipmunk chops and cartoon sound effects",
+"good": "Chaotic montages",
+"colors": [
+"#2a0202",
+"#a80f0f",
+"#ffd1d1",
+"#150101",
+"#ffffff"
+],
+"order": 108,
+"groups": [
+"Breakcore",
+"Hyperpop"
+],
+"genres": [
+"Breakcore",
+"Hyperpop",
+"Pop",
+"Chiptune & retro"
+],
+"moods": [
+"Funny"
+],
+"duration": 81.2,
+"loop": [
+16.1798,
+26.9663
+],
+"energy": 0.749,
+"thumb": "site/thumbs/red-40-breaks.jpg",
+"similar": [
+"arcade-heartbreak-breaks",
+"red-40-sugar-rush",
+"bitcrushed-daydream",
+"glitter-overload",
+"blue-spark-runaway",
+"pixel-heart-dnb"
+],
+"shape": [
+"lime-green-breaks",
+"sugar-cloud-breaks",
+"paper-sky",
+"indigo-fields",
+"velvet-layover",
+"aqua-tomorrow-breaks"
+],
+"versions": [
+"red-40-sugar-rush"
+],
+"arc": [
+0.41,
+0.45,
+0.56,
+0.89,
+0.95,
+0.95,
+0.94,
+0.83,
+0.73,
+0.84,
+1.0,
+0.98,
+0.98,
+0.92,
+0.42,
+0.15
+]
+},
+{
+"id": "aqua-tomorrow",
+"title": "Aqua Tomorrow",
+"file": "songs/youtube/Aqua Tomorrow.mp3",
+"video": "videos/YouTube - Aqua Tomorrow.mp4",
+"card": "cards/YouTube - Aqua Tomorrow.png",
+"tempo": 116,
+"style": "Frutiger Aero pop-rock",
+"feel": "Optimistic late-2000s pop-rock with glossy bells and bubbles (Meet the Robinsons / Frutiger Aero style)",
+"good": "Happy highlights, intros",
+"colors": [
+"#0b4a7a",
+"#3fb3f2",
+"#e0ffff",
+"#06284a",
+"#ffffff"
+],
+"order": 109,
+"groups": [],
+"genres": [
+"Pop",
+"Rock & metal"
+],
+"moods": [
+"Happy"
+],
+"duration": 85.5,
+"loop": [
+10.3448,
+51.7241
+],
+"energy": 0.773,
+"thumb": "site/thumbs/aqua-tomorrow.jpg",
+"similar": [
+"holler-hoedown",
+"static-tears",
+"starlit-orbit",
+"glitter-overload",
+"starlight-carnival-run",
+"bitcrushed-daydream"
+],
+"shape": [
+"life-goes-slow",
+"indigo-fields",
+"arirang-dawn",
+"youth-in-bloom",
+"velvet-layover",
+"menu-drift"
+],
+"versions": [
+"aqua-tomorrow-breaks"
+],
+"arc": [
+0.55,
+0.62,
+0.77,
+0.75,
+0.83,
+0.98,
+0.98,
+0.93,
+0.78,
+0.71,
+0.81,
+1.0,
+0.98,
+0.96,
+0.46,
+0.25
+]
+},
+{
+"id": "aqua-tomorrow-breaks",
+"title": "Aqua Tomorrow Breaks",
+"file": "songs/youtube/Aqua Tomorrow Breaks.mp3",
+"video": "videos/YouTube - Aqua Tomorrow Breaks.mp4",
+"card": "cards/YouTube - Aqua Tomorrow Breaks.png",
+"tempo": 172,
+"style": "Frutiger Aero breakcore",
+"feel": "Steady breakcore with plucks, bells and bubbles",
+"good": "Upbeat montages",
+"colors": [
+"#06284a",
+"#1f8fd9",
+"#c7f7ff",
+"#03152a",
+"#ffffff"
+],
+"order": 110,
+"groups": [
+"Breakcore"
+],
+"genres": [
+"Breakcore"
+],
+"moods": [
+"Happy"
+],
+"duration": 87.3,
+"loop": [
+16.7442,
+27.907
+],
+"energy": 0.703,
+"thumb": "site/thumbs/aqua-tomorrow-breaks.jpg",
+"similar": [
+"paper-sky",
+"first-bloom",
+"heatwave-arcade",
+"off-the-lines-breaks",
+"lanterns-and-thunder-drums",
+"frostline"
+],
+"shape": [
+"window-seat",
+"amber-leaves",
+"lantern-in-the-fog",
+"frostline",
+"heatwave-arcade",
+"last-light"
+],
+"versions": [
+"aqua-tomorrow"
+],
+"arc": [
+0.17,
+0.6,
+0.53,
+0.97,
+0.99,
+1.0,
+1.0,
+0.73,
+0.7,
+0.87,
+0.91,
+0.91,
+0.92,
+0.58,
+0.32,
+0.02
+]
+},
+{
+"id": "pixel-heart-dnb",
+"title": "Pixel Heart DnB",
+"file": "songs/youtube/Pixel Heart DnB.mp3",
+"video": "videos/YouTube - Pixel Heart DnB.mp4",
+"card": "cards/YouTube - Pixel Heart DnB.png",
+"tempo": 174,
+"style": "hyperpop drum & bass",
+"feel": "Hyper drum & bass with chipmunk hooks and supersaw chords",
+"good": "Fast montages",
+"colors": [
+"#2a0b4a",
+"#c02ae0",
+"#ffd1f7",
+"#15052a",
+"#ffffff"
+],
+"order": 111,
+"groups": [
+"Hyperpop"
+],
+"genres": [
+"Drum & bass",
+"Hyperpop",
+"Pop",
+"Chiptune & retro"
+],
+"moods": [
+"Hype"
+],
+"duration": 83.2,
+"loop": [
+22.069,
+71.7239
+],
+"energy": 0.848,
+"thumb": "site/thumbs/pixel-heart-dnb.jpg",
+"similar": [
+"nightcore-rush",
+"glitter-overload",
+"static-tears",
+"lime-green-breaks",
+"off-the-lines-breaks",
+"bitcrushed-daydream"
+],
+"shape": [
+"dark-and-wild-run",
+"red-40-sugar-rush",
+"arcade-heartbreak-2005",
+"nightcore-rush",
+"infinite-series",
+"static-weather"
+],
+"versions": [],
+"arc": [
+0.45,
+0.87,
+0.88,
+0.85,
+1.0,
+0.96,
+0.91,
+0.94,
+0.87,
+0.95,
+0.97,
+0.83,
+0.88,
+0.98,
+0.93,
+0.29
+]
+},
+{
+"id": "midnight-drift",
+"title": "Midnight Drift",
+"file": "songs/youtube/Midnight Drift.mp3",
+"video": "videos/YouTube - Midnight Drift.mp4",
+"card": "cards/YouTube - Midnight Drift.png",
+"tempo": 130,
+"style": "drift phonk",
+"feel": "Drift phonk: cowbell melody, distorted 808, triplet hats, dark shouts",
+"good": "Edits, montages, clutch plays",
+"colors": [
+"#0a0a12",
+"#2a1a3a",
+"#b38fff",
+"#050508",
+"#ffffff"
+],
+"order": 112,
+"groups": [],
+"genres": [
+"Hip-hop & trap"
+],
+"moods": [],
+"duration": 94.9,
+"loop": [
+22.1538,
+81.2309
+],
+"energy": 0.808,
+"thumb": "site/thumbs/midnight-drift.jpg",
+"similar": [
+"fragile-mask",
+"lobby-loop",
+"final-circle",
+"sugar-cloud-smile",
+"amber-leaves",
+"yet-to-bloom"
+],
+"shape": [
+"lime-green-afterparty",
+"arcade-heartbreak-2005",
+"dark-and-wild-run",
+"red-40-sugar-rush",
+"titan-undefeated",
+"sky-piercing-promise"
+],
+"versions": [],
+"arc": [
+0.43,
+0.67,
+0.75,
+0.81,
+0.99,
+1.0,
+0.76,
+0.75,
+0.82,
+0.99,
+1.0,
+0.73,
+0.87,
+0.98,
+0.98,
+0.41
+]
+},
+{
+"id": "neon-horizon",
+"title": "Neon Horizon",
+"file": "songs/youtube/Neon Horizon.mp3",
+"video": "videos/YouTube - Neon Horizon.mp4",
+"card": "cards/YouTube - Neon Horizon.png",
+"tempo": 104,
+"style": "synthwave",
+"feel": "Synthwave: gated snares, 16th arpeggios, big 80s saw lead",
+"good": "Driving, retro edits",
+"colors": [
+"#1a0533",
+"#e02a8f",
+"#ffb347",
+"#0d021a",
+"#ffffff"
+],
+"order": 113,
+"groups": [],
+"genres": [
+"Electronic & dance"
+],
+"moods": [],
+"duration": 90.1,
+"loop": [
+9.2308,
+55.3846
+],
+"energy": 0.763,
+"thumb": "site/thumbs/neon-horizon.jpg",
+"similar": [
+"time-warp-zone",
+"sugar-cloud-smile",
+"squeak-sprint",
+"turbo-corner",
+"eolssu-groove",
+"daily-poke-catch-mythic-battle"
+],
+"shape": [
+"respawn-lounge",
+"island-time",
+"yet-to-bloom",
+"johto-morning",
+"light-up-the-persona",
+"pallet-path"
+],
+"versions": [],
+"arc": [
+0.22,
+0.44,
+0.74,
+0.76,
+0.75,
+0.99,
+0.96,
+0.98,
+0.79,
+0.73,
+0.75,
+0.86,
+1.0,
+0.94,
+0.97,
+0.34
+]
+},
+{
+"id": "turbo-corner",
+"title": "Turbo Corner",
+"file": "songs/youtube/Turbo Corner.mp3",
+"video": "videos/YouTube - Turbo Corner.mp4",
+"card": "cards/YouTube - Turbo Corner.png",
+"tempo": 156,
+"style": "eurobeat",
+"feel": "Eurobeat: racing lead, supersaw stabs, offbeat octave bass",
+"good": "Fast rotations, chases",
+"colors": [
+"#2a0505",
+"#e0471f",
+"#ffe14d",
+"#150202",
+"#ffffff"
+],
+"order": 114,
+"groups": [],
+"genres": [
+"Electronic & dance"
+],
+"moods": [
+"Hype"
+],
+"duration": 61.3,
+"loop": [
+6.1538,
+36.9232
+],
+"energy": 0.793,
+"thumb": "site/thumbs/turbo-corner.jpg",
+"similar": [
+"squeak-sprint",
+"skyscraper-sprint",
+"iron-storm-rising",
+"nightcore-rush",
+"sky-piercing-promise",
+"emerald-shore-zone"
+],
+"shape": [
+"grassland-hop",
+"starry-road",
+"cloudtop-athletic",
+"magma-fortress",
+"holler-hoedown",
+"checkerboard-skank"
+],
+"versions": [],
+"arc": [
+0.55,
+0.65,
+0.76,
+0.76,
+0.79,
+1.0,
+0.98,
+0.96,
+0.77,
+0.76,
+0.77,
+0.93,
+0.99,
+0.97,
+0.91,
+0.15
+]
+},
+{
+"id": "checkerboard-skank",
+"title": "Checkerboard Skank",
+"file": "songs/youtube/Checkerboard Skank.mp3",
+"video": "videos/YouTube - Checkerboard Skank.mp4",
+"card": "cards/YouTube - Checkerboard Skank.png",
+"tempo": 168,
+"style": "ska",
+"feel": "Ska: offbeat guitar, horn section, fast walking bass",
+"good": "Funny, upbeat clips",
+"colors": [
+"#111111",
+"#555555",
+"#ffffff",
+"#000000",
+"#ff3b2f"
+],
+"order": 115,
+"groups": [],
+"genres": [
+"Jazz, funk & soul"
+],
+"moods": [
+"Hype",
+"Happy",
+"Funny"
+],
+"duration": 57.4,
+"loop": [
+17.1429,
+45.7146
+],
+"energy": 0.777,
+"thumb": "site/thumbs/checkerboard-skank.jpg",
+"similar": [
+"rush-hour-boost",
+"arcade-heartbreak-2005",
+"heatwave-arcade",
+"frosty-podium",
+"lightning-over-the-city",
+"iron-storm-rising"
+],
+"shape": [
+"holler-hoedown",
+"cloudtop-athletic",
+"eolssu-groove",
+"turbo-corner",
+"stadium-highlands",
+"boulevard-cafe"
+],
+"versions": [],
+"arc": [
+0.5,
+0.6,
+0.76,
+0.75,
+0.83,
+1.0,
+0.96,
+0.96,
+0.75,
+0.75,
+0.78,
+0.94,
+0.97,
+1.0,
+0.82,
+0.08
+]
+},
+{
+"id": "island-time",
+"title": "Island Time",
+"file": "songs/youtube/Island Time.mp3",
+"video": "videos/YouTube - Island Time.mp4",
+"card": "cards/YouTube - Island Time.png",
+"tempo": 76,
+"style": "reggae",
+"feel": "Reggae: one-drop drums, skank and organ bubble, melodica-style lead",
+"good": "Chill gameplay",
+"colors": [
+"#0b3a0b",
+"#e0b31f",
+"#ff3b2f",
+"#052005",
+"#ffffff"
+],
+"order": 116,
+"groups": [
+"World music"
+],
+"genres": [
+"Jazz, funk & soul",
+"World & folk"
+],
+"moods": [
+"Chill"
+],
+"duration": 121.5,
+"loop": [
+15.7895,
+78.9476
+],
+"energy": 0.741,
+"thumb": "site/thumbs/island-time.jpg",
+"similar": [
+"island-breeze",
+"winds-of-the-world",
+"menu-drift",
+"life-goes-slow",
+"boulevard-cafe",
+"indigo-fields"
+],
+"shape": [
+"neon-horizon",
+"johto-morning",
+"pallet-path",
+"respawn-lounge",
+"tokyo-sunset-drive",
+"yet-to-bloom"
+],
+"versions": [],
+"arc": [
+0.22,
+0.4,
+0.71,
+0.73,
+0.7,
+0.92,
+0.98,
+0.93,
+0.74,
+0.7,
+0.71,
+0.77,
+0.87,
+1.0,
+0.96,
+0.5
+]
+},
+{
+"id": "log-drum-sunset",
+"title": "Log Drum Sunset",
+"file": "songs/youtube/Log Drum Sunset.mp3",
+"video": "videos/YouTube - Log Drum Sunset.mp4",
+"card": "cards/YouTube - Log Drum Sunset.png",
+"tempo": 112,
+"style": "amapiano",
+"feel": "Amapiano: log drum bass, shakers, jazzy piano and sax",
+"good": "Chill, groovy clips",
+"colors": [
+"#3a1a05",
+"#d9772a",
+"#ffe0b3",
+"#200d02",
+"#ffffff"
+],
+"order": 117,
+"groups": [
+"World music"
+],
+"genres": [
+"Jazz, funk & soul",
+"World & folk",
+"Piano"
+],
+"moods": [
+"Chill"
+],
+"duration": 84.1,
+"loop": [
+12.8571,
+55.7143
+],
+"energy": 0.783,
+"thumb": "site/thumbs/log-drum-sunset.jpg",
+"similar": [
+"island-breeze",
+"coconut-cove",
+"boulevard-cafe",
+"winds-of-the-world",
+"island-time",
+"pallet-path"
+],
+"shape": [
+"pipe-cavern",
+"desert-dunes",
+"treasure-hunt-flow",
+"turbo-corner",
+"mushroom-woods",
+"magma-fortress"
+],
+"versions": [],
+"arc": [
+0.52,
+0.63,
+0.76,
+0.74,
+0.75,
+1.0,
+1.0,
+0.9,
+0.75,
+0.73,
+0.78,
+0.88,
+0.98,
+0.94,
+0.92,
+0.25
+]
+},
+{
+"id": "holler-hoedown",
+"title": "Holler Hoedown",
+"file": "songs/youtube/Holler Hoedown.mp3",
+"video": "videos/YouTube - Holler Hoedown.mp4",
+"card": "cards/YouTube - Holler Hoedown.png",
+"tempo": 150,
+"style": "bluegrass",
+"feel": "Bluegrass: banjo rolls, fiddle, boom-chuck guitar",
+"good": "Funny clips, farming maps",
+"colors": [
+"#3a2a0b",
+"#a8802a",
+"#fff0c7",
+"#201505",
+"#ffffff"
+],
+"order": 118,
+"groups": [],
+"genres": [
+"World & folk"
+],
+"moods": [
+"Happy",
+"Funny"
+],
+"duration": 63.7,
+"loop": [
+6.4,
+38.4003
+],
+"energy": 0.759,
+"thumb": "site/thumbs/holler-hoedown.jpg",
+"similar": [
+"snowcap-slide",
+"aqua-tomorrow",
+"kite-season",
+"first-bloom",
+"haunted-manor",
+"starry-road"
+],
+"shape": [
+"checkerboard-skank",
+"turbo-corner",
+"eolssu-groove",
+"starry-road",
+"magma-fortress",
+"cloudtop-athletic"
+],
+"versions": [],
+"arc": [
+0.48,
+0.58,
+0.72,
+0.72,
+0.8,
+0.98,
+0.95,
+0.92,
+0.73,
+0.74,
+0.73,
+0.92,
+0.93,
+1.0,
+0.84,
+0.11
+]
+},
+{
+"id": "tokyo-sunset-drive",
+"title": "Tokyo Sunset Drive",
+"file": "songs/youtube/Tokyo Sunset Drive.mp3",
+"video": "videos/YouTube - Tokyo Sunset Drive.mp4",
+"card": "cards/YouTube - Tokyo Sunset Drive.png",
+"tempo": 112,
+"style": "city pop",
+"feel": "City pop: Rhodes chords, slap bass, funky guitar, brass",
+"good": "Chill highlights",
+"colors": [
+"#3a0b2a",
+"#e06f8f",
+"#ffd9a3",
+"#200515",
+"#ffffff"
+],
+"order": 119,
+"groups": [],
+"genres": [
+"Pop",
+"Jazz, funk & soul"
+],
+"moods": [
+"Chill",
+"Happy"
+],
+"duration": 84.3,
+"loop": [
+8.5714,
+51.4287
+],
+"energy": 0.708,
+"thumb": "site/thumbs/tokyo-sunset-drive.jpg",
+"similar": [
+"light-up-the-persona",
+"life-goes-slow",
+"starlit-orbit",
+"island-breeze",
+"street-neuron",
+"velvet-layover"
+],
+"shape": [
+"respawn-lounge",
+"light-up-the-persona",
+"starlight-carnival-run",
+"coconut-cove",
+"fragile-mask",
+"snowcap-slide"
+],
+"versions": [],
+"arc": [
+0.3,
+0.53,
+0.66,
+0.68,
+0.68,
+0.96,
+0.85,
+0.89,
+0.72,
+0.68,
+0.68,
+0.84,
+0.8,
+1.0,
+0.84,
+0.21
+]
+},
+{
+"id": "squeak-sprint",
+"title": "Squeak Sprint",
+"file": "songs/youtube/Squeak Sprint.mp3",
+"video": "videos/YouTube - Squeak Sprint.mp4",
+"card": "cards/YouTube - Squeak Sprint.png",
+"tempo": 140,
+"style": "jersey club",
+"feel": "Jersey club: bouncing kicks, bed squeaks, vocal chops",
+"good": "Hype edits",
+"colors": [
+"#0b0b2a",
+"#2a2ae0",
+"#ffffff",
+"#05051a",
+"#ff5fa2"
+],
+"order": 120,
+"groups": [],
+"genres": [
+"Electronic & dance"
+],
+"moods": [
+"Hype"
+],
+"duration": 67.9,
+"loop": [
+6.8571,
+41.1427
+],
+"energy": 0.779,
+"thumb": "site/thumbs/squeak-sprint.jpg",
+"similar": [
+"turbo-corner",
+"nightcore-rush",
+"iron-storm-rising",
+"eolssu-groove",
+"skyscraper-sprint",
+"lime-green-breaks"
+],
+"shape": [
+"treasure-hunt-flow",
+"desert-dunes",
+"respawn-lounge",
+"light-up-the-persona",
+"yet-to-bloom",
+"cliffside-climb"
+],
+"versions": [],
+"arc": [
+0.44,
+0.51,
+0.79,
+0.75,
+0.74,
+1.0,
+0.98,
+1.0,
+0.79,
+0.7,
+0.78,
+0.84,
+1.0,
+0.99,
+0.97,
+0.19
+]
+},
+{
+"id": "indigo-fields",
+"title": "Indigo Fields",
+"file": "songs/youtube/Indigo Fields.mp3",
+"video": "videos/YouTube - Indigo Fields.mp4",
+"card": "cards/YouTube - Indigo Fields.png",
+"tempo": 86,
+"style": "RM solo style",
+"feel": "Warm alt-folk hip-hop with acoustic guitar and muted trumpet (in the style of RM’s solo work)",
+"good": "Chill, reflective clips",
+"colors": [
+"#0b1a3a",
+"#2a4a8f",
+"#c7d9ff",
+"#050d20",
+"#ffffff"
+],
+"order": 121,
+"groups": [
+"BTS solo styles",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Hip-hop & trap",
+"World & folk"
+],
+"moods": [
+"Chill",
+"Emotional"
+],
+"duration": 117.0,
+"loop": [
+13.9535,
+69.7676
+],
+"energy": 0.741,
+"thumb": "site/thumbs/indigo-fields.jpg",
+"similar": [
+"riverbank-evening",
+"yet-to-bloom",
+"morning-over-the-valley",
+"island-time",
+"life-goes-slow",
+"fragile-mask"
+],
+"shape": [
+"velvet-layover",
+"life-goes-slow",
+"aqua-tomorrow",
+"lime-green-breaks",
+"red-40-breaks",
+"paper-sky"
+],
+"versions": [],
+"arc": [
+0.27,
+0.52,
+0.74,
+0.73,
+0.89,
+1.0,
+0.93,
+0.93,
+0.75,
+0.74,
+0.86,
+0.97,
+0.98,
+0.88,
+0.49,
+0.19
+]
+},
+{
+"id": "starlit-orbit",
+"title": "Starlit Orbit",
+"file": "songs/youtube/Starlit Orbit.mp3",
+"video": "videos/YouTube - Starlit Orbit.mp4",
+"card": "cards/YouTube - Starlit Orbit.png",
+"tempo": 126,
+"style": "Jin solo style",
+"feel": "Anthemic pop-rock with driving piano and a soaring chorus (in the style of Jin’s solo work)",
+"good": "Big wins, highlights",
+"colors": [
+"#0b0b3a",
+"#3a5fd9",
+"#ffd1f7",
+"#05051f",
+"#ffffff"
+],
+"order": 122,
+"groups": [
+"BTS solo styles",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Pop",
+"Rock & metal",
+"Piano"
+],
+"moods": [
+"Happy"
+],
+"duration": 83.4,
+"loop": [
+1.9048,
+70.4836
+],
+"energy": 0.733,
+"thumb": "site/thumbs/starlit-orbit.jpg",
+"similar": [
+"aqua-tomorrow",
+"tokyo-sunset-drive",
+"light-up-the-persona",
+"life-goes-slow",
+"static-weather",
+"double-helix"
+],
+"shape": [
+"lantern-in-the-fog",
+"last-light",
+"frostline",
+"heatwave-arcade",
+"aqua-tomorrow-breaks",
+"monsoon-breaks"
+],
+"versions": [],
+"arc": [
+0.51,
+0.66,
+0.72,
+0.74,
+0.89,
+0.92,
+1.0,
+0.82,
+0.7,
+0.78,
+0.95,
+0.95,
+0.94,
+0.58,
+0.52,
+0.05
+]
+},
+{
+"id": "street-neuron",
+"title": "Street Neuron",
+"file": "songs/youtube/Street Neuron.mp3",
+"video": "videos/YouTube - Street Neuron.mp4",
+"card": "cards/YouTube - Street Neuron.png",
+"tempo": 100,
+"style": "j-hope solo style",
+"feel": "Old-school funky hip-hop with horns and scratches; ends with a tape stop (in the style of j-hope’s solo work)",
+"good": "Dance emotes, upbeat clips",
+"colors": [
+"#3a0b0b",
+"#d9472a",
+"#ffe14d",
+"#200505",
+"#ffffff"
+],
+"order": 123,
+"groups": [
+"BTS solo styles",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Hip-hop & trap",
+"Jazz, funk & soul"
+],
+"moods": [
+"Happy"
+],
+"duration": 107.5,
+"loop": [
+28.8,
+86.4
+],
+"energy": 0.849,
+"thumb": "site/thumbs/street-neuron.jpg",
+"similar": [
+"light-up-the-persona",
+"tokyo-sunset-drive",
+"schoolyard-riot",
+"breeze-in-the-alley",
+"stadium-highlands",
+"starlit-orbit"
+],
+"shape": [
+"arcade-heartbreak-breaks",
+"off-the-lines",
+"island-time",
+"neon-horizon",
+"riverbank-evening",
+"overclocked"
+],
+"versions": [],
+"arc": [
+0.55,
+0.66,
+0.74,
+0.76,
+0.91,
+0.99,
+0.98,
+0.76,
+0.75,
+0.76,
+0.99,
+0.97,
+0.98,
+1.0,
+0.96,
+0.84
+]
+},
+{
+"id": "velvet-layover",
+"title": "Velvet Layover",
+"file": "songs/youtube/Velvet Layover.mp3",
+"video": "videos/YouTube - Velvet Layover.mp4",
+"card": "cards/YouTube - Velvet Layover.png",
+"tempo": 76,
+"style": "V solo style",
+"feel": "Late-night jazzy R&B with Rhodes and muted trumpet (in the style of V’s solo work)",
+"good": "Chill streams, night clips",
+"colors": [
+"#1a0b1a",
+"#5a2a4a",
+"#f2c7a3",
+"#0d050d",
+"#ffffff"
+],
+"order": 124,
+"groups": [
+"BTS solo styles",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Jazz, funk & soul"
+],
+"moods": [
+"Chill",
+"Spooky & sneaky"
+],
+"duration": 133.6,
+"loop": [
+3.1579,
+116.8421
+],
+"energy": 0.74,
+"thumb": "site/thumbs/velvet-layover.jpg",
+"similar": [
+"respawn-lounge",
+"yet-to-bloom",
+"island-time",
+"tokyo-sunset-drive",
+"lobby-loop",
+"life-goes-slow"
+],
+"shape": [
+"indigo-fields",
+"life-goes-slow",
+"paper-sky",
+"aqua-tomorrow",
+"red-40-breaks",
+"aqua-tomorrow-breaks"
+],
+"versions": [],
+"arc": [
+0.29,
+0.54,
+0.76,
+0.76,
+0.9,
+1.0,
+0.91,
+0.91,
+0.76,
+0.77,
+0.86,
+0.96,
+1.0,
+0.75,
+0.4,
+0.28
+]
+},
+{
+"id": "infinite-series",
+"title": "Infinite Series",
+"file": "songs/youtube/Infinite Series.mp3",
+"video": "videos/YouTube - Infinite Series.mp4",
+"card": "cards/YouTube - Infinite Series.png",
+"tempo": 120,
+"style": "built from math",
+"feel": "A song built from math: pi and e as melodies, Fibonacci bass, Euclidean drums, prime-number bells, a Zeno ending",
+"good": "Smart plays, building, puzzles",
+"colors": [
+"#0b1a1a",
+"#1f5a5a",
+"#9fffe0",
+"#050d0d",
+"#ffffff"
+],
+"order": 125,
+"groups": [
+"Math"
+],
+"genres": [
+"Other"
+],
+"moods": [],
+"duration": 103.7,
+"loop": [
+24.0,
+80.0
+],
+"energy": 0.799,
+"thumb": "site/thumbs/infinite-series.jpg",
+"similar": [
+"yet-to-bloom",
+"respawn-lounge",
+"pipe-cavern",
+"ringworld-vigil",
+"velvet-layover",
+"arirang-dawn"
+],
+"shape": [
+"red-40-sugar-rush",
+"dark-and-wild-run",
+"lime-green-afterparty",
+"moonlit-night-stage",
+"final-circle",
+"highway-escape"
+],
+"versions": [],
+"arc": [
+0.54,
+0.7,
+0.77,
+0.82,
+0.98,
+0.99,
+0.79,
+0.76,
+0.84,
+1.0,
+0.99,
+0.71,
+0.89,
+0.99,
+0.88,
+0.13
+]
+}
+]
+}

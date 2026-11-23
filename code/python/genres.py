@@ -52,9 +52,9 @@ SONGS = {
  # dubstep: build-up, then a half-time drop with a wobble bass
  'dubstep': song('Bass_Quake', 'Bass Quake', 140, ['Fm', 'Db', 'Ab', 'Eb'], ['Fm', 'Db', 'Ab', 'Eb'],
    [[77,-1,-1,-1,80,-1,-1,-1],[77,-1,-1,-1,73,-1,-1,-1],[75,-1,-1,-1,72,-1,-1,-1],[70,-1,-1,-1,-1,-1,0,0]],
-   [[89,0,0,89,0,0,87,0],[85,0,0,0,84,0,0,0],[89,0,0,89,0,0,92,0],[91,-1,0,0,87,-1,0,0]],
+   [[77,0,0,77,0,0,75,0],[73,0,0,0,72,0,0,0],[77,0,0,77,0,0,80,0],[79,-1,0,0,75,-1,0,0]],
    ['dark', 'pluck'], ['dark', 'pluck'], 'dubstep', 'wobble', 'fmbell', 'chop', dV='halfpop', bV='sub', intro=['dark'],
-   pre=dict(keys=['dark', 'pluck'], drums=None, extra=lambda M, t0, st, S, i, n, tones, root: [snare(M, t0 + k * st, .2 + .15 * i) for k in range(0, 16, [4, 2, 1, 1][i])]),
+   pre=dict(keys=['dark', 'pluck'], drums=None, extra=lambda M, t0, st, S, i, n, tones, root: [snare(M, t0 + k * st, .12 + .05 * i) for k in range(0, 16, [4, 2, 1, 1][i])]),
    levels={'bass': 1.1}),
  # eurobeat: 156 bpm, offbeat octave bass, supersaw stabs, racing lead
  'eurobeat': song('Turbo_Corner', 'Turbo Corner', 156, ['Am', 'F', 'G', 'Em'], ['F', 'G', 'Em', 'Am'],
@@ -95,7 +95,9 @@ SONGS = {
 
 SONGS['synthwave']['mus_gap'] = 2.5
 # Bass Quake: the pluck stays at one level all the way through (no jump in the build-up); the bell is softer
-SONGS['dubstep'].update(cont_buses=['keys'], cont_tol=0., targets={'pre': -16.})
+SONGS['dubstep'].update(cont_buses=['keys'], cont_tol=0., targets={'pre': -16.5, 'verse': -15.5})
+SONGS['dubstep']['sections']['pre']['riser'] = False
+SONGS['dubstep']['order'] = [o for o in SONGS['dubstep']['order'] if o != 'tag']   # straight from the last drop into the final hit
 SONGS['dubstep']['sections']['verse']['lv'] = .6
 SONGS['synthwave']['cont_tol'] = -.5
 SONGS['synthwave']['sections']['verse']['kv'] = 1.5   # keep the arpeggio as present as in the intro

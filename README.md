@@ -6,6 +6,18 @@ Every note is written out as instructions (which note, which kind of wave, how l
 
 Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
+## Website
+
+`index.html` is a song browser for phones and computers (it becomes the site when the repo is published with GitHub Pages). It has:
+
+- search, plus filters for genre, mood, tempo and length, and group chips (Pokémon-style, Sonic-style, Mario-style worlds, BTS eras, breakcore, and more)
+- sorting by newest, title, tempo, length, energy or group
+- for every song: other versions (like the breakcore version), songs that sound similar, songs with a similar structure, and more from the same group
+- seamless loop playback, and **Extended versions**: pick 2 to 20 minutes and your browser builds an MP3 or WAV that plays the start, repeats the seamless loop, then plays the real ending
+- four themes (Storm, Neon, Daylight, Game Boy), share links for each song, and a link to Loop Lab
+
+`python tools/build_site.py` rebuilds `site/songs.json` and `site/thumbs/` after songs are added. It reads this README's song table and the title-card list, then listens to each MP3 to find its loop points, what it sounds like and its energy shape.
+
 ## What's here
 
 | Folder | What it is |

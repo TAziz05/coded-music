@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coded Music · TAziz322</title>
+<meta name="description" content="Original music written entirely as code, for gameplay videos. Search, sort, loop and download every song.">
+<meta name="theme-color" content="#140b2a">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fira+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#120a26;--bg2:#1d1240;--card:#22174a;--line:#3a2b74;--text:#f3efff;--mute:#b3a8d9;--acc:#ffd23f;--acc2:#5fe0ff;--hot:#ff5fa2;--glow:0 0 24px #7a4dff55}
+[data-theme=neon]{--bg:#05050a;--bg2:#0d0d1a;--card:#111124;--line:#26264a;--text:#f0f6ff;--mute:#8f9bc0;--acc:#00f0ff;--acc2:#ff2bd6;--hot:#fffb00;--glow:0 0 24px #00f0ff44}
+[data-theme=day]{--bg:#f6f3ff;--bg2:#ffffff;--card:#ffffff;--line:#ddd5f5;--text:#1c1240;--mute:#6a5f8f;--acc:#6a2cff;--acc2:#00a3c4;--hot:#e0306f;--glow:0 4px 18px #6a2cff22}
+[data-theme=gb]{--bg:#0f380f;--bg2:#1e4d1e;--card:#306230;--line:#4f7f2f;--text:#e0f8d0;--mute:#9bbc0f;--acc:#9bbc0f;--acc2:#e0f8d0;--hot:#c4e86b;--glow:none}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 'Fira Sans',system-ui,sans-serif}
+body{padding-bottom:110px;background:radial-gradient(1200px 500px at 20% -10%,var(--bg2),transparent),var(--bg);min-height:100vh}
+a{color:var(--acc2)}button,select,input{font:inherit;color:inherit}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 14px 8px}
+.top{display:flex;align-items:center;gap:10px}
+.logo{font-family:Anton,Impact,sans-serif;font-size:26px;letter-spacing:.5px;line-height:1;text-transform:uppercase;background:linear-gradient(90deg,var(--acc),var(--hot));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:12px;color:var(--mute)}
+.sp{flex:1}
+.btn{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer;white-space:nowrap;text-decoration:none;color:var(--text);display:inline-flex;align-items:center;gap:6px}
+.btn:hover{border-color:var(--acc)}.btn.pri{background:var(--acc);color:var(--bg);border-color:var(--acc);font-weight:800}
+.search{margin-top:10px;display:flex;gap:8px}
+.search input{flex:1;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;outline:none}
+.search input:focus{border-color:var(--acc);box-shadow:var(--glow)}
+.filters{display:flex;gap:6px;margin-top:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.filters::-webkit-scrollbar{display:none}
+.filters select{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 8px;max-width:170px}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-top:8px}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:transparent;border-radius:999px;padding:5px 11px;font-size:13px;cursor:pointer;color:var(--mute)}
+.chip.on{background:var(--acc);color:var(--bg);border-color:var(--acc);font-weight:700}
+main{padding:12px 14px;max-width:1100px;margin:0 auto}
+.count{color:var(--mute);font-size:13px;margin:2px 2px 10px;display:flex;gap:8px;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.song{display:flex;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px;cursor:pointer;align-items:center;position:relative;overflow:hidden}
+.song:hover{border-color:var(--acc);box-shadow:var(--glow)}.song.playing{border-color:var(--acc);box-shadow:var(--glow)}
+.song .th{width:96px;height:54px;border-radius:9px;flex:none;background:#000 center/cover}
+.song .meta{flex:1;min-width:0}.song .t{font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.song .s{color:var(--mute);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.song .tags{display:flex;gap:4px;margin-top:3px;flex-wrap:nowrap;overflow:hidden}
+.tag{font-size:11px;border-radius:6px;padding:1px 6px;background:color-mix(in srgb,var(--acc2) 18%,transparent);color:var(--text);white-space:nowrap}
+.play{width:40px;height:40px;border-radius:50%;border:none;background:var(--acc);color:var(--bg);font-size:16px;cursor:pointer;flex:none;font-weight:900}
+/* player */
+#player{position:fixed;left:0;right:0;bottom:0;z-index:30;background:color-mix(in srgb,var(--bg2) 94%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:8px 12px calc(8px + env(safe-area-inset-bottom));display:none}
+#player.show{display:block}
+.prow{display:flex;align-items:center;gap:10px;max-width:1100px;margin:0 auto}
+#pth{width:64px;height:36px;border-radius:7px;background:#000 center/cover;flex:none;cursor:pointer}
+#ptitle{font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}#pinfo{flex:1;min-width:0}
+#ptime{font-size:12px;color:var(--mute)}
+.ctl{background:none;border:none;font-size:20px;cursor:pointer;color:var(--text);padding:4px 6px}
+.ctl.big{width:44px;height:44px;border-radius:50%;background:var(--acc);color:var(--bg);font-size:18px;font-weight:900}
+.ctl.on{color:var(--acc)}
+.seekwrap{position:relative;max-width:1100px;margin:6px auto 0;height:18px}
+#seek{width:100%;margin:0;accent-color:var(--acc)}
+#loopmark{position:absolute;top:13px;height:3px;background:var(--hot);border-radius:2px;pointer-events:none;opacity:.8}
+/* sheet */
+#sheet{position:fixed;inset:0;z-index:40;background:#0009;display:none;align-items:flex-end;justify-content:center}
+#sheet.show{display:flex}
+.panel{background:var(--bg2);width:100%;max-width:760px;max-height:92vh;overflow:auto;border-radius:18px 18px 0 0;border:1px solid var(--line);padding:0 0 20px}
+.hero{aspect-ratio:16/9;background:#000 center/cover;position:relative;border-radius:18px 18px 0 0}
+.hero .x{position:absolute;right:10px;top:10px;background:#000a;border:none;color:#fff;border-radius:50%;width:36px;height:36px;font-size:18px;cursor:pointer}
+.pbody{padding:14px 16px}
+.pbody h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:30px;margin:0;line-height:1.1;letter-spacing:.3px}
+.kv{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.sec h3{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--mute);margin:18px 0 8px}
+.mini{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}.mini::-webkit-scrollbar{display:none}
+.mini .song{flex:none;width:250px}
+.ext{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-top:10px}
+.ext select{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:5px}
+.arc{width:100%;height:46px;display:block}
+.note{font-size:12px;color:var(--mute)}
+footer{text-align:center;color:var(--mute);font-size:12px;padding:24px 14px}
+.toast{position:fixed;left:50%;bottom:120px;transform:translateX(-50%);background:var(--acc);color:var(--bg);padding:8px 14px;border-radius:999px;font-weight:700;z-index:50;display:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div><div class="logo">Coded Music</div><div class="sub"><span id="total"></span> songs written as code · by TAziz322</div></div>
+    <div class="sp"></div>
+    <a class="btn" href="loop-lab/" title="Make your own songs">🎛️ Loop Lab</a>
+    <button class="btn" id="themeBtn" title="Change theme">🎨</button>
+  </div>
+  <div class="search"><input id="q" type="search" placeholder="Search songs, styles, instruments, moods…" autocomplete="off"><button class="btn" id="shuffle" title="Play a random song from the list">🔀</button></div>
+  <div class="filters">
+    <select id="fGenre"><option value="">All genres</option></select>
+    <select id="fMood"><option value="">Any mood</option></select>
+    <select id="fTempo"><option value="">Any tempo</option><option value="0-99">Slow (under 100)</option><option value="100-139">Medium (100–139)</option><option value="140-169">Fast (140–169)</option><option value="170-999">Very fast (170+)</option></select>
+    <select id="fLen"><option value="">Any length</option><option value="0-75">Under 1¼ min</option><option value="75-105">1¼–1¾ min</option><option value="105-999">Over 1¾ min</option></select>
+    <select id="sort"><option value="new">Newest first</option><option value="old">Oldest first</option><option value="az">Title A–Z</option><option value="fast">Fastest first</option><option value="slow">Slowest first</option><option value="long">Longest first</option><option value="short">Shortest first</option><option value="energy">Most energy</option><option value="calm">Calmest</option><option value="group">By group</option></select>
+  </div>
+  <div class="chips" id="groups"></div>
+</header>
+<main>
+  <div class="count"><span id="count"></span><span class="sp"></span><button class="btn" id="clear" style="display:none">Clear filters</button></div>
+  <div class="grid" id="list"></div>
+</main>
+<footer>Every note is code: no samples and no AI audio generators. Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic<br>Free to use in your videos. Loop and Extended versions are made right here in your browser.</footer>
+
+<div id="player">
+  <div class="prow">
+    <div id="pth"></div>
+    <div id="pinfo"><div id="ptitle"></div><div id="ptime">0:00</div></div>
+    <button class="ctl" id="prev" title="Previous">⏮</button>
+    <button class="ctl big" id="pp" title="Play / pause">▶</button>
+    <button class="ctl" id="next" title="Next">⏭</button>
+    <button class="ctl" id="loopBtn" title="Loop seamlessly">🔁</button>
+  </div>
+  <div class="seekwrap"><input id="seek" type="range" min="0" max="1000" value="0"><div id="loopmark"></div></div>
+</div>
+<div id="sheet"><div class="panel" id="panel"></div></div>
+<div class="toast" id="toast"></div>
+<audio id="audio" preload="none"></audio>
+
+<script>
+const $ = s => document.querySelector(s), esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const url = p => encodeURI(p).replace(/#/g, '%23');
+const fmt = s => { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+let SONGS = [], BY = {}, view = [], cur = null, group = '';
+const store = { get(k, d) { try { return localStorage.getItem(k) ?? d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+
+// ---------- themes ----------
+const THEMES = ['storm', 'neon', 'day', 'gb'], TNAME = {storm: 'Storm', neon: 'Neon', day: 'Daylight', gb: 'Game Boy'};
+function setTheme(t) { document.documentElement.dataset.theme = t === 'storm' ? '' : t; store.set('theme', t); }
+setTheme(store.get('theme', 'storm'));
+$('#themeBtn').onclick = () => { const t = THEMES[(THEMES.indexOf(store.get('theme', 'storm')) + 1) % THEMES.length]; setTheme(t); toast('Theme: ' + TNAME[t]); };
+function toast(m) { const t = $('#toast'); t.textContent = m; t.style.display = 'block'; clearTimeout(t._h); t._h = setTimeout(() => t.style.display = 'none', 1600); }
+
+// ---------- data ----------
+fetch('site/songs.json').then(r => r.json()).then(d => {
+  SONGS = d.songs; SONGS.forEach(s => BY[s.id] = s); $('#total').textContent = SONGS.length;
+  const uniq = k => [...new Set(SONGS.flatMap(s => s[k]))].sort();
+  uniq('genres').forEach(g => $('#fGenre').insertAdjacentHTML('beforeend', `<option>${esc(g)}</option>`));
+  uniq('moods').forEach(g => $('#fMood').insertAdjacentHTML('beforeend', `<option>${esc(g)}</option>`));
+  const gs = uniq('groups'); $('#groups').innerHTML = `<button class="chip on" data-g="">All</button>` + gs.map(g => `<button class="chip" data-g="${esc(g)}">${esc(g)} <span style="opacity:.6">${SONGS.filter(s => s.groups.includes(g)).length}</span></button>`).join('');
+  $('#groups').onclick = e => { const b = e.target.closest('.chip'); if (!b) return; group = b.dataset.g; document.querySelectorAll('#groups .chip').forEach(c => c.classList.toggle('on', c === b)); render(); };
+  render(); route();
+});
+['q', 'fGenre', 'fMood', 'fTempo', 'fLen', 'sort'].forEach(id => $('#' + id).addEventListener('input', render));
+$('#clear').onclick = () => { ['q', 'fGenre', 'fMood', 'fTempo', 'fLen'].forEach(id => $('#' + id).value = ''); group = ''; document.querySelectorAll('#groups .chip').forEach((c, i) => c.classList.toggle('on', i === 0)); render(); };
+const tempoOf = s => s.tempo || s.tempo_est || 0;
+function render() {
+  const q = $('#q').value.trim().toLowerCase().split(/\s+/).filter(Boolean), g = $('#fGenre').value, m = $('#fMood').value;
+  const [t0, t1] = ($('#fTempo').value || '0-9999').split('-').map(Number), [l0, l1] = ($('#fLen').value || '0-9999').split('-').map(Number);
+  view = SONGS.filter(s => {
+    const hay = [s.title, s.style, s.feel, s.good, ...s.groups, ...s.genres, ...s.moods].join(' ').toLowerCase();
+    return q.every(w => hay.includes(w)) && (!g || s.genres.includes(g)) && (!m || s.moods.includes(m)) && (!group || s.groups.includes(group))
+      && tempoOf(s) >= t0 && tempoOf(s) <= t1 && s.duration >= l0 && s.duration <= l1;
+  });
+  const so = $('#sort').value, cmp = {new: (a, b) => b.order - a.order, old: (a, b) => a.order - b.order, az: (a, b) => a.title.localeCompare(b.title),
+    fast: (a, b) => tempoOf(b) - tempoOf(a), slow: (a, b) => tempoOf(a) - tempoOf(b), long: (a, b) => b.duration - a.duration, short: (a, b) => a.duration - b.duration,
+    energy: (a, b) => b.energy - a.energy, calm: (a, b) => a.energy - b.energy, group: (a, b) => (a.groups[0] || 'zz').localeCompare(b.groups[0] || 'zz') || a.order - b.order}[so];
+  view.sort(cmp);
+  $('#list').innerHTML = view.map(card).join('') || `<p class="note">No songs match. Try fewer filters.</p>`;
+  $('#count').textContent = `${view.length} of ${SONGS.length} songs`;
+  $('#clear').style.display = (q.length || g || m || group || $('#fTempo').value || $('#fLen').value) ? '' : 'none';
+}
+function card(s) {
+  const tags = [...s.moods.slice(0, 2), ...s.groups.slice(0, 1)].map(t => `<span class="tag">${esc(t)}</span>`).join('');
+  return `<div class="song ${cur && cur.id === s.id ? 'playing' : ''}" data-id="${s.id}"><div class="th" style="background-image:url('${s.thumb ? url(s.thumb) : ''}');background-color:${s.colors[1]}"></div>
+  <div class="meta"><div class="t">${esc(s.title)}</div><div class="s">${esc(s.style)} · ${tempoOf(s) ? tempoOf(s) + ' BPM · ' : ''}${fmt(s.duration)}</div><div class="tags">${tags}</div></div>
+  <button class="play" data-play="${s.id}" aria-label="Play">${cur && cur.id === s.id && playing() ? '❚❚' : '▶'}</button></div>`;
+}
+document.addEventListener('click', e => {
+  const p = e.target.closest('[data-play]'); if (p) { e.stopPropagation(); const s = BY[p.dataset.play]; (cur && cur.id === s.id) ? toggle() : play(s); return; }
+  const c = e.target.closest('.song'); if (c) { openSong(BY[c.dataset.id]); return; }
+  const t = e.target.closest('[data-filter]'); if (t) { closeSheet(); const [k, v] = t.dataset.filter.split('|');
+    if (k === 'group') { group = v; document.querySelectorAll('#groups .chip').forEach(ch => ch.classList.toggle('on', ch.dataset.g === v)); } else $('#' + k).value = v; render(); window.scrollTo(0, 0); }
+});
+
+// ---------- song sheet ----------
+function arcSVG(a) { const w = 300, h = 46, pts = a.map((v, i) => `${(i / (a.length - 1) * w).toFixed(1)},${(h - 3 - v * (h - 8)).toFixed(1)}`).join(' ');
+  return `<svg class="arc" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><polyline points="0,${h} ${pts} ${w},${h}" fill="color-mix(in srgb,var(--acc) 25%,transparent)" stroke="var(--acc)" stroke-width="2"/></svg>`; }
+function miniList(ids) { return `<div class="mini">${ids.map(i => BY[i]).filter(Boolean).map(card).join('')}</div>`; }
+function openSong(s) {
+  history.replaceState(null, '', '#' + s.id);
+  const sameGroup = s.groups.length ? SONGS.filter(o => o !== s && o.groups.includes(s.groups[0])).slice(0, 12).map(o => o.id) : [];
+  const L = s.loop[1] - s.loop[0];
+  $('#panel').innerHTML = `<div class="hero" style="background-image:url('${url(s.card)}');background-color:${s.colors[1]}"><button class="x" onclick="closeSheet()" aria-label="Close">✕</button></div>
+  <div class="pbody"><h2>${esc(s.title)}</h2><div class="note">${esc(s.style)}${tempoOf(s) ? ' · ' + tempoOf(s) + ' BPM' : ''} · ${fmt(s.duration)}</div>
+  <p>${esc(s.feel)}</p><p class="note"><b>Good for:</b> ${esc(s.good)}</p>
+  <div class="kv">${s.groups.map(g => `<span class="chip" data-filter="group|${esc(g)}">${esc(g)}</span>`).join('')}${s.genres.filter(g => !s.groups.includes(g)).map(g => `<span class="chip" data-filter="fGenre|${esc(g)}">${esc(g)}</span>`).join('')}${s.moods.map(g => `<span class="chip" data-filter="fMood|${esc(g)}">${esc(g)}</span>`).join('')}</div>
+  <div class="row"><button class="btn pri" onclick="play(BY['${s.id}'])">▶ Play</button><button class="btn" onclick="play(BY['${s.id}'], true)">🔁 Play on loop</button>
+  <a class="btn" href="${url(s.file)}" download>⬇ MP3</a><a class="btn" href="${url(s.video)}" target="_blank" rel="noopener">🎬 Video</a><button class="btn" onclick="share('${s.id}')">🔗 Share</button></div>
+  <div class="ext"><b>Extended version</b> <span class="note">plays the start, repeats the seamless loop (${fmt(s.loop[0])}–${fmt(s.loop[1])}, ${fmt(L)} long), then the real ending</span>
+  <div class="row" style="margin:8px 0 0;align-items:center"><select id="exMin">${[2, 3, 5, 10, 15, 20].map(m => `<option value="${m}" ${m === 5 ? 'selected' : ''}>${m} min</option>`).join('')}</select>
+  <select id="exFmt"><option value="mp3">MP3</option><option value="wav">WAV</option></select><button class="btn pri" id="exGo" onclick="extended('${s.id}')">Make it</button><span class="note" id="exMsg"></span></div></div>
+  <div class="sec"><h3>Energy over time</h3>${arcSVG(s.arc)}</div>
+  ${s.versions.length ? `<div class="sec"><h3>Other versions</h3>${miniList(s.versions)}</div>` : ''}
+  <div class="sec"><h3>Sounds similar</h3>${miniList(s.similar)}</div>
+  <div class="sec"><h3>Similar structure (energy rises and falls the same way)</h3>${miniList(s.shape)}</div>
+  ${sameGroup.length ? `<div class="sec"><h3>More ${esc(s.groups[0])}</h3>${miniList(sameGroup)}</div>` : ''}</div>`;
+  $('#sheet').classList.add('show'); $('#panel').scrollTop = 0;
+}
+function closeSheet() { $('#sheet').classList.remove('show'); history.replaceState(null, '', location.pathname + location.search); }
+$('#sheet').onclick = e => { if (e.target.id === 'sheet') closeSheet(); };
+function route() { const id = location.hash.slice(1); if (BY[id]) openSong(BY[id]); }
+window.addEventListener('hashchange', route);
+async function share(id) { const s = BY[id], u = location.origin + location.pathname + '#' + id;
+  if (navigator.share) { try { await navigator.share({title: s.title + ' · Coded Music', url: u}); } catch (e) {} } else { try { await navigator.clipboard.writeText(u); toast('Link copied'); } catch (e) { prompt('Copy this link', u); } } }
+
+// ---------- player: <audio> for normal play, Web Audio for seamless loops ----------
+const audio = $('#audio'); let ctx = null, src = null, buf = null, bufId = null, loopOn = false, wStart = 0, wOff = 0, wPlaying = false;
+const playing = () => loopOn ? wPlaying : !audio.paused;
+async function getBuf(s) {
+  if (bufId === s.id && buf) return buf;
+  ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+  const ab = await (await fetch(url(s.file))).arrayBuffer(); buf = await new Promise((ok, no) => ctx.decodeAudioData(ab, ok, no)); bufId = s.id; return buf;
+}
+function stopW() { if (src) { try { src.onended = null; src.stop(); } catch (e) {} src = null; } wPlaying = false; }
+async function startW(off) {
+  const s = cur, b = await getBuf(s); if (cur !== s) return; stopW(); await ctx.resume();
+  src = ctx.createBufferSource(); src.buffer = b; src.loop = true; src.loopStart = s.loop[0]; src.loopEnd = s.loop[1]; src.connect(ctx.destination);
+  src.start(0, off); wStart = ctx.currentTime; wOff = off; wPlaying = true; ui();
+}
+function wTime() { if (!wPlaying) return wOff; let t = wOff + (ctx.currentTime - wStart); const [a, b] = cur.loop; if (t >= b) t = a + ((t - a) % (b - a)); return t; }
+async function play(s, loop = null) {
+  if (loop !== null) loopOn = loop; cur = s; audio.pause(); stopW();
+  $('#player').classList.add('show'); $('#ptitle').textContent = s.title; $('#pth').style.backgroundImage = s.thumb ? `url('${url(s.thumb)}')` : '';
+  $('#loopmark').style.left = (s.loop[0] / s.duration * 100) + '%'; $('#loopmark').style.width = ((s.loop[1] - s.loop[0]) / s.duration * 100) + '%';
+  if ('mediaSession' in navigator) navigator.mediaSession.metadata = new MediaMetadata({title: s.title, artist: 'TAziz322 · Coded Music', artwork: s.thumb ? [{src: url(s.thumb), sizes: '480x270', type: 'image/jpeg'}] : []});
+  if (loopOn) { $('#ptime').textContent = 'Loading loop…'; await startW(0); }
+  else { audio.src = url(s.file); try { await audio.play(); } catch (e) {} }
+  ui(); render();
+}
+function toggle() {
+  if (!cur) return;
+  if (loopOn) { if (wPlaying) { wOff = wTime(); stopW(); } else startW(wOff); }
+  else audio.paused ? audio.play() : audio.pause();
+  ui(); setTimeout(render, 30);
+}
+async function setLoop(on) {
+  if (!cur) { loopOn = on; ui(); return; }
+  const t = loopOn ? wTime() : audio.currentTime, was = playing(); loopOn = on;
+  if (on) { audio.pause(); if (was) { $('#ptime').textContent = 'Loading loop…'; await startW(Math.min(t, cur.loop[1] - .05)); } else wOff = t; toast('Seamless loop on'); }
+  else { stopW(); audio.src = url(cur.file); audio.currentTime = t; if (was) audio.play(); toast('Loop off'); }
+  ui();
+}
+function step(d) { if (!view.length || !cur) return; let i = view.findIndex(s => s.id === cur.id); i = (i + d + view.length) % view.length; play(view[i]); }
+$('#pp').onclick = toggle; $('#loopBtn').onclick = () => setLoop(!loopOn); $('#next').onclick = () => step(1); $('#prev').onclick = () => step(-1);
+$('#ptitle').onclick = $('#pth').onclick = () => cur && openSong(cur);
+$('#shuffle').onclick = () => { if (view.length) play(view[Math.floor(Math.random() * view.length)]); };
+audio.onended = () => step(1); audio.onplay = audio.onpause = () => { ui(); render(); };
+let dragging = false; $('#seek').oninput = () => dragging = true;
+$('#seek').onchange = () => { dragging = false; if (!cur) return; const t = $('#seek').value / 1000 * cur.duration; if (loopOn) { if (wPlaying) startW(Math.min(t, cur.loop[1] - .05)); else wOff = t; } else audio.currentTime = t; };
+function ui() { $('#pp').textContent = playing() ? '❚❚' : '▶'; $('#loopBtn').classList.toggle('on', loopOn); }
+setInterval(() => { if (!cur) return; const t = loopOn ? wTime() : audio.currentTime; if (!dragging) $('#seek').value = t / cur.duration * 1000;
+  if (!(loopOn && !buf)) $('#ptime').textContent = `${fmt(t)} / ${fmt(cur.duration)}${loopOn ? ' · looping' : ''}`; }, 250);
+if ('mediaSession' in navigator) { navigator.mediaSession.setActionHandler('nexttrack', () => step(1)); navigator.mediaSession.setActionHandler('previoustrack', () => step(-1)); }
+
+// ---------- extended versions, made in the browser ----------
+function loadScript(u) { return new Promise((ok, no) => { const s = document.createElement('script'); s.src = u; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
+async function extended(id) {
+  const s = BY[id], mins = +$('#exMin').value, kind = $('#exFmt').value, msg = $('#exMsg'), go = $('#exGo'); go.disabled = true;
+  try {
+    msg.textContent = 'Loading…'; ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+    const ab = await (await fetch(url(s.file))).arrayBuffer(), b = await new Promise((ok, no) => ctx.decodeAudioData(ab, ok, no));
+    const sr = b.sampleRate, A = Math.round(s.loop[0] * sr), B = Math.round(s.loop[1] * sr), N = b.length, L = B - A;
+    const reps = Math.max(1, Math.ceil((mins * 60 * sr - N) / L)), total = N + reps * L, X = Math.round(.015 * sr);
+    const ch = [0, 1].map(c => b.getChannelData(Math.min(c, b.numberOfChannels - 1))), out = ch.map(() => new Float32Array(total));
+    for (let c = 0; c < 2; c++) {   // start ... loop end, then (loop start ... loop end) x reps, then the real ending; 15 ms crossfades at each jump
+      const o = out[c], x = ch[c]; o.set(x.subarray(0, B), 0); let p = B;
+      for (let r = 0; r < reps; r++) {   // jump back to the loop start, crossfading from where the music would have gone
+        for (let k = 0; k < X; k++) { const w = k / X; o[p + k] = (x[B + k] || 0) * (1 - w) + x[A + k] * w; }
+        o.set(x.subarray(A + X, B), p + X); p += L;
+      }
+      o.set(x.subarray(B, N), p);   // the real ending
+    }
+    let blob;
+    if (kind === 'wav') blob = wav(out, sr);
+    else try {
+      msg.textContent = 'Encoding MP3…'; if (!window.lamejs) await loadScript('https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js');
+      const enc = new lamejs.Mp3Encoder(2, sr, 192), parts = [], i16 = f => { const r = new Int16Array(f.length); for (let k = 0; k < f.length; k++) r[k] = Math.max(-1, Math.min(1, f[k])) * 32767; return r; };
+      const Lc = i16(out[0]), Rc = i16(out[1]), blk = 1152 * 40;
+      for (let k = 0; k < total; k += blk) { parts.push(enc.encodeBuffer(Lc.subarray(k, k + blk), Rc.subarray(k, k + blk))); if ((k / blk) % 20 === 0) { msg.textContent = `Encoding MP3… ${Math.round(k / total * 100)}%`; await new Promise(r => setTimeout(r)); } }
+      parts.push(enc.flush()); blob = new Blob(parts, {type: 'audio/mpeg'});
+    } catch (e) { blob = wav(out, sr); }   // if the MP3 encoder can't load, hand over a WAV instead
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${s.title} (Extended ${fmt(total / sr).replace(':', 'm')}s).${blob.type === 'audio/wav' ? 'wav' : 'mp3'}`; document.body.appendChild(a); a.click(); a.remove();
+    msg.textContent = `Done: ${fmt(total / sr)} long`;
+  } catch (e) { msg.textContent = 'Could not make it: ' + e.message; }
+  go.disabled = false;
+}
+function wav(chs, sr) {
+  const n = chs[0].length, buf = new ArrayBuffer(44 + n * 4), v = new DataView(buf), w = (o, s) => [...s].forEach((c, i) => v.setUint8(o + i, c.charCodeAt(0)));
+  w(0, 'RIFF'); v.setUint32(4, 36 + n * 4, true); w(8, 'WAVEfmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 2, true);
+  v.setUint32(24, sr, true); v.setUint32(28, sr * 4, true); v.setUint16(32, 4, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 4, true);
+  for (let i = 0, o = 44; i < n; i++, o += 4) { v.setInt16(o, Math.max(-1, Math.min(1, chs[0][i])) * 32767, true); v.setInt16(o + 2, Math.max(-1, Math.min(1, chs[1][i])) * 32767, true); }
+  return new Blob([buf], {type: 'audio/wav'});
+}
+</script>
+</body>
+</html>

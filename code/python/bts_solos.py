@@ -32,6 +32,10 @@ def ring(kind):        # a soft final chord on one instrument, nothing else
             for c in tones[:3]: violins(M, t0, c + 12, 3.5, .25, att=.6)
         if kind == 'ep': cymbal(M, t0, .25); fbass(M, t0, (root if root < 44 else root - 12), 3., .5)
     return f
+def falsetto_close(M, t0, st, S, i, n, tones, root):   # right after the last chorus: a soft Rhodes chord and one held falsetto note
+    if i: return
+    for j, c in enumerate(tones[:4]): epiano(M, 'keys', t0 + j * .04, c + 12, 4., .1)
+    voice(M, 'lead', t0, tones[0] + 24, 2.5, .6); fbass(M, t0, (root if root < 44 else root - 12), 3., .45)
 def gong_stop(M, t0, st, S, i, n, tones, root):   # everything cuts out on one gong + 808 hit
     if i: return
     gong(M, t0, 1.); kkwaeng(M, t0, .9); heavy808(M, t0, (root if root < 44 else root - 12), 2., .6); janggu(M, t0, False, 1.)
@@ -103,7 +107,11 @@ SONGS = {
 }
 
 SONGS['jimin'].update(cont_buses=['keys'], cont_tol=0., targets={'intro': -15., 'outro': -16.})   # the arpeggio keeps one level from the intro on
-SONGS['jk'].update(cont_buses=['keys'], cont_tol=-1., targets={'outro': -19.})                       # the ending no longer jumps back up
+SONGS['jimin']['sections']['verse']['kv'] = 2.; SONGS['jimin']['sections']['chorus']['kv'] = 1.6
+SONGS['jk'].update(cont_tol=-1., order=['intro', 'verse', 'chorus', 'verse', 'chorus', 'end'])   # no outro: the band drops straight into the vocal chops
+SONGS['jk']['sections']['intro']['keys'] = ['ep']                                                     # the ticking guitar comes in with the verse
+SONGS['jimin']['order'] = ['intro', 'verse', 'chorus', 'verse', 'chorus', 'end']                       # no synth outro: it ends right after the last chorus
+SONGS['jimin']['sections']['end']['extra'] = falsetto_close                       # the ending no longer jumps back up
 
 if __name__ == '__main__':
     names = list(SONGS) if sys.argv[1] == 'all' else sys.argv[1:]

@@ -262,7 +262,7 @@ def build(cfg):
             for k in range(0, 16, 2): put(t0 + k * st, stretch2(slices[HALF[(b % 2) * 8 + k // 2]], n), .85)
             subbass(M, t0, root, B * .95, .45, 1.5)
             if i == nb - 1: riser(M, t0, B, .45)
-        if sec == 'outro' and i < 4 and not full_out:
+        if sec == 'outro' and i < 4 and not full_out and cfg.get('outro_breaks', True):
             for k in range(0, 16, 4): put(t0 + k * st, np.array([lp(c, 1500 - 300 * i) for c in slices[(b % 2) * 16 + k]]), .45 - .08 * i)
         if sec == 'outro' and i == nb - 1 and cfg.get('ending') == 'roll':   # rolled-chord ending (plucked, harp-like)
             tones0, r0 = ch[0]; play_mel(M, cfg['mel'], t0 + B, tones0[0] + 12, 3., .8)
