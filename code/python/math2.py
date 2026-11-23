@@ -76,12 +76,9 @@ def gap_melody(bars, start=0):               # prime gaps (1, 2, 2, 4, 2, 4, ...
         out += [deg(idx, 69)] + [-1] * (L - 1)
         if len(out) >= bars * 8: break
     return rows_from(out[:bars * 8])
-def end_primes(M, t0, st, S, i, n, tones, root):   # a natural ending: the pad holds the last chord while the 2-3-5 players thin out and stop
+def end_primes(M, t0, st, S, i, n, tones, root):   # a natural ending: the pad holds the last chord under the 2-3-5 players, then it all echoes away
     if i: return
-    for c in tones[:3]: supersaw(M, 'pad', t0, c + 12, 32 * st, .03, cut=1500, a=.05, r=2.5, voices=3)
-    for k in range(16):
-        for j, (p, fn) in enumerate(PLAYERS):
-            if k % p == 0 and k < 16 - 4 * j: fn(M, t0 + S(k), tones)
+    for c in tones[:3]: supersaw(M, 'pad', t0, c + 12, 16 * st + 1., .03, cut=1500, a=.05, r=2.5, voices=3)
 
 # ---------------- Sierpinski ----------------
 def pascal_row(r): return [comb(r, k) % 2 if k <= r else 0 for k in range(16)]
@@ -138,7 +135,7 @@ SONGS = {
    'intro': sec(4, ['Dm', 'Bb', 'F', 'C'], keys=['pad'], drums='primes2', extra=keep_tones),
    'verse': sec(8, ['Dm', 'Bb', 'F', 'C'], keys=['pad'], drums='primes3', bass='long', lead='plastic', mel=gap_melody(8), extra=keep_tones, kind='verse'),
    'chorus': sec(8, ['Bb', 'C', 'Dm', 'Dm'], keys=['pad', 'pluck'], drums='primes6', bass='octave', lead='sqbright+plastic', mel=gap_melody(8, 40), extra=keep_tones, impact=True, kind='chorus'),
-   'end': sec(2, ['Dm'], extra=end_primes, kind='outro')},
+   'end': sec(1, ['Dm'], extra=end_primes, drums='primes3', fill=False, kind='outro')},
    order=['intro', 'verse', 'chorus', 'verse', 'chorus', 'end'], levels={'glock': .9}),
  'sierpinski': dict(file='Sierpinski_Steps', title='Sierpinski Steps', bpm=136, chorus_keys=True, cont_tol=0., sections={
    'intro': sec(4, ['Em', 'C', 'G', 'D'], keys=['celesta']),
@@ -157,7 +154,8 @@ SONGS = {
 }
 
 SONGS['collatz']['gain_like'] = {'verse': 'intro', 'chorus': 'intro', 'end': 'intro'}   # one level for the whole song, so nothing drops when the drums come in
-SONGS['primes']['fadeout'] = 3.   # the last bars fade out naturally
+SONGS['primes']['echo_out'] = (8, .55, 7)   # the song ends in an echo of its last half bar (like Polygon Party)
+SONGS['primes']['gain_like'] = {'end': 'chorus'}   # the ending stays at the chorus level (no jump up)
 SONGS['sierpinski']['targets'] = {'outro': -22.}         # a softer last hit
 
 if __name__ == '__main__':

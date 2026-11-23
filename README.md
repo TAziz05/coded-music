@@ -28,7 +28,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 | Folder | What it is |
 |---|---|
-| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 148 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
+| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 149 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
 | `videos/` | The same songs as 1080p videos with a title card, ready to upload to YouTube. |
 | `cards/` | The title card images. |
 | `loops/` | One seamless loop of each song (see `loops/music.json` for loop lengths). |
@@ -39,7 +39,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 ## The songs
 
-8 game songs, plus 148 YouTube gameplay tracks (below): 156 songs in all.
+8 game songs, plus 149 YouTube gameplay tracks (below): 157 songs in all.
 
 | Song | Game | Plays during |
 |---|---|---|
@@ -56,7 +56,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 `loop-lab/index.html` is a song maker that runs in the browser: build songs from sections with chords, a melody, drums and sound effects (built-in coded effects or your own uploads), load TAziz322's songs and tweak them, and save songs as code. See [`loop-lab/GUIDE.md`](loop-lab/GUIDE.md) for how to use it. `loop-lab/tools/make_presets.py` rebuilds the page from `template.html` with the built-in songs.
 
-## YouTube gameplay tracks (148 songs)
+## YouTube gameplay tracks (149 songs)
 
 Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3). They run from 1 to about 2½ minutes; most are around 1½ minutes. These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments, and the songs live in the other files in `code/python/` (see the commands below). Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
 
@@ -210,6 +210,7 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Collatz Climb | 128 BPM | The melody follows the Collatz sequence from 27 as it climbs and falls; it ends on 4, 2, 1 echoing away | Climbing, building moments |
 | Sierpinski Steps | 136 BPM | The drums follow Pascal's triangle with the odd numbers marked (a Sierpinski fractal); the melody follows the Thue-Morse sequence | Puzzles, smart plays |
 | Rainbow Spectrum | 116 BPM | Each color of the rainbow is a section in the key of its light frequency (red to violet), gliding from one color into the next | Colorful, upbeat clips |
+| Polygon Party | 112 BPM | Shapes as rhythms: a triangle hits 3 times a bar, a square 4, a pentagon 5, and a star visits every other corner; ends in an echo | Puzzles, fun clips |
 
 ```
 pip install numpy scipy

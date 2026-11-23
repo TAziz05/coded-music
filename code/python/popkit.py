@@ -361,6 +361,15 @@ def build(cfg):
         w = int(2 * B * SR); e = np.sqrt(ss.filtfilt(*ss.butter(1, .5, fs=SR), (out ** 2).mean(0)) + 1e-12)
         ref = np.sqrt(ss.filtfilt(*ss.butter(1, 1 / (8 * B), fs=SR), e ** 2)); gr = np.clip((ref / e) ** cfg['ride'], 10 ** (-3 / 20), 10 ** (3 / 20)); gr[body:] = gr[body - 1]   # smooth out wobble around the local (8-bar) level only
         out = out * ss.filtfilt(*ss.butter(1, .4, fs=SR), gr)
+    if cfg.get('echo_out'):   # ending: at the end of the song body, the last stretch echoes away (delay repeats, each darker and softer)
+        D_, fb, reps = cfg['echo_out']; D_ = int(D_ * B / 16 * SR) if isinstance(D_, int) else int(D_ * SR)
+        seg = out[:, body - D_:body].copy(); out[:, body:] = 0
+        for k in range(1, reps + 1):
+            a_ = body + (k - 1) * D_; b_ = min(out.shape[1], a_ + D_)
+            if a_ >= out.shape[1]: break
+            seg = np.array([lp(c, max(900, 6000 / k)) for c in seg]) * fb
+            ramp = np.ones(D_); ramp[:256] = np.linspace(0, 1, 256); ramp[-256:] = np.linspace(1, 0, 256)
+            out[:, a_:b_] += (seg * ramp)[:, :b_ - a_]
     if cfg.get('fadeout'):   # ending: fade out over the last N seconds of the song body
         f_ = int(cfg['fadeout'] * SR); out[:, body - f_:body] *= np.linspace(1, 0, f_) ** 1.5; out[:, body:] = 0
     if cfg.get('tapestop'):   # ending: the whole band slows to a halt at the start of the last section

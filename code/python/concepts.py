@@ -57,10 +57,8 @@ def end_circle(M, t0, st, S, i, n, tones, root):  # all the shapes once more, th
     if i == 0:   # bar 1: all the shapes; bar 2: only the triangle and pentagon; then just the circle, fading away
         for f in (TRI, SQU, PEN, HEX, OCT): f(M, t0, st, S, 0, 1, tones, root)
         for c in tones[:3]: supersaw(M, 'pad', t0, c + 12, 32 * st + 2., .045, cut=1500, a=.35, r=3.5, voices=3)
-    elif i == 1:
+    else:   # the last bar: triangle and pentagon, then the song ends in an echo of it
         for f in (TRI, PEN): f(M, t0, st, S, 0, 1, tones, root)
-        harp(M, t0 + 16 * st, tones[0] + 24, .5)
-    else: TRI(M, t0, st, S, 0, 1, tones, root)   # the song fades out from here
 
 # ---------------- colors ----------------
 COLORS = [('red', 450e12), ('orange', 490e12), ('yellow', 520e12), ('green', 560e12), ('blue', 640e12), ('indigo', 670e12), ('violet', 730e12)]
@@ -117,7 +115,7 @@ SONGS = {
    'pentagon': sec(4, ['F', 'G', 'Em', 'Am'], extra=chain(circle, TRI, SQU, PEN), drums='fourfloor', bass='octave', kind='verse'),
    'star': sec(8, ['F', 'G', 'Em', 'Am'], extra=chain(circle, SQU, STAR, HEX), drums='fourfloor', bass='octave', impact=True, kind='chorus'),
    'all': sec(8, ['C', 'Am', 'F', 'G'], extra=chain(circle, TRI, SQU, PEN, HEX, OCT, STAR), drums='fourfloor', bass='octave', kind='chorus'),
-   'end': sec(3, ['C'], extra=end_circle, kind='outro')},
+   'end': sec(2, ['C'], extra=end_circle, kind='outro')},
    order=['circle', 'triangle', 'square', 'pentagon', 'star', 'all', 'end'], levels={'glock': .9}),
  'colors': build_colors(),
 }
@@ -132,7 +130,8 @@ def soft_add(self, bus, t, L, R=None, gain=1., pan=0.):   # sounds that would st
             k = max(32, n // 4); f = np.ones(n); f[-k:] = np.cos(np.linspace(0, np.pi / 2, k)) ** 2; L = L * f
             if R is not None: R = np.asarray(R, float) * f
     return _add(self, bus, t, L, R, gain, pan)
-SONGS['shapes']['fadeout'] = 4.7   # from 1:06 the song fades away instead of stopping
+SONGS['shapes']['echo_out'] = (8, .55, 7)   # at 1:08 the last half bar echoes away instead of the beat going on
+SONGS['shapes']['gain_like'] = {'end': 'all'}
 
 if __name__ == '__main__':
     print('color notes:', COLOR_KEYS)
