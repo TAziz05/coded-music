@@ -1,5 +1,5 @@
 {
-"count": 125,
+"count": 135,
 "songs": [
 {
 "id": "drop-in-daily-lobby",
@@ -467,8 +467,8 @@
 "coastal-route",
 "emerald-shore-zone",
 "highway-escape",
-"daily-poke-catch-battle",
-"storm-closing"
+"storm-closing",
+"daily-poke-catch-battle"
 ],
 "shape": [
 "daily-poke-catch-route",
@@ -604,19 +604,19 @@
 "thumb": "site/thumbs/victory-rush.jpg",
 "similar": [
 "storm-closing",
+"final-zone-countdown",
 "static-weather",
 "golden-hour-groove",
 "overclocked",
-"lobby-loop",
-"red-40-sugar-rush"
+"lobby-loop"
 ],
 "shape": [
 "storm-closing",
+"midnight-mirage",
 "starlight-carnival-run",
 "yet-to-bloom",
 "fragile-mask",
-"light-up-the-persona",
-"respawn-lounge"
+"light-up-the-persona"
 ],
 "versions": [],
 "arc": [
@@ -675,8 +675,8 @@
 "lime-green-afterparty",
 "skyscraper-sprint",
 "red-40-sugar-rush",
-"daily-poke-catch-mythic-battle",
-"drop-in-daily-mythic-match-og-style"
+"final-zone-countdown",
+"daily-poke-catch-mythic-battle"
 ],
 "shape": [
 "victory-rush",
@@ -745,9 +745,9 @@
 "respawn-lounge",
 "yet-to-bloom",
 "channel-plaza",
+"final-zone-countdown",
 "youth-in-bloom",
-"amber-leaves",
-"midnight-drift"
+"comeback-rising"
 ],
 "shape": [
 "channel-plaza",
@@ -755,7 +755,7 @@
 "pixel-heart-dnb",
 "coral-waltz",
 "arcade-heartbreak-2005",
-"golden-hour-groove"
+"level-up-rush"
 ],
 "versions": [],
 "arc": [
@@ -815,15 +815,15 @@
 "heatwave-arcade",
 "off-the-lines",
 "lime-green-afterparty",
-"daily-poke-catch-battle"
+"lightning-over-the-city"
 ],
 "shape": [
 "nobody-s-looking",
 "arcade-heartbreak-2005",
 "off-the-lines",
+"level-up-rush",
 "static-weather",
-"paper-sky",
-"coral-waltz"
+"paper-sky"
 ],
 "versions": [],
 "arc": [
@@ -884,9 +884,9 @@
 "last-light",
 "sky-piercing-breaks",
 "sky-piercing-promise",
+"breakcore-squared",
 "blue-spark-breaks",
-"titan-undefeated",
-"sugar-cloud-breaks"
+"titan-undefeated"
 ],
 "shape": [
 "overclocked",
@@ -894,7 +894,7 @@
 "sugar-cloud-breaks",
 "red-40-breaks",
 "off-the-lines",
-"lime-green-breaks"
+"royal-procession"
 ],
 "versions": [],
 "arc": [
@@ -954,19 +954,19 @@
 "thumb": "site/thumbs/static-weather.jpg",
 "similar": [
 "lantern-theory",
-"tokyo-sunset-drive",
 "starlit-orbit",
+"tokyo-sunset-drive",
 "victory-rush",
-"aqua-tomorrow",
-"golden-hour-breaks"
+"golden-hour-breaks",
+"aqua-tomorrow"
 ],
 "shape": [
+"level-up-rush",
+"midnight-mirage",
 "starlight-carnival-run",
 "lobby-loop",
 "respawn-lounge",
-"pixel-heart-dnb",
-"yet-to-bloom",
-"light-up-the-persona"
+"pixel-heart-dnb"
 ],
 "versions": [],
 "arc": [
@@ -1102,8 +1102,8 @@
 "lobby-loop",
 "lime-green-afterparty",
 "magma-fortress",
-"march-of-seven",
 "storm-closing",
+"march-of-seven",
 "shellfire-castle"
 ],
 "shape": [
@@ -1111,8 +1111,8 @@
 "golden-hour-groove",
 "static-weather",
 "arcade-heartbreak-2005",
-"pixel-heart-dnb",
-"coral-waltz"
+"level-up-rush",
+"pixel-heart-dnb"
 ],
 "versions": [],
 "arc": [
@@ -1318,16 +1318,16 @@
 "magma-fortress",
 "march-of-seven",
 "titan-undefeated",
-"shellfire-castle",
-"cliffside-climb"
+"cliffside-climb",
+"shellfire-castle"
 ],
 "shape": [
 "menu-drift",
 "frosty-podium",
 "lantern-theory",
+"see-you-next-drop",
 "skyscraper-sprint",
-"velvet-layover",
-"paper-sky"
+"velvet-layover"
 ],
 "versions": [],
 "arc": [
@@ -1457,20 +1457,20 @@
 "energy": 0.653,
 "thumb": "site/thumbs/ringworld-vigil.jpg",
 "similar": [
+"final-zone-countdown",
+"comeback-rising",
 "shellfire-castle",
 "homebase-rising",
 "shattered-overture",
-"youth-in-bloom",
-"lobby-loop",
-"stadium-highlands"
+"youth-in-bloom"
 ],
 "shape": [
 "morning-over-the-valley",
 "iron-storm-rising",
 "determined-steps",
+"final-zone-countdown",
 "skyscraper-sprint",
-"arirang-dawn",
-"sugar-cloud-breaks"
+"breakcore-squared"
 ],
 "versions": [],
 "arc": [
@@ -1605,15 +1605,15 @@
 "padma-to-kyoto",
 "shattered-overture",
 "determined-steps",
-"life-goes-slow"
+"boulevard-cafe"
 ],
 "shape": [
 "ringworld-vigil",
+"breakcore-squared",
 "lightning-over-the-city",
 "last-light",
 "heatwave-arcade",
-"lantern-in-the-fog",
-"monsoon-breaks"
+"lantern-in-the-fog"
 ],
 "versions": [],
 "arc": [
@@ -1673,20 +1673,20 @@
 "energy": 0.642,
 "thumb": "site/thumbs/shattered-overture.jpg",
 "similar": [
-"last-light",
 "morning-over-the-valley",
+"last-light",
 "sky-piercing-breaks",
+"comeback-rising",
 "indigo-fields",
-"ringworld-vigil",
-"sugar-cloud-breaks"
+"ringworld-vigil"
 ],
 "shape": [
 "padma-to-kyoto-breaks",
 "lantern-in-the-fog",
 "frostline",
+"breakcore-squared",
 "lightning-over-the-city",
-"heatwave-arcade",
-"monsoon-breaks"
+"heatwave-arcade"
 ],
 "versions": [],
 "arc": [
@@ -1815,11 +1815,11 @@
 "thumb": "site/thumbs/last-light.jpg",
 "similar": [
 "breeze-breaks",
+"breakcore-squared",
 "nobody-s-looking",
 "sky-piercing-breaks",
 "sugar-cloud-breaks",
-"determined-steps",
-"shattered-overture"
+"determined-steps"
 ],
 "shape": [
 "monsoon-breaks",
@@ -1827,7 +1827,7 @@
 "heatwave-arcade",
 "sky-piercing-breaks",
 "iron-storm-breaks",
-"lantern-in-the-fog"
+"breakcore-squared"
 ],
 "versions": [],
 "arc": [
@@ -1969,10 +1969,10 @@
 "shape": [
 "lightning-over-the-city",
 "last-light",
+"breakcore-squared",
 "lantern-in-the-fog",
 "iron-storm-breaks",
-"sky-piercing-breaks",
-"monsoon-breaks"
+"sky-piercing-breaks"
 ],
 "versions": [],
 "arc": [
@@ -2038,7 +2038,7 @@
 "last-light",
 "breeze-breaks",
 "lobby-loop",
-"yet-to-bloom"
+"breakcore-squared"
 ],
 "shape": [
 "lanterns-and-thunder-drums",
@@ -2257,9 +2257,9 @@
 "heatwave-arcade",
 "sky-piercing-breaks",
 "iron-storm-breaks",
+"breakcore-squared",
 "last-light",
-"monsoon-breaks",
-"lantern-in-the-fog"
+"monsoon-breaks"
 ],
 "versions": [],
 "arc": [
@@ -2320,19 +2320,19 @@
 "thumb": "site/thumbs/lantern-in-the-fog.jpg",
 "similar": [
 "window-seat",
-"determined-steps",
 "padma-to-kyoto-breaks",
+"determined-steps",
 "coastal-route",
 "titan-undefeated",
 "sky-piercing-promise"
 ],
 "shape": [
 "heatwave-arcade",
+"breakcore-squared",
 "last-light",
 "breeze-breaks",
 "monsoon-breaks",
-"lightning-over-the-city",
-"window-seat"
+"lightning-over-the-city"
 ],
 "versions": [],
 "arc": [
@@ -2605,11 +2605,11 @@
 "thumb": "site/thumbs/off-the-lines.jpg",
 "similar": [
 "daily-poke-catch-battle",
+"royal-procession",
 "final-circle",
 "red-40-sugar-rush",
 "overclocked",
-"storm-closing",
-"drop-in-daily-match"
+"storm-closing"
 ],
 "shape": [
 "overclocked",
@@ -2754,8 +2754,8 @@
 "energy": 0.772,
 "thumb": "site/thumbs/golden-hour-breaks.jpg",
 "similar": [
-"frostline",
 "paper-sky",
+"frostline",
 "kite-season",
 "first-bloom",
 "lightning-over-the-city",
@@ -3046,11 +3046,11 @@
 "thumb": "site/thumbs/breeze-breaks.jpg",
 "similar": [
 "last-light",
+"breakcore-squared",
 "sky-piercing-breaks",
 "sugar-cloud-breaks",
 "nobody-s-looking",
-"amber-leaves",
-"youth-in-bloom"
+"amber-leaves"
 ],
 "shape": [
 "last-light",
@@ -3121,9 +3121,9 @@
 "treasure-hunt-flow",
 "street-neuron",
 "dark-and-wild-run",
+"royal-procession",
 "respawn-lounge",
-"fragile-mask",
-"yet-to-bloom"
+"fragile-mask"
 ],
 "shape": [
 "holler-hoedown",
@@ -3262,20 +3262,20 @@
 "energy": 0.771,
 "thumb": "site/thumbs/youth-in-bloom.jpg",
 "similar": [
+"comeback-rising",
 "breeze-in-the-alley",
 "last-light",
 "lobby-loop",
 "grassland-hop",
-"breeze-breaks",
-"determined-steps"
+"breeze-breaks"
 ],
 "shape": [
+"comeback-rising",
 "sunlit-plaza",
 "stadium-highlands",
 "eolssu-groove",
 "island-breeze",
-"march-of-seven",
-"schoolyard-riot"
+"march-of-seven"
 ],
 "versions": [],
 "arc": [
@@ -3333,8 +3333,8 @@
 "thumb": "site/thumbs/velvet-wings.jpg",
 "similar": [
 "winds-of-the-world",
-"arirang-dawn",
 "island-time",
+"arirang-dawn",
 "snowcap-slide",
 "first-bloom",
 "fragile-mask"
@@ -3405,10 +3405,10 @@
 "similar": [
 "light-up-the-persona",
 "arcade-heartbreak-2005",
+"see-you-next-drop",
+"level-up-rush",
 "starlit-orbit",
-"aqua-tomorrow",
-"tokyo-sunset-drive",
-"blue-spark-runaway"
+"aqua-tomorrow"
 ],
 "shape": [
 "shellfire-castle",
@@ -3551,8 +3551,8 @@
 "coastal-route",
 "magma-fortress",
 "squeak-sprint",
-"monsoon-breaks",
-"homebase-rising"
+"homebase-rising",
+"monsoon-breaks"
 ],
 "shape": [
 "sunlit-plaza",
@@ -3622,9 +3622,9 @@
 "tokyo-sunset-drive",
 "double-helix",
 "street-neuron",
+"see-you-next-drop",
 "rush-hour-boost",
-"starlit-orbit",
-"island-breeze"
+"starlit-orbit"
 ],
 "shape": [
 "treasure-hunt-flow",
@@ -3695,8 +3695,8 @@
 "stadium-highlands",
 "homebase-rising",
 "magma-fortress",
+"royal-procession",
 "daily-poke-catch-mythic-battle",
-"eolssu-groove",
 "shellfire-castle"
 ],
 "shape": [
@@ -3776,8 +3776,8 @@
 "indigo-fields",
 "youth-in-bloom",
 "velvet-layover",
-"starlight-carnival-run",
-"sunlit-plaza"
+"royal-procession",
+"starlight-carnival-run"
 ],
 "versions": [],
 "arc": [
@@ -3908,12 +3908,12 @@
 "energy": 0.772,
 "thumb": "site/thumbs/arirang-dawn.jpg",
 "similar": [
+"oops-again",
+"royal-procession",
 "fragile-mask",
 "velvet-wings",
-"drop-in-daily-endless-summary-og-lobby-style",
 "daily-poke-catch-route",
-"daily-poke-catch-battle",
-"sugar-cloud-smile"
+"drop-in-daily-endless-summary-og-lobby-style"
 ],
 "shape": [
 "aqua-tomorrow",
@@ -3992,7 +3992,7 @@
 "starlight-carnival-run",
 "sunlit-plaza",
 "holler-hoedown",
-"checkerboard-skank"
+"comeback-rising"
 ],
 "versions": [],
 "arc": [
@@ -4126,8 +4126,8 @@
 "titan-undefeated",
 "iron-storm-rising",
 "skyscraper-sprint",
-"rush-hour-boost",
-"dark-and-wild-run"
+"dark-and-wild-run",
+"rush-hour-boost"
 ],
 "shape": [
 "lime-green-afterparty",
@@ -4194,11 +4194,11 @@
 "thumb": "site/thumbs/sky-piercing-breaks.jpg",
 "similar": [
 "sugar-cloud-breaks",
+"breakcore-squared",
 "breeze-breaks",
 "last-light",
 "nobody-s-looking",
-"shattered-overture",
-"iron-storm-breaks"
+"shattered-overture"
 ],
 "shape": [
 "iron-storm-breaks",
@@ -4270,8 +4270,8 @@
 "iron-storm-rising",
 "checkerboard-skank",
 "dark-and-wild-run",
-"rush-hour-boost",
-"blue-spark-runaway"
+"blue-spark-runaway",
+"rush-hour-boost"
 ],
 "shape": [
 "midnight-drift",
@@ -4412,9 +4412,9 @@
 "dark-and-wild-run",
 "lightning-over-the-city",
 "boundless-run",
+"breakcore-squared",
 "arcade-heartbreak-2005",
-"lime-green-breaks",
-"iron-storm-rising"
+"lime-green-breaks"
 ],
 "shape": [
 "sky-piercing-breaks",
@@ -4555,11 +4555,11 @@
 "thumb": "site/thumbs/final-circle.jpg",
 "similar": [
 "lime-green-afterparty",
+"royal-procession",
 "off-the-lines",
 "midnight-drift",
 "storm-closing",
-"squeak-sprint",
-"sugar-cloud-smile"
+"squeak-sprint"
 ],
 "shape": [
 "rush-hour-boost",
@@ -4630,15 +4630,15 @@
 "daily-poke-catch-route",
 "daily-poke-catch-town",
 "checkerboard-skank",
-"coral-waltz"
+"see-you-next-drop"
 ],
 "shape": [
 "johto-morning",
+"tiptoe-heist",
 "sugar-cloud-smile",
 "squeak-sprint",
 "treasure-hunt-flow",
-"yet-to-bloom",
-"neon-horizon"
+"yet-to-bloom"
 ],
 "versions": [],
 "arc": [
@@ -4698,19 +4698,19 @@
 "thumb": "site/thumbs/johto-morning.jpg",
 "similar": [
 "pallet-path",
+"see-you-next-drop",
 "frosty-podium",
 "holler-hoedown",
 "checkerboard-skank",
-"first-bloom",
 "sunlit-plaza"
 ],
 "shape": [
 "pallet-path",
+"tiptoe-heist",
 "sugar-cloud-smile",
 "squeak-sprint",
 "neon-horizon",
-"treasure-hunt-flow",
-"yet-to-bloom"
+"treasure-hunt-flow"
 ],
 "versions": [],
 "arc": [
@@ -4781,7 +4781,7 @@
 "sunlit-plaza",
 "island-breeze",
 "cloudtop-athletic",
-"eolssu-groove"
+"comeback-rising"
 ],
 "versions": [],
 "arc": [
@@ -4988,8 +4988,8 @@
 "rush-hour-boost",
 "arcade-heartbreak-2005",
 "boulevard-cafe",
-"cliffside-climb",
-"holler-hoedown"
+"see-you-next-drop",
+"cliffside-climb"
 ],
 "shape": [
 "eolssu-groove",
@@ -5269,10 +5269,10 @@
 "similar": [
 "checkerboard-skank",
 "highway-escape",
+"see-you-next-drop",
 "iron-storm-rising",
 "titan-undefeated",
-"arcade-heartbreak-2005",
-"skyscraper-sprint"
+"arcade-heartbreak-2005"
 ],
 "shape": [
 "emerald-shore-zone",
@@ -5341,9 +5341,9 @@
 "boulevard-cafe",
 "haunted-manor",
 "golden-hour-breaks",
+"tiptoe-heist",
 "window-seat",
-"checkerboard-skank",
-"sunlit-plaza"
+"light-up-the-persona"
 ],
 "shape": [
 "emerald-shore-zone",
@@ -5411,10 +5411,10 @@
 "thumb": "site/thumbs/starlight-carnival-run.jpg",
 "similar": [
 "glitter-overload",
+"level-up-rush",
 "aqua-tomorrow",
 "red-40-sugar-rush",
 "turbo-corner",
-"overclocked",
 "paper-sky"
 ],
 "shape": [
@@ -5481,10 +5481,10 @@
 "similar": [
 "final-circle",
 "storm-closing",
+"royal-procession",
 "red-40-sugar-rush",
 "sugar-cloud-smile",
-"golden-hour-groove",
-"channel-plaza"
+"golden-hour-groove"
 ],
 "shape": [
 "dark-and-wild-run",
@@ -5714,8 +5714,8 @@
 "island-time",
 "off-the-lines",
 "neon-horizon",
-"riverbank-evening",
-"arcade-heartbreak-2005"
+"gold-rush-garage",
+"riverbank-evening"
 ],
 "versions": [
 "arcade-heartbreak-2005"
@@ -6000,11 +6000,11 @@
 ],
 "shape": [
 "double-helix",
+"tiptoe-heist",
 "johto-morning",
 "pallet-path",
 "yet-to-bloom",
-"island-time",
-"fragile-mask"
+"island-time"
 ],
 "versions": [],
 "arc": [
@@ -6060,11 +6060,11 @@
 "thumb": "site/thumbs/sugar-cloud-smile.jpg",
 "similar": [
 "lime-green-afterparty",
+"gold-rush-garage",
 "neon-horizon",
-"midnight-drift",
-"lobby-loop",
-"red-40-sugar-rush",
-"final-circle"
+"royal-procession",
+"comeback-rising",
+"midnight-drift"
 ],
 "shape": [
 "treasure-hunt-flow",
@@ -6132,17 +6132,17 @@
 "sky-piercing-breaks",
 "last-light",
 "breeze-breaks",
+"breakcore-squared",
 "nobody-s-looking",
-"shattered-overture",
-"youth-in-bloom"
+"shattered-overture"
 ],
 "shape": [
 "red-40-breaks",
 "paper-sky",
 "lime-green-breaks",
+"breakcore-squared",
 "lantern-in-the-fog",
-"last-light",
-"aqua-tomorrow-breaks"
+"last-light"
 ],
 "versions": [
 "sugar-cloud-smile"
@@ -6207,15 +6207,15 @@
 "heatwave-arcade",
 "blue-spark-breaks",
 "iron-storm-breaks",
-"pixel-heart-dnb"
+"frostline"
 ],
 "shape": [
 "red-40-breaks",
 "riverbank-evening",
 "sugar-cloud-breaks",
 "indigo-fields",
-"paper-sky",
-"velvet-layover"
+"royal-procession",
+"paper-sky"
 ],
 "versions": [
 "lime-green-afterparty"
@@ -6281,7 +6281,7 @@
 "rush-hour-boost",
 "eolssu-groove",
 "titan-undefeated",
-"lantern-in-the-fog"
+"nobody-s-looking"
 ],
 "shape": [
 "monsoon-breaks",
@@ -6353,8 +6353,8 @@
 "coconut-cove",
 "magma-fortress",
 "sky-piercing-promise",
-"youth-in-bloom",
 "pipe-cavern",
+"youth-in-bloom",
 "rush-hour-boost"
 ],
 "shape": [
@@ -6425,8 +6425,8 @@
 "coconut-cove",
 "island-breeze",
 "island-time",
-"padma-to-kyoto",
-"riverbank-evening"
+"riverbank-evening",
+"padma-to-kyoto"
 ],
 "shape": [
 "mushroom-woods",
@@ -6634,12 +6634,12 @@
 "energy": 0.778,
 "thumb": "site/thumbs/mushroom-woods.jpg",
 "similar": [
+"oops-again",
 "pipe-cavern",
 "cloudtop-athletic",
 "grassland-hop",
 "haunted-manor",
-"island-breeze",
-"tokyo-sunset-drive"
+"tiptoe-heist"
 ],
 "shape": [
 "desert-dunes",
@@ -6708,8 +6708,8 @@
 "similar": [
 "stadium-highlands",
 "homebase-rising",
-"snowpoint-trail",
 "sunlit-plaza",
+"snowpoint-trail",
 "rush-hour-boost",
 "titan-undefeated"
 ],
@@ -6922,10 +6922,10 @@
 "similar": [
 "sunlit-plaza",
 "boundless-run",
+"see-you-next-drop",
 "holler-hoedown",
 "arcade-heartbreak-2005",
-"blue-spark-runaway",
-"cloudtop-athletic"
+"blue-spark-runaway"
 ],
 "shape": [
 "grassland-hop",
@@ -6993,10 +6993,10 @@
 "similar": [
 "grassland-hop",
 "mushroom-woods",
+"midnight-mirage",
 "treasure-hunt-flow",
 "youth-in-bloom",
-"infinite-series",
-"shellfire-castle"
+"coconut-cove"
 ],
 "shape": [
 "shellfire-castle",
@@ -7069,7 +7069,7 @@
 "island-time",
 "menu-drift",
 "first-bloom",
-"holler-hoedown"
+"riverbank-evening"
 ],
 "shape": [
 "lantern-theory",
@@ -7139,11 +7139,11 @@
 "thumb": "site/thumbs/haunted-manor.jpg",
 "similar": [
 "holler-hoedown",
+"tiptoe-heist",
 "winds-of-the-world",
 "island-time",
 "moonlit-night-stage",
-"first-bloom",
-"frostline"
+"first-bloom"
 ],
 "shape": [
 "light-up-the-persona",
@@ -7215,8 +7215,8 @@
 "ringworld-vigil",
 "homebase-rising",
 "stadium-highlands",
-"march-of-seven",
-"titan-undefeated"
+"final-zone-countdown",
+"royal-procession"
 ],
 "shape": [
 "cliffside-climb",
@@ -7503,7 +7503,7 @@
 "turbo-corner",
 "lime-green-breaks",
 "off-the-lines-breaks",
-"bitcrushed-daydream"
+"level-up-rush"
 ],
 "shape": [
 "bitcrushed-daydream",
@@ -7573,15 +7573,15 @@
 "winds-of-the-world",
 "coral-waltz",
 "window-seat",
-"indigo-fields"
+"island-breeze"
 ],
 "shape": [
 "homebase-rising",
 "skyscraper-sprint",
 "frosty-podium",
+"see-you-next-drop",
 "lantern-theory",
-"paper-sky",
-"arirang-dawn"
+"paper-sky"
 ],
 "versions": [],
 "arc": [
@@ -7642,8 +7642,8 @@
 "iron-storm-rising",
 "highway-escape",
 "snowpoint-trail",
-"turbo-corner",
 "sky-piercing-promise",
+"turbo-corner",
 "rush-hour-boost"
 ],
 "shape": [
@@ -7716,17 +7716,17 @@
 "arcade-heartbreak-breaks",
 "red-40-sugar-rush",
 "bitcrushed-daydream",
-"glitter-overload",
 "blue-spark-runaway",
-"pixel-heart-dnb"
+"pixel-heart-dnb",
+"glitter-overload"
 ],
 "shape": [
 "lime-green-breaks",
 "sugar-cloud-breaks",
 "paper-sky",
 "indigo-fields",
-"velvet-layover",
-"aqua-tomorrow-breaks"
+"royal-procession",
+"velvet-layover"
 ],
 "versions": [
 "red-40-sugar-rush"
@@ -7785,8 +7785,8 @@
 "thumb": "site/thumbs/aqua-tomorrow.jpg",
 "similar": [
 "holler-hoedown",
-"static-tears",
 "starlit-orbit",
+"static-tears",
 "glitter-overload",
 "starlight-carnival-run",
 "bitcrushed-daydream"
@@ -7796,8 +7796,8 @@
 "indigo-fields",
 "arirang-dawn",
 "youth-in-bloom",
-"velvet-layover",
-"menu-drift"
+"oops-again",
+"velvet-layover"
 ],
 "versions": [
 "aqua-tomorrow-breaks"
@@ -7934,8 +7934,8 @@
 "nightcore-rush",
 "glitter-overload",
 "static-tears",
-"lime-green-breaks",
 "off-the-lines-breaks",
+"lime-green-breaks",
 "bitcrushed-daydream"
 ],
 "shape": [
@@ -8000,9 +8000,9 @@
 "fragile-mask",
 "lobby-loop",
 "final-circle",
+"final-zone-countdown",
 "sugar-cloud-smile",
-"amber-leaves",
-"yet-to-bloom"
+"royal-procession"
 ],
 "shape": [
 "lime-green-afterparty",
@@ -8066,17 +8066,17 @@
 "time-warp-zone",
 "sugar-cloud-smile",
 "squeak-sprint",
+"midnight-mirage",
 "turbo-corner",
-"eolssu-groove",
-"daily-poke-catch-mythic-battle"
+"eolssu-groove"
 ],
 "shape": [
+"gold-rush-garage",
+"midnight-mirage",
 "respawn-lounge",
 "island-time",
 "yet-to-bloom",
-"johto-morning",
-"light-up-the-persona",
-"pallet-path"
+"johto-morning"
 ],
 "versions": [],
 "arc": [
@@ -8203,10 +8203,10 @@
 "similar": [
 "rush-hour-boost",
 "arcade-heartbreak-2005",
+"see-you-next-drop",
 "heatwave-arcade",
 "frosty-podium",
-"lightning-over-the-city",
-"iron-storm-rising"
+"lightning-over-the-city"
 ],
 "shape": [
 "holler-hoedown",
@@ -8280,12 +8280,12 @@
 "indigo-fields"
 ],
 "shape": [
+"gold-rush-garage",
 "neon-horizon",
 "johto-morning",
 "pallet-path",
-"respawn-lounge",
-"tokyo-sunset-drive",
-"yet-to-bloom"
+"tiptoe-heist",
+"midnight-mirage"
 ],
 "versions": [],
 "arc": [
@@ -8349,7 +8349,7 @@
 "boulevard-cafe",
 "winds-of-the-world",
 "island-time",
-"pallet-path"
+"level-up-rush"
 ],
 "shape": [
 "pipe-cavern",
@@ -8555,8 +8555,8 @@
 "nightcore-rush",
 "iron-storm-rising",
 "eolssu-groove",
-"skyscraper-sprint",
-"lime-green-breaks"
+"lime-green-breaks",
+"skyscraper-sprint"
 ],
 "shape": [
 "treasure-hunt-flow",
@@ -8629,15 +8629,15 @@
 "morning-over-the-valley",
 "island-time",
 "life-goes-slow",
-"fragile-mask"
+"padma-to-kyoto"
 ],
 "shape": [
+"royal-procession",
 "velvet-layover",
 "life-goes-slow",
 "aqua-tomorrow",
 "lime-green-breaks",
-"red-40-breaks",
-"paper-sky"
+"red-40-breaks"
 ],
 "versions": [],
 "arc": [
@@ -8702,15 +8702,15 @@
 "light-up-the-persona",
 "life-goes-slow",
 "static-weather",
-"double-helix"
+"boulevard-cafe"
 ],
 "shape": [
+"breakcore-squared",
 "lantern-in-the-fog",
 "last-light",
 "frostline",
 "heatwave-arcade",
-"aqua-tomorrow-breaks",
-"monsoon-breaks"
+"aqua-tomorrow-breaks"
 ],
 "versions": [],
 "arc": [
@@ -8781,8 +8781,8 @@
 "off-the-lines",
 "island-time",
 "neon-horizon",
-"riverbank-evening",
-"overclocked"
+"gold-rush-garage",
+"riverbank-evening"
 ],
 "versions": [],
 "arc": [
@@ -8845,16 +8845,16 @@
 "yet-to-bloom",
 "island-time",
 "tokyo-sunset-drive",
-"lobby-loop",
-"life-goes-slow"
+"life-goes-slow",
+"lobby-loop"
 ],
 "shape": [
 "indigo-fields",
+"royal-procession",
 "life-goes-slow",
 "paper-sky",
 "aqua-tomorrow",
-"red-40-breaks",
-"aqua-tomorrow-breaks"
+"red-40-breaks"
 ],
 "versions": [],
 "arc": [
@@ -8909,12 +8909,12 @@
 "energy": 0.799,
 "thumb": "site/thumbs/infinite-series.jpg",
 "similar": [
+"final-zone-countdown",
 "yet-to-bloom",
 "respawn-lounge",
 "pipe-cavern",
-"ringworld-vigil",
 "velvet-layover",
-"arirang-dawn"
+"ringworld-vigil"
 ],
 "shape": [
 "red-40-sugar-rush",
@@ -8942,6 +8942,721 @@
 0.99,
 0.88,
 0.13
+]
+},
+{
+"id": "level-up-rush",
+"title": "Level Up Rush",
+"file": "songs/youtube/Level Up Rush.mp3",
+"video": "videos/YouTube - Level Up Rush.mp4",
+"card": "cards/YouTube - Level Up Rush.png",
+"tempo": 124,
+"style": "upbeat EDM BGM",
+"feel": "Upbeat house-pop with plucks and a future-bass chorus",
+"good": "Intros, upbeat rotations",
+"colors": [
+"#0b2a4a",
+"#1f8fe0",
+"#ffe14d",
+"#05152a",
+"#ffffff"
+],
+"order": 126,
+"groups": [
+"Background music"
+],
+"genres": [
+"Pop",
+"Electronic & dance"
+],
+"moods": [
+"Happy"
+],
+"duration": 76.0,
+"loop": [
+7.7419,
+46.4517
+],
+"energy": 0.828,
+"thumb": "site/thumbs/level-up-rush.jpg",
+"similar": [
+"see-you-next-drop",
+"starlight-carnival-run",
+"double-helix",
+"arcade-heartbreak-2005",
+"squeak-sprint",
+"turbo-corner"
+],
+"shape": [
+"static-weather",
+"midnight-mirage",
+"gold-rush-garage",
+"neon-horizon",
+"starlight-carnival-run",
+"respawn-lounge"
+],
+"versions": [],
+"arc": [
+0.21,
+0.49,
+0.94,
+0.89,
+0.91,
+0.98,
+0.99,
+1.0,
+0.94,
+0.91,
+0.94,
+0.91,
+0.99,
+0.97,
+0.87,
+0.31
+]
+},
+{
+"id": "royal-procession",
+"title": "Royal Procession",
+"file": "songs/youtube/Royal Procession.mp3",
+"video": "videos/YouTube - Royal Procession.mp4",
+"card": "cards/YouTube - Royal Procession.png",
+"tempo": 102,
+"style": "SUGA solo style",
+"feel": "Hard hip-hop over haegeum, gayageum, janggu and a royal-procession horn (in the style of SUGA / Agust D)",
+"good": "Hype plays, boss moments",
+"colors": [
+"#1a0505",
+"#8f1f1f",
+"#ffd27f",
+"#0d0202",
+"#ffffff"
+],
+"order": 127,
+"groups": [
+"BTS solo styles",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Hip-hop & trap"
+],
+"moods": [
+"Hype",
+"Epic"
+],
+"duration": 100.5,
+"loop": [
+9.4118,
+84.7059
+],
+"energy": 0.744,
+"thumb": "site/thumbs/royal-procession.jpg",
+"similar": [
+"lime-green-afterparty",
+"final-circle",
+"off-the-lines",
+"daily-poke-catch-mythic-battle",
+"eolssu-groove",
+"march-of-seven"
+],
+"shape": [
+"indigo-fields",
+"velvet-layover",
+"lime-green-breaks",
+"red-40-breaks",
+"life-goes-slow",
+"starlight-carnival-run"
+],
+"versions": [],
+"arc": [
+0.24,
+0.52,
+0.73,
+0.75,
+0.9,
+0.98,
+0.98,
+0.9,
+0.73,
+0.75,
+0.9,
+0.96,
+1.0,
+0.79,
+0.55,
+0.22
+]
+},
+{
+"id": "oops-again",
+"title": "Oops Again",
+"file": "songs/youtube/Oops Again.mp3",
+"video": "videos/YouTube - Oops Again.mp4",
+"card": "cards/YouTube - Oops Again.png",
+"tempo": 150,
+"style": "funny-fail polka",
+"feel": "Goofy polka with tuba, clarinet, xylophone and slide whistles; ends with a sad wah-wah",
+"good": "Funny fails, bloopers",
+"colors": [
+"#3a2a05",
+"#e0a81f",
+"#ff5fa2",
+"#201505",
+"#ffffff"
+],
+"order": 128,
+"groups": [
+"Gameplay moments"
+],
+"genres": [
+"Other"
+],
+"moods": [
+"Emotional",
+"Happy",
+"Funny"
+],
+"duration": 60.6,
+"loop": [
+4.8,
+36.7998
+],
+"energy": 0.726,
+"thumb": "site/thumbs/oops-again.jpg",
+"similar": [
+"mushroom-woods",
+"arirang-dawn",
+"drop-in-daily-endless-summary-og-lobby-style",
+"drop-in-daily-lobby",
+"daily-poke-catch-town",
+"aqua-tomorrow-breaks"
+],
+"shape": [
+"aqua-tomorrow",
+"youth-in-bloom",
+"schoolyard-riot",
+"checkerboard-skank",
+"life-goes-slow",
+"cloudtop-athletic"
+],
+"versions": [],
+"arc": [
+0.48,
+0.77,
+0.73,
+0.68,
+0.81,
+0.89,
+1.0,
+0.78,
+0.71,
+0.67,
+0.71,
+1.0,
+0.9,
+0.88,
+0.56,
+0.05
+]
+},
+{
+"id": "tiptoe-heist",
+"title": "Tiptoe Heist",
+"file": "songs/youtube/Tiptoe Heist.mp3",
+"video": "videos/YouTube - Tiptoe Heist.mp4",
+"card": "cards/YouTube - Tiptoe Heist.png",
+"tempo": 104,
+"style": "sneaky stealth jazz",
+"feel": "Tiptoe jazz with walking bass, pizzicato and finger snaps",
+"good": "Sneaky plays, stealth",
+"colors": [
+"#0b0b1a",
+"#2a2a5a",
+"#c7c7ff",
+"#05050d",
+"#ffffff"
+],
+"order": 129,
+"groups": [
+"Gameplay moments"
+],
+"genres": [
+"Jazz, funk & soul"
+],
+"moods": [
+"Spooky & sneaky"
+],
+"duration": 86.8,
+"loop": [
+11.5385,
+57.6924
+],
+"energy": 0.777,
+"thumb": "site/thumbs/tiptoe-heist.jpg",
+"similar": [
+"haunted-manor",
+"moonlit-night-stage",
+"velvet-layover",
+"winds-of-the-world",
+"island-breeze",
+"island-time"
+],
+"shape": [
+"johto-morning",
+"pallet-path",
+"squeak-sprint",
+"double-helix",
+"yet-to-bloom",
+"sugar-cloud-smile"
+],
+"versions": [],
+"arc": [
+0.49,
+0.54,
+0.71,
+0.71,
+0.77,
+0.97,
+0.93,
+0.98,
+0.81,
+0.74,
+0.69,
+0.75,
+0.98,
+0.95,
+1.0,
+0.41
+]
+},
+{
+"id": "final-zone-countdown",
+"title": "Final Zone Countdown",
+"file": "songs/youtube/Final Zone Countdown.mp3",
+"video": "videos/YouTube - Final Zone Countdown.mp4",
+"card": "cards/YouTube - Final Zone Countdown.png",
+"tempo": 120,
+"style": "clutch countdown",
+"feel": "Ticking clock and low strings building through trailer brass hits to a climax",
+"good": "Clutch final circles, intense endgames",
+"colors": [
+"#1a0505",
+"#3a0b0b",
+"#ff3b2f",
+"#0d0202",
+"#ffffff"
+],
+"order": 130,
+"groups": [
+"Gameplay moments"
+],
+"genres": [
+"Other"
+],
+"moods": [
+"Hype",
+"Epic"
+],
+"duration": 62.8,
+"loop": [
+4.0,
+19.9994
+],
+"energy": 0.67,
+"thumb": "site/thumbs/final-zone-countdown.jpg",
+"similar": [
+"ringworld-vigil",
+"storm-closing",
+"lobby-loop",
+"infinite-series",
+"shellfire-castle",
+"midnight-drift"
+],
+"shape": [
+"ringworld-vigil",
+"arirang-dawn",
+"level-up-rush",
+"static-weather",
+"midnight-mirage",
+"skyscraper-sprint"
+],
+"versions": [],
+"arc": [
+0.3,
+0.3,
+0.87,
+0.27,
+0.89,
+0.25,
+0.78,
+0.81,
+0.85,
+0.8,
+0.98,
+1.0,
+0.95,
+0.98,
+0.57,
+0.11
+]
+},
+{
+"id": "see-you-next-drop",
+"title": "See You Next Drop",
+"file": "songs/youtube/See You Next Drop.mp3",
+"video": "videos/YouTube - See You Next Drop.mp4",
+"card": "cards/YouTube - See You Next Drop.png",
+"tempo": 120,
+"style": "end screen outro",
+"feel": "Short, upbeat funky piece for the end of a video",
+"good": "End screens, subscribe moments",
+"colors": [
+"#2a0b4a",
+"#e02a8f",
+"#ffe14d",
+"#15052a",
+"#ffffff"
+],
+"order": 131,
+"groups": [
+"Gameplay moments"
+],
+"genres": [
+"Jazz, funk & soul"
+],
+"moods": [
+"Happy"
+],
+"duration": 32.6,
+"loop": [
+2.0,
+18.0004
+],
+"energy": 0.739,
+"thumb": "site/thumbs/see-you-next-drop.jpg",
+"similar": [
+"checkerboard-skank",
+"rush-hour-boost",
+"arcade-heartbreak-2005",
+"johto-morning",
+"starry-road",
+"light-up-the-persona"
+],
+"shape": [
+"menu-drift",
+"homebase-rising",
+"paper-sky",
+"skyscraper-sprint",
+"lantern-theory",
+"velvet-layover"
+],
+"versions": [],
+"arc": [
+0.5,
+0.51,
+0.89,
+0.88,
+0.9,
+0.9,
+0.91,
+0.88,
+0.9,
+0.91,
+0.97,
+0.8,
+1.0,
+0.8,
+0.08,
+0.0
+]
+},
+{
+"id": "midnight-mirage",
+"title": "Midnight Mirage",
+"file": "songs/youtube/Midnight Mirage.mp3",
+"video": "videos/YouTube - Midnight Mirage.mp4",
+"card": "cards/YouTube - Midnight Mirage.png",
+"tempo": 118,
+"style": "Jimin solo style",
+"feel": "Glossy 80s synth-pop with a falsetto lead (in the style of Jimin’s solo work)",
+"good": "Smooth highlights, night clips",
+"colors": [
+"#1a0b3a",
+"#8a2ae0",
+"#ffc7f0",
+"#0d051f",
+"#ffffff"
+],
+"order": 132,
+"groups": [
+"BTS solo styles",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Pop"
+],
+"moods": [
+"Spooky & sneaky"
+],
+"duration": 80.4,
+"loop": [
+8.1356,
+48.8137
+],
+"energy": 0.731,
+"thumb": "site/thumbs/midnight-mirage.jpg",
+"similar": [
+"pipe-cavern",
+"neon-horizon",
+"double-helix",
+"youth-in-bloom",
+"lantern-in-the-fog",
+"breeze-in-the-alley"
+],
+"shape": [
+"respawn-lounge",
+"neon-horizon",
+"gold-rush-garage",
+"starlight-carnival-run",
+"light-up-the-persona",
+"level-up-rush"
+],
+"versions": [],
+"arc": [
+0.14,
+0.34,
+0.82,
+0.69,
+0.8,
+0.96,
+0.97,
+0.97,
+0.85,
+0.66,
+0.76,
+0.86,
+1.0,
+0.93,
+0.82,
+0.1
+]
+},
+{
+"id": "gold-rush-garage",
+"title": "Gold Rush Garage",
+"file": "songs/youtube/Gold Rush Garage.mp3",
+"video": "videos/YouTube - Gold Rush Garage.mp4",
+"card": "cards/YouTube - Gold Rush Garage.png",
+"tempo": 126,
+"style": "Jung Kook solo style",
+"feel": "Sleek UK-garage pop with funky guitar; ends on vocal chops (in the style of Jung Kook’s solo work)",
+"good": "Upbeat highlights",
+"colors": [
+"#2a1a05",
+"#d9a82a",
+"#fff0c7",
+"#150d02",
+"#ffffff"
+],
+"order": 133,
+"groups": [
+"BTS solo styles",
+"K-pop & J-pop styles"
+],
+"genres": [
+"Pop",
+"Electronic & dance",
+"Jazz, funk & soul"
+],
+"moods": [
+"Hype",
+"Happy"
+],
+"duration": 72.1,
+"loop": [
+7.619,
+45.7143
+],
+"energy": 0.752,
+"thumb": "site/thumbs/gold-rush-garage.jpg",
+"similar": [
+"sugar-cloud-smile",
+"lime-green-afterparty",
+"yet-to-bloom",
+"tokyo-sunset-drive",
+"lobby-loop",
+"respawn-lounge"
+],
+"shape": [
+"neon-horizon",
+"midnight-mirage",
+"island-time",
+"respawn-lounge",
+"johto-morning",
+"tiptoe-heist"
+],
+"versions": [],
+"arc": [
+0.15,
+0.37,
+0.76,
+0.75,
+0.75,
+1.0,
+0.94,
+0.98,
+0.8,
+0.77,
+0.73,
+0.8,
+0.99,
+1.0,
+0.96,
+0.29
+]
+},
+{
+"id": "breakcore-squared",
+"title": "Breakcore Squared",
+"file": "songs/youtube/Breakcore Squared.mp3",
+"video": "videos/YouTube - Breakcore Squared.mp4",
+"card": "cards/YouTube - Breakcore Squared.png",
+"tempo": 186,
+"style": "double breakcore",
+"feel": "Two breakbeats at once with steady 32nd-note rolls; the breaks go solo, then the piano ends it",
+"good": "Intense montages",
+"colors": [
+"#05050a",
+"#3a0b5a",
+"#ff2bd6",
+"#020205",
+"#ffffff"
+],
+"order": 134,
+"groups": [
+"Breakcore"
+],
+"genres": [
+"Breakcore",
+"Piano"
+],
+"moods": [
+"Hype"
+],
+"duration": 83.8,
+"loop": [
+1.2903,
+73.5561
+],
+"energy": 0.737,
+"thumb": "site/thumbs/breakcore-squared.jpg",
+"similar": [
+"last-light",
+"breeze-breaks",
+"sky-piercing-breaks",
+"sugar-cloud-breaks",
+"iron-storm-breaks",
+"nobody-s-looking"
+],
+"shape": [
+"heatwave-arcade",
+"lantern-in-the-fog",
+"lightning-over-the-city",
+"last-light",
+"sky-piercing-breaks",
+"monsoon-breaks"
+],
+"versions": [],
+"arc": [
+0.5,
+0.5,
+0.63,
+0.92,
+0.94,
+0.95,
+0.91,
+0.75,
+0.79,
+0.98,
+1.0,
+1.0,
+0.92,
+0.52,
+0.41,
+0.1
+]
+},
+{
+"id": "comeback-rising",
+"title": "Comeback Rising",
+"file": "songs/youtube/Comeback Rising.mp3",
+"video": "videos/YouTube - Comeback Rising.mp4",
+"card": "cards/YouTube - Comeback Rising.png",
+"tempo": 128,
+"style": "comeback anthem",
+"feel": "Starts as sad piano and builds into a triumphant orchestral chorus with a key change",
+"good": "Comebacks, emotional wins",
+"colors": [
+"#0b1a3a",
+"#3a5fd9",
+"#ffd23f",
+"#050d20",
+"#ffffff"
+],
+"order": 135,
+"groups": [
+"Orchestral & cinematic",
+"Gameplay moments"
+],
+"genres": [
+"Orchestral & cinematic",
+"Piano"
+],
+"moods": [
+"Emotional",
+"Happy"
+],
+"duration": 90.3,
+"loop": [
+7.5,
+52.5001
+],
+"energy": 0.766,
+"thumb": "site/thumbs/comeback-rising.jpg",
+"similar": [
+"youth-in-bloom",
+"ringworld-vigil",
+"nobody-s-looking",
+"shattered-overture",
+"lobby-loop",
+"last-light"
+],
+"shape": [
+"snowpoint-trail",
+"time-warp-zone",
+"sunlit-plaza",
+"boulevard-cafe",
+"island-breeze",
+"treasure-hunt-flow"
+],
+"versions": [],
+"arc": [
+0.44,
+0.63,
+0.75,
+0.73,
+0.77,
+0.94,
+1.0,
+0.99,
+0.75,
+0.72,
+0.76,
+0.79,
+1.0,
+0.99,
+0.79,
+0.2
 ]
 }
 ]

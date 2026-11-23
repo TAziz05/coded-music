@@ -51,6 +51,7 @@ def groups_for(t, style, feel):
     if has(s, 'bengali', 'bangladesh', 'flutes', 'east asian', 'amapiano', 'reggae', 'gugak', 'korean traditional', 'koto', 'tabla'): g.append('World music')
     if has(s, 'orchestral', 'waltz', 'orchestra', 'choir'): g.append('Orchestral & cinematic')
     if has(s, 'math'): g.append('Math')
+    if t in ('Oops Again', 'Tiptoe Heist', 'Final Zone Countdown', 'Comeback Rising', 'See You Next Drop'): g.append('Gameplay moments')
     return g
 def genres_for(style, feel):
     s = (style + ' ' + feel).lower(); g = []

@@ -122,6 +122,16 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ('Street Neuron', '100 BPM · j-hope solo style', ('#3a0b0b', '#d9472a', '#ffe14d', '#200505', '#ffffff')),
     ('Velvet Layover', '76 BPM · V solo style', ('#1a0b1a', '#5a2a4a', '#f2c7a3', '#0d050d', '#ffffff')),
     ('Infinite Series', '120 BPM · built from math', ('#0b1a1a', '#1f5a5a', '#9fffe0', '#050d0d', '#ffffff')),
+    ('Level Up Rush', '124 BPM · upbeat EDM BGM', ('#0b2a4a', '#1f8fe0', '#ffe14d', '#05152a', '#ffffff')),
+    ('Royal Procession', '102 BPM · SUGA solo style', ('#1a0505', '#8f1f1f', '#ffd27f', '#0d0202', '#ffffff')),
+    ('Oops Again', '150 BPM · funny-fail polka', ('#3a2a05', '#e0a81f', '#ff5fa2', '#201505', '#ffffff')),
+    ('Tiptoe Heist', '104 BPM · sneaky stealth jazz', ('#0b0b1a', '#2a2a5a', '#c7c7ff', '#05050d', '#ffffff')),
+    ('Final Zone Countdown', '120 BPM · clutch countdown', ('#1a0505', '#3a0b0b', '#ff3b2f', '#0d0202', '#ffffff')),
+    ('See You Next Drop', '120 BPM · end screen outro', ('#2a0b4a', '#e02a8f', '#ffe14d', '#15052a', '#ffffff')),
+    ('Midnight Mirage', '118 BPM · Jimin solo style', ('#1a0b3a', '#8a2ae0', '#ffc7f0', '#0d051f', '#ffffff')),
+    ('Gold Rush Garage', '126 BPM · Jung Kook solo style', ('#2a1a05', '#d9a82a', '#fff0c7', '#150d02', '#ffffff')),
+    ('Breakcore Squared', '186 BPM · double breakcore', ('#05050a', '#3a0b5a', '#ff2bd6', '#020205', '#ffffff')),
+    ('Comeback Rising', '128 BPM · comeback anthem', ('#0b1a3a', '#3a5fd9', '#ffd23f', '#050d20', '#ffffff')),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 

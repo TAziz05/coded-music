@@ -22,7 +22,7 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
 | Folder | What it is |
 |---|---|
-| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 117 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
+| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 127 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
 | `videos/` | The same songs as 1080p videos with a title card, ready to upload to YouTube. |
 | `cards/` | The title card images. |
 | `loops/` | One seamless loop of each song (see `loops/music.json` for loop lengths). |
@@ -33,7 +33,7 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
 ## The songs
 
-8 game songs, plus 117 YouTube gameplay tracks (below): 125 songs in all.
+8 game songs, plus 127 YouTube gameplay tracks (below): 135 songs in all.
 
 | Song | Game | Plays during |
 |---|---|---|
@@ -50,7 +50,7 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
 `loop-lab/index.html` is a song maker that runs in the browser: build songs from sections with chords, a melody, drums and sound effects (built-in coded effects or your own uploads), load TAziz322's songs and tweak them, and save songs as code. See [`loop-lab/GUIDE.md`](loop-lab/GUIDE.md) for how to use it. `loop-lab/tools/make_presets.py` rebuilds the page from `template.html` with the built-in songs.
 
-## YouTube gameplay tracks (117 songs)
+## YouTube gameplay tracks (127 songs)
 
 Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3). They run from 1 to about 2½ minutes; most are around 1½ minutes. These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments, and the songs live in the other files in `code/python/` (see the commands below). Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
 
@@ -173,6 +173,16 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Street Neuron | 100 BPM | Old-school funky hip-hop with horns and scratches; ends with a tape stop (in the style of j-hope’s solo work) | Dance emotes, upbeat clips |
 | Velvet Layover | 76 BPM | Late-night jazzy R&B with Rhodes and muted trumpet (in the style of V’s solo work) | Chill streams, night clips |
 | Infinite Series | 120 BPM | A song built from math: pi and e as melodies, Fibonacci bass, Euclidean drums, prime-number bells, a Zeno ending | Smart plays, building, puzzles |
+| Level Up Rush | 124 BPM | Upbeat house-pop with plucks and a future-bass chorus | Intros, upbeat rotations |
+| Royal Procession | 102 BPM | Hard hip-hop over haegeum, gayageum, janggu and a royal-procession horn (in the style of SUGA / Agust D) | Hype plays, boss moments |
+| Oops Again | 150 BPM | Goofy polka with tuba, clarinet, xylophone and slide whistles; ends with a sad wah-wah | Funny fails, bloopers |
+| Tiptoe Heist | 104 BPM | Tiptoe jazz with walking bass, pizzicato and finger snaps | Sneaky plays, stealth |
+| Final Zone Countdown | 120 BPM | Ticking clock and low strings building through trailer brass hits to a climax | Clutch final circles, intense endgames |
+| See You Next Drop | 120 BPM | Short, upbeat funky piece for the end of a video | End screens, subscribe moments |
+| Midnight Mirage | 118 BPM | Glossy 80s synth-pop with a falsetto lead (in the style of Jimin’s solo work) | Smooth highlights, night clips |
+| Gold Rush Garage | 126 BPM | Sleek UK-garage pop with funky guitar; ends on vocal chops (in the style of Jung Kook’s solo work) | Upbeat highlights |
+| Breakcore Squared | 186 BPM | Two breakbeats at once with steady 32nd-note rolls; the breaks go solo, then the piano ends it | Intense montages |
+| Comeback Rising | 128 BPM | Starts as sad piano and builds into a triumphant orchestral chorus with a key change | Comebacks, emotional wins |
 
 ```
 pip install numpy scipy

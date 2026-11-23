@@ -2,7 +2,7 @@
 bluegrass, city pop and jersey club. python genres.py all  (or: phonk synthwave dubstep eurobeat ska reggae amapiano bluegrass citypop jersey)"""
 import sys
 from newstyles import *
-from popkit import build
+from popkit import build, keys_bar
 
 def button_for(kind):
     def f(M, t0, st, S, i, n, tones, root):   # the ending: one hit with the whole band
@@ -95,7 +95,11 @@ SONGS = {
 
 SONGS['synthwave']['mus_gap'] = 2.5
 # Bass Quake: the pluck stays at one level all the way through (no jump in the build-up); the bell is softer
-SONGS['dubstep'].update(cont_buses=['keys'], cont_tol=0., targets={'pre': -16.5, 'verse': -15.5})
+@K('pluckloud')
+def _(M, t0, st, S, T, r, v): keys_bar(M, 'pluck', t0, st, S, T, r, 3. * v)   # the pluck melody, up front
+for _k in ('verse', 'chorus', 'pre'): SONGS['dubstep']['sections'][_k]['keys'] = ['dark', 'pluckloud']
+SONGS['dubstep']['sections']['pre'].update(drums='halfpop', bass='sub')   # the build-up keeps the verse's beat under it, so nothing drops out
+SONGS['dubstep'].update(cont_buses=['keys'], cont_tol=0., targets={'verse': -15.5}, gain_like={'pre': 'verse', 'end': 'chorus'})   # the pluck is as loud in the verses and drops as in the build-up
 SONGS['dubstep']['sections']['pre']['riser'] = False
 SONGS['dubstep']['order'] = [o for o in SONGS['dubstep']['order'] if o != 'tag']   # straight from the last drop into the final hit
 SONGS['dubstep']['sections']['verse']['lv'] = .6

@@ -44,6 +44,39 @@ def sq_keys(M, t0, st, tones, root, vol, bar):
 SQ = [[78,-1,81,-1,85,-1,83,81],[81,-1,-1,78,-1,-1,0,0],[76,-1,78,-1,81,-1,80,78],[80,-1,-1,-1,0,0,0,0]]
 SQB = [[85,-1,83,81,-1,83,-1,85],[86,-1,-1,85,-1,81,-1,-1],[85,-1,83,81,-1,80,-1,78],[80,-1,-1,-1,-1,-1,0,0]]
 
+# ================= Breakcore Cubed: three breaks at once, each in its own frequency range =================
+_K3 = {}
+def kit3(st):   # layer 1: full funk break (engine); layer 2: amen break above 2 kHz (hats, snare tops); layer 3: a jungle kick break below 160 Hz
+    if not _K3:
+        def filtered(kit, fn):
+            sl, n = make_kit(st, kit); x = np.concatenate(sl, axis=1); x = np.array([fn(c) for c in x])
+            return [x[:, i * n:(i + 1) * n] for i in range(32)]
+        _K3['hi'] = filtered(dict(AMEN, crunch=2.4, clap=.4), lambda c: hp(c, 2000) * 1.8)
+        _K3['lo'] = filtered({'K': [[0, 3, 6, 10, 13], [0, 3, 8, 11, 14]], 'S': [[], []], 'G': [[], []], 'hat': None, 'punch': 1.6, 'crunch': 2.}, lambda c: lp(c, 160) * 1.6)
+    return _K3
+def put_layer(M, layer, pat, t0, st, gain, pan=0.):
+    for k in range(16):
+        x = layer[pat[k]]; M.add('break', t0 + k * st, x[0] * gain * (1 - pan), x[1] * gain * (1 + pan))
+def triple_breaks(M, sec, i, t0, st, tones, root):
+    if sec not in ('dropA', 'dropB'): return
+    K3 = kit3(st); bar = i % 2; pat = PATS['P3' if sec == 'dropA' else 'P1']
+    put_layer(M, K3['hi'], pat[bar * 16:(bar + 1) * 16], t0, st, .55, (-.35, .35)[i % 2])
+    put_layer(M, K3['lo'], list(range(bar * 16, bar * 16 + 16)), t0, st, .7)
+    for base in (6, 14):
+        for j in range(4): snare(M, t0 + (base + j / 2) * st, .16 + .05 * j)
+CUBE = {}
+def cube_end(M, t_out, st, B, nb, ch):   # the layers leave one at a time: three breaks, then two, then one, then the piano alone
+    CUBE['t'] = t_out; K3 = kit3(st); main, n = make_kit(st, dict(FUNK, crunch=2.3, punch=1.35, clap=.4))
+    for b in range(6):
+        t0 = t_out + b * B; seq = PATS['P2'][(b % 2) * 16:(b % 2) * 16 + 16]
+        put_layer(M, main, seq, t0, st, .85)
+        if b < 4: put_layer(M, K3['hi'], seq, t0, st, .55, (-.35, .35)[b % 2])
+        if b < 2: put_layer(M, K3['lo'], list(range((b % 2) * 16, (b % 2) * 16 + 16)), t0, st, .7)
+    tones, root = ch[0]
+    for c in [root + 12] + tones: piano(M, 'keys', t_out + nb * B, c + 12, 4., .35)
+CU = [[81,-1,80,78,-1,76,-1,78],[80,-1,-1,76,-1,73,-1,-1],[76,-1,78,80,-1,81,-1,83],[81,-1,-1,-1,0,0,0,0]]
+CUB = [[85,-1,83,81,-1,80,-1,81],[83,-1,-1,80,-1,76,-1,-1],[81,-1,83,85,-1,88,-1,86],[85,-1,-1,-1,-1,-1,0,0]]
+
 # ================= Infinite Series Breaks =================
 def zeno_end(M, t_out, st, B, nb, ch):
     tones, root = ch[0]; ms.zeno(M, t_out + (nb - 1) * B, st, lambda k: k * st, 0, 1, tones, root)
@@ -56,8 +89,12 @@ BC = {
    mel='lead', melB='lead', layerB='strings', bass='sub', kit=dict(FUNK, crunch=2.3, punch=1.35, clap=.4), patA='P2', patB='P4',
    melody=blocks(SQ), melodyB=blocks(SQB), seed=301, extra=double_breaks, levels={'sub': .45, 'break': 1.15}, mus_gap=7.,
    ending='custom', ending_fn=breaks_solo_end),
+ 'cubed': dict(file='Breakcore_Cubed', title='Breakcore Cubed', bpm=190, chords=['Am', 'F', 'C', 'E'], keys='piano', pad=.05, outro_breaks=False,
+   mel='lead', melB='lead', layerB='strings', bass='sub', kit=dict(FUNK, crunch=2.3, punch=1.35, clap=.4), patA='P2', patB='P4',
+   melody=blocks(CU), melodyB=blocks(CUB), seed=333, extra=triple_breaks, levels={'sub': .35, 'break': 1.1}, mus_gap=7.,
+   ending='custom', ending_fn=cube_end),
  'math_bc': dict(file='Infinite_Series_Breaks', title='Infinite Series Breaks', bpm=174, chords=['Am', 'F', 'C', 'G'], keys='piano', pad=.05,
-   mel=lambda M, t, n, d, v: play_mel(M, 'vibes', t, n, d, .55 * v), melB='lead', layerB='vibes',   # first drop: the melody sits back so the breaks come through
+   mel=lambda M, t, n, d, v: play_mel(M, 'vibes', t, n, d, .55 * v), melB=lambda M, t, n, d, v: play_mel(M, 'lead', t, n, d, .7 * v), layerB='vibes', match_drops='A',   # first drop: the melody sits back so the breaks come through
    bass='sub', kit=dict(AMEN, crunch=1.8, tone=10000, clap=.25), patA='P3', patB='P1',
    melody=blocks(ms.digit_mel(ms.PI, 4)), melodyB=blocks(ms.digit_mel(ms.E, 4, 57)), seed=314, extra=math_extra,
    ending='custom', ending_fn=zeno_end),
