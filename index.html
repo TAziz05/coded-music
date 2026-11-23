@@ -6,6 +6,9 @@
 <title>Coded Music · TAziz322</title>
 <meta name="description" content="Original music written entirely as code, for gameplay videos. Search, sort, loop and download every song.">
 <meta name="theme-color" content="#140b2a">
+<link rel="icon" href="site/icons/coded-music.svg" type="image/svg+xml"><link rel="icon" href="site/icons/coded-music-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="site/icons/coded-music-180.png"><link rel="manifest" href="site.webmanifest">
+<meta property="og:title" content="Coded Music · TAziz322"><meta property="og:image" content="site/icons/coded-music-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fira+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
@@ -79,10 +82,12 @@ footer{text-align:center;color:var(--mute);font-size:12px;padding:24px 14px}
 <body>
 <header>
   <div class="top">
+    <img src="site/icons/coded-music.svg" alt="" width="40" height="40" style="border-radius:10px">
     <div><div class="logo">Coded Music</div><div class="sub"><span id="total"></span> songs written as code · by TAziz322</div></div>
     <div class="sp"></div>
     <a class="btn" href="loop-lab/" title="Make your own songs">🎛️ Loop Lab</a>
     <button class="btn" id="themeBtn" title="Change theme">🎨</button>
+    <button class="btn" id="sfxBtn" title="Button sounds on/off">🔊</button>
   </div>
   <div class="search"><input id="q" type="search" placeholder="Search songs, styles, instruments, moods…" autocomplete="off"><button class="btn" id="shuffle" title="Play a random song from the list">🔀</button></div>
   <div class="filters">
@@ -114,6 +119,7 @@ footer{text-align:center;color:var(--mute);font-size:12px;padding:24px 14px}
 <div id="sheet"><div class="panel" id="panel"></div></div>
 <div class="toast" id="toast"></div>
 <audio id="audio" preload="none"></audio>
+<script src="site/ui-sfx.js"></script>
 
 <script>
 const $ = s => document.querySelector(s), esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -128,7 +134,11 @@ const store = { get(k, d) { try { return localStorage.getItem(k) ?? d; } catch (
 const THEMES = ['storm', 'neon', 'day', 'gb'], TNAME = {storm: 'Storm', neon: 'Neon', day: 'Daylight', gb: 'Game Boy'};
 function setTheme(t) { document.documentElement.dataset.theme = t === 'storm' ? '' : t; store.set('theme', t); }
 setTheme(store.get('theme', 'storm'));
-$('#themeBtn').onclick = () => { const t = THEMES[(THEMES.indexOf(store.get('theme', 'storm')) + 1) % THEMES.length]; setTheme(t); toast('Theme: ' + TNAME[t]); };
+$('#themeBtn').onclick = () => { const t = THEMES[(THEMES.indexOf(store.get('theme', 'storm')) + 1) % THEMES.length]; setTheme(t); sfx('sparkle'); toast('Theme: ' + TNAME[t]); };
+const sfx = n => window.UISFX && UISFX.play(n);
+function sfxIcon() { $('#sfxBtn').textContent = (window.UISFX && UISFX.on) ? '🔊' : '🔇'; }
+$('#sfxBtn').onclick = () => { UISFX.set(!UISFX.on); sfxIcon(); if (UISFX.on) sfx('on'); toast(UISFX.on ? 'Button sounds on' : 'Button sounds off'); };
+setTimeout(sfxIcon);
 function toast(m) { const t = $('#toast'); t.textContent = m; t.style.display = 'block'; clearTimeout(t._h); t._h = setTimeout(() => t.style.display = 'none', 1600); }
 
 // ---------- data ----------
@@ -138,11 +148,11 @@ fetch('site/songs.json').then(r => r.json()).then(d => {
   uniq('genres').forEach(g => $('#fGenre').insertAdjacentHTML('beforeend', `<option>${esc(g)}</option>`));
   uniq('moods').forEach(g => $('#fMood').insertAdjacentHTML('beforeend', `<option>${esc(g)}</option>`));
   const gs = uniq('groups'); $('#groups').innerHTML = `<button class="chip on" data-g="">All</button>` + gs.map(g => `<button class="chip" data-g="${esc(g)}">${esc(g)} <span style="opacity:.6">${SONGS.filter(s => s.groups.includes(g)).length}</span></button>`).join('');
-  $('#groups').onclick = e => { const b = e.target.closest('.chip'); if (!b) return; group = b.dataset.g; document.querySelectorAll('#groups .chip').forEach(c => c.classList.toggle('on', c === b)); render(); };
+  $('#groups').onclick = e => { const b = e.target.closest('.chip'); if (!b) return; sfx('tap'); group = b.dataset.g; document.querySelectorAll('#groups .chip').forEach(c => c.classList.toggle('on', c === b)); render(); };
   render(); route();
 });
 ['q', 'fGenre', 'fMood', 'fTempo', 'fLen', 'sort'].forEach(id => $('#' + id).addEventListener('input', render));
-$('#clear').onclick = () => { ['q', 'fGenre', 'fMood', 'fTempo', 'fLen'].forEach(id => $('#' + id).value = ''); group = ''; document.querySelectorAll('#groups .chip').forEach((c, i) => c.classList.toggle('on', i === 0)); render(); };
+$('#clear').onclick = () => { sfx('off'); ['q', 'fGenre', 'fMood', 'fTempo', 'fLen'].forEach(id => $('#' + id).value = ''); group = ''; document.querySelectorAll('#groups .chip').forEach((c, i) => c.classList.toggle('on', i === 0)); render(); };
 const tempoOf = s => s.tempo || s.tempo_est || 0;
 function render() {
   const q = $('#q').value.trim().toLowerCase().split(/\s+/).filter(Boolean), g = $('#fGenre').value, m = $('#fMood').value;
@@ -168,8 +178,8 @@ function card(s) {
 }
 document.addEventListener('click', e => {
   const p = e.target.closest('[data-play]'); if (p) { e.stopPropagation(); const s = BY[p.dataset.play]; (cur && cur.id === s.id) ? toggle() : play(s); return; }
-  const c = e.target.closest('.song'); if (c) { openSong(BY[c.dataset.id]); return; }
-  const t = e.target.closest('[data-filter]'); if (t) { closeSheet(); const [k, v] = t.dataset.filter.split('|');
+  const c = e.target.closest('.song'); if (c) { sfx('open'); openSong(BY[c.dataset.id]); return; }
+  const t = e.target.closest('[data-filter]'); if (t) { sfx('tap'); closeSheet(); const [k, v] = t.dataset.filter.split('|');
     if (k === 'group') { group = v; document.querySelectorAll('#groups .chip').forEach(ch => ch.classList.toggle('on', ch.dataset.g === v)); } else $('#' + k).value = v; render(); window.scrollTo(0, 0); }
 });
 
@@ -187,6 +197,8 @@ function openSong(s) {
   <div class="kv">${s.groups.map(g => `<span class="chip" data-filter="group|${esc(g)}">${esc(g)}</span>`).join('')}${s.genres.filter(g => !s.groups.includes(g)).map(g => `<span class="chip" data-filter="fGenre|${esc(g)}">${esc(g)}</span>`).join('')}${s.moods.map(g => `<span class="chip" data-filter="fMood|${esc(g)}">${esc(g)}</span>`).join('')}</div>
   <div class="row"><button class="btn pri" onclick="play(BY['${s.id}'])">▶ Play</button><button class="btn" onclick="play(BY['${s.id}'], true)">🔁 Play on loop</button>
   <a class="btn" href="${url(s.file)}" download>⬇ MP3</a><a class="btn" href="${vurl(s.video)}" target="_blank" rel="noopener">🎬 Video</a><button class="btn" onclick="share('${s.id}')">🔗 Share</button></div>
+  ${s.looplab ? `<div class="row" style="margin-top:0"><a class="btn" href="loop-lab/?song=../${url(s.looplab)}" onclick="sfx('open')">🎛️ Open in Loop Lab</a><button class="btn" onclick="copyCode('${s.id}')">📋 Copy Loop Lab code</button>${s.src ? `<a class="btn" href="https://github.com/TAziz05/coded-music/blob/main/${url(s.src)}" target="_blank" rel="noopener">🐍 Python code</a>` : ''}</div>
+  <p class="note" style="margin-top:-4px">Loop Lab gets a simplified version (its own instruments, 8-bar sections) that you can change and export again.</p>` : ''}
   <div class="ext"><b>Extended version</b> <span class="note">plays the start, repeats the seamless loop (${fmt(s.loop[0])}–${fmt(s.loop[1])}, ${fmt(L)} long), then the real ending</span>
   <div class="row" style="margin:8px 0 0;align-items:center"><select id="exMin">${[2, 3, 5, 10, 15, 20].map(m => `<option value="${m}" ${m === 5 ? 'selected' : ''}>${m} min</option>`).join('')}</select>
   <select id="exFmt"><option value="mp3">MP3</option><option value="wav">WAV</option></select><button class="btn pri" id="exGo" onclick="extended('${s.id}')">Make it</button><span class="note" id="exMsg"></span></div></div>
@@ -197,12 +209,16 @@ function openSong(s) {
   ${sameGroup.length ? `<div class="sec"><h3>More ${esc(s.groups[0])}</h3>${miniList(sameGroup)}</div>` : ''}</div>`;
   $('#sheet').classList.add('show'); $('#panel').scrollTop = 0;
 }
-function closeSheet() { $('#sheet').classList.remove('show'); history.replaceState(null, '', location.pathname + location.search); }
+function closeSheet() { if ($('#sheet').classList.contains('show')) sfx('close'); $('#sheet').classList.remove('show'); history.replaceState(null, '', location.pathname + location.search); }
 $('#sheet').onclick = e => { if (e.target.id === 'sheet') closeSheet(); };
 function route() { const id = location.hash.slice(1); if (BY[id]) openSong(BY[id]); }
 window.addEventListener('hashchange', route);
+async function copyCode(id) {
+  try { const txt = await (await fetch(url(BY[id].looplab))).text(); await navigator.clipboard.writeText(txt); sfx('success'); toast('Song code copied: paste it into Loop Lab'); }
+  catch (e) { sfx('error'); toast('Could not copy. Use Open in Loop Lab instead.'); }
+}
 async function share(id) { const s = BY[id], u = location.origin + location.pathname + '#' + id;
-  if (navigator.share) { try { await navigator.share({title: s.title + ' · Coded Music', url: u}); } catch (e) {} } else { try { await navigator.clipboard.writeText(u); toast('Link copied'); } catch (e) { prompt('Copy this link', u); } } }
+  if (navigator.share) { try { await navigator.share({title: s.title + ' · Coded Music', url: u}); } catch (e) {} } else { try { await navigator.clipboard.writeText(u); sfx('success'); toast('Link copied'); } catch (e) { prompt('Copy this link', u); } } }
 
 // ---------- player: <audio> for normal play, Web Audio for seamless loops ----------
 const audio = $('#audio'); let ctx = null, src = null, buf = null, bufId = null, loopOn = false, wStart = 0, wOff = 0, wPlaying = false;
@@ -220,6 +236,7 @@ async function startW(off) {
 }
 function wTime() { if (!wPlaying) return wOff; let t = wOff + (ctx.currentTime - wStart); const [a, b] = cur.loop; if (t >= b) t = a + ((t - a) % (b - a)); return t; }
 async function play(s, loop = null) {
+  sfx('play');
   if (loop !== null) loopOn = loop; cur = s; audio.pause(); stopW();
   $('#player').classList.add('show'); $('#ptitle').textContent = s.title; $('#pth').style.backgroundImage = s.thumb ? `url('${url(s.thumb)}')` : '';
   $('#loopmark').style.left = (s.loop[0] / s.duration * 100) + '%'; $('#loopmark').style.width = ((s.loop[1] - s.loop[0]) / s.duration * 100) + '%';
@@ -229,12 +246,13 @@ async function play(s, loop = null) {
   ui(); render();
 }
 function toggle() {
-  if (!cur) return;
+  if (!cur) return; sfx(playing() ? 'pause' : 'play');
   if (loopOn) { if (wPlaying) { wOff = wTime(); stopW(); } else startW(wOff); }
   else audio.paused ? audio.play() : audio.pause();
   ui(); setTimeout(render, 30);
 }
 async function setLoop(on) {
+  sfx(on ? 'on' : 'off');
   if (!cur) { loopOn = on; ui(); return; }
   const t = loopOn ? wTime() : audio.currentTime, was = playing(); loopOn = on;
   if (on) { audio.pause(); if (was) { $('#ptime').textContent = 'Loading loop…'; await startW(Math.min(t, cur.loop[1] - .05)); } else wOff = t; toast('Seamless loop on'); }
@@ -242,9 +260,9 @@ async function setLoop(on) {
   ui();
 }
 function step(d) { if (!view.length || !cur) return; let i = view.findIndex(s => s.id === cur.id); i = (i + d + view.length) % view.length; play(view[i]); }
-$('#pp').onclick = toggle; $('#loopBtn').onclick = () => setLoop(!loopOn); $('#next').onclick = () => step(1); $('#prev').onclick = () => step(-1);
+$('#pp').onclick = toggle; $('#loopBtn').onclick = () => setLoop(!loopOn); $('#next').onclick = () => { sfx('click'); step(1); }; $('#prev').onclick = () => { sfx('click'); step(-1); };
 $('#ptitle').onclick = $('#pth').onclick = () => cur && openSong(cur);
-$('#shuffle').onclick = () => { if (view.length) play(view[Math.floor(Math.random() * view.length)]); };
+$('#shuffle').onclick = () => { sfx('whoosh'); if (view.length) play(view[Math.floor(Math.random() * view.length)]); };
 audio.onended = () => step(1); audio.onplay = audio.onpause = () => { ui(); render(); };
 let dragging = false; $('#seek').oninput = () => dragging = true;
 $('#seek').onchange = () => { dragging = false; if (!cur) return; const t = $('#seek').value / 1000 * cur.duration; if (loopOn) { if (wPlaying) startW(Math.min(t, cur.loop[1] - .05)); else wOff = t; } else audio.currentTime = t; };
@@ -281,8 +299,8 @@ async function extended(id) {
       parts.push(enc.flush()); blob = new Blob(parts, {type: 'audio/mpeg'});
     } catch (e) { blob = wav(out, sr); }   // if the MP3 encoder can't load, hand over a WAV instead
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${s.title} (Extended ${fmt(total / sr).replace(':', 'm')}s).${blob.type === 'audio/wav' ? 'wav' : 'mp3'}`; document.body.appendChild(a); a.click(); a.remove();
-    msg.textContent = `Done: ${fmt(total / sr)} long`;
-  } catch (e) { msg.textContent = 'Could not make it: ' + e.message; }
+    msg.textContent = `Done: ${fmt(total / sr)} long`; sfx('success');
+  } catch (e) { msg.textContent = 'Could not make it: ' + e.message; sfx('error'); }
   go.disabled = false;
 }
 function wav(chs, sr) {

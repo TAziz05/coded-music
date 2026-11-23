@@ -1,5 +1,5 @@
 {
-"count": 135,
+"count": 137,
 "songs": [
 {
 "id": "drop-in-daily-lobby",
@@ -636,7 +636,9 @@
 0.98,
 0.89,
 0.06
-]
+],
+"looplab": "site/looplab/victory-rush.json",
+"src": null
 },
 {
 "id": "storm-closing",
@@ -704,7 +706,9 @@
 0.97,
 0.76,
 0.04
-]
+],
+"looplab": "site/looplab/storm-closing.json",
+"src": null
 },
 {
 "id": "lobby-loop",
@@ -775,7 +779,9 @@
 1.0,
 0.88,
 0.36
-]
+],
+"looplab": "site/looplab/lobby-loop.json",
+"src": null
 },
 {
 "id": "overclocked",
@@ -885,8 +891,8 @@
 "sky-piercing-breaks",
 "sky-piercing-promise",
 "breakcore-squared",
-"blue-spark-breaks",
-"titan-undefeated"
+"titan-undefeated",
+"blue-spark-breaks"
 ],
 "shape": [
 "overclocked",
@@ -986,7 +992,9 @@
 1.0,
 0.86,
 0.05
-]
+],
+"looplab": "site/looplab/static-weather.json",
+"src": null
 },
 {
 "id": "lantern-theory",
@@ -1132,7 +1140,9 @@
 0.96,
 0.89,
 0.45
-]
+],
+"looplab": "site/looplab/channel-plaza.json",
+"src": null
 },
 {
 "id": "frosty-podium",
@@ -1204,7 +1214,9 @@
 0.99,
 0.56,
 0.18
-]
+],
+"looplab": "site/looplab/frosty-podium.json",
+"src": null
 },
 {
 "id": "coastal-route",
@@ -1275,7 +1287,9 @@
 0.97,
 0.93,
 0.38
-]
+],
+"looplab": "site/looplab/coastal-route.json",
+"src": null
 },
 {
 "id": "homebase-rising",
@@ -1418,7 +1432,9 @@
 0.95,
 0.88,
 0.66
-]
+],
+"looplab": "site/looplab/determined-steps.json",
+"src": null
 },
 {
 "id": "ringworld-vigil",
@@ -1462,15 +1478,15 @@
 "shellfire-castle",
 "homebase-rising",
 "shattered-overture",
-"youth-in-bloom"
+"infinite-series-breaks"
 ],
 "shape": [
 "morning-over-the-valley",
 "iron-storm-rising",
 "determined-steps",
 "final-zone-countdown",
-"skyscraper-sprint",
-"breakcore-squared"
+"infinite-series-breaks",
+"skyscraper-sprint"
 ],
 "versions": [],
 "arc": [
@@ -1610,10 +1626,10 @@
 "shape": [
 "ringworld-vigil",
 "breakcore-squared",
+"infinite-series-breaks",
 "lightning-over-the-city",
 "last-light",
-"heatwave-arcade",
-"lantern-in-the-fog"
+"heatwave-arcade"
 ],
 "versions": [],
 "arc": [
@@ -1678,7 +1694,7 @@
 "sky-piercing-breaks",
 "comeback-rising",
 "indigo-fields",
-"ringworld-vigil"
+"infinite-series-breaks"
 ],
 "shape": [
 "padma-to-kyoto-breaks",
@@ -1817,9 +1833,9 @@
 "breeze-breaks",
 "breakcore-squared",
 "nobody-s-looking",
+"infinite-series-breaks",
 "sky-piercing-breaks",
-"sugar-cloud-breaks",
-"determined-steps"
+"sugar-cloud-breaks"
 ],
 "shape": [
 "monsoon-breaks",
@@ -1827,7 +1843,7 @@
 "heatwave-arcade",
 "sky-piercing-breaks",
 "iron-storm-breaks",
-"breakcore-squared"
+"infinite-series-breaks"
 ],
 "versions": [],
 "arc": [
@@ -1847,7 +1863,9 @@
 0.5,
 0.49,
 0.15
-]
+],
+"looplab": "site/looplab/last-light.json",
+"src": "code/python/seasons.py"
 },
 {
 "id": "first-bloom",
@@ -1920,7 +1938,9 @@
 0.5,
 0.44,
 0.48
-]
+],
+"looplab": "site/looplab/first-bloom.json",
+"src": "code/python/seasons.py"
 },
 {
 "id": "heatwave-arcade",
@@ -1963,8 +1983,8 @@
 "off-the-lines-breaks",
 "aqua-tomorrow-breaks",
 "monsoon-breaks",
-"padma-to-kyoto-breaks",
-"blue-spark-breaks"
+"blue-spark-breaks",
+"padma-to-kyoto-breaks"
 ],
 "shape": [
 "lightning-over-the-city",
@@ -1992,7 +2012,9 @@
 0.49,
 0.41,
 0.12
-]
+],
+"looplab": "site/looplab/heatwave-arcade.json",
+"src": "code/python/seasons.py"
 },
 {
 "id": "amber-leaves",
@@ -2066,7 +2088,9 @@
 0.51,
 0.41,
 0.26
-]
+],
+"looplab": "site/looplab/amber-leaves.json",
+"src": "code/python/seasons.py"
 },
 {
 "id": "frostline",
@@ -2135,7 +2159,9 @@
 0.43,
 0.46,
 0.07
-]
+],
+"looplab": "site/looplab/frostline.json",
+"src": "code/python/seasons.py"
 },
 {
 "id": "window-seat",
@@ -2188,7 +2214,7 @@
 "heatwave-arcade",
 "last-light",
 "monsoon-breaks",
-"lantern-in-the-fog"
+"infinite-series-breaks"
 ],
 "versions": [],
 "arc": [
@@ -2208,7 +2234,9 @@
 0.46,
 0.42,
 0.16
-]
+],
+"looplab": "site/looplab/window-seat.json",
+"src": "code/python/seasons.py"
 },
 {
 "id": "lightning-over-the-city",
@@ -2279,7 +2307,9 @@
 0.42,
 0.41,
 0.12
-]
+],
+"looplab": "site/looplab/lightning-over-the-city.json",
+"src": "code/python/seasons.py"
 },
 {
 "id": "lantern-in-the-fog",
@@ -2352,7 +2382,9 @@
 0.53,
 0.38,
 0.1
-]
+],
+"looplab": "site/looplab/lantern-in-the-fog.json",
+"src": "code/python/seasons.py"
 },
 {
 "id": "kite-season",
@@ -2422,7 +2454,9 @@
 0.46,
 0.51,
 0.37
-]
+],
+"looplab": "site/looplab/kite-season.json",
+"src": "code/python/seasons.py"
 },
 {
 "id": "golden-hour-groove",
@@ -2789,7 +2823,9 @@
 0.48,
 0.49,
 0.66
-]
+],
+"looplab": "site/looplab/golden-hour-breaks.json",
+"src": "code/python/styles_breakcore.py"
 },
 {
 "id": "blue-spark-breaks",
@@ -2862,7 +2898,9 @@
 0.47,
 0.51,
 0.61
-]
+],
+"looplab": "site/looplab/blue-spark-breaks.json",
+"src": "code/python/styles_breakcore.py"
 },
 {
 "id": "off-the-lines-breaks",
@@ -2935,7 +2973,9 @@
 0.46,
 0.45,
 0.84
-]
+],
+"looplab": "site/looplab/off-the-lines-breaks.json",
+"src": "code/python/styles_breakcore.py"
 },
 {
 "id": "lanterns-and-thunder-drums",
@@ -3007,7 +3047,9 @@
 0.5,
 0.43,
 0.45
-]
+],
+"looplab": "site/looplab/lanterns-and-thunder-drums.json",
+"src": "code/python/styles_breakcore.py"
 },
 {
 "id": "breeze-breaks",
@@ -3047,18 +3089,18 @@
 "similar": [
 "last-light",
 "breakcore-squared",
+"infinite-series-breaks",
 "sky-piercing-breaks",
 "sugar-cloud-breaks",
-"nobody-s-looking",
-"amber-leaves"
+"nobody-s-looking"
 ],
 "shape": [
 "last-light",
 "iron-storm-breaks",
 "sky-piercing-breaks",
+"infinite-series-breaks",
 "monsoon-breaks",
-"heatwave-arcade",
-"window-seat"
+"heatwave-arcade"
 ],
 "versions": [
 "breeze-in-the-alley"
@@ -3080,7 +3122,9 @@
 0.51,
 0.48,
 0.24
-]
+],
+"looplab": "site/looplab/breeze-breaks.json",
+"src": "code/python/styles_breakcore.py"
 },
 {
 "id": "schoolyard-riot",
@@ -3151,7 +3195,9 @@
 1.0,
 0.87,
 0.32
-]
+],
+"looplab": "site/looplab/schoolyard-riot.json",
+"src": "code/python/bts_albums.py"
 },
 {
 "id": "dark-and-wild-run",
@@ -3223,7 +3269,9 @@
 0.97,
 0.96,
 0.31
-]
+],
+"looplab": "site/looplab/dark-and-wild-run.json",
+"src": "code/python/bts_albums.py"
 },
 {
 "id": "youth-in-bloom",
@@ -3295,7 +3343,9 @@
 0.99,
 0.69,
 0.29
-]
+],
+"looplab": "site/looplab/youth-in-bloom.json",
+"src": "code/python/bts_albums.py"
 },
 {
 "id": "velvet-wings",
@@ -3365,7 +3415,9 @@
 1.0,
 0.9,
 0.27
-]
+],
+"looplab": "site/looplab/velvet-wings.json",
+"src": "code/python/bts_albums.py"
 },
 {
 "id": "double-helix",
@@ -3407,8 +3459,8 @@
 "arcade-heartbreak-2005",
 "see-you-next-drop",
 "level-up-rush",
-"starlit-orbit",
-"aqua-tomorrow"
+"aqua-tomorrow",
+"starlit-orbit"
 ],
 "shape": [
 "shellfire-castle",
@@ -3436,7 +3488,9 @@
 0.99,
 0.97,
 0.28
-]
+],
+"looplab": "site/looplab/double-helix.json",
+"src": "code/python/bts_albums.py"
 },
 {
 "id": "fragile-mask",
@@ -3507,7 +3561,9 @@
 0.97,
 0.89,
 0.29
-]
+],
+"looplab": "site/looplab/fragile-mask.json",
+"src": "code/python/bts_albums.py"
 },
 {
 "id": "eolssu-groove",
@@ -3580,7 +3636,9 @@
 0.96,
 0.81,
 0.18
-]
+],
+"looplab": "site/looplab/eolssu-groove.json",
+"src": "code/python/bts_albums.py"
 },
 {
 "id": "light-up-the-persona",
@@ -3652,7 +3710,9 @@
 0.96,
 0.88,
 0.28
-]
+],
+"looplab": "site/looplab/light-up-the-persona.json",
+"src": "code/python/bts_albums.py"
 },
 {
 "id": "march-of-seven",
@@ -3725,7 +3785,9 @@
 1.0,
 0.84,
 0.27
-]
+],
+"looplab": "site/looplab/march-of-seven.json",
+"src": "code/python/bts_albums.py"
 },
 {
 "id": "life-goes-slow",
@@ -3797,7 +3859,9 @@
 0.96,
 0.53,
 0.33
-]
+],
+"looplab": "site/looplab/life-goes-slow.json",
+"src": "code/python/bts_albums.py"
 },
 {
 "id": "yet-to-bloom",
@@ -3870,7 +3934,9 @@
 0.92,
 0.95,
 0.21
-]
+],
+"looplab": "site/looplab/yet-to-bloom.json",
+"src": "code/python/bts_albums.py"
 },
 {
 "id": "arirang-dawn",
@@ -3913,7 +3979,7 @@
 "fragile-mask",
 "velvet-wings",
 "daily-poke-catch-route",
-"drop-in-daily-endless-summary-og-lobby-style"
+"tiptoe-heist"
 ],
 "shape": [
 "aqua-tomorrow",
@@ -3941,7 +4007,9 @@
 1.0,
 0.57,
 0.11
-]
+],
+"looplab": "site/looplab/arirang-dawn.json",
+"src": "code/python/bts_albums.py"
 },
 {
 "id": "riverbank-evening",
@@ -4157,7 +4225,9 @@
 0.99,
 0.98,
 0.29
-]
+],
+"looplab": "site/looplab/sky-piercing-promise.json",
+"src": "code/python/batch_a.py"
 },
 {
 "id": "sky-piercing-breaks",
@@ -4193,12 +4263,12 @@
 "energy": 0.746,
 "thumb": "site/thumbs/sky-piercing-breaks.jpg",
 "similar": [
+"infinite-series-breaks",
 "sugar-cloud-breaks",
 "breakcore-squared",
 "breeze-breaks",
 "last-light",
-"nobody-s-looking",
-"shattered-overture"
+"nobody-s-looking"
 ],
 "shape": [
 "iron-storm-breaks",
@@ -4228,7 +4298,9 @@
 0.5,
 0.51,
 0.22
-]
+],
+"looplab": "site/looplab/sky-piercing-breaks.json",
+"src": "code/python/batch_a.py"
 },
 {
 "id": "arcade-heartbreak-2005",
@@ -4301,7 +4373,9 @@
 1.0,
 0.92,
 0.3
-]
+],
+"looplab": "site/looplab/arcade-heartbreak-2005.json",
+"src": "code/python/batch_a.py"
 },
 {
 "id": "iron-storm-rising",
@@ -4371,7 +4445,9 @@
 0.99,
 0.96,
 0.28
-]
+],
+"looplab": "site/looplab/iron-storm-rising.json",
+"src": "code/python/batch_a.py"
 },
 {
 "id": "iron-storm-breaks",
@@ -4422,7 +4498,7 @@
 "last-light",
 "lightning-over-the-city",
 "heatwave-arcade",
-"monsoon-breaks"
+"infinite-series-breaks"
 ],
 "versions": [
 "iron-storm-rising"
@@ -4444,7 +4520,9 @@
 0.47,
 0.47,
 0.21
-]
+],
+"looplab": "site/looplab/iron-storm-breaks.json",
+"src": "code/python/batch_a.py"
 },
 {
 "id": "respawn-lounge",
@@ -4516,7 +4594,9 @@
 0.99,
 0.91,
 0.27
-]
+],
+"looplab": "site/looplab/respawn-lounge.json",
+"src": "code/python/bgm.py"
 },
 {
 "id": "final-circle",
@@ -4557,9 +4637,9 @@
 "lime-green-afterparty",
 "royal-procession",
 "off-the-lines",
-"midnight-drift",
-"storm-closing",
-"squeak-sprint"
+"bass-quake",
+"squeak-sprint",
+"midnight-drift"
 ],
 "shape": [
 "rush-hour-boost",
@@ -4587,7 +4667,9 @@
 0.97,
 0.95,
 0.18
-]
+],
+"looplab": "site/looplab/final-circle.json",
+"src": "code/python/bgm.py"
 },
 {
 "id": "pallet-path",
@@ -4658,7 +4740,9 @@
 0.96,
 0.98,
 0.47
-]
+],
+"looplab": "site/looplab/pallet-path.json",
+"src": "code/python/pokemon_gens.py"
 },
 {
 "id": "johto-morning",
@@ -4730,7 +4814,9 @@
 0.97,
 0.99,
 0.49
-]
+],
+"looplab": "site/looplab/johto-morning.json",
+"src": "code/python/pokemon_gens.py"
 },
 {
 "id": "snowpoint-trail",
@@ -4801,7 +4887,9 @@
 0.96,
 0.83,
 0.17
-]
+],
+"looplab": "site/looplab/snowpoint-trail.json",
+"src": "code/python/pokemon_gens.py"
 },
 {
 "id": "island-breeze",
@@ -4873,7 +4961,9 @@
 1.0,
 0.81,
 0.18
-]
+],
+"looplab": "site/looplab/island-breeze.json",
+"src": "code/python/pokemon_gens.py"
 },
 {
 "id": "stadium-highlands",
@@ -4945,7 +5035,9 @@
 0.98,
 0.76,
 0.18
-]
+],
+"looplab": "site/looplab/stadium-highlands.json",
+"src": "code/python/pokemon_gens.py"
 },
 {
 "id": "sunlit-plaza",
@@ -5017,7 +5109,9 @@
 0.95,
 0.8,
 0.23
-]
+],
+"looplab": "site/looplab/sunlit-plaza.json",
+"src": "code/python/pokemon_gens.py"
 },
 {
 "id": "emerald-shore-zone",
@@ -5088,7 +5182,9 @@
 0.98,
 1.0,
 0.32
-]
+],
+"looplab": "site/looplab/emerald-shore-zone.json",
+"src": "code/python/sonic_styles.py"
 },
 {
 "id": "time-warp-zone",
@@ -5157,7 +5253,9 @@
 0.96,
 0.83,
 0.27
-]
+],
+"looplab": "site/looplab/time-warp-zone.json",
+"src": "code/python/sonic_styles.py"
 },
 {
 "id": "treasure-hunt-flow",
@@ -5228,7 +5326,9 @@
 0.98,
 0.91,
 0.34
-]
+],
+"looplab": "site/looplab/treasure-hunt-flow.json",
+"src": "code/python/sonic_styles.py"
 },
 {
 "id": "rush-hour-boost",
@@ -5300,7 +5400,9 @@
 0.95,
 0.99,
 0.29
-]
+],
+"looplab": "site/looplab/rush-hour-boost.json",
+"src": "code/python/sonic_styles.py"
 },
 {
 "id": "moonlit-night-stage",
@@ -5340,8 +5442,8 @@
 "similar": [
 "boulevard-cafe",
 "haunted-manor",
-"golden-hour-breaks",
 "tiptoe-heist",
+"golden-hour-breaks",
 "window-seat",
 "light-up-the-persona"
 ],
@@ -5371,7 +5473,9 @@
 0.97,
 1.0,
 0.29
-]
+],
+"looplab": "site/looplab/moonlit-night-stage.json",
+"src": "code/python/sonic_styles.py"
 },
 {
 "id": "starlight-carnival-run",
@@ -5443,7 +5547,9 @@
 0.97,
 0.82,
 0.25
-]
+],
+"looplab": "site/looplab/starlight-carnival-run.json",
+"src": "code/python/sonic_styles.py"
 },
 {
 "id": "lime-green-afterparty",
@@ -5514,7 +5620,9 @@
 1.0,
 0.97,
 0.33
-]
+],
+"looplab": "site/looplab/lime-green-afterparty.json",
+"src": "code/python/batch_c.py"
 },
 {
 "id": "red-40-sugar-rush",
@@ -5560,7 +5668,7 @@
 "lime-green-afterparty",
 "glitter-overload",
 "storm-closing",
-"off-the-lines"
+"bass-quake"
 ],
 "shape": [
 "dark-and-wild-run",
@@ -5590,7 +5698,9 @@
 0.99,
 0.93,
 0.16
-]
+],
+"looplab": "site/looplab/red-40-sugar-rush.json",
+"src": "code/python/batch_d.py"
 },
 {
 "id": "padma-to-kyoto",
@@ -5663,7 +5773,9 @@
 0.99,
 0.91,
 0.23
-]
+],
+"looplab": "site/looplab/padma-to-kyoto.json",
+"src": "code/python/batch_d.py"
 },
 {
 "id": "arcade-heartbreak-breaks",
@@ -5737,7 +5849,9 @@
 0.95,
 0.95,
 0.78
-]
+],
+"looplab": "site/looplab/arcade-heartbreak-breaks.json",
+"src": "code/python/batch_a.py"
 },
 {
 "id": "boulevard-cafe",
@@ -5810,7 +5924,9 @@
 1.0,
 0.85,
 0.2
-]
+],
+"looplab": "site/looplab/boulevard-cafe.json",
+"src": "code/python/pokemon_gens.py"
 },
 {
 "id": "highway-escape",
@@ -5881,7 +5997,9 @@
 0.98,
 0.91,
 0.3
-]
+],
+"looplab": "site/looplab/highway-escape.json",
+"src": "code/python/sonic_styles.py"
 },
 {
 "id": "titan-undefeated",
@@ -5954,7 +6072,9 @@
 1.0,
 0.95,
 0.3
-]
+],
+"looplab": "site/looplab/titan-undefeated.json",
+"src": "code/python/sonic_styles.py"
 },
 {
 "id": "winds-of-the-world",
@@ -5999,12 +6119,12 @@
 "padma-to-kyoto"
 ],
 "shape": [
+"bass-quake",
 "double-helix",
 "tiptoe-heist",
 "johto-morning",
 "pallet-path",
-"yet-to-bloom",
-"island-time"
+"yet-to-bloom"
 ],
 "versions": [],
 "arc": [
@@ -6094,7 +6214,9 @@
 0.97,
 0.9,
 0.21
-]
+],
+"looplab": "site/looplab/sugar-cloud-smile.json",
+"src": "code/python/batch_c.py"
 },
 {
 "id": "sugar-cloud-breaks",
@@ -6130,11 +6252,11 @@
 "thumb": "site/thumbs/sugar-cloud-breaks.jpg",
 "similar": [
 "sky-piercing-breaks",
+"infinite-series-breaks",
 "last-light",
 "breeze-breaks",
 "breakcore-squared",
-"nobody-s-looking",
-"shattered-overture"
+"nobody-s-looking"
 ],
 "shape": [
 "red-40-breaks",
@@ -6164,7 +6286,9 @@
 0.92,
 0.55,
 0.09
-]
+],
+"looplab": "site/looplab/sugar-cloud-breaks.json",
+"src": "code/python/batch_c.py"
 },
 {
 "id": "lime-green-breaks",
@@ -6237,7 +6361,9 @@
 0.99,
 0.61,
 0.21
-]
+],
+"looplab": "site/looplab/lime-green-breaks.json",
+"src": "code/python/batch_c.py"
 },
 {
 "id": "padma-to-kyoto-breaks",
@@ -6311,7 +6437,9 @@
 0.42,
 0.58,
 0.09
-]
+],
+"looplab": "site/looplab/padma-to-kyoto-breaks.json",
+"src": "code/python/batch_d.py"
 },
 {
 "id": "grassland-hop",
@@ -6383,7 +6511,9 @@
 0.98,
 0.94,
 0.1
-]
+],
+"looplab": "site/looplab/grassland-hop.json",
+"src": "code/python/mario_worlds.py"
 },
 {
 "id": "desert-dunes",
@@ -6454,7 +6584,9 @@
 0.95,
 0.93,
 0.21
-]
+],
+"looplab": "site/looplab/desert-dunes.json",
+"src": "code/python/mario_worlds.py"
 },
 {
 "id": "snowcap-slide",
@@ -6523,7 +6655,9 @@
 0.97,
 0.89,
 0.2
-]
+],
+"looplab": "site/looplab/snowcap-slide.json",
+"src": "code/python/mario_worlds.py"
 },
 {
 "id": "coconut-cove",
@@ -6594,7 +6728,9 @@
 0.98,
 0.82,
 0.22
-]
+],
+"looplab": "site/looplab/coconut-cove.json",
+"src": "code/python/mario_worlds.py"
 },
 {
 "id": "mushroom-woods",
@@ -6667,7 +6803,9 @@
 0.97,
 0.94,
 0.23
-]
+],
+"looplab": "site/looplab/mushroom-woods.json",
+"src": "code/python/mario_worlds.py"
 },
 {
 "id": "cliffside-climb",
@@ -6739,7 +6877,9 @@
 1.0,
 0.96,
 0.19
-]
+],
+"looplab": "site/looplab/cliffside-climb.json",
+"src": "code/python/mario_worlds.py"
 },
 {
 "id": "cloudtop-athletic",
@@ -6808,7 +6948,9 @@
 1.0,
 0.83,
 0.05
-]
+],
+"looplab": "site/looplab/cloudtop-athletic.json",
+"src": "code/python/mario_worlds.py"
 },
 {
 "id": "magma-fortress",
@@ -6882,7 +7024,9 @@
 1.0,
 0.92,
 0.18
-]
+],
+"looplab": "site/looplab/magma-fortress.json",
+"src": "code/python/mario_worlds.py"
 },
 {
 "id": "starry-road",
@@ -6922,8 +7066,8 @@
 "similar": [
 "sunlit-plaza",
 "boundless-run",
-"see-you-next-drop",
 "holler-hoedown",
+"see-you-next-drop",
 "arcade-heartbreak-2005",
 "blue-spark-runaway"
 ],
@@ -6953,7 +7097,9 @@
 1.0,
 0.95,
 0.11
-]
+],
+"looplab": "site/looplab/starry-road.json",
+"src": "code/python/mario_worlds.py"
 },
 {
 "id": "pipe-cavern",
@@ -6992,8 +7138,8 @@
 "thumb": "site/thumbs/pipe-cavern.jpg",
 "similar": [
 "grassland-hop",
-"mushroom-woods",
 "midnight-mirage",
+"mushroom-woods",
 "treasure-hunt-flow",
 "youth-in-bloom",
 "coconut-cove"
@@ -7024,7 +7170,9 @@
 0.95,
 0.98,
 0.17
-]
+],
+"looplab": "site/looplab/pipe-cavern.json",
+"src": "code/python/mario_worlds.py"
 },
 {
 "id": "coral-waltz",
@@ -7171,7 +7319,9 @@
 0.89,
 0.8,
 0.29
-]
+],
+"looplab": "site/looplab/haunted-manor.json",
+"src": "code/python/mario_worlds.py"
 },
 {
 "id": "shellfire-castle",
@@ -7215,8 +7365,8 @@
 "ringworld-vigil",
 "homebase-rising",
 "stadium-highlands",
-"final-zone-countdown",
-"royal-procession"
+"royal-procession",
+"final-zone-countdown"
 ],
 "shape": [
 "cliffside-climb",
@@ -7244,7 +7394,9 @@
 1.0,
 0.96,
 0.18
-]
+],
+"looplab": "site/looplab/shellfire-castle.json",
+"src": "code/python/mario_worlds.py"
 },
 {
 "id": "glitter-overload",
@@ -7319,7 +7471,9 @@
 1.0,
 1.0,
 0.43
-]
+],
+"looplab": "site/looplab/glitter-overload.json",
+"src": "code/python/hyperpop2.py"
 },
 {
 "id": "bitcrushed-daydream",
@@ -7388,7 +7542,9 @@
 1.0,
 0.99,
 0.34
-]
+],
+"looplab": "site/looplab/bitcrushed-daydream.json",
+"src": "code/python/hyperpop2.py"
 },
 {
 "id": "static-tears",
@@ -7459,7 +7615,9 @@
 0.95,
 1.0,
 0.43
-]
+],
+"looplab": "site/looplab/static-tears.json",
+"src": "code/python/hyperpop2.py"
 },
 {
 "id": "nightcore-rush",
@@ -7531,7 +7689,9 @@
 0.98,
 0.97,
 0.3
-]
+],
+"looplab": "site/looplab/nightcore-rush.json",
+"src": "code/python/hyperpop2.py"
 },
 {
 "id": "menu-drift",
@@ -7601,7 +7761,9 @@
 0.94,
 0.59,
 0.29
-]
+],
+"looplab": "site/looplab/menu-drift.json",
+"src": "code/python/bgm.py"
 },
 {
 "id": "skyscraper-sprint",
@@ -7672,7 +7834,9 @@
 0.96,
 0.71,
 0.15
-]
+],
+"looplab": "site/looplab/skyscraper-sprint.json",
+"src": "code/python/pokemon_gens.py"
 },
 {
 "id": "red-40-breaks",
@@ -7717,8 +7881,8 @@
 "red-40-sugar-rush",
 "bitcrushed-daydream",
 "blue-spark-runaway",
-"pixel-heart-dnb",
-"glitter-overload"
+"glitter-overload",
+"pixel-heart-dnb"
 ],
 "shape": [
 "lime-green-breaks",
@@ -7748,7 +7912,9 @@
 0.92,
 0.42,
 0.15
-]
+],
+"looplab": "site/looplab/red-40-breaks.json",
+"src": "code/python/batch_d.py"
 },
 {
 "id": "aqua-tomorrow",
@@ -7819,7 +7985,9 @@
 0.96,
 0.46,
 0.25
-]
+],
+"looplab": "site/looplab/aqua-tomorrow.json",
+"src": "code/python/batch_d.py"
 },
 {
 "id": "aqua-tomorrow-breaks",
@@ -7891,7 +8059,9 @@
 0.58,
 0.32,
 0.02
-]
+],
+"looplab": "site/looplab/aqua-tomorrow-breaks.json",
+"src": "code/python/batch_d.py"
 },
 {
 "id": "pixel-heart-dnb",
@@ -7964,7 +8134,9 @@
 0.98,
 0.93,
 0.29
-]
+],
+"looplab": "site/looplab/pixel-heart-dnb.json",
+"src": "code/python/hyperpop2.py"
 },
 {
 "id": "midnight-drift",
@@ -8030,7 +8202,9 @@
 0.98,
 0.98,
 0.41
-]
+],
+"looplab": "site/looplab/midnight-drift.json",
+"src": "code/python/genres.py"
 },
 {
 "id": "neon-horizon",
@@ -8096,7 +8270,9 @@
 0.94,
 0.97,
 0.34
-]
+],
+"looplab": "site/looplab/neon-horizon.json",
+"src": "code/python/genres.py"
 },
 {
 "id": "turbo-corner",
@@ -8135,8 +8311,8 @@
 "skyscraper-sprint",
 "iron-storm-rising",
 "nightcore-rush",
-"sky-piercing-promise",
-"emerald-shore-zone"
+"bass-quake",
+"sky-piercing-promise"
 ],
 "shape": [
 "grassland-hop",
@@ -8164,7 +8340,9 @@
 0.97,
 0.91,
 0.15
-]
+],
+"looplab": "site/looplab/turbo-corner.json",
+"src": "code/python/genres.py"
 },
 {
 "id": "checkerboard-skank",
@@ -8234,7 +8412,9 @@
 1.0,
 0.82,
 0.08
-]
+],
+"looplab": "site/looplab/checkerboard-skank.json",
+"src": "code/python/genres.py"
 },
 {
 "id": "island-time",
@@ -8283,9 +8463,9 @@
 "gold-rush-garage",
 "neon-horizon",
 "johto-morning",
+"bass-quake",
 "pallet-path",
-"tiptoe-heist",
-"midnight-mirage"
+"tiptoe-heist"
 ],
 "versions": [],
 "arc": [
@@ -8305,7 +8485,9 @@
 1.0,
 0.96,
 0.5
-]
+],
+"looplab": "site/looplab/island-time.json",
+"src": "code/python/genres.py"
 },
 {
 "id": "log-drum-sunset",
@@ -8377,7 +8559,9 @@
 0.94,
 0.92,
 0.25
-]
+],
+"looplab": "site/looplab/log-drum-sunset.json",
+"src": "code/python/genres.py"
 },
 {
 "id": "holler-hoedown",
@@ -8446,7 +8630,9 @@
 1.0,
 0.84,
 0.11
-]
+],
+"looplab": "site/looplab/holler-hoedown.json",
+"src": "code/python/genres.py"
 },
 {
 "id": "tokyo-sunset-drive",
@@ -8516,7 +8702,9 @@
 1.0,
 0.84,
 0.21
-]
+],
+"looplab": "site/looplab/tokyo-sunset-drive.json",
+"src": "code/python/genres.py"
 },
 {
 "id": "squeak-sprint",
@@ -8554,9 +8742,9 @@
 "turbo-corner",
 "nightcore-rush",
 "iron-storm-rising",
-"eolssu-groove",
+"bass-quake",
 "lime-green-breaks",
-"skyscraper-sprint"
+"eolssu-groove"
 ],
 "shape": [
 "treasure-hunt-flow",
@@ -8584,7 +8772,9 @@
 0.99,
 0.97,
 0.19
-]
+],
+"looplab": "site/looplab/squeak-sprint.json",
+"src": "code/python/genres.py"
 },
 {
 "id": "indigo-fields",
@@ -8626,8 +8816,8 @@
 "similar": [
 "riverbank-evening",
 "yet-to-bloom",
-"morning-over-the-valley",
 "island-time",
+"morning-over-the-valley",
 "life-goes-slow",
 "padma-to-kyoto"
 ],
@@ -8657,7 +8847,9 @@
 0.88,
 0.49,
 0.19
-]
+],
+"looplab": "site/looplab/indigo-fields.json",
+"src": "code/python/bts_solos.py"
 },
 {
 "id": "starlit-orbit",
@@ -8730,7 +8922,9 @@
 0.58,
 0.52,
 0.05
-]
+],
+"looplab": "site/looplab/starlit-orbit.json",
+"src": "code/python/bts_solos.py"
 },
 {
 "id": "street-neuron",
@@ -8802,7 +8996,9 @@
 1.0,
 0.96,
 0.84
-]
+],
+"looplab": "site/looplab/street-neuron.json",
+"src": "code/python/bts_solos.py"
 },
 {
 "id": "velvet-layover",
@@ -8874,7 +9070,9 @@
 0.75,
 0.4,
 0.28
-]
+],
+"looplab": "site/looplab/velvet-layover.json",
+"src": "code/python/bts_solos.py"
 },
 {
 "id": "infinite-series",
@@ -8924,7 +9122,9 @@
 "final-circle",
 "highway-escape"
 ],
-"versions": [],
+"versions": [
+"infinite-series-breaks"
+],
 "arc": [
 0.54,
 0.7,
@@ -8942,7 +9142,9 @@
 0.99,
 0.88,
 0.13
-]
+],
+"looplab": "site/looplab/infinite-series.json",
+"src": "code/python/mathsong.py"
 },
 {
 "id": "level-up-rush",
@@ -9013,7 +9215,9 @@
 0.97,
 0.87,
 0.31
-]
+],
+"looplab": "site/looplab/level-up-rush.json",
+"src": "code/python/bgm.py"
 },
 {
 "id": "royal-procession",
@@ -9055,8 +9259,8 @@
 "lime-green-afterparty",
 "final-circle",
 "off-the-lines",
-"daily-poke-catch-mythic-battle",
 "eolssu-groove",
+"daily-poke-catch-mythic-battle",
 "march-of-seven"
 ],
 "shape": [
@@ -9085,7 +9289,9 @@
 0.79,
 0.55,
 0.22
-]
+],
+"looplab": "site/looplab/royal-procession.json",
+"src": "code/python/bts_solos.py"
 },
 {
 "id": "oops-again",
@@ -9157,7 +9363,9 @@
 0.88,
 0.56,
 0.05
-]
+],
+"looplab": "site/looplab/oops-again.json",
+"src": "code/python/batch_e.py"
 },
 {
 "id": "tiptoe-heist",
@@ -9227,7 +9435,9 @@
 0.95,
 1.0,
 0.41
-]
+],
+"looplab": "site/looplab/tiptoe-heist.json",
+"src": "code/python/batch_e.py"
 },
 {
 "id": "final-zone-countdown",
@@ -9298,7 +9508,9 @@
 0.98,
 0.57,
 0.11
-]
+],
+"looplab": "site/looplab/final-zone-countdown.json",
+"src": "code/python/batch_e.py"
 },
 {
 "id": "see-you-next-drop",
@@ -9339,8 +9551,8 @@
 "rush-hour-boost",
 "arcade-heartbreak-2005",
 "johto-morning",
-"starry-road",
-"light-up-the-persona"
+"light-up-the-persona",
+"starry-road"
 ],
 "shape": [
 "menu-drift",
@@ -9368,7 +9580,9 @@
 0.8,
 0.08,
 0.0
-]
+],
+"looplab": "site/looplab/see-you-next-drop.json",
+"src": "code/python/batch_e.py"
 },
 {
 "id": "midnight-mirage",
@@ -9439,7 +9653,9 @@
 0.93,
 0.82,
 0.1
-]
+],
+"looplab": "site/looplab/midnight-mirage.json",
+"src": "code/python/bts_solos.py"
 },
 {
 "id": "gold-rush-garage",
@@ -9481,8 +9697,8 @@
 "thumb": "site/thumbs/gold-rush-garage.jpg",
 "similar": [
 "sugar-cloud-smile",
-"lime-green-afterparty",
 "yet-to-bloom",
+"lime-green-afterparty",
 "tokyo-sunset-drive",
 "lobby-loop",
 "respawn-lounge"
@@ -9513,7 +9729,9 @@
 1.0,
 0.96,
 0.29
-]
+],
+"looplab": "site/looplab/gold-rush-garage.json",
+"src": "code/python/bts_solos.py"
 },
 {
 "id": "breakcore-squared",
@@ -9554,9 +9772,9 @@
 "last-light",
 "breeze-breaks",
 "sky-piercing-breaks",
+"infinite-series-breaks",
 "sugar-cloud-breaks",
-"iron-storm-breaks",
-"nobody-s-looking"
+"iron-storm-breaks"
 ],
 "shape": [
 "heatwave-arcade",
@@ -9584,7 +9802,9 @@
 0.52,
 0.41,
 0.1
-]
+],
+"looplab": "site/looplab/breakcore-squared.json",
+"src": "code/python/batch_e.py"
 },
 {
 "id": "comeback-rising",
@@ -9657,7 +9877,152 @@
 0.99,
 0.79,
 0.2
-]
+],
+"looplab": "site/looplab/comeback-rising.json",
+"src": "code/python/batch_e.py"
+},
+{
+"id": "bass-quake",
+"title": "Bass Quake",
+"file": "songs/youtube/Bass Quake.mp3",
+"video": "videos/YouTube - Bass Quake.mp4",
+"card": "cards/YouTube - Bass Quake.png",
+"tempo": 140,
+"style": "dubstep",
+"feel": "Dubstep: build-ups, then half-time drops with a wobble bass and a pluck melody",
+"good": "Hype edits, montages",
+"colors": [
+"#1a0533",
+"#5a0fa8",
+"#00f0ff",
+"#0d021a",
+"#ffffff"
+],
+"order": 136,
+"groups": [],
+"genres": [
+"Electronic & dance"
+],
+"moods": [
+"Hype"
+],
+"duration": 80.1,
+"loop": [
+6.8571,
+48.0
+],
+"energy": 0.756,
+"thumb": "site/thumbs/bass-quake.jpg",
+"similar": [
+"squeak-sprint",
+"lime-green-afterparty",
+"turbo-corner",
+"final-circle",
+"red-40-sugar-rush",
+"overclocked"
+],
+"shape": [
+"johto-morning",
+"pallet-path",
+"island-time",
+"tiptoe-heist",
+"sugar-cloud-smile",
+"gold-rush-garage"
+],
+"versions": [],
+"arc": [
+0.44,
+0.64,
+0.72,
+0.72,
+0.67,
+0.82,
+0.97,
+0.95,
+0.77,
+0.72,
+0.71,
+0.67,
+0.86,
+1.0,
+0.94,
+0.5
+],
+"looplab": "site/looplab/bass-quake.json",
+"src": "code/python/genres.py"
+},
+{
+"id": "infinite-series-breaks",
+"title": "Infinite Series Breaks",
+"file": "songs/youtube/Infinite Series Breaks.mp3",
+"video": "videos/YouTube - Infinite Series Breaks.mp4",
+"card": "cards/YouTube - Infinite Series Breaks.png",
+"tempo": 174,
+"style": "math breakcore",
+"feel": "Steady breakcore with pi and e as melodies, prime-number bells and a Zeno ending",
+"good": "Smart plays, montages",
+"colors": [
+"#051a1a",
+"#0f5a5a",
+"#9fffe0",
+"#020d0d",
+"#ffffff"
+],
+"order": 137,
+"groups": [
+"Breakcore",
+"Math"
+],
+"genres": [
+"Breakcore"
+],
+"moods": [],
+"duration": 87.6,
+"loop": [
+16.5517,
+27.5863
+],
+"energy": 0.719,
+"thumb": "site/thumbs/infinite-series-breaks.jpg",
+"similar": [
+"sky-piercing-breaks",
+"sugar-cloud-breaks",
+"breeze-breaks",
+"last-light",
+"breakcore-squared",
+"nobody-s-looking"
+],
+"shape": [
+"breeze-breaks",
+"last-light",
+"iron-storm-breaks",
+"window-seat",
+"monsoon-breaks",
+"sky-piercing-breaks"
+],
+"versions": [
+"infinite-series"
+],
+"arc": [
+0.4,
+0.53,
+0.56,
+0.9,
+0.87,
+0.88,
+0.88,
+0.73,
+0.7,
+0.96,
+1.0,
+0.97,
+0.99,
+0.47,
+0.47,
+0.19
+],
+"looplab": "site/looplab/infinite-series-breaks.json",
+"src": "code/python/batch_e.py"
 }
 ]
 }

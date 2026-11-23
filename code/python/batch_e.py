@@ -60,10 +60,8 @@ def put_layer(M, layer, pat, t0, st, gain, pan=0.):
 def triple_breaks(M, sec, i, t0, st, tones, root):
     if sec not in ('dropA', 'dropB'): return
     K3 = kit3(st); bar = i % 2; pat = PATS['P3' if sec == 'dropA' else 'P1']
-    put_layer(M, K3['hi'], pat[bar * 16:(bar + 1) * 16], t0, st, .55, (-.35, .35)[i % 2])
-    put_layer(M, K3['lo'], list(range(bar * 16, bar * 16 + 16)), t0, st, .7)
-    for base in (6, 14):
-        for j in range(4): snare(M, t0 + (base + j / 2) * st, .16 + .05 * j)
+    put_layer(M, K3['hi'], pat[bar * 16:(bar + 1) * 16], t0, st, .4, (-.4, .4)[i % 2])   # the extra layers sit lower so they don't smear the main break
+    put_layer(M, K3['lo'], list(range(bar * 16, bar * 16 + 16)), t0, st, .5)
 CUBE = {}
 def cube_end(M, t_out, st, B, nb, ch):   # the layers leave one at a time: three breaks, then two, then one, then the piano alone
     CUBE['t'] = t_out; K3 = kit3(st); main, n = make_kit(st, dict(FUNK, crunch=2.3, punch=1.35, clap=.4))
@@ -74,8 +72,10 @@ def cube_end(M, t_out, st, B, nb, ch):   # the layers leave one at a time: three
         if b < 2: put_layer(M, K3['lo'], list(range((b % 2) * 16, (b % 2) * 16 + 16)), t0, st, .7)
     tones, root = ch[0]
     for c in [root + 12] + tones: piano(M, 'keys', t_out + nb * B, c + 12, 4., .35)
-CU = [[81,-1,80,78,-1,76,-1,78],[80,-1,-1,76,-1,73,-1,-1],[76,-1,78,80,-1,81,-1,83],[81,-1,-1,-1,0,0,0,0]]
-CUB = [[85,-1,83,81,-1,80,-1,81],[83,-1,-1,80,-1,76,-1,-1],[81,-1,83,85,-1,88,-1,86],[85,-1,-1,-1,-1,-1,0,0]]
+CU = [[76,-1,72,-1,69,-1,72,74],[76,-1,-1,79,-1,76,-1,-1],[77,-1,72,-1,69,-1,72,77],[76,-1,-1,72,-1,-1,0,0],      # chord tones: Am, Am, F, F
+      [79,-1,76,-1,72,-1,76,79],[84,-1,-1,79,-1,76,-1,-1],[80,-1,76,-1,71,-1,74,76],[80,-1,-1,-1,-1,-1,0,0]]      # C, C, E, E
+CUB = [[81,-1,79,76,-1,72,-1,76],[79,-1,-1,76,-1,72,-1,-1],[81,-1,77,72,-1,77,-1,81],[79,-1,-1,77,-1,-1,0,0],
+       [84,-1,79,76,-1,79,-1,84],[83,-1,-1,79,-1,76,-1,-1],[83,-1,80,76,-1,80,-1,83],[80,-1,-1,-1,-1,-1,0,0]]
 
 # ================= Infinite Series Breaks =================
 def zeno_end(M, t_out, st, B, nb, ch):
@@ -90,7 +90,7 @@ BC = {
    melody=blocks(SQ), melodyB=blocks(SQB), seed=301, extra=double_breaks, levels={'sub': .45, 'break': 1.15}, mus_gap=7.,
    ending='custom', ending_fn=breaks_solo_end),
  'cubed': dict(file='Breakcore_Cubed', title='Breakcore Cubed', bpm=190, chords=['Am', 'F', 'C', 'E'], keys='piano', pad=.05, outro_breaks=False,
-   mel='lead', melB='lead', layerB='strings', bass='sub', kit=dict(FUNK, crunch=2.3, punch=1.35, clap=.4), patA='P2', patB='P4',
+   mel='piano', melB='lead', layerB='piano', bass='sub', kit=dict(FUNK, crunch=2.1, punch=1.35, clap=.4), patA='P0', patB='P3',
    melody=blocks(CU), melodyB=blocks(CUB), seed=333, extra=triple_breaks, levels={'sub': .35, 'break': 1.1}, mus_gap=7.,
    ending='custom', ending_fn=cube_end),
  'math_bc': dict(file='Infinite_Series_Breaks', title='Infinite Series Breaks', bpm=174, chords=['Am', 'F', 'C', 'G'], keys='piano', pad=.05,

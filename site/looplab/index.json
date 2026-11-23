@@ -1,0 +1,667 @@
+{
+"schoolyard-riot": {
+"file": "site/looplab/schoolyard-riot.json",
+"src": "code/python/bts_albums.py",
+"key": "school"
+},
+"dark-and-wild-run": {
+"file": "site/looplab/dark-and-wild-run.json",
+"src": "code/python/bts_albums.py",
+"key": "dark"
+},
+"youth-in-bloom": {
+"file": "site/looplab/youth-in-bloom.json",
+"src": "code/python/bts_albums.py",
+"key": "hyyh"
+},
+"velvet-wings": {
+"file": "site/looplab/velvet-wings.json",
+"src": "code/python/bts_albums.py",
+"key": "wings"
+},
+"double-helix": {
+"file": "site/looplab/double-helix.json",
+"src": "code/python/bts_albums.py",
+"key": "her"
+},
+"fragile-mask": {
+"file": "site/looplab/fragile-mask.json",
+"src": "code/python/bts_albums.py",
+"key": "tear"
+},
+"eolssu-groove": {
+"file": "site/looplab/eolssu-groove.json",
+"src": "code/python/bts_albums.py",
+"key": "answer"
+},
+"light-up-the-persona": {
+"file": "site/looplab/light-up-the-persona.json",
+"src": "code/python/bts_albums.py",
+"key": "persona"
+},
+"march-of-seven": {
+"file": "site/looplab/march-of-seven.json",
+"src": "code/python/bts_albums.py",
+"key": "seven"
+},
+"life-goes-slow": {
+"file": "site/looplab/life-goes-slow.json",
+"src": "code/python/bts_albums.py",
+"key": "be"
+},
+"yet-to-bloom": {
+"file": "site/looplab/yet-to-bloom.json",
+"src": "code/python/bts_albums.py",
+"key": "proof"
+},
+"arirang-dawn": {
+"file": "site/looplab/arirang-dawn.json",
+"src": "code/python/bts_albums.py",
+"key": "arirang"
+},
+"sky-piercing-promise": {
+"file": "site/looplab/sky-piercing-promise.json",
+"src": "code/python/batch_a.py",
+"key": "anime"
+},
+"sky-piercing-breaks": {
+"file": "site/looplab/sky-piercing-breaks.json",
+"src": "code/python/batch_a.py",
+"key": "anime_bc"
+},
+"arcade-heartbreak-2005": {
+"file": "site/looplab/arcade-heartbreak-2005.json",
+"src": "code/python/batch_a.py",
+"key": "south"
+},
+"arcade-heartbreak-breaks": {
+"file": "site/looplab/arcade-heartbreak-breaks.json",
+"src": "code/python/batch_a.py",
+"key": "south_bc"
+},
+"iron-storm-rising": {
+"file": "site/looplab/iron-storm-rising.json",
+"src": "code/python/batch_a.py",
+"key": "metal"
+},
+"iron-storm-breaks": {
+"file": "site/looplab/iron-storm-breaks.json",
+"src": "code/python/batch_a.py",
+"key": "metal_bc"
+},
+"respawn-lounge": {
+"file": "site/looplab/respawn-lounge.json",
+"src": "code/python/bgm.py",
+"key": "lounge"
+},
+"level-up-rush": {
+"file": "site/looplab/level-up-rush.json",
+"src": "code/python/bgm.py",
+"key": "levelup"
+},
+"menu-drift": {
+"file": "site/looplab/menu-drift.json",
+"src": "code/python/bgm.py",
+"key": "menu"
+},
+"final-circle": {
+"file": "site/looplab/final-circle.json",
+"src": "code/python/bgm.py",
+"key": "final"
+},
+"pallet-path": {
+"file": "site/looplab/pallet-path.json",
+"src": "code/python/pokemon_gens.py",
+"key": "g1"
+},
+"johto-morning": {
+"file": "site/looplab/johto-morning.json",
+"src": "code/python/pokemon_gens.py",
+"key": "g2"
+},
+"snowpoint-trail": {
+"file": "site/looplab/snowpoint-trail.json",
+"src": "code/python/pokemon_gens.py",
+"key": "g4"
+},
+"skyscraper-sprint": {
+"file": "site/looplab/skyscraper-sprint.json",
+"src": "code/python/pokemon_gens.py",
+"key": "g5"
+},
+"boulevard-cafe": {
+"file": "site/looplab/boulevard-cafe.json",
+"src": "code/python/pokemon_gens.py",
+"key": "g6"
+},
+"island-breeze": {
+"file": "site/looplab/island-breeze.json",
+"src": "code/python/pokemon_gens.py",
+"key": "g7"
+},
+"stadium-highlands": {
+"file": "site/looplab/stadium-highlands.json",
+"src": "code/python/pokemon_gens.py",
+"key": "g8"
+},
+"sunlit-plaza": {
+"file": "site/looplab/sunlit-plaza.json",
+"src": "code/python/pokemon_gens.py",
+"key": "g9"
+},
+"emerald-shore-zone": {
+"file": "site/looplab/emerald-shore-zone.json",
+"src": "code/python/sonic_styles.py",
+"key": "genesis"
+},
+"time-warp-zone": {
+"file": "site/looplab/time-warp-zone.json",
+"src": "code/python/sonic_styles.py",
+"key": "cd"
+},
+"highway-escape": {
+"file": "site/looplab/highway-escape.json",
+"src": "code/python/sonic_styles.py",
+"key": "adventure"
+},
+"treasure-hunt-flow": {
+"file": "site/looplab/treasure-hunt-flow.json",
+"src": "code/python/sonic_styles.py",
+"key": "hiphop"
+},
+"rush-hour-boost": {
+"file": "site/looplab/rush-hour-boost.json",
+"src": "code/python/sonic_styles.py",
+"key": "rush"
+},
+"moonlit-night-stage": {
+"file": "site/looplab/moonlit-night-stage.json",
+"src": "code/python/sonic_styles.py",
+"key": "jazz"
+},
+"starlight-carnival-run": {
+"file": "site/looplab/starlight-carnival-run.json",
+"src": "code/python/sonic_styles.py",
+"key": "colors"
+},
+"titan-undefeated": {
+"file": "site/looplab/titan-undefeated.json",
+"src": "code/python/sonic_styles.py",
+"key": "frontiers"
+},
+"sugar-cloud-smile": {
+"file": "site/looplab/sugar-cloud-smile.json",
+"src": "code/python/batch_c.py",
+"key": "mello"
+},
+"sugar-cloud-breaks": {
+"file": "site/looplab/sugar-cloud-breaks.json",
+"src": "code/python/batch_c.py",
+"key": "mello_bc"
+},
+"lime-green-afterparty": {
+"file": "site/looplab/lime-green-afterparty.json",
+"src": "code/python/batch_c.py",
+"key": "charli"
+},
+"lime-green-breaks": {
+"file": "site/looplab/lime-green-breaks.json",
+"src": "code/python/batch_c.py",
+"key": "charli_bc"
+},
+"red-40-sugar-rush": {
+"file": "site/looplab/red-40-sugar-rush.json",
+"src": "code/python/batch_d.py",
+"key": "red"
+},
+"red-40-breaks": {
+"file": "site/looplab/red-40-breaks.json",
+"src": "code/python/batch_d.py",
+"key": "red_bc"
+},
+"aqua-tomorrow": {
+"file": "site/looplab/aqua-tomorrow.json",
+"src": "code/python/batch_d.py",
+"key": "aero"
+},
+"aqua-tomorrow-breaks": {
+"file": "site/looplab/aqua-tomorrow-breaks.json",
+"src": "code/python/batch_d.py",
+"key": "aero_bc"
+},
+"padma-to-kyoto": {
+"file": "site/looplab/padma-to-kyoto.json",
+"src": "code/python/batch_d.py",
+"key": "bdjp"
+},
+"padma-to-kyoto-breaks": {
+"file": "site/looplab/padma-to-kyoto-breaks.json",
+"src": "code/python/batch_d.py",
+"key": "bdjp_bc"
+},
+"grassland-hop": {
+"file": "site/looplab/grassland-hop.json",
+"src": "code/python/mario_worlds.py",
+"key": "w1"
+},
+"desert-dunes": {
+"file": "site/looplab/desert-dunes.json",
+"src": "code/python/mario_worlds.py",
+"key": "w2"
+},
+"snowcap-slide": {
+"file": "site/looplab/snowcap-slide.json",
+"src": "code/python/mario_worlds.py",
+"key": "w3"
+},
+"coconut-cove": {
+"file": "site/looplab/coconut-cove.json",
+"src": "code/python/mario_worlds.py",
+"key": "w4"
+},
+"mushroom-woods": {
+"file": "site/looplab/mushroom-woods.json",
+"src": "code/python/mario_worlds.py",
+"key": "w5"
+},
+"cliffside-climb": {
+"file": "site/looplab/cliffside-climb.json",
+"src": "code/python/mario_worlds.py",
+"key": "w6"
+},
+"cloudtop-athletic": {
+"file": "site/looplab/cloudtop-athletic.json",
+"src": "code/python/mario_worlds.py",
+"key": "w7"
+},
+"magma-fortress": {
+"file": "site/looplab/magma-fortress.json",
+"src": "code/python/mario_worlds.py",
+"key": "w8"
+},
+"starry-road": {
+"file": "site/looplab/starry-road.json",
+"src": "code/python/mario_worlds.py",
+"key": "w9"
+},
+"pipe-cavern": {
+"file": "site/looplab/pipe-cavern.json",
+"src": "code/python/mario_worlds.py",
+"key": "under"
+},
+"haunted-manor": {
+"file": "site/looplab/haunted-manor.json",
+"src": "code/python/mario_worlds.py",
+"key": "ghost"
+},
+"shellfire-castle": {
+"file": "site/looplab/shellfire-castle.json",
+"src": "code/python/mario_worlds.py",
+"key": "castle"
+},
+"glitter-overload": {
+"file": "site/looplab/glitter-overload.json",
+"src": "code/python/hyperpop2.py",
+"key": "bubble"
+},
+"bitcrushed-daydream": {
+"file": "site/looplab/bitcrushed-daydream.json",
+"src": "code/python/hyperpop2.py",
+"key": "glitch"
+},
+"pixel-heart-dnb": {
+"file": "site/looplab/pixel-heart-dnb.json",
+"src": "code/python/hyperpop2.py",
+"key": "dnb"
+},
+"static-tears": {
+"file": "site/looplab/static-tears.json",
+"src": "code/python/hyperpop2.py",
+"key": "emo"
+},
+"nightcore-rush": {
+"file": "site/looplab/nightcore-rush.json",
+"src": "code/python/hyperpop2.py",
+"key": "nightcore"
+},
+"midnight-drift": {
+"file": "site/looplab/midnight-drift.json",
+"src": "code/python/genres.py",
+"key": "phonk"
+},
+"neon-horizon": {
+"file": "site/looplab/neon-horizon.json",
+"src": "code/python/genres.py",
+"key": "synthwave"
+},
+"bass-quake": {
+"file": "site/looplab/bass-quake.json",
+"src": "code/python/genres.py",
+"key": "dubstep"
+},
+"turbo-corner": {
+"file": "site/looplab/turbo-corner.json",
+"src": "code/python/genres.py",
+"key": "eurobeat"
+},
+"checkerboard-skank": {
+"file": "site/looplab/checkerboard-skank.json",
+"src": "code/python/genres.py",
+"key": "ska"
+},
+"island-time": {
+"file": "site/looplab/island-time.json",
+"src": "code/python/genres.py",
+"key": "reggae"
+},
+"log-drum-sunset": {
+"file": "site/looplab/log-drum-sunset.json",
+"src": "code/python/genres.py",
+"key": "amapiano"
+},
+"holler-hoedown": {
+"file": "site/looplab/holler-hoedown.json",
+"src": "code/python/genres.py",
+"key": "bluegrass"
+},
+"tokyo-sunset-drive": {
+"file": "site/looplab/tokyo-sunset-drive.json",
+"src": "code/python/genres.py",
+"key": "citypop"
+},
+"squeak-sprint": {
+"file": "site/looplab/squeak-sprint.json",
+"src": "code/python/genres.py",
+"key": "jersey"
+},
+"indigo-fields": {
+"file": "site/looplab/indigo-fields.json",
+"src": "code/python/bts_solos.py",
+"key": "rm"
+},
+"starlit-orbit": {
+"file": "site/looplab/starlit-orbit.json",
+"src": "code/python/bts_solos.py",
+"key": "jin"
+},
+"royal-procession": {
+"file": "site/looplab/royal-procession.json",
+"src": "code/python/bts_solos.py",
+"key": "suga"
+},
+"street-neuron": {
+"file": "site/looplab/street-neuron.json",
+"src": "code/python/bts_solos.py",
+"key": "jhope"
+},
+"midnight-mirage": {
+"file": "site/looplab/midnight-mirage.json",
+"src": "code/python/bts_solos.py",
+"key": "jimin"
+},
+"velvet-layover": {
+"file": "site/looplab/velvet-layover.json",
+"src": "code/python/bts_solos.py",
+"key": "v"
+},
+"gold-rush-garage": {
+"file": "site/looplab/gold-rush-garage.json",
+"src": "code/python/bts_solos.py",
+"key": "jk"
+},
+"breakcore-squared": {
+"file": "site/looplab/breakcore-squared.json",
+"src": "code/python/batch_e.py",
+"key": "squared"
+},
+"breakcore-cubed": {
+"file": "site/looplab/breakcore-cubed.json",
+"src": "code/python/batch_e.py",
+"key": "cubed"
+},
+"infinite-series-breaks": {
+"file": "site/looplab/infinite-series-breaks.json",
+"src": "code/python/batch_e.py",
+"key": "math_bc"
+},
+"oops-again": {
+"file": "site/looplab/oops-again.json",
+"src": "code/python/batch_e.py",
+"key": "oops"
+},
+"tiptoe-heist": {
+"file": "site/looplab/tiptoe-heist.json",
+"src": "code/python/batch_e.py",
+"key": "heist"
+},
+"final-zone-countdown": {
+"file": "site/looplab/final-zone-countdown.json",
+"src": "code/python/batch_e.py",
+"key": "countdown"
+},
+"comeback-rising": {
+"file": "site/looplab/comeback-rising.json",
+"src": "code/python/batch_e.py",
+"key": "comeback"
+},
+"see-you-next-drop": {
+"file": "site/looplab/see-you-next-drop.json",
+"src": "code/python/batch_e.py",
+"key": "endscreen"
+},
+"last-light": {
+"file": "site/looplab/last-light.json",
+"src": "code/python/seasons.py",
+"key": "sad"
+},
+"first-bloom": {
+"file": "site/looplab/first-bloom.json",
+"src": "code/python/seasons.py",
+"key": "spring"
+},
+"heatwave-arcade": {
+"file": "site/looplab/heatwave-arcade.json",
+"src": "code/python/seasons.py",
+"key": "summer"
+},
+"amber-leaves": {
+"file": "site/looplab/amber-leaves.json",
+"src": "code/python/seasons.py",
+"key": "autumn"
+},
+"frostline": {
+"file": "site/looplab/frostline.json",
+"src": "code/python/seasons.py",
+"key": "winter"
+},
+"window-seat": {
+"file": "site/looplab/window-seat.json",
+"src": "code/python/seasons.py",
+"key": "rain"
+},
+"lightning-over-the-city": {
+"file": "site/looplab/lightning-over-the-city.json",
+"src": "code/python/seasons.py",
+"key": "storm"
+},
+"lantern-in-the-fog": {
+"file": "site/looplab/lantern-in-the-fog.json",
+"src": "code/python/seasons.py",
+"key": "fog"
+},
+"kite-season": {
+"file": "site/looplab/kite-season.json",
+"src": "code/python/seasons.py",
+"key": "wind"
+},
+"golden-hour-breaks": {
+"file": "site/looplab/golden-hour-breaks.json",
+"src": "code/python/styles_breakcore.py",
+"key": "bts"
+},
+"blue-spark-breaks": {
+"file": "site/looplab/blue-spark-breaks.json",
+"src": "code/python/styles_breakcore.py",
+"key": "txt"
+},
+"off-the-lines-breaks": {
+"file": "site/looplab/off-the-lines-breaks.json",
+"src": "code/python/styles_breakcore.py",
+"key": "cortis"
+},
+"lanterns-and-thunder-drums": {
+"file": "site/looplab/lanterns-and-thunder-drums.json",
+"src": "code/python/styles_breakcore.py",
+"key": "asia"
+},
+"breeze-breaks": {
+"file": "site/looplab/breeze-breaks.json",
+"src": "code/python/styles_breakcore.py",
+"key": "kaze"
+},
+"golazo-anthem": {
+"file": "site/looplab/golazo-anthem.json",
+"src": "code/python/sports.py",
+"key": "soccer"
+},
+"full-court-press": {
+"file": "site/looplab/full-court-press.json",
+"src": "code/python/sports.py",
+"key": "basketball"
+},
+"fourth-and-goal": {
+"file": "site/looplab/fourth-and-goal.json",
+"src": "code/python/sports.py",
+"key": "football"
+},
+"seventh-inning-swing": {
+"file": "site/looplab/seventh-inning-swing.json",
+"src": "code/python/sports.py",
+"key": "baseball"
+},
+"ice-time": {
+"file": "site/looplab/ice-time.json",
+"src": "code/python/sports.py",
+"key": "hockey"
+},
+"match-point": {
+"file": "site/looplab/match-point.json",
+"src": "code/python/sports.py",
+"key": "tennis"
+},
+"beach-spike": {
+"file": "site/looplab/beach-spike.json",
+"src": "code/python/sports.py",
+"key": "volleyball"
+},
+"powder-run": {
+"file": "site/looplab/powder-run.json",
+"src": "code/python/sports.py",
+"key": "skiing"
+},
+"shuttle-rally": {
+"file": "site/looplab/shuttle-rally.json",
+"src": "code/python/sports.py",
+"key": "badminton"
+},
+"huck-it": {
+"file": "site/looplab/huck-it.json",
+"src": "code/python/sports.py",
+"key": "frisbee"
+},
+"stride-176": {
+"file": "site/looplab/stride-176.json",
+"src": "code/python/sports.py",
+"key": "running"
+},
+"easy-pace": {
+"file": "site/looplab/easy-pace.json",
+"src": "code/python/sports.py",
+"key": "jogging"
+},
+"sunday-stroll": {
+"file": "site/looplab/sunday-stroll.json",
+"src": "code/python/sports.py",
+"key": "walking"
+},
+"collatz-climb": {
+"file": "site/looplab/collatz-climb.json",
+"src": "code/python/math2.py",
+"key": "collatz"
+},
+"prime-time": {
+"file": "site/looplab/prime-time.json",
+"src": "code/python/math2.py",
+"key": "primes"
+},
+"sierpinski-steps": {
+"file": "site/looplab/sierpinski-steps.json",
+"src": "code/python/math2.py",
+"key": "sierpinski"
+},
+"fourier-rise": {
+"file": "site/looplab/fourier-rise.json",
+"src": "code/python/math2.py",
+"key": "fourier"
+},
+"spelled-in-notes": {
+"file": "site/looplab/spelled-in-notes.json",
+"src": "code/python/concepts.py",
+"key": "words"
+},
+"polygon-party": {
+"file": "site/looplab/polygon-party.json",
+"src": "code/python/concepts.py",
+"key": "shapes"
+},
+"rainbow-spectrum": {
+"file": "site/looplab/rainbow-spectrum.json",
+"src": "code/python/concepts.py",
+"key": "colors"
+},
+"infinite-series": {
+"file": "site/looplab/infinite-series.json",
+"src": "code/python/mathsong.py",
+"key": null
+},
+"victory-rush": {
+"file": "site/looplab/victory-rush.json",
+"src": null,
+"key": null
+},
+"storm-closing": {
+"file": "site/looplab/storm-closing.json",
+"src": null,
+"key": null
+},
+"lobby-loop": {
+"file": "site/looplab/lobby-loop.json",
+"src": null,
+"key": null
+},
+"channel-plaza": {
+"file": "site/looplab/channel-plaza.json",
+"src": null,
+"key": null
+},
+"frosty-podium": {
+"file": "site/looplab/frosty-podium.json",
+"src": null,
+"key": null
+},
+"coastal-route": {
+"file": "site/looplab/coastal-route.json",
+"src": null,
+"key": null
+},
+"determined-steps": {
+"file": "site/looplab/determined-steps.json",
+"src": null,
+"key": null
+},
+"static-weather": {
+"file": "site/looplab/static-weather.json",
+"src": null,
+"key": null
+}
+}

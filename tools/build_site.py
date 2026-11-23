@@ -168,6 +168,10 @@ for i, s in enumerate(songs):
     s['versions'] = [o['id'] for o in songs if o is not s and o['title'].split()[0] == base and (o['title'].endswith('Breaks') != s['title'].endswith('Breaks'))]
     s['arc'] = [round(float(v), 2) for v in s['_arc']]
 for s in songs: s.pop('_timbre'); s.pop('_arc')
+LL = json.load(open('site/looplab/index.json')) if os.path.exists('site/looplab/index.json') else {}   # from tools/to_looplab.py
+for s in songs:
+    if s['id'] in LL: s['looplab'] = LL[s['id']]['file']; s['src'] = LL[s['id']]['src']
+print('Loop Lab versions for', sum('looplab' in s for s in songs), 'of', len(songs), 'songs; missing:', [s['title'] for s in songs if 'looplab' not in s])
 songs.sort(key=lambda s: s['order'])
 json.dump(dict(count=len(songs), songs=songs), open('site/songs.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
 print('wrote site/songs.json with', len(songs), 'songs')

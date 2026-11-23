@@ -132,6 +132,8 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ('Gold Rush Garage', '126 BPM · Jung Kook solo style', ('#2a1a05', '#d9a82a', '#fff0c7', '#150d02', '#ffffff')),
     ('Breakcore Squared', '186 BPM · double breakcore', ('#05050a', '#3a0b5a', '#ff2bd6', '#020205', '#ffffff')),
     ('Comeback Rising', '128 BPM · comeback anthem', ('#0b1a3a', '#3a5fd9', '#ffd23f', '#050d20', '#ffffff')),
+    ('Bass Quake', '140 BPM · dubstep', ('#1a0533', '#5a0fa8', '#00f0ff', '#0d021a', '#ffffff')),
+    ('Infinite Series Breaks', '174 BPM · math breakcore', ('#051a1a', '#0f5a5a', '#9fffe0', '#020d0d', '#ffffff')),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 

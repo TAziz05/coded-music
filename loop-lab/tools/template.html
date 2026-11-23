@@ -2,6 +2,9 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Loop Lab</title>
+<meta name="theme-color" content="#14122b">
+<link rel="icon" href="icons/loop-lab.svg" type="image/svg+xml"><link rel="icon" href="icons/loop-lab-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="icons/loop-lab-180.png"><link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -84,9 +87,11 @@ input[type=range]{width:100%;accent-color:#ff5a36;height:32px}
 footer{text-align:center;color:#fff;font-size:14px;padding:6px 12px 30px;opacity:.92}
 @media(max-width:720px){.top{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){.big{transition:none}}
+.llbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.llbar .tool{font-size:14px;padding:7px 12px;color:inherit;text-decoration:none;display:inline-flex;align-items:center;width:auto}
 </style></head><body>
-<header class="band"><h1>Loop Lab</h1>
-<p>Build whole songs by tapping: sections, chords, melody, drums and sound effects. Every sound is made in code. No samples, no AI audio.</p></header>
+<header class="band"><h1><img src="icons/loop-lab.svg" alt="" width="44" height="44" style="vertical-align:middle;border-radius:11px;margin-right:8px">Loop Lab</h1>
+<p>Build whole songs by tapping: sections, chords, melody, drums and sound effects. Every sound is made in code. No samples, no AI audio.</p>
+<div class="llbar"><button class="tool" id="impBtn">📥 Import song code</button><button class="tool" id="expBtn">📤 Export song code</button><a class="tool" href="../">🎵 Get songs from Coded Music</a><button class="tool" id="sfxT">🔊 Button sounds</button></div></header>
 <main class="band" style="padding-top:6px">
 <section class="dev" aria-label="Loop Lab">
  <div class="top">
@@ -154,10 +159,55 @@ footer{text-align:center;color:#fff;font-size:14px;padding:6px 12px 30px;opacity
  <div class="row"><h2>Song code</h2><div class="row"><button class="tool" id="copy">Copy</button><button class="tool" id="load">Load this code</button><label class="tool" style="display:inline-flex;align-items:center;cursor:pointer">Open a file<input type="file" id="upCode" accept=".json,.txt,application/json,text/plain" class="hide"></label></div></div>
  <textarea id="code" spellcheck="false" aria-label="Song code"></textarea>
  <p class="msg" id="codeMsg"></p>
- <p>This is your whole song written as code. Copy it to save or share it, paste someone else's and press Load to open it. Sounds you upload aren't part of the code, so add them again after loading.</p>
+ <p>This is your whole song written as code. <b>Export</b> saves it as a file and <b>Copy</b> puts it on your clipboard. To bring a song in, paste its code here and press <b>Load this code</b>, open a saved file, or drag a file onto the page. Every song on the Coded Music site has an <b>Open in Loop Lab</b> button and a <b>Copy Loop Lab code</b> button. Sounds you upload aren't part of the code, so add them again after loading.</p>
 </section>
 </main>
 <footer>Loop Lab, a TAziz322 project · Coded with Claude (Opus 5.5) by Anthropic</footer>
+<script>
+/* Button sound effects for the Coded Music site and Loop Lab, synthesized with the Web Audio API (no audio files).
+   UISFX.play('click' | 'tap' | 'open' | 'close' | 'play' | 'pause' | 'on' | 'off' | 'success' | 'error' | 'whoosh' | 'sparkle')
+   UISFX.set(true/false) turns them on or off (remembered on this device). */
+window.UISFX = (() => {
+  let c = null, on = true;
+  try { on = localStorage.getItem('uisfx') !== 'off'; } catch (e) {}
+  const ctx = () => { if (!c) c = new (window.AudioContext || window.webkitAudioContext)(); if (c.state === 'suspended') c.resume(); return c; };
+  function tone(f, t, d, type = 'triangle', v = .05, f2 = null) {
+    const a = ctx(), T = a.currentTime + t, o = a.createOscillator(), g = a.createGain(), lp = a.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = 4000; o.type = type; o.frequency.setValueAtTime(f, T);
+    if (f2) o.frequency.exponentialRampToValueAtTime(f2, T + d);
+    g.gain.setValueAtTime(0, T); g.gain.linearRampToValueAtTime(v, T + .004); g.gain.exponentialRampToValueAtTime(.0001, T + d);
+    o.connect(lp).connect(g).connect(a.destination); o.start(T); o.stop(T + d + .03);
+  }
+  function noise(t, d, f0, f1, v = .05) {
+    const a = ctx(), T = a.currentTime + t, n = Math.ceil(d * a.sampleRate), b = a.createBuffer(1, n, a.sampleRate), x = b.getChannelData(0);
+    for (let i = 0; i < n; i++) x[i] = Math.random() * 2 - 1;
+    const s = a.createBufferSource(), bp = a.createBiquadFilter(), g = a.createGain(); s.buffer = b; bp.type = 'bandpass'; bp.Q.value = 2;
+    bp.frequency.setValueAtTime(f0, T); bp.frequency.exponentialRampToValueAtTime(f1, T + d);
+    g.gain.setValueAtTime(0, T); g.gain.linearRampToValueAtTime(v, T + d * .3); g.gain.exponentialRampToValueAtTime(.0001, T + d);
+    s.connect(bp).connect(g).connect(a.destination); s.start(T);
+  }
+  const SFX = {
+    click: () => tone(1500, 0, .035, 'square', .025),
+    tap: () => tone(880, 0, .06, 'triangle', .06),
+    open: () => { tone(660, 0, .07, 'triangle', .055); tone(990, .055, .1, 'triangle', .055); },
+    close: () => { tone(880, 0, .06, 'triangle', .05); tone(587, .05, .09, 'triangle', .05); },
+    play: () => tone(520, 0, .13, 'sine', .08, 1040),
+    pause: () => tone(780, 0, .11, 'sine', .07, 390),
+    on: () => { tone(700, 0, .05, 'square', .025); tone(1050, .05, .07, 'square', .025); },
+    off: () => { tone(1050, 0, .05, 'square', .025); tone(700, .05, .07, 'square', .025); },
+    success: () => [523, 659, 784, 1047].forEach((f, i) => tone(f, i * .06, .14, 'triangle', .055)),
+    error: () => tone(240, 0, .2, 'sawtooth', .035, 150),
+    whoosh: () => noise(0, .35, 400, 4000, .06),
+    sparkle: () => [1319, 1568, 1976, 2637].forEach((f, i) => tone(f, i * .045, .12, 'sine', .035)),
+  };
+  return {
+    play(name) { if (on && SFX[name]) try { SFX[name](); } catch (e) {} },
+    get on() { return on; },
+    set(v) { on = !!v; try { localStorage.setItem('uisfx', on ? 'on' : 'off'); } catch (e) {} }
+  };
+})();
+
+</script>
 <script>
 {
 const PRESETS=__PRESETS__;
@@ -371,6 +421,7 @@ function code(){let j=JSON.stringify(S,null,2);j=j.replace(/\[\s+([^\[\]{}]*?)\s
 function preview(fn){ensure();fn(bus,A.currentTime+.01)}
 /* ---------- events ---------- */
 document.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;const sec=S.sections[cur],d=t.dataset;
+ if(t.classList.contains('tool')||d.p!==undefined||d.a!==undefined||d.s!==undefined)UISFX.play(d.p!==undefined?'open':'click');
  if(t.id==='pSong')return mode==='song'?stop():start('song');
  if(t.id==='pSec')return mode==='sec'?stop():start('sec');
  if(d.p!==undefined){stop();hist.push(JSON.stringify(S));S=norm(+d.p<0?{name:'New song',sections:[blankSection('Verse',4)]}:JSON.parse(JSON.stringify(PRESETS[+d.p])));cur=0;slot=0;bar=0;win=null;chordEdit=-1;render();return}
@@ -397,7 +448,14 @@ document.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)r
   case'clrMel':edit(()=>{sec.melody=[]});return;
   case'render':return renderSong(t);
   case'copy':navigator.clipboard.writeText($('code').value).then(()=>msg('codeMsg','Copied. Paste it anywhere to save it.')).catch(()=>{$('code').select();msg('codeMsg','Select all the code and copy it.')});return;
-  case'load':return loadCode($('code').value)}});
+  case'load':return loadCode($('code').value);
+  case'impBtn':$('code').scrollIntoView({behavior:'smooth',block:'center'});$('code').focus();$('code').select();msg('codeMsg','Paste a song code here and press Load this code, or open a saved file.');return;
+  case'expBtn':return exportSong();
+  case'sfxT':UISFX.set(!UISFX.on);t.textContent=(UISFX.on?'🔊':'🔇')+' Button sounds';if(UISFX.on)UISFX.play('on');return}});
+function exportSong(){code();const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([$('code').value],{type:'application/json'}));
+ a.download=((S.name||'song').replace(/[^\w\- ]+/g,'').trim()||'song')+'.json';document.body.appendChild(a);a.click();a.remove();UISFX.play('success');msg('codeMsg','Saved as a file. Import it any time to keep editing.')}
+document.addEventListener('dragover',e=>{e.preventDefault()});
+document.addEventListener('drop',e=>{const f=e.dataTransfer&&e.dataTransfer.files[0];if(!f)return;e.preventDefault();f.text().then(loadCode)});
 document.addEventListener('change',e=>{const t=e.target,sec=S.sections[cur];
  if(t.id==='cRoot'||t.id==='cQual'){edit(()=>{sec.chords[chordEdit]=$('cRoot').value+$('cQual').value});if(!mode){const ch=parseChord(sec.chords[chordEdit]);preview((b,tt)=>voicing(ch).forEach(m=>chordNote(b,'ep',m,tt,.6)))}return}
  if(t.id==='secBars'){edit(()=>{const nb=+t.value,N=nb*16;sec.bars=nb;sec.chords=Array.from({length:nb},(_,i)=>sec.chords[i]||sec.chords[i%Math.max(1,sec.chords.length)]||'C');
@@ -417,7 +475,7 @@ document.addEventListener('input',e=>{const t=e.target;
  const m=t.dataset.m;if(!m)return;const v=+t.value;if(m==='bpm')S.bpm=v;else if(m==='swing')S.swing=v;else{S.mix[m]=v;if(bus)bus[m].gain.value=v}$('o-'+m).textContent=fmt(m,v);if(m==='bpm')$('info').textContent=`${S.bpm} BPM · ${S.scaleRoot} ${S.scale} · ${S.sections.length} sections`;code();save()});
 document.addEventListener('focusout',e=>{if(e.target.id==='secName')render()});
 function msg(id,s){$(id).textContent=s;clearTimeout(msg[id]);msg[id]=setTimeout(()=>$(id).textContent='',4000)}
-function loadCode(txt){try{const o=JSON.parse(txt);stop();hist.push(JSON.stringify(S));S=norm(o);cur=0;slot=0;bar=0;win=null;chordEdit=-1;render();msg('codeMsg',`Loaded "${S.name}".`)}catch(err){msg('codeMsg','That code has a typo, so it could not be loaded. Check the brackets and quotes.')}}
+function loadCode(txt){try{const o=JSON.parse(txt);stop();hist.push(JSON.stringify(S));S=norm(o);cur=0;slot=0;bar=0;win=null;chordEdit=-1;render();UISFX.play('success');msg('codeMsg',`Loaded "${S.name}". Change anything, then Export to save it.`)}catch(err){UISFX.play('error');msg('codeMsg','That code has a typo, so it could not be loaded. Check the brackets and quotes.')}}
 async function addUploads(files){ensure();let n=0;for(const fl of files){try{const buf=await A.decodeAudioData(await fl.arrayBuffer());const name=fl.name.replace(/\.[^.]+$/,'').slice(0,24)||'sound';customs[name]=buf;sfxSel='custom:'+name;n++}catch(err){msg('upMsg',`Could not open ${fl.name}. Try an MP3 or WAV.`)}}
  if(n){msg('upMsg',`Added ${n} sound${n>1?'s':''}. Pick it above, then tap a step.`);render()}$('up').value=''}
 /* ---------- render the whole song offline to a WAV you can play ---------- */
@@ -431,6 +489,10 @@ async function renderSong(btn){if(!S.arrangement.length)return msg('upMsg','Add 
 function toWav(buf){const n=buf.length,ab=new ArrayBuffer(44+n*4),v=new DataView(ab),w=(o,s)=>[...s].forEach((c,i)=>v.setUint8(o+i,c.charCodeAt(0)));
  w(0,'RIFF');v.setUint32(4,36+n*4,true);w(8,'WAVE');w(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,2,true);v.setUint32(24,buf.sampleRate,true);v.setUint32(28,buf.sampleRate*4,true);v.setUint16(32,4,true);v.setUint16(34,16,true);w(36,'data');v.setUint32(40,n*4,true);
  const L=buf.getChannelData(0),R=buf.getChannelData(1);let p=44;for(let i=0;i<n;i++){v.setInt16(p,Math.max(-1,Math.min(1,L[i]))*32767,true);v.setInt16(p+2,Math.max(-1,Math.min(1,R[i]))*32767,true);p+=4}return new Blob([ab],{type:'audio/wav'})}
+// open a song passed in the address, e.g. loop-lab/?song=../site/looplab/victory-rush.json (the Coded Music site's Open in Loop Lab button)
+{const q=new URLSearchParams(location.search).get('song');if(q){try{const u=new URL(q,location.href);if(u.origin!==location.origin)throw 0;
+ fetch(u).then(r=>{if(!r.ok)throw 0;return r.text()}).then(t=>{loadCode(t);$('sname').scrollIntoView({block:'center'})}).catch(()=>msg('codeMsg','Could not open that song.'))}catch(err){msg('codeMsg','Could not open that song.')}}}
+setTimeout(()=>{$('sfxT').textContent=(UISFX.on?'🔊':'🔇')+' Button sounds'});
 let syncing=false;document.querySelectorAll('.panel .scroll').forEach(el=>el.addEventListener('scroll',()=>{if(syncing)return;syncing=true;document.querySelectorAll('.panel .scroll').forEach(o=>{if(o!==el)o.scrollLeft=el.scrollLeft});syncing=false},{passive:true}));
 render();
 }

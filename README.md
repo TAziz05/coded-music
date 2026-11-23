@@ -16,13 +16,15 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 - seamless loop playback, and **Extended versions**: pick 2 to 20 minutes and your browser builds an MP3 or WAV that plays the start, repeats the seamless loop, then plays the real ending
 - four themes (Storm, Neon, Daylight, Game Boy), share links for each song, and a link to Loop Lab
 
+Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `python tools/to_looplab.py` turns the Python songs into simplified Loop Lab song code (`site/looplab/`). Loop Lab can import that code (paste it, open the file, drag it onto the page, or open `loop-lab/?song=...`), change it and export it again. Both pages have app icons (add them to your home screen) and coded button sounds you can switch off.
+
 `python tools/build_site.py` rebuilds `site/songs.json` and `site/thumbs/` after songs are added. It reads this README's song table and the title-card list, then listens to each MP3 to find its loop points, what it sounds like and its energy shape.
 
 ## What's here
 
 | Folder | What it is |
 |---|---|
-| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 127 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
+| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 129 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
 | `videos/` | The same songs as 1080p videos with a title card, ready to upload to YouTube. |
 | `cards/` | The title card images. |
 | `loops/` | One seamless loop of each song (see `loops/music.json` for loop lengths). |
@@ -33,7 +35,7 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
 ## The songs
 
-8 game songs, plus 127 YouTube gameplay tracks (below): 135 songs in all.
+8 game songs, plus 129 YouTube gameplay tracks (below): 137 songs in all.
 
 | Song | Game | Plays during |
 |---|---|---|
@@ -50,7 +52,7 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
 `loop-lab/index.html` is a song maker that runs in the browser: build songs from sections with chords, a melody, drums and sound effects (built-in coded effects or your own uploads), load TAziz322's songs and tweak them, and save songs as code. See [`loop-lab/GUIDE.md`](loop-lab/GUIDE.md) for how to use it. `loop-lab/tools/make_presets.py` rebuilds the page from `template.html` with the built-in songs.
 
-## YouTube gameplay tracks (127 songs)
+## YouTube gameplay tracks (129 songs)
 
 Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3). They run from 1 to about 2½ minutes; most are around 1½ minutes. These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments, and the songs live in the other files in `code/python/` (see the commands below). Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
 
@@ -183,6 +185,8 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Gold Rush Garage | 126 BPM | Sleek UK-garage pop with funky guitar; ends on vocal chops (in the style of Jung Kook’s solo work) | Upbeat highlights |
 | Breakcore Squared | 186 BPM | Two breakbeats at once with steady 32nd-note rolls; the breaks go solo, then the piano ends it | Intense montages |
 | Comeback Rising | 128 BPM | Starts as sad piano and builds into a triumphant orchestral chorus with a key change | Comebacks, emotional wins |
+| Bass Quake | 140 BPM | Dubstep: build-ups, then half-time drops with a wobble bass and a pluck melody | Hype edits, montages |
+| Infinite Series Breaks | 174 BPM | Steady breakcore with pi and e as melodies, prime-number bells and a Zeno ending | Smart plays, montages |
 
 ```
 pip install numpy scipy
