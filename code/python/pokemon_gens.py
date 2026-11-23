@@ -73,6 +73,8 @@ SONGS = {
    ['Am', 'G', 'F', 'E'], ['Am', 'G', 'F', 'E'], ['nylon', 'strings'], 'nylon', 'breakbeat', 'finger', leadB='trumpet', extra=castanets),
 }
 
+SONGS['g5']['targets'] = {'verse': -13., 'chorus': -13.2, 'outro': -18.}   # final chorus no louder than the rest
+SONGS['g5']['cont_tol'] = 0.
 SONGS['g6']['levels'] = {'bass': .45, 'keys': .65, 'str': .7, 'lead': 1.35, 'drums': .8}
 
 if __name__ == '__main__':

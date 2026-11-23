@@ -14,7 +14,7 @@ SONGS = {
                  mel=[[77,-1,76,74,-1,72,-1,74],[74,-1,-1,71,-1,-1,0,0],[72,-1,74,76,-1,79,-1,77],[76,-1,-1,-1,-1,-1,0,0]]),
    'outro': sec(2, ['Dm9', 'Cmaj7'], keys=['ep'], fill=False)},
    order=['intro', 'verse', 'chorus', 'verse', 'chorus', 'outro']),
- 'levelup': dict(file='Level_Up_Rush', title='Level Up Rush', bpm=124, ride=.5, targets={'intro': -17., 'verse': -14., 'chorus': -13.}, sections={
+ 'levelup': dict(file='Level_Up_Rush', title='Level Up Rush', bpm=124, ride=.5, cont_tol=-1.5, targets={'intro': -20., 'verse': -14., 'chorus': -13.}, sections={
    'intro': sec(4, ['C', 'G', 'Am', 'F'], keys=['pluck'], riser=True),
    'verse': sec(8, ['C', 'G', 'Am', 'F'], keys=['pluck', 'pad'], drums='house', bass='octave', lead='square', lv=.7,
                 mel=[[72,-1,72,76,-1,72,-1,79],[79,-1,-1,74,-1,71,-1,-1],[72,-1,76,79,-1,81,-1,79],[77,-1,-1,-1,0,0,0,0]]),
@@ -22,9 +22,9 @@ SONGS = {
                  mel=[[84,-1,83,79,-1,76,-1,79],[83,-1,-1,79,-1,74,-1,-1],[81,-1,83,84,-1,88,-1,84],[84,-1,-1,-1,81,-1,-1,-1]]),
    'outro': sec(2, ['C', 'C'], keys=['pluck'], drums='house', fill=False)},
    order=['intro', 'verse', 'chorus', 'verse', 'chorus', 'outro']),
- 'menu': dict(file='Menu_Drift', title='Menu Drift', bpm=100, ride=.75, targets={'intro': -16., 'verse': -14., 'chorus': -13.5, 'outro': -15.5}, sections={
+ 'menu': dict(file='Menu_Drift', title='Menu Drift', bpm=100, ride=.75, cont_tol=0., targets={'intro': -17.5, 'verse': -14., 'chorus': -13.5, 'outro': -17.5}, sections={
    'intro': sec(4, ['Fmaj7', 'Em7', 'Dm7', 'Cmaj7'], keys=['pad']),
-   'verse': sec(8, ['Fmaj7', 'Em7', 'Dm7', 'Cmaj7'], keys=['pad', 'pluck'], drums='halfpop', bass='long', lead='fmbell', lv=.8,
+   'verse': sec(8, ['Fmaj7', 'Em7', 'Dm7', 'Cmaj7'], keys=['pad', 'pluck'], drums='halfpop', bass='long', lead='fmbell', lv=.55,
                 mel=[[76,-1,-1,-1,72,-1,-1,-1],[74,-1,-1,-1,71,-1,-1,-1],[72,-1,-1,-1,69,-1,-1,-1],[71,-1,-1,-1,-1,-1,0,0]]),
    'chorus': sec(8, ['Fmaj7', 'Em7', 'Dm7', 'Cmaj7'], keys=['pad', 'pluck'], drums='fourfloor', bass='octave', lead='synth', lv=.8,
                  mel=[[81,-1,79,76,-1,-1,0,0],[79,-1,76,74,-1,-1,0,0],[77,-1,76,72,-1,-1,74,-1],[72,-1,-1,-1,-1,-1,0,0]]),

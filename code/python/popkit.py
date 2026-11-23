@@ -321,6 +321,17 @@ def build(cfg):
     levels.update(cfg.get('levels', {}))
     sends = {'keys': .25, 'pad': .45, 'lead': .3, 'drums': .05, 'perc': .25, 'fx': .25, 'str': .4, 'organ': .25, 'gtrL': .08, 'gtrR': .08}
     sends.update(cfg.get('sends', {}))
+    # balance: in the chorus, keep the keys/lead within a few dB of the drums and bass so the music never gets buried
+    DR = ('drums', 'perc', 'bass', 'sub')
+    ref = next((m for m in marks if secs[m[0]].get('kind', m[0].rstrip('0123456789')) in ('chorus', 'drop')), marks[min(1, len(marks) - 1)])
+    a0, a1 = int(ref[1] * SR), int((ref[1] + ref[2] * B) * SR)
+    lv = lambda ks_: 20 * np.log10(np.sqrt((sum(M.buses[k][:, a0:a1] * levels.get(k, 1.) for k in ks_) ** 2).mean()) + 1e-9)
+    mk_ = [k for k in M.buses if k not in DR + ('fx',)]; dk_ = [k for k in M.buses if k in DR]
+    if mk_ and dk_ and cfg.get('mus_gap', 5.) is not None:
+        gap = lv(dk_) - lv(mk_)
+        if gap > cfg.get('mus_gap', 5.):
+            f_ = 10 ** ((gap - cfg.get('mus_gap', 5.)) / 20)
+            for k in mk_: levels[k] = levels.get(k, 1.) * f_
     out = np.zeros((2, M.n)); send = np.zeros((2, M.n))
     for k, x in M.buses.items(): out += x * levels.get(k, 1.); send += x * levels.get(k, 1.) * sends.get(k, 0.)
     ir = reverb_ir(cfg.get('verb', 2.2), cfg.get('decay', .55)); out += np.array([ss.fftconvolve(send[c], ir[c])[:M.n] for c in range(2)])
@@ -342,8 +353,14 @@ def build(cfg):
     g = ss.filtfilt(*ss.butter(1, 1.2, fs=SR), g); out = out * g
     if cfg.get('ride'):   # gentle gain riding inside sections, for an even, steady level (background music)
         w = int(2 * B * SR); e = np.sqrt(ss.filtfilt(*ss.butter(1, .5, fs=SR), (out ** 2).mean(0)) + 1e-12)
-        ref = np.median(e[:body]); gr = np.clip((ref / e) ** cfg['ride'], 10 ** (-3 / 20), 10 ** (3 / 20)); gr[body:] = gr[body - 1]
+        ref = np.sqrt(ss.filtfilt(*ss.butter(1, 1 / (8 * B), fs=SR), e ** 2)); gr = np.clip((ref / e) ** cfg['ride'], 10 ** (-3 / 20), 10 ** (3 / 20)); gr[body:] = gr[body - 1]   # smooth out wobble around the local (8-bar) level only
         out = out * ss.filtfilt(*ss.butter(1, .4, fs=SR), gr)
+    if cfg.get('fadeout'):   # ending: fade out over the last N seconds of the song body
+        f_ = int(cfg['fadeout'] * SR); out[:, body - f_:body] *= np.linspace(1, 0, f_) ** 1.5; out[:, body:] = 0
+    if cfg.get('tapestop'):   # ending: the whole band slows to a halt at the start of the last section
+        a_ = int(marks[-1][1] * SR); D = int(cfg.get('stop_len', 1.6) * SR); rate = np.linspace(1, 0, D) ** 1.3
+        pos = a_ + np.cumsum(rate); seg = np.array([np.interp(pos, np.arange(out.shape[1]), c) for c in out]) * np.linspace(1, 0, D) ** .4
+        out = np.concatenate([out[:, :a_], seg, np.zeros((2, int(.5 * SR)))], axis=1); body = min(body, a_)
     nz = np.nonzero(np.abs(out).max(0) > 1e-4)[0]; out = out[:, :nz[-1] + int(.3 * SR)]
     f = int(1.2 * SR); out[:, -f:] *= np.linspace(1, 0, f) ** 2
     out = out / np.abs(out[:, :body]).max() * 1.15; out = np.tanh(out) / np.tanh(1.15) * .89

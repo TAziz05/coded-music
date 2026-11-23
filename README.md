@@ -10,7 +10,7 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
 | Folder | What it is |
 |---|---|
-| `songs/` | About 2-minute versions of every song with a fade-out (320 kbps MP3). Good for videos. |
+| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 97 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
 | `videos/` | The same songs as 1080p videos with a title card, ready to upload to YouTube. |
 | `cards/` | The title card images. |
 | `loops/` | One seamless loop of each song (see `loops/music.json` for loop lengths). |
@@ -20,6 +20,8 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 | `sound-test.html` | Open in a browser to hear every sound effect and song live from code. |
 
 ## The songs
+
+8 game songs, plus 97 YouTube gameplay tracks (below): 105 songs in all.
 
 | Song | Game | Plays during |
 |---|---|---|
@@ -36,9 +38,9 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
 `loop-lab/index.html` is a song maker that runs in the browser: build songs from sections with chords, a melody, drums and sound effects (built-in coded effects or your own uploads), load TAziz322's songs and tweak them, and save songs as code. See [`loop-lab/GUIDE.md`](loop-lab/GUIDE.md) for how to use it. `loop-lab/tools/make_presets.py` rebuilds the page from `template.html` with the built-in songs.
 
-## YouTube gameplay tracks
+## YouTube gameplay tracks (97 songs)
 
-Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3, each about 2 to 2.5 minutes with a fade-out). These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments and `code/python/songs.py` holds the songs. Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
+Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3). They run from 1 to about 2½ minutes; most are around 1½ minutes. These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments, and the songs live in the other files in `code/python/` (see the commands below). Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
 
 | Song | Tempo | Feel | Good for |
 |---|---|---|---|
@@ -113,6 +115,32 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Lime Green Afterparty | 132 BPM | Abrasive club pop: distorted rave stabs, heavy 808, vocoder hook (in the style of Charli xcx’s Brat era) | Hype edits |
 | Red 40 Sugar Rush | 162 BPM | Hyperpop: chipmunk vocal chops, glitchy synths, distorted 808, cartoon sound effects | Chaotic or funny clips |
 | Padma to Kyoto | 100 BPM | Bangladesh meets Japan: koto, harmonium, ektara, tabla and taiko, bansuri and shakuhachi trading phrases | Calm intros, story edits |
+| Arcade Heartbreak Breaks | 172 BPM | Steady breakcore with the pop-punk hook; ends with a tape stop | Hype montages |
+| Boulevard Café | 116 BPM | Accordion over jazzy piano and walking bass (in the style of Pokémon Gen 6) | Chill exploring |
+| Highway Escape | 160 BPM | Fast punk rock with strings and pads behind the guitars (in the style of Sonic Adventure) | Chases, fast clips |
+| Titan Undefeated | 150 BPM | Epic rock boss theme with strings and piano (in the style of Sonic Frontiers) | Boss fights, final circles |
+| Winds of the World | 104 BPM | A tour of flutes from different cultures, each with its own instruments and rhythm | Calm intros, travel edits |
+| Sugar Cloud Smile | 128 BPM | Happy future bass with bright chords and vocal chops (in the style of Marshmello) | Happy highlights |
+| Sugar Cloud Breaks | 172 BPM | Steady breakcore with the future-bass hook; instruments drop out one by one at the end | Montages |
+| Lime Green Breaks | 176 BPM | Steady breakcore with rave stabs and 808; winds down and stops | Hype edits |
+| Padma to Kyoto Breaks | 172 BPM | Steady breakcore with tabla, taiko and flutes; ends with a traditional tihai | Upbeat montages |
+| Grassland Hop | 150 BPM | Bouncy grassland world with steel drum, stride piano, bongos and "bah!" hits (in the style of New Super Mario Bros. Wii) | Fun, lighthearted clips |
+| Desert Dunes | 120 BPM | Desert world with oud, oboe and darbuka | Desert maps, exploring |
+| Snowcap Slide | 112 BPM | Snow world with celesta, pizzicato strings and sleigh bells | Winter maps |
+| Coconut Cove | 124 BPM | Beach world: steel drum, ukulele, congas | Chill gameplay |
+| Mushroom Woods | 116 BPM | Forest world with clarinet, marimba and pizzicato | Sneaky or funny clips |
+| Cliffside Climb | 132 BPM | Heroic mountain world with brass and strings | Climbs, comebacks |
+| Cloudtop Athletic | 160 BPM | Light, bouncy sky world with flute, strings and tuba | Movement clips |
+| Magma Fortress | 132 BPM | Lava world: organ, choir, brass and timpani | Boss fights, endgames |
+| Starry Road | 140 BPM | Sparkly star world with celesta and bright synths | Big wins |
+| Pipe Cavern | 120 BPM | Underground: slap bass, xylophone and "bah!" hits | Sneaky clips |
+| Coral Waltz | 150 BPM | Underwater waltz in 3/4 with harp, strings, flute and celesta | Calm moments, water maps |
+| Haunted Manor | 96 BPM | Spooky swing with theremin and harpsichord | Spooky or funny clips |
+| Shellfire Castle | 112 BPM | Castle theme with organ, choir and timpani | Final circles, boss fights |
+| Glitter Overload | 136 BPM | Bubblegum hyperpop: glossy bell synths, metallic clanks, chipmunk hooks | Funny, chaotic clips |
+| Bitcrushed Daydream | 150 BPM | Glitchcore: crushed, stuttering synths over emo guitar verses | Montages, edits |
+| Static Tears | 140 BPM | Sad acoustic verses that blow up into a huge distorted chorus | Emotional edits |
+| Nightcore Rush | 172 BPM | Nightcore: sped-up trance energy, gated supersaws, four on the floor | Hype montages |
 
 ```
 pip install numpy scipy
@@ -135,6 +163,11 @@ python pokemon_gens.py all  # g1 g2 g4 g5 g6 g7 g8 g9 route-style songs (Gen 3 =
 python sonic_styles.py all  # genesis cd adventure hiphop rush jazz colors frontiers
 python batch_c.py all  # flutes (Winds of the World), mello, mello_bc, charli, charli_bc
 python batch_d.py all  # red, red_bc, aero, aero_bc, bdjp, bdjp_bc
+python mario_worlds.py all  # w1-w9 worlds, under, water (Coral Waltz), ghost, castle (styles in newstyles.py)
+python hyperpop2.py all  # bubble glitch dnb emo nightcore
+python genres.py all  # phonk synthwave dubstep eurobeat ska reggae amapiano bluegrass citypop jersey
+python bts_solos.py all  # rm jin suga jhope jimin v jk
+python mathsong.py  # Infinite Series: a song built from pi, e, Fibonacci, Euclidean rhythms and more
 ```
 
 ## Re-recording

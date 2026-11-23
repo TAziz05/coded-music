@@ -337,6 +337,7 @@ def build(cfg):
         r = 20 * np.log10(np.sqrt((out[:, a:bnd] ** 2).mean()) + 1e-9)
         rm[sec] = 20 * np.log10(np.sqrt((mus[:, a:bnd] ** 2).mean()) + 1e-9)
         gs[sec] = 10 ** ((TG[sec] - r) / 20); acc += nb
+    if cfg.get('match_drops'): gs['dropA'] = gs['dropB']   # same loudness for the breaks in both drops
     for s_, ref_ in (('intro', 'dropA'), ('build', 'dropA'), ('half', 'dropB'), ('outro', 'dropB')):
         if s_ in gs and ref_ in gs: gs[s_] = min(gs[s_], gs[ref_] * 10 ** ((rm[ref_] - rm[s_] + cfg.get('cont_tol', 1.5)) / 20))
     if cfg.get("debug"): print({k: (round(rm[k], 1), round(20 * np.log10(gs[k]), 1)) for k in gs}, sorted((k, round(float(np.sqrt((x ** 2).mean())), 4)) for k, x in M.buses.items()))

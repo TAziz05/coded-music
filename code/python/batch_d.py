@@ -55,6 +55,11 @@ def aero_fx(M, t0, st, S, i, n, tones, root):    # bubbles in a fixed rhythm: 'b
     if i % 4 == 3:
         for k, s in enumerate((12, 13, 14, 15)): bubble(M, t0 + S(s), up[k % 3] + (12 if k == 3 else 0), .8, -.6 + .4 * k)
     if i % 2 == 0: glock(M, t0 + S(14), tones[-1] + 24, .25, pan=.4)
+def aero_runs(M, t0, st, S, i, n, tones, root):   # main sections: only the rising bubble run every 4th bar
+    up = [c + 24 for c in tones[:3]]
+    if i % 4 == 3:
+        for k, s in enumerate((12, 13, 14, 15)): bubble(M, t0 + S(s), up[k % 3] + (12 if k == 3 else 0), .8, -.6 + .4 * k)
+    if i % 2 == 0: glock(M, t0 + S(14), tones[-1] + 24, .25, pan=.4)
 
 # ---------------- Bangladesh x Japan ----------------
 def bdjp_keys(M, t0, st, tones, root, vol, bar):    # koto arpeggios + harmonium + ektara
@@ -117,17 +122,19 @@ SONGS = {
  'red_bc': ('bc', dict(file='Red_40_Breaks', title='Red 40 Breaks', bpm=178, chords=['C', 'G', 'Am', 'F'],
    keys=lambda M, t0, st, tones, root, vol, bar: (keys_bar(M, 'glitch', t0, st, lambda k: k * st, tones, root, vol), hyper_fx(M, t0, st, lambda k: k * st, bar, 0, tones, root)),
    pad=.05, mel=lambda M, t, n, d, v: chop(M, t, n, d, v, 19), melB=lambda M, t, n, d, v: chop(M, t, n, d, v, 19), layerB='lead', bass='808',
-   kit=dict(FUNK, crunch=2.6, clap=.5, punch=1.4), patA='P4', patB='P2', melody=blocks(RED), seed=211, levels={'fx': 1.})),
+   kit=dict(FUNK, crunch=2.6, clap=.5, punch=1.4), patA='P4', patB='P2', melody=blocks(RED), seed=211, levels={'fx': 1.}, ending='none',
+   sections=[('intro', 8), ('build', 4), ('dropA', 16), ('half', 8), ('dropB', 16), ('outro', 6)])),
  'aero': ('pop', dict(file='Aqua_Tomorrow', title='Aqua Tomorrow', bpm=116, chorus_keys=True, sections={
    'intro': sec(4, ['C', 'G', 'Am', 'F'], keys=['pad', 'pluck'], lead='fmbell', mel=AERO, lv=.7, extra=aero_fx),
-   'verse': sec(8, ['C', 'G', 'Am', 'F'], keys=['acoustic', 'piano'], drums='halfpop', bass='long', lead='voice', extra=aero_fx, kv=.8,
+   'verse': sec(8, ['C', 'G', 'Am', 'F'], keys=['acoustic', 'piano'], drums='halfpop', bass='long', lead='voice', extra=aero_runs, kv=.8,
                 mel=[[72,-1,72,74,-1,72,71,-1],[71,-1,-1,67,-1,69,71,-1],[72,-1,74,76,-1,77,-1,76],[74,-1,-1,-1,0,0,0,0]]),
-   'chorus': sec(8, ['F', 'G', 'Em', 'Am', 'F', 'G', 'C', 'C'], keys=['acoustic', 'pad', 'pluck'], drums='rock', bass='octave', lead='synth+fmbell', impact=True, extra=aero_fx, mel=AERO),
+   'chorus': sec(8, ['F', 'G', 'Em', 'Am', 'F', 'G', 'C', 'C'], keys=['acoustic', 'pad', 'pluck'], drums='rock', bass='octave', lead='synth+fmbell', impact=True, extra=aero_runs, mel=AERO),
    'outro': sec(4, ['C', 'G', 'F', 'C'], keys=['pad', 'pluck'], lead='fmbell', mel=[[76,-1,-1,-1,0,0,0,0],[74,-1,-1,-1,0,0,0,0],[72,-1,-1,-1,0,0,0,0],[72,-1,-1,-1,-1,-1,0,0]], extra=aero_fx, fill=False)},
    order=['intro', 'verse', 'chorus', 'verse', 'chorus', 'outro'], levels={'fx': .9})),
  'aero_bc': ('bc', dict(file='Aqua_Tomorrow_Breaks', title='Aqua Tomorrow Breaks', bpm=172, chords=['C', 'G', 'Am', 'F'],
    keys=lambda M, t0, st, tones, root, vol, bar: (keys_bar(M, 'pluck', t0, st, lambda k: k * st, tones, root, vol), aero_fx(M, t0, st, lambda k: k * st, bar, 0, tones, root)),
-   pad=.08, mel='glock', melB='lead', layerB='glock', bass='808', amb=[('rain', .25)], kit=dict(FUNK, crunch=1.3, clap=.35), patA='P0', patB='P3', melody=blocks(AERO), seed=221, levels={'fx': .9})),
+   pad=.08, mel='glock', melB='lead', layerB='glock', bass='808', amb=[('rain', .25)], kit=dict(FUNK, crunch=1.3, clap=.35), patA='P0', patB='P3', melody=blocks(AERO), seed=221, levels={'fx': .4}, match_drops=True, ending='none',
+   sections=[('intro', 8), ('build', 4), ('dropA', 16), ('half', 8), ('dropB', 16), ('outro', 6)])),
  'bdjp': ('pop', dict(file='Padma_to_Kyoto', title='Padma to Kyoto', bpm=100, sections={
    'intro': sec(4, ['Dm', 'C', 'Bb', 'C'], keys=['bdjp'], lead='danso', mel=BDJP, lv=.8, gong=True),
    'verse': sec(8, ['Dm', 'C', 'Bb', 'C'], keys=['bdjp'], bass='finger', lead='callresp', extra=bdjp_song_extra, mel=BDJP),
