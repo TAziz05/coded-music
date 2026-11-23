@@ -237,6 +237,10 @@ SONGS = {
    ['G', 'C', 'D', 'G'], ['C', 'G', 'Am', 'D'], ['uke'], 'ocarina', 'steps_soft', 'upright', ex_birds, end_walking, leadB='ocarina+celesta', swing=.15),
 }
 
+SONGS['tennis']['targets'] = {'outro': -21.}      # a quieter ending, so it doesn't jump up
+SONGS['walking']['levels'] = {'keys': 3.5}         # the ukulele up front, so the intro isn't faint
+SONGS['walking']['gain_like'] = {'A': 'intro', 'B': 'intro', 'end': 'intro'}   # one level for the whole song: the band joins the intro instead of the intro being turned down
+
 if __name__ == '__main__':
     names = list(SONGS) if sys.argv[1] == 'all' else sys.argv[1:]
     for k in names: build(SONGS[k])

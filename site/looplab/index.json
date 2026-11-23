@@ -663,5 +663,130 @@
 "file": "site/looplab/static-weather.json",
 "src": null,
 "key": null
+},
+"overclocked": {
+"file": "site/looplab/overclocked.json",
+"src": "code/python/songs.py",
+"key": "dnb"
+},
+"nobody-s-looking": {
+"file": "site/looplab/nobody-s-looking.json",
+"src": "code/python/songs.py",
+"key": "breakcore"
+},
+"lantern-theory": {
+"file": "site/looplab/lantern-theory.json",
+"src": "code/python/songs2.py",
+"key": "lantern_theory"
+},
+"homebase-rising": {
+"file": "site/looplab/homebase-rising.json",
+"src": "code/python/songs3.py",
+"key": "homebase_rising"
+},
+"ringworld-vigil": {
+"file": "site/looplab/ringworld-vigil.json",
+"src": "code/python/songs4.py",
+"key": "ringworld_vigil"
+},
+"boundless-run": {
+"file": "site/looplab/boundless-run.json",
+"src": "code/python/songs4.py",
+"key": "boundless_run"
+},
+"morning-over-the-valley": {
+"file": "site/looplab/morning-over-the-valley.json",
+"src": "code/python/songs5.py",
+"key": "morning_valley"
+},
+"shattered-overture": {
+"file": "site/looplab/shattered-overture.json",
+"src": "code/python/songs6.py",
+"key": "shattered_overture"
+},
+"paper-sky": {
+"file": "site/looplab/paper-sky.json",
+"src": "code/python/songs7.py",
+"key": "paper_sky"
+},
+"golden-hour-groove": {
+"file": "site/looplab/golden-hour-groove.json",
+"src": "code/python/songs9.py",
+"key": "golden_hour"
+},
+"blue-spark-runaway": {
+"file": "site/looplab/blue-spark-runaway.json",
+"src": "code/python/songs9.py",
+"key": "blue_spark"
+},
+"off-the-lines": {
+"file": "site/looplab/off-the-lines.json",
+"src": "code/python/songs10.py",
+"key": "cortis_hype"
+},
+"breeze-in-the-alley": {
+"file": "site/looplab/breeze-in-the-alley.json",
+"src": "code/python/songs10.py",
+"key": "kaze_style"
+},
+"riverbank-evening": {
+"file": "site/looplab/riverbank-evening.json",
+"src": "code/python/southasia.py",
+"key": "riverbank"
+},
+"monsoon-breaks": {
+"file": "site/looplab/monsoon-breaks.json",
+"src": "code/python/southasia.py",
+"key": "monsoon_breaks"
+},
+"winds-of-the-world": {
+"file": "site/looplab/winds-of-the-world.json",
+"src": "code/python/batch_c.py",
+"key": "winds_of_the_world"
+},
+"coral-waltz": {
+"file": "site/looplab/coral-waltz.json",
+"src": "code/python/mario_worlds.py",
+"key": "coral_waltz"
+},
+"drop-in-daily-lobby": {
+"file": "site/looplab/drop-in-daily-lobby.json",
+"src": "code/songs/fnMenu.js",
+"key": "fnMenu"
+},
+"drop-in-daily-match": {
+"file": "site/looplab/drop-in-daily-match.json",
+"src": "code/songs/fn.js",
+"key": "fn"
+},
+"drop-in-daily-mythic-match-og-style": {
+"file": "site/looplab/drop-in-daily-mythic-match-og-style.json",
+"src": "code/songs/fnOGm.js",
+"key": "fnOGm"
+},
+"drop-in-daily-endless-summary-og-lobby-style": {
+"file": "site/looplab/drop-in-daily-endless-summary-og-lobby-style.json",
+"src": "code/songs/fnOG.js",
+"key": "fnOG"
+},
+"daily-poke-catch-route": {
+"file": "site/looplab/daily-poke-catch-route.json",
+"src": "code/songs/pkMenu.js",
+"key": "pkMenu"
+},
+"daily-poke-catch-battle": {
+"file": "site/looplab/daily-poke-catch-battle.json",
+"src": "code/songs/pk.js",
+"key": "pk"
+},
+"daily-poke-catch-mythic-battle": {
+"file": "site/looplab/daily-poke-catch-mythic-battle.json",
+"src": "code/songs/pkB.js",
+"key": "pkB"
+},
+"daily-poke-catch-town": {
+"file": "site/looplab/daily-poke-catch-town.json",
+"src": "code/songs/pkTown.js",
+"key": "pkTown"
 }
 }

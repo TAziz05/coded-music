@@ -50,7 +50,8 @@ def groups_for(t, style, feel):
     if has(s, 'hyperpop', 'nightcore', 'glitchcore'): g.append('Hyperpop')
     if has(s, 'bengali', 'bangladesh', 'flutes', 'east asian', 'amapiano', 'reggae', 'gugak', 'korean traditional', 'koto', 'tabla'): g.append('World music')
     if has(s, 'orchestral', 'waltz', 'orchestra', 'choir'): g.append('Orchestral & cinematic')
-    if has(s, 'math'): g.append('Math')
+    if has(s, 'math', 'sine waves', 'made from words', 'shapes', 'colors'): g.append('Math & made from things')
+    if t in ('Golazo Anthem', 'Full Court Press', 'Fourth and Goal', 'Seventh Inning Swing', 'Ice Time', 'Match Point', 'Beach Spike', 'Powder Run', 'Shuttle Rally', 'Huck It', 'Stride 176', 'Easy Pace', 'Sunday Stroll'): g.append('Sports & moving')
     if t in ('Oops Again', 'Tiptoe Heist', 'Final Zone Countdown', 'Comeback Rising', 'See You Next Drop'): g.append('Gameplay moments')
     return g
 def genres_for(style, feel):
@@ -120,12 +121,20 @@ def analyse(x, bpm, beats_per_bar=4, game_L=None):
         if best:
             top = max(s for s, _, _ in best); good = [(b_ - a_, -a_, s, a_, b_) for s, a_, b_ in best if s >= top - .07]   # the longest loop that is still nearly as seamless as the best one
             _, _, sim, ka, kb = max(good); a, b = ka * bar, kb * bar
-        else: a, b = 0, T - 2; sim = 0
+            # a few other good loops for people to choose from: different lengths and places, still close to seamless
+            alts = []
+            for L_, na, s_, ka_, kb_ in sorted(good, key=lambda g: -g[2]):
+                if (ka_, kb_) == (ka, kb) or any(abs(ka_ - p) < 4 and abs(kb_ - q) < 4 for p, q in alts): continue
+                alts.append((ka_, kb_))
+                if len(alts) == 3: break
+            extra_loops = [[round(p * bar, 3), round(q * bar, 3)] for p, q in alts]
+        else: a, b = 0, T - 2; sim = 0; extra_loops = []
         # fine-tune the jump by a few milliseconds so the waveforms line up
         w = int(.05 * SR); ia, ib = int(a * SR), int(b * SR); R = int(.012 * SR)
         if ib + w + R < len(x):
             ref = x[ia:ia + w]; scores = [np.dot(ref, x[ib + d:ib + d + w]) for d in range(-R, R)]; b = (ib + int(np.argmax(scores)) - R) / SR
-    return dict(timbre=timbre, arc=arc, loop=[round(a, 4), round(b, 4)], bpm=bpm, dur=T)
+    if game_L: extra_loops = []
+    return dict(timbre=timbre, arc=arc, loop=[round(a, 4), round(b, 4)], loops=extra_loops, bpm=bpm, dur=T, bar=(beats_per_bar * 60 / bpm))
 
 songs = []
 for n, (t, tempo, feel, good) in enumerate(rows):
@@ -144,7 +153,7 @@ for n, (t, game, during, f, key) in enumerate(GAME):
 
 for k, s in enumerate(songs):
     x = load(s['file']); r = analyse(x, s['tempo'], s.pop('_bar'), s.pop('_gameL', None))
-    s.update(duration=round(r['dur'], 1), loop=r['loop'], _timbre=r['timbre'], _arc=r['arc'])
+    s.update(duration=round(r['dur'], 1), loop=r['loop'], loops=r['loops'], bar=round(r['bar'], 4), _timbre=r['timbre'], _arc=r['arc'])
     if not s['tempo']: s['tempo_est'] = round(r['bpm'])
     s['energy'] = round(float(np.mean(r['arc'])), 3)
     th = f"site/thumbs/{s['id']}.jpg"
@@ -167,6 +176,21 @@ for i, s in enumerate(songs):
     base = s['title'].split()[0]
     s['versions'] = [o['id'] for o in songs if o is not s and o['title'].split()[0] == base and (o['title'].endswith('Breaks') != s['title'].endswith('Breaks'))]
     s['arc'] = [round(float(v), 2) for v in s['_arc']]
+# sound families: group songs that sound alike, and an order that keeps similar songs next to each other
+from scipy.cluster.hierarchy import linkage, fcluster, leaves_list
+from scipy.spatial.distance import squareform
+D = np.clip(1 - (SIM + SIM.T) / 2, 0, None); np.fill_diagonal(D, 0)
+Z = linkage(squareform(D, checks=False), 'average'); fam = fcluster(Z, 18, 'maxclust'); order = leaves_list(Z)
+for rank, i in enumerate(order): songs[i]['sound_rank'] = rank
+from collections import Counter
+fam_name = {}
+for f in set(fam):
+    members = [songs[i] for i in range(len(songs)) if fam[i] == f]
+    g = Counter(x for m in members for x in m['genres']).most_common(1); md = Counter(x for m in members for x in m['moods']).most_common(1)
+    fam_name[f] = ' · '.join([g[0][0]] + ([md[0][0]] if md else []))
+for i, s in enumerate(songs): s['family'] = fam_name[fam[i]]
+DS = np.clip(1 - SHAPE, 0, None); np.fill_diagonal(DS, 0)
+for rank, i in enumerate(leaves_list(linkage(squareform(DS, checks=False), 'average'))): songs[i]['shape_rank'] = rank
 for s in songs: s.pop('_timbre'); s.pop('_arc')
 LL = json.load(open('site/looplab/index.json')) if os.path.exists('site/looplab/index.json') else {}   # from tools/to_looplab.py
 for s in songs:

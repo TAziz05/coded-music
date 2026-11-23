@@ -350,7 +350,9 @@ def build(cfg):
         gl[0] = min(gl[0], gl[1] * 10 ** ((rl[1] - rl[0] + tol) / 20)); gl[-1] = min(gl[-1], gl[-2] * 10 ** ((rl[-2] - rl[-1] + tol) / 20))
     for j, (name, t0, nb) in enumerate(marks):   # gain_like: a section takes the gain of the section of the named kind just before it (same mix level)
         want = cfg.get('gain_like', {}).get(name)
-        if want and j: gl[j] = next((gl[i] for i in range(j - 1, -1, -1) if marks[i][0].rstrip('0123456789') == want), gl[j])
+        if want:   # nearest section of that kind, looking back first, then ahead (so an intro can take the verse's level)
+            near = [i for i in list(range(j - 1, -1, -1)) + list(range(j + 1, len(marks))) if marks[i][0].rstrip('0123456789') == want]
+            if near: gl[j] = gl[near[0]]
     for (name, t0, nb), gg in zip(marks, gl): g[int(t0 * SR):int((t0 + nb * B) * SR)] = gg
     body = int(len(plan) * B * SR); g[body:] = g[body - 1]
     from scipy.ndimage import minimum_filter1d; g = minimum_filter1d(g, int(.6 * SR))   # lean to the quieter side at boundaries (no spikes)

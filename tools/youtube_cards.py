@@ -134,6 +134,20 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ('Comeback Rising', '128 BPM · comeback anthem', ('#0b1a3a', '#3a5fd9', '#ffd23f', '#050d20', '#ffffff')),
     ('Bass Quake', '140 BPM · dubstep', ('#1a0533', '#5a0fa8', '#00f0ff', '#0d021a', '#ffffff')),
     ('Infinite Series Breaks', '174 BPM · math breakcore', ('#051a1a', '#0f5a5a', '#9fffe0', '#020d0d', '#ffffff')),
+    ('Breakcore Cubed', '190 BPM · triple breakcore', ('#05050a', '#0b3a5a', '#00f0ff', '#020205', '#ff2bd6')),
+    ('Golazo Anthem', '128 BPM · soccer anthem', ('#0b3a0b', '#1fae2a', '#ffffff', '#052005', '#ffd23f')),
+    ('Full Court Press', '94 BPM · basketball hip-hop', ('#3a1a05', '#e0701f', '#1a1a1a', '#200d02', '#ffffff')),
+    ('Fourth and Goal', '112 BPM · football fight song', ('#2a0b0b', '#8f1f1f', '#ffd23f', '#150505', '#ffffff')),
+    ('Seventh Inning Swing', '120 BPM · baseball stadium organ', ('#0b1a3a', '#1f3f8f', '#ffffff', '#050d20', '#e03a3a')),
+    ('Ice Time', '140 BPM · hockey rock', ('#0b1a2a', '#3a6f9a', '#e0f4ff', '#050d15', '#ffffff')),
+    ('Beach Spike', '116 BPM · volleyball tropical house', ('#0b4a5c', '#1fc9e0', '#ffe7a3', '#062a35', '#ffffff')),
+    ('Powder Run', '132 BPM · skiing eurobeat', ('#1a3a5c', '#7fc4f2', '#ffffff', '#0a2238', '#1f4f8f')),
+    ('Shuttle Rally', '150 BPM · badminton bounce', ('#2a3a05', '#8fc41f', '#ffffff', '#152002', '#ffffff')),
+    ('Huck It', '160 BPM · ultimate frisbee indie', ('#3a2a05', '#e0b31f', '#ffffff', '#201505', '#1f6fe0')),
+    ('Stride 176', '176 BPM · running cadence', ('#2a0505', '#e01f3a', '#ffffff', '#150202', '#ffd23f')),
+    ('Easy Pace', '160 BPM · jogging cadence', ('#0b2a1a', '#2a8f5a', '#e0ffe7', '#05150d', '#ffffff')),
+    ('Fourier Rise', '110 BPM · built from sine waves', ('#0b0b2a', '#2a2a8f', '#9fffff', '#05051a', '#ffffff')),
+    ('Spelled in Notes', '120 BPM · made from words', ('#1a0b2a', '#6f2ae0', '#ffd23f', '#0d051a', '#ffffff')),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 

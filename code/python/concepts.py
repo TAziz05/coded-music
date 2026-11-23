@@ -34,18 +34,19 @@ def end_words(M, t0, st, S, i, n, tones, root):    # it spells T-H-E E-N-D
     for c in tones[:3]: epiano(M, 'keys', t, c + 12, 2.5, .12)
 
 # ---------------- shapes ----------------
-def polygon(sides, inst, every=1, order=None):    # 'sides' evenly spaced hits per bar (true polyrhythm, not on the 16th grid); notes walk the corners
+from mathsong import euclid
+def polygon(sides, inst, every=1, order=None, rot=0):   # a shape with N corners = N hits spread as evenly as the beat grid allows (Euclidean rhythm); notes walk the corners
     def f(M, t0, st, S, i, n, tones, root):
         if i % every: return
-        bar = 16 * st; corners = [tones[k % len(tones)] + 12 * (k // len(tones)) for k in range(sides)]
+        corners = [tones[k % 3] + 12 * (k // 3) for k in range(sides)]
         seq = order(sides) if order else list(range(sides))
-        for j in range(sides): inst(M, t0 + j * bar / sides, corners[seq[j]] + 12)
+        for j, s in enumerate(euclid(sides, 16, rot)): inst(M, t0 + S(s), corners[seq[j]] + 12)
     return f
 def star(n): return [(2 * k) % n for k in range(n)]          # a star polygon: visit every other corner (0, 2, 4, 1, 3)
-TRI = polygon(3, lambda M, t, nn: marimba(M, 'keys', t, nn, .3, .8, pan=-.4))
+TRI = polygon(3, lambda M, t, nn: marimba(M, 'keys', t, nn, .3, .8, pan=-.4))   # 3 hits: the 'tresillo' feel
 SQU = polygon(4, lambda M, t, nn: pizz(M, t, nn - 12, .8, pan=.4))
 PEN = polygon(5, lambda M, t, nn: celesta(M, 'glock', t, nn, .25, .6, pan=.2))
-HEX = polygon(6, lambda M, t, nn: woodblock(M, t, nn % 2 == 0, .5))
+HEX = polygon(6, lambda M, t, nn: woodblock(M, t, nn % 2 == 0, .5), rot=1)
 OCT = polygon(8, lambda M, t, nn: hat(M, t, .25))
 STAR = polygon(5, lambda M, t, nn: plastic(M, 'lead', t, nn + 12, .3, .9), order=star)
 def circle(M, t0, st, S, i, n, tones, root):      # a circle has no corners: one smooth swell

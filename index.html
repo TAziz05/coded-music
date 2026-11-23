@@ -76,6 +76,10 @@ main{padding:12px 14px;max-width:1100px;margin:0 auto}
 .arc{width:100%;height:46px;display:block}
 .note{font-size:12px;color:var(--mute)}
 footer{text-align:center;color:var(--mute);font-size:12px;padding:24px 14px}
+.fav{background:none;border:none;font-size:20px;cursor:pointer;color:var(--mute);padding:4px;flex:none}.fav.on{color:var(--acc)}
+.fam{grid-column:1/-1;font-family:Anton,Impact,sans-serif;font-size:18px;letter-spacing:.4px;margin:10px 2px 0;color:var(--acc)}
+.loopopt{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.loopopt .chip.on{background:var(--acc);color:var(--bg);border-color:var(--acc)}
+.custom input[type=range]{width:100%;accent-color:var(--acc)}
 .toast{position:fixed;left:50%;bottom:120px;transform:translateX(-50%);background:var(--acc);color:var(--bg);padding:8px 14px;border-radius:999px;font-weight:700;z-index:50;display:none}
 </style>
 </head>
@@ -95,7 +99,7 @@ footer{text-align:center;color:var(--mute);font-size:12px;padding:24px 14px}
     <select id="fMood"><option value="">Any mood</option></select>
     <select id="fTempo"><option value="">Any tempo</option><option value="0-99">Slow (under 100)</option><option value="100-139">Medium (100–139)</option><option value="140-169">Fast (140–169)</option><option value="170-999">Very fast (170+)</option></select>
     <select id="fLen"><option value="">Any length</option><option value="0-75">Under 1¼ min</option><option value="75-105">1¼–1¾ min</option><option value="105-999">Over 1¾ min</option></select>
-    <select id="sort"><option value="new">Newest first</option><option value="old">Oldest first</option><option value="az">Title A–Z</option><option value="fast">Fastest first</option><option value="slow">Slowest first</option><option value="long">Longest first</option><option value="short">Shortest first</option><option value="energy">Most energy</option><option value="calm">Calmest</option><option value="group">By group</option></select>
+    <select id="sort"><option value="new">Newest first</option><option value="old">Oldest first</option><option value="az">Title A–Z</option><option value="fast">Fastest first</option><option value="slow">Slowest first</option><option value="long">Longest first</option><option value="short">Shortest first</option><option value="energy">Most energy</option><option value="calm">Calmest</option><option value="group">By group</option><option value="sound">Similar sound together</option><option value="shapesort">Similar structure together</option></select>
   </div>
   <div class="chips" id="groups"></div>
 </header>
@@ -147,7 +151,7 @@ fetch('site/songs.json').then(r => r.json()).then(d => {
   const uniq = k => [...new Set(SONGS.flatMap(s => s[k]))].sort();
   uniq('genres').forEach(g => $('#fGenre').insertAdjacentHTML('beforeend', `<option>${esc(g)}</option>`));
   uniq('moods').forEach(g => $('#fMood').insertAdjacentHTML('beforeend', `<option>${esc(g)}</option>`));
-  const gs = uniq('groups'); $('#groups').innerHTML = `<button class="chip on" data-g="">All</button>` + gs.map(g => `<button class="chip" data-g="${esc(g)}">${esc(g)} <span style="opacity:.6">${SONGS.filter(s => s.groups.includes(g)).length}</span></button>`).join('');
+  const gs = uniq('groups'); $('#groups').innerHTML = `<button class="chip on" data-g="">All</button><button class="chip" data-g="__fav">★ Favorites <span style="opacity:.6" id="favN">${FAVS.size}</span></button>` + gs.map(g => `<button class="chip" data-g="${esc(g)}">${esc(g)} <span style="opacity:.6">${SONGS.filter(s => s.groups.includes(g)).length}</span></button>`).join('');
   $('#groups').onclick = e => { const b = e.target.closest('.chip'); if (!b) return; sfx('tap'); group = b.dataset.g; document.querySelectorAll('#groups .chip').forEach(c => c.classList.toggle('on', c === b)); render(); };
   render(); route();
 });
@@ -159,14 +163,17 @@ function render() {
   const [t0, t1] = ($('#fTempo').value || '0-9999').split('-').map(Number), [l0, l1] = ($('#fLen').value || '0-9999').split('-').map(Number);
   view = SONGS.filter(s => {
     const hay = [s.title, s.style, s.feel, s.good, ...s.groups, ...s.genres, ...s.moods].join(' ').toLowerCase();
-    return q.every(w => hay.includes(w)) && (!g || s.genres.includes(g)) && (!m || s.moods.includes(m)) && (!group || s.groups.includes(group))
+    return q.every(w => hay.includes(w)) && (!g || s.genres.includes(g)) && (!m || s.moods.includes(m)) && (!group || (group === '__fav' ? FAVS.has(s.id) : s.groups.includes(group)))
       && tempoOf(s) >= t0 && tempoOf(s) <= t1 && s.duration >= l0 && s.duration <= l1;
   });
   const so = $('#sort').value, cmp = {new: (a, b) => b.order - a.order, old: (a, b) => a.order - b.order, az: (a, b) => a.title.localeCompare(b.title),
     fast: (a, b) => tempoOf(b) - tempoOf(a), slow: (a, b) => tempoOf(a) - tempoOf(b), long: (a, b) => b.duration - a.duration, short: (a, b) => a.duration - b.duration,
-    energy: (a, b) => b.energy - a.energy, calm: (a, b) => a.energy - b.energy, group: (a, b) => (a.groups[0] || 'zz').localeCompare(b.groups[0] || 'zz') || a.order - b.order}[so];
+    energy: (a, b) => b.energy - a.energy, calm: (a, b) => a.energy - b.energy, group: (a, b) => (a.groups[0] || 'zz').localeCompare(b.groups[0] || 'zz') || a.order - b.order,
+    sound: (a, b) => a.sound_rank - b.sound_rank, shapesort: (a, b) => a.shape_rank - b.shape_rank}[so];
   view.sort(cmp);
-  $('#list').innerHTML = view.map(card).join('') || `<p class="note">No songs match. Try fewer filters.</p>`;
+  let last = null;   // with 'Similar sound together', a heading starts each sound family
+  $('#list').innerHTML = view.map(s => { let h = ''; if (so === 'sound' && s.family !== last) { h = `<div class="fam">${esc(s.family)}</div>`; last = s.family; } return h + card(s); }).join('')
+    || `<p class="note">${group === '__fav' ? 'No favorites yet. Tap ☆ on any song to save it here.' : 'No songs match. Try fewer filters.'}</p>`;
   $('#count').textContent = `${view.length} of ${SONGS.length} songs`;
   $('#clear').style.display = (q.length || g || m || group || $('#fTempo').value || $('#fLen').value) ? '' : 'none';
 }
@@ -174,15 +181,56 @@ function card(s) {
   const tags = [...s.moods.slice(0, 2), ...s.groups.slice(0, 1)].map(t => `<span class="tag">${esc(t)}</span>`).join('');
   return `<div class="song ${cur && cur.id === s.id ? 'playing' : ''}" data-id="${s.id}"><div class="th" style="background-image:url('${s.thumb ? url(s.thumb) : ''}');background-color:${s.colors[1]}"></div>
   <div class="meta"><div class="t">${esc(s.title)}</div><div class="s">${esc(s.style)} · ${tempoOf(s) ? tempoOf(s) + ' BPM · ' : ''}${fmt(s.duration)}</div><div class="tags">${tags}</div></div>
+  <button class="fav ${FAVS.has(s.id) ? 'on' : ''}" data-fav="${s.id}" aria-label="Favorite">${FAVS.has(s.id) ? '★' : '☆'}</button>
   <button class="play" data-play="${s.id}" aria-label="Play">${cur && cur.id === s.id && playing() ? '❚❚' : '▶'}</button></div>`;
 }
 document.addEventListener('click', e => {
+  const fv = e.target.closest('[data-fav]'); if (fv) { e.stopPropagation(); toggleFav(fv.dataset.fav); return; }
   const p = e.target.closest('[data-play]'); if (p) { e.stopPropagation(); const s = BY[p.dataset.play]; (cur && cur.id === s.id) ? toggle() : play(s); return; }
   const c = e.target.closest('.song'); if (c) { sfx('open'); openSong(BY[c.dataset.id]); return; }
   const t = e.target.closest('[data-filter]'); if (t) { sfx('tap'); closeSheet(); const [k, v] = t.dataset.filter.split('|');
     if (k === 'group') { group = v; document.querySelectorAll('#groups .chip').forEach(ch => ch.classList.toggle('on', ch.dataset.g === v)); } else $('#' + k).value = v; render(); window.scrollTo(0, 0); }
 });
 
+// ---------- favorites (saved on this device) ----------
+let FAVS = new Set(); try { FAVS = new Set(JSON.parse(localStorage.getItem('favs') || '[]')); } catch (e) {}
+function toggleFav(id) {
+  FAVS.has(id) ? FAVS.delete(id) : FAVS.add(id); store.set('favs', JSON.stringify([...FAVS]));
+  sfx(FAVS.has(id) ? 'sparkle' : 'off'); toast(FAVS.has(id) ? 'Added to favorites' : 'Removed from favorites');
+  const n = document.getElementById('favN'); if (n) n.textContent = FAVS.size;
+  const b = document.getElementById('sheetFav'); if (b && location.hash.slice(1) === id) b.textContent = FAVS.has(id) ? '★ Favorited' : '☆ Favorite';
+  render();
+}
+// ---------- choosing the loop section ----------
+function getLoop(s) { try { const v = JSON.parse(localStorage.getItem('loop:' + s.id)); if (v && v[1] > v[0]) return v; } catch (e) {} return s.loop; }
+function setLoopPts(s, v, quiet) {
+  store.set('loop:' + s.id, JSON.stringify(v)); if (cur && cur.id === s.id) { markLoop(s); if (loopOn && wPlaying) startW(Math.min(wTime(), v[1] - .05)); }
+  const d = document.getElementById('exDesc'); if (d) d.textContent = `plays the start, repeats the loop (${fmt(v[0])}–${fmt(v[1])}, ${fmt(v[1] - v[0])} long), then the real ending`;
+  if (!quiet) sfx('tap');
+}
+function markLoop(s) { const [a, b] = getLoop(s); $('#loopmark').style.left = (a / s.duration * 100) + '%'; $('#loopmark').style.width = ((b - a) / s.duration * 100) + '%'; }
+function loopUI(s) {
+  const opts = [s.loop, ...(s.loops || [])], curL = getLoop(s), same = (x, y) => Math.abs(x[0] - y[0]) < .05 && Math.abs(x[1] - y[1]) < .05;
+  const isCustom = !opts.some(o => same(o, curL));
+  $('#loopOpts').innerHTML = opts.map((o, i) => `<button class="chip ${same(o, curL) ? 'on' : ''}" data-lp="${i}">${i ? 'Option ' + (i + 1) : 'Best match'}: ${fmt(o[0])}–${fmt(o[1])}</button>`).join('')
+    + `<button class="chip ${isCustom ? 'on' : ''}" data-lp="c">✏️ Pick my own</button>`;
+  $('#loopOpts').onclick = e => { const b = e.target.closest('[data-lp]'); if (!b) return;
+    if (b.dataset.lp === 'c') { customUI(s, curL); document.querySelectorAll('#loopOpts .chip').forEach(c => c.classList.toggle('on', c === b)); sfx('tap'); return; }
+    setLoopPts(s, opts[+b.dataset.lp]); $('#customLoop').innerHTML = ''; loopUI(s); };
+  if (isCustom) customUI(s, curL); else $('#customLoop').innerHTML = '';
+}
+function customUI(s, v) {   // start and end snap to bar lines so the jump lands on the beat
+  const bar = s.bar || 2, nb = Math.floor(s.duration / bar), A = Math.round(v[0] / bar), B = Math.round(v[1] / bar);
+  $('#customLoop').innerHTML = `<div class="custom"><p class="note" style="margin:10px 0 2px">Start: <b id="cA"></b></p><input type="range" id="rA" min="0" max="${nb - 1}" value="${A}">
+  <p class="note" style="margin:6px 0 2px">End: <b id="cB"></b></p><input type="range" id="rB" min="1" max="${nb}" value="${B}">
+  <div class="row" style="margin:8px 0 0"><button class="btn" id="cTry">🔁 Try it</button><button class="btn" id="cReset">Back to best match</button></div>
+  <p class="note">Both ends snap to bar lines. If the jump sounds bumpy, move one end a bar or two.</p></div>`;
+  const upd = () => { let a = +$('#rA').value, b = +$('#rB').value; if (b <= a) { b = a + 1; $('#rB').value = b; }
+    $('#cA').textContent = fmt(a * bar) + ` (bar ${a + 1})`; $('#cB').textContent = fmt(b * bar) + ` (bar ${b + 1})`; setLoopPts(s, [+(a * bar).toFixed(3), +(b * bar).toFixed(3)], true); };
+  $('#rA').oninput = $('#rB').oninput = upd; upd();
+  $('#cTry').onclick = () => play(s, true);
+  $('#cReset').onclick = () => { localStorage.removeItem('loop:' + s.id); sfx('off'); loopUI(s); setLoopPts(s, s.loop, true); };
+}
 // ---------- song sheet ----------
 function arcSVG(a) { const w = 300, h = 46, pts = a.map((v, i) => `${(i / (a.length - 1) * w).toFixed(1)},${(h - 3 - v * (h - 8)).toFixed(1)}`).join(' ');
   return `<svg class="arc" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><polyline points="0,${h} ${pts} ${w},${h}" fill="color-mix(in srgb,var(--acc) 25%,transparent)" stroke="var(--acc)" stroke-width="2"/></svg>`; }
@@ -190,16 +238,18 @@ function miniList(ids) { return `<div class="mini">${ids.map(i => BY[i]).filter(
 function openSong(s) {
   history.replaceState(null, '', '#' + s.id);
   const sameGroup = s.groups.length ? SONGS.filter(o => o !== s && o.groups.includes(s.groups[0])).slice(0, 12).map(o => o.id) : [];
-  const L = s.loop[1] - s.loop[0];
+  const LP = getLoop(s), L = LP[1] - LP[0];
   $('#panel').innerHTML = `<div class="hero" style="background-image:url('${url(s.card)}');background-color:${s.colors[1]}"><button class="x" onclick="closeSheet()" aria-label="Close">✕</button></div>
   <div class="pbody"><h2>${esc(s.title)}</h2><div class="note">${esc(s.style)}${tempoOf(s) ? ' · ' + tempoOf(s) + ' BPM' : ''} · ${fmt(s.duration)}</div>
   <p>${esc(s.feel)}</p><p class="note"><b>Good for:</b> ${esc(s.good)}</p>
   <div class="kv">${s.groups.map(g => `<span class="chip" data-filter="group|${esc(g)}">${esc(g)}</span>`).join('')}${s.genres.filter(g => !s.groups.includes(g)).map(g => `<span class="chip" data-filter="fGenre|${esc(g)}">${esc(g)}</span>`).join('')}${s.moods.map(g => `<span class="chip" data-filter="fMood|${esc(g)}">${esc(g)}</span>`).join('')}</div>
   <div class="row"><button class="btn pri" onclick="play(BY['${s.id}'])">▶ Play</button><button class="btn" onclick="play(BY['${s.id}'], true)">🔁 Play on loop</button>
-  <a class="btn" href="${url(s.file)}" download>⬇ MP3</a><a class="btn" href="${vurl(s.video)}" target="_blank" rel="noopener">🎬 Video</a><button class="btn" onclick="share('${s.id}')">🔗 Share</button></div>
+  <a class="btn" href="${url(s.file)}" download>⬇ MP3</a><a class="btn" href="${vurl(s.video)}" target="_blank" rel="noopener">🎬 Video</a><button class="btn" onclick="share('${s.id}')">🔗 Share</button><button class="btn" id="sheetFav" onclick="toggleFav('${s.id}')">${FAVS.has(s.id) ? '★ Favorited' : '☆ Favorite'}</button></div>
   ${s.looplab ? `<div class="row" style="margin-top:0"><a class="btn" href="loop-lab/?song=../${url(s.looplab)}" onclick="sfx('open')">🎛️ Open in Loop Lab</a><button class="btn" onclick="copyCode('${s.id}')">📋 Copy Loop Lab code</button>${s.src ? `<a class="btn" href="https://github.com/TAziz05/coded-music/blob/main/${url(s.src)}" target="_blank" rel="noopener">🐍 Python code</a>` : ''}</div>
   <p class="note" style="margin-top:-4px">Loop Lab gets a simplified version (its own instruments, 8-bar sections) that you can change and export again.</p>` : ''}
-  <div class="ext"><b>Extended version</b> <span class="note">plays the start, repeats the seamless loop (${fmt(s.loop[0])}–${fmt(s.loop[1])}, ${fmt(L)} long), then the real ending</span>
+  <div class="ext"><b>Loop section</b> <span class="note">which part repeats when you play on loop or make an extended version</span>
+  <div class="loopopt" id="loopOpts"></div><div id="customLoop"></div></div>
+  <div class="ext"><b>Extended version</b> <span class="note" id="exDesc">plays the start, repeats the loop (${fmt(LP[0])}–${fmt(LP[1])}, ${fmt(L)} long), then the real ending</span>
   <div class="row" style="margin:8px 0 0;align-items:center"><select id="exMin">${[2, 3, 5, 10, 15, 20].map(m => `<option value="${m}" ${m === 5 ? 'selected' : ''}>${m} min</option>`).join('')}</select>
   <select id="exFmt"><option value="mp3">MP3</option><option value="wav">WAV</option></select><button class="btn pri" id="exGo" onclick="extended('${s.id}')">Make it</button><span class="note" id="exMsg"></span></div></div>
   <div class="sec"><h3>Energy over time</h3>${arcSVG(s.arc)}</div>
@@ -207,7 +257,7 @@ function openSong(s) {
   <div class="sec"><h3>Sounds similar</h3>${miniList(s.similar)}</div>
   <div class="sec"><h3>Similar structure (energy rises and falls the same way)</h3>${miniList(s.shape)}</div>
   ${sameGroup.length ? `<div class="sec"><h3>More ${esc(s.groups[0])}</h3>${miniList(sameGroup)}</div>` : ''}</div>`;
-  $('#sheet').classList.add('show'); $('#panel').scrollTop = 0;
+  loopUI(s); $('#sheet').classList.add('show'); $('#panel').scrollTop = 0;
 }
 function closeSheet() { if ($('#sheet').classList.contains('show')) sfx('close'); $('#sheet').classList.remove('show'); history.replaceState(null, '', location.pathname + location.search); }
 $('#sheet').onclick = e => { if (e.target.id === 'sheet') closeSheet(); };
@@ -231,15 +281,15 @@ async function getBuf(s) {
 function stopW() { if (src) { try { src.onended = null; src.stop(); } catch (e) {} src = null; } wPlaying = false; }
 async function startW(off) {
   const s = cur, b = await getBuf(s); if (cur !== s) return; stopW(); await ctx.resume();
-  src = ctx.createBufferSource(); src.buffer = b; src.loop = true; src.loopStart = s.loop[0]; src.loopEnd = s.loop[1]; src.connect(ctx.destination);
+  src = ctx.createBufferSource(); src.buffer = b; src.loop = true; [src.loopStart, src.loopEnd] = getLoop(s); src.connect(ctx.destination);
   src.start(0, off); wStart = ctx.currentTime; wOff = off; wPlaying = true; ui();
 }
-function wTime() { if (!wPlaying) return wOff; let t = wOff + (ctx.currentTime - wStart); const [a, b] = cur.loop; if (t >= b) t = a + ((t - a) % (b - a)); return t; }
+function wTime() { if (!wPlaying) return wOff; let t = wOff + (ctx.currentTime - wStart); const [a, b] = getLoop(cur); if (t >= b) t = a + ((t - a) % (b - a)); return t; }
 async function play(s, loop = null) {
   sfx('play');
   if (loop !== null) loopOn = loop; cur = s; audio.pause(); stopW();
   $('#player').classList.add('show'); $('#ptitle').textContent = s.title; $('#pth').style.backgroundImage = s.thumb ? `url('${url(s.thumb)}')` : '';
-  $('#loopmark').style.left = (s.loop[0] / s.duration * 100) + '%'; $('#loopmark').style.width = ((s.loop[1] - s.loop[0]) / s.duration * 100) + '%';
+  markLoop(s);
   if ('mediaSession' in navigator) navigator.mediaSession.metadata = new MediaMetadata({title: s.title, artist: 'TAziz322 · Coded Music', artwork: s.thumb ? [{src: url(s.thumb), sizes: '480x270', type: 'image/jpeg'}] : []});
   if (loopOn) { $('#ptime').textContent = 'Loading loop…'; await startW(0); }
   else { audio.src = url(s.file); try { await audio.play(); } catch (e) {} }
@@ -255,7 +305,7 @@ async function setLoop(on) {
   sfx(on ? 'on' : 'off');
   if (!cur) { loopOn = on; ui(); return; }
   const t = loopOn ? wTime() : audio.currentTime, was = playing(); loopOn = on;
-  if (on) { audio.pause(); if (was) { $('#ptime').textContent = 'Loading loop…'; await startW(Math.min(t, cur.loop[1] - .05)); } else wOff = t; toast('Seamless loop on'); }
+  if (on) { audio.pause(); if (was) { $('#ptime').textContent = 'Loading loop…'; await startW(Math.min(t, getLoop(cur)[1] - .05)); } else wOff = t; toast('Loop on'); }
   else { stopW(); audio.src = url(cur.file); audio.currentTime = t; if (was) audio.play(); toast('Loop off'); }
   ui();
 }
@@ -265,7 +315,7 @@ $('#ptitle').onclick = $('#pth').onclick = () => cur && openSong(cur);
 $('#shuffle').onclick = () => { sfx('whoosh'); if (view.length) play(view[Math.floor(Math.random() * view.length)]); };
 audio.onended = () => step(1); audio.onplay = audio.onpause = () => { ui(); render(); };
 let dragging = false; $('#seek').oninput = () => dragging = true;
-$('#seek').onchange = () => { dragging = false; if (!cur) return; const t = $('#seek').value / 1000 * cur.duration; if (loopOn) { if (wPlaying) startW(Math.min(t, cur.loop[1] - .05)); else wOff = t; } else audio.currentTime = t; };
+$('#seek').onchange = () => { dragging = false; if (!cur) return; const t = $('#seek').value / 1000 * cur.duration; if (loopOn) { if (wPlaying) startW(Math.min(t, getLoop(cur)[1] - .05)); else wOff = t; } else audio.currentTime = t; };
 function ui() { $('#pp').textContent = playing() ? '❚❚' : '▶'; $('#loopBtn').classList.toggle('on', loopOn); }
 setInterval(() => { if (!cur) return; const t = loopOn ? wTime() : audio.currentTime; if (!dragging) $('#seek').value = t / cur.duration * 1000;
   if (!(loopOn && !buf)) $('#ptime').textContent = `${fmt(t)} / ${fmt(cur.duration)}${loopOn ? ' · looping' : ''}`; }, 250);
@@ -278,7 +328,7 @@ async function extended(id) {
   try {
     msg.textContent = 'Loading…'; ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
     const ab = await (await fetch(url(s.file))).arrayBuffer(), b = await new Promise((ok, no) => ctx.decodeAudioData(ab, ok, no));
-    const sr = b.sampleRate, A = Math.round(s.loop[0] * sr), B = Math.round(s.loop[1] * sr), N = b.length, L = B - A;
+    const sr = b.sampleRate, A = Math.round(getLoop(s)[0] * sr), B = Math.round(getLoop(s)[1] * sr), N = b.length, L = B - A;
     const reps = Math.max(1, Math.ceil((mins * 60 * sr - N) / L)), total = N + reps * L, X = Math.round(.015 * sr);
     const ch = [0, 1].map(c => b.getChannelData(Math.min(c, b.numberOfChannels - 1))), out = ch.map(() => new Float32Array(total));
     for (let c = 0; c < 2; c++) {   // start ... loop end, then (loop start ... loop end) x reps, then the real ending; 15 ms crossfades at each jump

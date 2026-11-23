@@ -11,12 +11,14 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 `index.html` is a song browser for phones and computers (it becomes the site when the repo is published with GitHub Pages). It has:
 
 - search, plus filters for genre, mood, tempo and length, and group chips (Pokémon-style, Sonic-style, Mario-style worlds, BTS eras, breakcore, and more)
-- sorting by newest, title, tempo, length, energy or group
+- sorting by newest, title, tempo, length, energy or group, plus **Similar sound together** (songs grouped into sound families by their audio) and **Similar structure together** (songs with the same build-up/drop/energy shape next to each other)
+- **Favorites**: tap ☆ on any song, then the ★ Favorites chip (saved in your browser)
 - for every song: other versions (like the breakcore version), songs that sound similar, songs with a similar structure, and more from the same group
-- seamless loop playback, and **Extended versions**: pick 2 to 20 minutes and your browser builds an MP3 or WAV that plays the start, repeats the seamless loop, then plays the real ending
+- seamless loop playback with a **loop picker**: the best match, up to three other loop options, or pick your own start and end (snapped to bar lines); your choice is remembered and used for loop playback and extended versions
+- **Extended versions**: pick 2 to 20 minutes and your browser builds an MP3 or WAV that plays the start, repeats the seamless loop, then plays the real ending
 - four themes (Storm, Neon, Daylight, Game Boy), share links for each song, and a link to Loop Lab
 
-Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `python tools/to_looplab.py` turns the Python songs into simplified Loop Lab song code (`site/looplab/`). Loop Lab can import that code (paste it, open the file, drag it onto the page, or open `loop-lab/?song=...`), change it and export it again. Both pages have app icons (add them to your home screen) and coded button sounds you can switch off.
+Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `python tools/to_looplab.py` turns the Python songs into simplified Loop Lab song code (`site/looplab/`), and `python tools/transcribe.py` does the same for the early hand-coded songs and the browser game songs by writing down every note and drum hit while their code runs, so all songs have a Loop Lab version. Loop Lab can import that code (paste it, open the file, drag it onto the page, or open `loop-lab/?song=...`), change it and export it again. Both pages have app icons (add them to your home screen) and coded button sounds you can switch off.
 
 `python tools/build_site.py` rebuilds `site/songs.json` and `site/thumbs/` after songs are added. It reads this README's song table and the title-card list, then listens to each MP3 to find its loop points, what it sounds like and its energy shape.
 
@@ -24,7 +26,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 | Folder | What it is |
 |---|---|
-| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 129 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
+| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 143 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
 | `videos/` | The same songs as 1080p videos with a title card, ready to upload to YouTube. |
 | `cards/` | The title card images. |
 | `loops/` | One seamless loop of each song (see `loops/music.json` for loop lengths). |
@@ -35,7 +37,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 ## The songs
 
-8 game songs, plus 129 YouTube gameplay tracks (below): 137 songs in all.
+8 game songs, plus 143 YouTube gameplay tracks (below): 151 songs in all.
 
 | Song | Game | Plays during |
 |---|---|---|
@@ -52,7 +54,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 `loop-lab/index.html` is a song maker that runs in the browser: build songs from sections with chords, a melody, drums and sound effects (built-in coded effects or your own uploads), load TAziz322's songs and tweak them, and save songs as code. See [`loop-lab/GUIDE.md`](loop-lab/GUIDE.md) for how to use it. `loop-lab/tools/make_presets.py` rebuilds the page from `template.html` with the built-in songs.
 
-## YouTube gameplay tracks (129 songs)
+## YouTube gameplay tracks (143 songs)
 
 Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3). They run from 1 to about 2½ minutes; most are around 1½ minutes. These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments, and the songs live in the other files in `code/python/` (see the commands below). Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
 
@@ -187,6 +189,20 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Comeback Rising | 128 BPM | Starts as sad piano and builds into a triumphant orchestral chorus with a key change | Comebacks, emotional wins |
 | Bass Quake | 140 BPM | Dubstep: build-ups, then half-time drops with a wobble bass and a pluck melody | Hype edits, montages |
 | Infinite Series Breaks | 174 BPM | Steady breakcore with pi and e as melodies, prime-number bells and a Zeno ending | Smart plays, montages |
+| Breakcore Cubed | 190 BPM | Three breakbeats at once, each in its own range; the layers leave one at a time at the end | Intense montages |
+| Golazo Anthem | 128 BPM | Samba drums, stadium chants and brass; ends with three final whistles and a roaring crowd | Soccer clips, wins |
+| Full Court Press | 94 BPM | Hip-hop with ball bounces and sneaker squeaks; ends on a buzzer beater | Highlights, trick shots |
+| Fourth and Goal | 112 BPM | Marching drumline and fight-song brass with hey chants | Big plays, intros |
+| Seventh Inning Swing | 120 BPM | Swinging stadium organ with the charge riff, bat cracks and crowd claps | Fun, laid-back clips |
+| Ice Time | 140 BPM | Rock and stadium organ with skate swooshes; ends with a goal horn | Hype plays |
+| Beach Spike | 116 BPM | Tropical house with steel drum and ukulele; ends with a spike and a whistle | Chill highlights |
+| Powder Run | 132 BPM | Racing winter eurobeat with sleigh bells and ski swooshes | Winter maps, fast clips |
+| Shuttle Rally | 150 BPM | Quick, bright rally with light shuttle hits panning left and right | Quick clips |
+| Huck It | 160 BPM | Upbeat indie-punk with ukulele and flying-disc swooshes | Upbeat highlights |
+| Stride 176 | 176 BPM | Drum & bass at a running pace, a footstep on every beat; ends with a sprint finish | Running, fast montages |
+| Easy Pace | 160 BPM | Light acoustic pop at a jogging pace, a footstep on every beat | Chill movement clips |
+| Fourier Rise | 110 BPM | The lead is built from sine waves, adding harmonics until it is a square wave, then taking them away | Building, smart plays |
+| Spelled in Notes | 120 BPM | Words turned into melodies, one note per letter (CODED MUSIC, TAZIZ322, GG, VICTORY ROYALE) | Intros, channel moments |
 
 ```
 pip install numpy scipy

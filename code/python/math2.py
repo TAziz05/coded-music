@@ -36,20 +36,17 @@ def accents(odd, notes):
             j = (i % (len(notes) // 8)) * 8 + k
             if odd[j]: brass(M, 'keys', t0 + S(2 * k), notes[j], st * 1.6, .14)
     return f
-def end_421(M, t0, st, S, i, n, tones, root):  # every Collatz path ends 4 -> 2 -> 1: played three times, slowing down
+def end_421(M, t0, st, S, i, n, tones, root):  # every Collatz path ends 4 -> 2 -> 1: three times, all the same length, then the 1 echoes away
     if i: return
-    t = t0
-    for r, d in enumerate((1., 1.4, 2.)):
-        for v in (4, 2, 1):
-            marimba(M, 'lead', t, deg(int(round(math.log2(v) * 1.2)) % 10, 69), st * 2 * d, 1.); t += st * 2 * d
-    kick(M, t, .9); crash(M, t, .5)
-    for c in (57, 64, 69, 72): supersaw(M, 'keys', t, c, 2.5, .05, cut=3000, a=.003, r=1., voices=4)
+    t = t0; note = lambda v: deg(int(round(math.log2(v) * 1.2)) % 10, 69)
+    for r in range(3):
+        for v in (4, 2, 1): marimba(M, 'lead', t, note(v), st * 2, 1.); t += st * 2
+    for k in range(1, 7): marimba(M, 'lead', t - st * 2 + k * st * 3, note(1), st * 2, .8 * .6 ** k)   # echo
 
 # ---------------- Prime Time ----------------
 G = [0]                                      # global 16th-note counter, so the prime cycles run through the whole song
 PLAYERS = [(2, lambda M, t, T: hat(M, t, .18)), (3, lambda M, t, T: celesta(M, 'glock', t, T[0] + 24, .2, .45)),
-           (5, lambda M, t, T: woodblock(M, t, True, .6)), (7, lambda M, t, T: marimba(M, 'keys', t, T[1] + 12, .3, .6, pan=-.4)),
-           (11, lambda M, t, T: cowbell(M, t, T[2] + 12, .15, .8)), (13, lambda M, t, T: pizz(M, t, T[0], .9, pan=.4))]
+           (5, lambda M, t, T: marimba(M, 'keys', t, T[1] + 12, .3, .6, pan=-.4))]   # just the first three primes: 2, 3 and 5
 def prime_drums(layers):
     def f(M, t0, st, S, i, n, fill):
         for s in (0, 8): kick(M, t0 + S(s), .8)
@@ -62,7 +59,7 @@ def prime_drums(layers):
     return f
 PT = [[57, 60, 64]]
 def keep_tones(M, t0, st, S, i, n, tones, root): PT[0] = tones
-for L in (2, 4, 6): EXTRA_DRUMS[f'primes{L}'] = prime_drums(L)
+for L in (2, 3): EXTRA_DRUMS[f'primes{L}'] = prime_drums(L)
 def gap_melody(bars, start=0):               # prime gaps (1, 2, 2, 4, 2, 4, ...) become note lengths and steps up the scale
     pr = [p for p in range(2, 2000) if all(p % q for q in range(2, int(p ** .5) + 1))]
     gaps = [b - a for a, b in zip(pr, pr[1:])][start:]
@@ -100,8 +97,8 @@ def tm_melody(bars, offset=0, base=69):
     return rows_from(out)
 def end_sierpinski(M, t0, st, S, i, n, tones, root):   # row 15 of the triangle is all odd: 16 hits in a row, then the last chord
     if i: return
-    for k in range(16): rim(M, t0 + S(k), .4 + .03 * k); woodblock(M, t0 + S(k), k % 2 == 0, .4)
-    te = t0 + 16 * st; kick(M, te, 1.); crash(M, te, .6)
+    for k in range(16): rim(M, t0 + S(k), .3 + .015 * k); woodblock(M, t0 + S(k), k % 2 == 0, .3)
+    te = t0 + 16 * st; kick(M, te, .7); crash(M, te, .4)
     for c in tones[:3]: plastic(M, 'keys', te, c + 24, 1.5, .7)
 
 # ---------------- Fourier ----------------
@@ -126,15 +123,15 @@ FB = [[81,-1,79,76,-1,74,-1,76],[79,-1,-1,76,-1,72,-1,-1],[77,-1,76,74,-1,72,-1,
 
 SONGS = {
  'collatz': dict(file='Collatz_Climb', title='Collatz Climb', bpm=128, chorus_keys=True, cont_tol=0., sections={
-   'intro': sec(4, ['Am', 'F', 'C', 'G'], keys=['pad'], lead='fmbell', mel=rows_from(CN[:32]), lv=.6),
+   'intro': sec(4, ['Am', 'F', 'C', 'G'], keys=['pad'], kv=1.6, lead='fmbell', mel=rows_from(CN[:32]), lv=1.2),
    'verse': sec(8, ['Am', 'F', 'C', 'G'], keys=['marimbaarp'], kv=.6, drums='euclid', bass='octave', lead='marimba', mel=rows_from(CN), extra=accents(CODD, CN), kind='verse'),
    'chorus': sec(8, ['F', 'G', 'Am', 'Am'], keys=['synthwave'], drums='euclid', bass='octave', lead='sqbright+marimba', mel=rows_from(CN2), extra=accents(CODD2, CN2), impact=True, kind='chorus'),
    'end': sec(1, ['Am'], extra=end_421, kind='outro')},
    order=['intro', 'verse', 'chorus', 'verse', 'chorus', 'end']),
  'primes': dict(file='Prime_Time', title='Prime Time', bpm=120, chorus_keys=True, cont_tol=0., sections={
    'intro': sec(4, ['Dm', 'Bb', 'F', 'C'], keys=['pad'], drums='primes2', extra=keep_tones),
-   'verse': sec(8, ['Dm', 'Bb', 'F', 'C'], keys=['pad'], drums='primes4', bass='long', lead='plastic', mel=gap_melody(8), extra=keep_tones, kind='verse'),
-   'chorus': sec(8, ['Bb', 'C', 'Dm', 'Dm'], keys=['pad', 'pluck'], drums='primes6', bass='octave', lead='sqbright+plastic', mel=gap_melody(8, 40), extra=keep_tones, impact=True, kind='chorus'),
+   'verse': sec(8, ['Dm', 'Bb', 'F', 'C'], keys=['pad'], drums='primes3', bass='long', lead='plastic', mel=gap_melody(8), extra=keep_tones, kind='verse'),
+   'chorus': sec(8, ['Bb', 'C', 'Dm', 'Dm'], keys=['pad', 'pluck'], drums='primes3', bass='octave', lead='sqbright+plastic', mel=gap_melody(8, 40), extra=keep_tones, impact=True, kind='chorus'),
    'end': sec(1, ['Dm'], extra=end_primes, kind='outro')},
    order=['intro', 'verse', 'chorus', 'verse', 'chorus', 'end'], levels={'glock': .9}),
  'sierpinski': dict(file='Sierpinski_Steps', title='Sierpinski Steps', bpm=136, chorus_keys=True, cont_tol=0., sections={
@@ -152,6 +149,9 @@ SONGS = {
    'end': sec(1, ['Am'], extra=end_fourier, kind='outro')},
    order=['intro', 'verse1', 'verse2', 'chorus1', 'chorus2', 'end']),
 }
+
+SONGS['collatz']['gain_like'] = {'verse': 'intro', 'chorus': 'intro', 'end': 'intro'}   # one level for the whole song, so nothing drops when the drums come in
+SONGS['sierpinski']['targets'] = {'outro': -20.}         # a softer last hit
 
 if __name__ == '__main__':
     names = list(SONGS) if sys.argv[1] == 'all' else sys.argv[1:]
