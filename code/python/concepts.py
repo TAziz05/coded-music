@@ -49,15 +49,17 @@ PEN = polygon(5, lambda M, t, nn: celesta(M, 'glock', t, nn, .25, .6, pan=.2))
 HEX = polygon(6, lambda M, t, nn: woodblock(M, t, nn % 2 == 0, .5), rot=1)
 OCT = polygon(8, lambda M, t, nn: hat(M, t, .25))
 STAR = polygon(5, lambda M, t, nn: plastic(M, 'lead', t, nn + 12, .3, .9), order=star)
-def circle(M, t0, st, S, i, n, tones, root):      # a circle has no corners: one smooth swell
-    if i % 2 == 0:
-        for c in tones[:3]: supersaw(M, 'pad', t0, c + 12, 32 * st, .045, cut=1500, a=1.5 * 16 * st, r=1., voices=3)
+CIRC = [False]
+def circle(M, t0, st, S, i, n, tones, root):      # a circle has no corners: one smooth, unbroken pad (it swells in once, then each chord overlaps the next)
+    first = not CIRC[0]; CIRC[0] = True
+    for c in tones[:3]: supersaw(M, 'pad', t0, c + 12, 16 * st + .5, .045, cut=1500, a=(24 * st if first else .35), r=1.2, voices=3)
 def end_circle(M, t0, st, S, i, n, tones, root):  # all the shapes once more, then they melt into one circle
-    if i: return
-    for f in (TRI, SQU, PEN, HEX, OCT): f(M, t0, st, S, 0, 1, tones, root)
-    te = t0 + 16 * st; kick(M, te, .9)
-    for c in tones[:3] + [tones[0] + 12]: supersaw(M, 'pad', te, c + 12, 4., .05, cut=1800, a=.05, r=2., voices=4)
-    harp(M, te, tones[0] + 24, .8)
+    if i == 0:   # bar 1: all the shapes; bar 2: only the triangle and pentagon; then just the circle, fading away
+        for f in (TRI, SQU, PEN, HEX, OCT): f(M, t0, st, S, 0, 1, tones, root)
+        for c in tones[:3]: supersaw(M, 'pad', t0, c + 12, 32 * st + 2., .045, cut=1500, a=.35, r=3.5, voices=3)
+    else:
+        for f in (TRI, PEN): f(M, t0, st, S, 0, 1, tones, root)
+        harp(M, t0 + 16 * st, tones[0] + 24, .5)
 
 # ---------------- colors ----------------
 COLORS = [('red', 450e12), ('orange', 490e12), ('yellow', 520e12), ('green', 560e12), ('blue', 640e12), ('indigo', 670e12), ('violet', 730e12)]
@@ -70,29 +72,35 @@ def key_chords(root, minor):
     if minor: return [r + 'm', NAMES[(root + 8) % 12], NAMES[(root + 3) % 12], NAMES[(root + 10) % 12]]
     return [r, NAMES[(root + 7) % 12], NAMES[(root + 9) % 12] + 'm', NAMES[(root + 5) % 12]]
 MOT_MAJ = [0, 4, 7, 9, 7, 4, 2, 4]; MOT_MIN = [0, 3, 7, 8, 7, 3, 2, 3]
-def color_mel(root, minor):
+def color_mel(root, minor, nxt=None):
     m = MOT_MIN if minor else MOT_MAJ; base = root
+    land = base + m[2] if nxt is None else min((nxt + 7 + 12 * o for o in (-1, 0, 1)), key=lambda x: abs(x - (base + m[2])))   # last note leads into the next color's key
     return [[base + m[0], -1, base + m[1], -1, base + m[2], -1, base + m[3], -1], [base + m[4], -1, base + m[5], base + m[6], base + m[7], -1, -1, 0],
-            [base + m[2], -1, base + m[3], -1, base + 12, -1, base + m[3], -1], [base + m[2], -1, -1, -1, 0, 0, 0, 0]]
-COLOR_STYLE = {'red': (['brasshits', 'pad'], 'brass2', 'rock'), 'orange': (['guitar', 'pad'], 'guitar', 'funk'),
-               'yellow': (['plastic', 'pluck'], 'sqbright', 'fourfloor'), 'green': (['marimbaarp'], 'flute', 'calypso'),
+            [base + m[2], -1, base + m[3], -1, base + 12, -1, base + m[3], -1], [land, -1, -1, -1, 0, 0, 0, 0]]
+COLOR_STYLE = {'red': (['brasshits', 'pad'], 'brass2', 'halfpop'), 'orange': (['guitar', 'pad'], 'guitar', 'halfpop'),
+               'yellow': (['plastic', 'pluck', 'pad'], 'sqbright', 'fourfloor'), 'green': (['marimbaarp', 'pad'], 'flute', 'fourfloor'),
                'blue': (['pad', 'pluck'], 'fmbell', 'halfpop'), 'indigo': (['dark', 'pad'], 'saw80s', 'halfpop'),
                'violet': (['celesta', 'pad'], 'celesta+voice', 'fourfloor')}
-def end_white(M, t0, st, S, i, n, tones, root):   # white light = every color at once: all seven color notes in one shimmering chord
+def end_white(M, t0, st, S, i, n, tones, root):   # white light = all the colors together: each color's note sparkles once, red to violet, and they settle on a warm chord
     if i: return
-    kick(M, t0, .9); crash(M, t0, .6)
-    for c, nn in COLOR_KEYS:
-        supersaw(M, 'pad', t0, nn, 4., .03, cut=3000, a=.02, r=2.5, voices=3); celesta(M, 'glock', t0 + (nn - 68) * .05, nn + 12, 2., .4)
+    kick(M, t0, .6)
+    for k, (c, nn) in enumerate(COLOR_KEYS): celesta(M, 'glock', t0 + k * 2 * st, nn + 12, 1.5, .35)
+    for c in tones[:3] + [tones[0] + 12]: supersaw(M, 'pad', t0, c + 12, 4., .035, cut=2200, a=.3, r=3., voices=3)
+    harp(M, t0 + 14 * st, tones[0] + 24, .5)
 
 def build_colors():
     secs, order = {'intro': sec(2, ['Ab', 'Eb'], keys=['pad'])}, ['intro']
-    for c, root in COLOR_KEYS:
+    for j, (c, root) in enumerate(COLOR_KEYS):   # every color keeps the pad and a related beat, and its last bar is the next color's 'five' chord, so it glides into the next key
         minor = c in COOL; keys, lead, drums = COLOR_STYLE[c]
-        secs[c] = sec(4, key_chords(root, minor), keys=keys, drums=drums, bass='octave', lead=lead, mel=color_mel(root, minor), crash=True,
-                      kind='chorus' if c in ('yellow', 'violet') else 'verse')
+        nxt = COLOR_KEYS[j + 1][1] if j + 1 < len(COLOR_KEYS) else None
+        ch = key_chords(root, minor)
+        if nxt is not None: ch = ch[:3] + [NAMES[(nxt + 7) % 12]]
+        secs[c] = sec(4, ch, keys=keys, drums=drums, bass='octave', lead=lead, mel=color_mel(root, minor, nxt), crash=False,
+                      kind='verse')
         order.append(c)
     secs['end'] = sec(1, ['E'], extra=end_white, kind='outro'); order.append('end')
-    return dict(file='Rainbow_Spectrum', title='Rainbow Spectrum', bpm=116, sections=secs, order=order, chorus_keys=True, cont_tol=0., verb=2.6)
+    return dict(file='Rainbow_Spectrum', title='Rainbow Spectrum', bpm=116, sections=secs, order=order, chorus_keys=True, cont_tol=0., verb=2.6,
+                targets={'verse': -15.5})   # every color is leveled to the same loudness
 
 SONGS = {
  'words': dict(file='Spelled_in_Notes', title='Spelled in Notes', bpm=120, chorus_keys=True, cont_tol=0., sections={
@@ -108,7 +116,7 @@ SONGS = {
    'pentagon': sec(4, ['F', 'G', 'Em', 'Am'], extra=chain(circle, TRI, SQU, PEN), drums='fourfloor', bass='octave', kind='verse'),
    'star': sec(8, ['F', 'G', 'Em', 'Am'], extra=chain(circle, SQU, STAR, HEX), drums='fourfloor', bass='octave', impact=True, kind='chorus'),
    'all': sec(8, ['C', 'Am', 'F', 'G'], extra=chain(circle, TRI, SQU, PEN, HEX, OCT, STAR), drums='fourfloor', bass='octave', kind='chorus'),
-   'end': sec(1, ['C'], extra=end_circle, kind='outro')},
+   'end': sec(2, ['C'], extra=end_circle, kind='outro')},
    order=['circle', 'triangle', 'square', 'pentagon', 'star', 'all', 'end'], levels={'glock': .9}),
  'colors': build_colors(),
 }

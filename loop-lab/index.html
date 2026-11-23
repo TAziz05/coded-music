@@ -88,7 +88,10 @@ footer{text-align:center;color:#fff;font-size:14px;padding:6px 12px 30px;opacity
 @media(max-width:720px){.top{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){.big{transition:none}}
 .llbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.llbar .tool{font-size:14px;padding:7px 12px;color:inherit;text-decoration:none;display:inline-flex;align-items:center;width:auto}
-</style></head><body>
+</style>
+<!-- visitor counts (GoatCounter: no cookies, no personal data) -->
+<script data-goatcounter="https://taziz322.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head><body>
 <header class="band"><h1><img src="icons/loop-lab.svg" alt="" width="44" height="44" style="vertical-align:middle;border-radius:11px;margin-right:8px">Loop Lab</h1>
 <p>Build whole songs by tapping: sections, chords, melody, drums and sound effects. Every sound is made in code. No samples, no AI audio.</p>
 <div class="llbar"><button class="tool" id="impBtn">📥 Import song code</button><button class="tool" id="expBtn">📤 Export song code</button><a class="tool" href="../">🎵 Get songs from Coded Music</a><button class="tool" id="sfxT">🔊 Button sounds</button></div></header>
@@ -151,7 +154,7 @@ footer{text-align:center;color:#fff;font-size:14px;padding:6px 12px 30px;opacity
   </div>
   <div class="mixer" id="mixer"></div>
   <div class="row"><button class="tool go" id="render">Make the full song</button><button class="tool" id="clrMel">Clear this section's melody</button></div>
-  <div id="out"><p id="outTxt"></p><audio id="aud" controls></audio></div>
+  <div id="out"><p id="outTxt"></p><audio id="aud" controls></audio><p id="outCred" style="font-size:12px;opacity:.85;margin:8px 0 0"></p></div>
  </div>
 </section>
 
@@ -453,7 +456,7 @@ document.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)r
   case'expBtn':return exportSong();
   case'sfxT':UISFX.set(!UISFX.on);t.textContent=(UISFX.on?'🔊':'🔇')+' Button sounds';if(UISFX.on)UISFX.play('on');return}});
 function exportSong(){code();const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([$('code').value],{type:'application/json'}));
- a.download=((S.name||'song').replace(/[^\w\- ]+/g,'').trim()||'song')+'.json';document.body.appendChild(a);a.click();a.remove();UISFX.play('success');msg('codeMsg','Saved as a file. Import it any time to keep editing.')}
+ gcEv('export');a.download=((S.name||'song').replace(/[^\w\- ]+/g,'').trim()||'song')+'.json';document.body.appendChild(a);a.click();a.remove();UISFX.play('success');msg('codeMsg','Saved as a file. Import it any time to keep editing.')}
 document.addEventListener('dragover',e=>{e.preventDefault()});
 document.addEventListener('drop',e=>{const f=e.dataTransfer&&e.dataTransfer.files[0];if(!f)return;e.preventDefault();f.text().then(loadCode)});
 document.addEventListener('change',e=>{const t=e.target,sec=S.sections[cur];
@@ -483,15 +486,16 @@ async function renderSong(btn){if(!S.arrangement.length)return msg('upMsg','Add 
  const dt=60/S.bpm/4,steps=S.arrangement.reduce((a,si)=>a+S.sections[si].bars*16,0),secs=steps*dt+3,sr=44100;
  try{prewarm();const oc=new OfflineAudioContext(2,Math.ceil(secs*sr),sr),b=graph(oc);let gs=0;
   for(const si of S.arrangement){const sec=S.sections[si];for(let k=0;k<sec.bars*16;k++){playStep(b,sec,k,swingT(k,.05+gs*dt,dt),dt);gs++}}
-  const buf=await oc.startRendering();$('aud').src=URL.createObjectURL(toWav(buf));$('outTxt').textContent=`"${S.name}": ${Math.round(secs)} seconds, ${S.arrangement.length} sections.`;$('out').classList.add('show')}
+  const buf=await oc.startRendering();$('aud').src=URL.createObjectURL(toWav(buf));$('outTxt').textContent=`"${S.name}": ${Math.round(secs)} seconds, ${S.arrangement.length} sections.`;$('outCred').textContent=CM_SRC?`🙌 This started from "${CM_SRC}" on Coded Music. If you use it, please give credit: "${CM_SRC}" by TAziz322 (Coded Music), with a link to ${new URL('../',location.href).href}`:`🙌 Made with Loop Lab. If you share it, a shout-out with a link to ${location.origin+location.pathname} is appreciated.`;$('out').classList.add('show');gcEv('render')}
  catch(err){$('outTxt').textContent='Something went wrong making the song. Try a shorter song order.';$('out').classList.add('show')}
  btn.disabled=false;btn.textContent='Make the full song'}
 function toWav(buf){const n=buf.length,ab=new ArrayBuffer(44+n*4),v=new DataView(ab),w=(o,s)=>[...s].forEach((c,i)=>v.setUint8(o+i,c.charCodeAt(0)));
  w(0,'RIFF');v.setUint32(4,36+n*4,true);w(8,'WAVE');w(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,2,true);v.setUint32(24,buf.sampleRate,true);v.setUint32(28,buf.sampleRate*4,true);v.setUint16(32,4,true);v.setUint16(34,16,true);w(36,'data');v.setUint32(40,n*4,true);
  const L=buf.getChannelData(0),R=buf.getChannelData(1);let p=44;for(let i=0;i<n;i++){v.setInt16(p,Math.max(-1,Math.min(1,L[i]))*32767,true);v.setInt16(p+2,Math.max(-1,Math.min(1,R[i]))*32767,true);p+=4}return new Blob([ab],{type:'audio/wav'})}
+let CM_SRC=null;function gcEv(p){try{window.goatcounter&&window.goatcounter.count&&window.goatcounter.count({path:'loop-lab/'+p,event:true})}catch(e){}}
 // open a song passed in the address, e.g. loop-lab/?song=../site/looplab/victory-rush.json (the Coded Music site's Open in Loop Lab button)
 {const q=new URLSearchParams(location.search).get('song');if(q){try{const u=new URL(q,location.href);if(u.origin!==location.origin)throw 0;
- fetch(u).then(r=>{if(!r.ok)throw 0;return r.text()}).then(t=>{loadCode(t);$('sname').scrollIntoView({block:'center'})}).catch(()=>msg('codeMsg','Could not open that song.'))}catch(err){msg('codeMsg','Could not open that song.')}}}
+ fetch(u).then(r=>{if(!r.ok)throw 0;return r.text()}).then(t=>{loadCode(t);try{CM_SRC=JSON.parse(t).name||null}catch(e){}gcEv('open-song');$('sname').scrollIntoView({block:'center'})}).catch(()=>msg('codeMsg','Could not open that song.'))}catch(err){msg('codeMsg','Could not open that song.')}}}
 setTimeout(()=>{$('sfxT').textContent=(UISFX.on?'🔊':'🔇')+' Button sounds'});
 let syncing=false;document.querySelectorAll('.panel .scroll').forEach(el=>el.addEventListener('scroll',()=>{if(syncing)return;syncing=true;document.querySelectorAll('.panel .scroll').forEach(o=>{if(o!==el)o.scrollLeft=el.scrollLeft});syncing=false},{passive:true}));
 render();

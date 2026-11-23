@@ -51,11 +51,11 @@ def prime_drums(layers):
     def f(M, t0, st, S, i, n, fill):
         for s in (0, 8): kick(M, t0 + S(s), .8)
         for s in (4, 12): snare(M, t0 + S(s), .6)
-        for k in range(16):
-            g = G[0] + k
+        for k in range(8):   # counted in 8th notes, and every 2 bars all the cycles start again together on the downbeat
+            g = G[0] % 16 + k
             for p, fn in PLAYERS[:layers]:
-                if g % p == 0: fn(M, t0 + S(k), PT[0])
-        G[0] += 16
+                if g % p == 0: fn(M, t0 + S(2 * k), PT[0])
+        G[0] += 8
     return f
 PT = [[57, 60, 64]]
 def keep_tones(M, t0, st, S, i, n, tones, root): PT[0] = tones
@@ -97,9 +97,9 @@ def tm_melody(bars, offset=0, base=69):
     return rows_from(out)
 def end_sierpinski(M, t0, st, S, i, n, tones, root):   # row 15 of the triangle is all odd: 16 hits in a row, then the last chord
     if i: return
-    for k in range(16): rim(M, t0 + S(k), .3 + .015 * k); woodblock(M, t0 + S(k), k % 2 == 0, .3)
-    te = t0 + 16 * st; kick(M, te, .7); crash(M, te, .4)
-    for c in tones[:3]: plastic(M, 'keys', te, c + 24, 1.5, .7)
+    for k in range(16): rim(M, t0 + S(k), .42 + .012 * k); woodblock(M, t0 + S(k), k % 2 == 0, .4)
+    te = t0 + 16 * st; kick(M, te, .35); crash(M, te, .12)
+    for c in tones[:3]: plastic(M, 'keys', te, c + 24, 1.5, .25)
 
 # ---------------- Fourier ----------------
 def fourier_lead(nh, saw_=False):
@@ -151,7 +151,7 @@ SONGS = {
 }
 
 SONGS['collatz']['gain_like'] = {'verse': 'intro', 'chorus': 'intro', 'end': 'intro'}   # one level for the whole song, so nothing drops when the drums come in
-SONGS['sierpinski']['targets'] = {'outro': -20.}         # a softer last hit
+SONGS['sierpinski']['targets'] = {'outro': -22.}         # a softer last hit
 
 if __name__ == '__main__':
     names = list(SONGS) if sys.argv[1] == 'all' else sys.argv[1:]

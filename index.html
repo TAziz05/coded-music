@@ -75,6 +75,9 @@ main{padding:12px 14px;max-width:1100px;margin:0 auto}
 .ext select{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:5px}
 .arc{width:100%;height:46px;display:block}
 .note{font-size:12px;color:var(--mute)}
+.credit{border-color:var(--hot)}.credit code{display:block;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px;margin:8px 0;font-size:12px;white-space:pre-wrap;word-break:break-word;user-select:all}
+#credPop{position:fixed;inset:0;z-index:60;background:#000b;display:none;align-items:center;justify-content:center;padding:16px}#credPop.show{display:flex}
+#credPop .ext{max-width:440px;width:100%;margin:0}
 footer{text-align:center;color:var(--mute);font-size:12px;padding:24px 14px}
 .fav{background:none;border:none;font-size:20px;cursor:pointer;color:var(--mute);padding:4px;flex:none}.fav.on{color:var(--acc)}
 .fam{grid-column:1/-1;font-family:Anton,Impact,sans-serif;font-size:18px;letter-spacing:.4px;margin:10px 2px 0;color:var(--acc)}
@@ -82,6 +85,8 @@ footer{text-align:center;color:var(--mute);font-size:12px;padding:24px 14px}
 .custom input[type=range]{width:100%;accent-color:var(--acc)}
 .toast{position:fixed;left:50%;bottom:120px;transform:translateX(-50%);background:var(--acc);color:var(--bg);padding:8px 14px;border-radius:999px;font-weight:700;z-index:50;display:none}
 </style>
+<!-- visitor counts (GoatCounter: no cookies, no personal data) -->
+<script data-goatcounter="https://taziz322.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <header>
@@ -107,7 +112,7 @@ footer{text-align:center;color:var(--mute);font-size:12px;padding:24px 14px}
   <div class="count"><span id="count"></span><span class="sp"></span><button class="btn" id="clear" style="display:none">Clear filters</button></div>
   <div class="grid" id="list"></div>
 </main>
-<footer>Every note is code: no samples and no AI audio generators. Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic<br>Free to use in your videos. Loop and Extended versions are made right here in your browser.</footer>
+<footer>Every note is code: no samples and no AI audio generators. Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic<br>Free to use in your videos: just give credit (a link to this site, or the song name and "Coded Music by TAziz322"). Loop and Extended versions are made right here in your browser.</footer>
 
 <div id="player">
   <div class="prow">
@@ -122,6 +127,9 @@ footer{text-align:center;color:var(--mute);font-size:12px;padding:24px 14px}
 </div>
 <div id="sheet"><div class="panel" id="panel"></div></div>
 <div class="toast" id="toast"></div>
+<div id="credPop" onclick="if(event.target===this)this.classList.remove('show')"><div class="ext credit"><b>🙌 Don't forget to give credit</b>
+<p class="note" style="margin:6px 0 0">The songs are free to use. If you use one, please put this in your video description (or say the song name and where it's from):</p>
+<code id="credPopTxt"></code><div class="row" style="margin:0"><button class="btn pri" onclick="copyCredit(CRED_ID)">📋 Copy credit</button><button class="btn" onclick="$('#credPop').classList.remove('show')">Got it</button></div></div></div>
 <audio id="audio" preload="none"></audio>
 <script src="site/ui-sfx.js"></script>
 
@@ -244,9 +252,11 @@ function openSong(s) {
   <p>${esc(s.feel)}</p><p class="note"><b>Good for:</b> ${esc(s.good)}</p>
   <div class="kv">${s.groups.map(g => `<span class="chip" data-filter="group|${esc(g)}">${esc(g)}</span>`).join('')}${s.genres.filter(g => !s.groups.includes(g)).map(g => `<span class="chip" data-filter="fGenre|${esc(g)}">${esc(g)}</span>`).join('')}${s.moods.map(g => `<span class="chip" data-filter="fMood|${esc(g)}">${esc(g)}</span>`).join('')}</div>
   <div class="row"><button class="btn pri" onclick="play(BY['${s.id}'])">▶ Play</button><button class="btn" onclick="play(BY['${s.id}'], true)">🔁 Play on loop</button>
-  <a class="btn" href="${url(s.file)}" download>⬇ MP3</a><a class="btn" href="${vurl(s.video)}" target="_blank" rel="noopener">🎬 Video</a><button class="btn" onclick="share('${s.id}')">🔗 Share</button><button class="btn" id="sheetFav" onclick="toggleFav('${s.id}')">${FAVS.has(s.id) ? '★ Favorited' : '☆ Favorite'}</button></div>
-  ${s.looplab ? `<div class="row" style="margin-top:0"><a class="btn" href="loop-lab/?song=../${url(s.looplab)}" onclick="sfx('open')">🎛️ Open in Loop Lab</a><button class="btn" onclick="copyCode('${s.id}')">📋 Copy Loop Lab code</button>${s.src ? `<a class="btn" href="https://github.com/TAziz05/coded-music/blob/main/${url(s.src)}" target="_blank" rel="noopener">🐍 Python code</a>` : ''}</div>
+  <a class="btn" href="${url(s.file)}" download onclick="used('${s.id}','download')">⬇ MP3</a><a class="btn" href="${vurl(s.video)}" target="_blank" rel="noopener" onclick="used('${s.id}','video')">🎬 Video</a><button class="btn" onclick="share('${s.id}')">🔗 Share</button><button class="btn" id="sheetFav" onclick="toggleFav('${s.id}')">${FAVS.has(s.id) ? '★ Favorited' : '☆ Favorite'}</button></div>
+  ${s.looplab ? `<div class="row" style="margin-top:0"><a class="btn" href="loop-lab/?song=../${url(s.looplab)}" onclick="sfx('open');track('looplab/' + '${s.id}')">🎛️ Open in Loop Lab</a><button class="btn" onclick="copyCode('${s.id}')">📋 Copy Loop Lab code</button>${s.src ? `<a class="btn" href="https://github.com/TAziz05/coded-music/blob/main/${url(s.src)}" target="_blank" rel="noopener">🐍 Python code</a>` : ''}</div>
   <p class="note" style="margin-top:-4px">Loop Lab gets a simplified version (its own instruments, 8-bar sections) that you can change and export again.</p>` : ''}
+  <div class="ext credit"><b>🙌 Using this song?</b> <span class="note">It's free: just give credit with a link to the site, or the song name and source. Copy this into your description:</span>
+  <code>${esc(creditText(s))}</code><button class="btn" onclick="copyCredit('${s.id}')">📋 Copy credit</button></div>
   <div class="ext"><b>Loop section</b> <span class="note">which part repeats when you play on loop or make an extended version</span>
   <div class="loopopt" id="loopOpts"></div><div id="customLoop"></div></div>
   <div class="ext"><b>Extended version</b> <span class="note" id="exDesc">plays the start, repeats the loop (${fmt(LP[0])}–${fmt(LP[1])}, ${fmt(L)} long), then the real ending</span>
@@ -263,6 +273,15 @@ function closeSheet() { if ($('#sheet').classList.contains('show')) sfx('close')
 $('#sheet').onclick = e => { if (e.target.id === 'sheet') closeSheet(); };
 function route() { const id = location.hash.slice(1); if (BY[id]) openSong(BY[id]); }
 window.addEventListener('hashchange', route);
+function creditText(s) { return `Music: "${s.title}" by TAziz322 (Coded Music, made in code)\n${location.origin}${location.pathname}#${s.id}`; }
+let CRED_ID = null;
+async function copyCredit(id) { try { await navigator.clipboard.writeText(creditText(BY[id])); sfx('success'); toast('Credit copied: paste it in your description'); } catch (e) { sfx('error'); toast('Could not copy. Select the text and copy it.'); } }
+function track(path) { try { window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path: 'coded-music/' + path, event: true }); } catch (e) {} }
+function used(id, how) {   // a download, video or extended version: count it and remind about credit (once per song per visit)
+  track(how + '/' + id);
+  const k = 'cred:' + id; if (sessionStorage.getItem(k)) return; sessionStorage.setItem(k, 1);
+  CRED_ID = id; $('#credPopTxt').textContent = creditText(BY[id]); setTimeout(() => $('#credPop').classList.add('show'), 400);
+}
 async function copyCode(id) {
   try { const txt = await (await fetch(url(BY[id].looplab))).text(); await navigator.clipboard.writeText(txt); sfx('success'); toast('Song code copied: paste it into Loop Lab'); }
   catch (e) { sfx('error'); toast('Could not copy. Use Open in Loop Lab instead.'); }
@@ -286,6 +305,7 @@ async function startW(off) {
 }
 function wTime() { if (!wPlaying) return wOff; let t = wOff + (ctx.currentTime - wStart); const [a, b] = getLoop(cur); if (t >= b) t = a + ((t - a) % (b - a)); return t; }
 async function play(s, loop = null) {
+  track((loop ? 'loop/' : 'play/') + s.id);
   sfx('play');
   if (loop !== null) loopOn = loop; cur = s; audio.pause(); stopW();
   $('#player').classList.add('show'); $('#ptitle').textContent = s.title; $('#pth').style.backgroundImage = s.thumb ? `url('${url(s.thumb)}')` : '';
@@ -348,7 +368,7 @@ async function extended(id) {
       for (let k = 0; k < total; k += blk) { parts.push(enc.encodeBuffer(Lc.subarray(k, k + blk), Rc.subarray(k, k + blk))); if ((k / blk) % 20 === 0) { msg.textContent = `Encoding MP3… ${Math.round(k / total * 100)}%`; await new Promise(r => setTimeout(r)); } }
       parts.push(enc.flush()); blob = new Blob(parts, {type: 'audio/mpeg'});
     } catch (e) { blob = wav(out, sr); }   // if the MP3 encoder can't load, hand over a WAV instead
-    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${s.title} (Extended ${fmt(total / sr).replace(':', 'm')}s).${blob.type === 'audio/wav' ? 'wav' : 'mp3'}`; document.body.appendChild(a); a.click(); a.remove();
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); used(id, 'extended'); a.download = `${s.title} (Extended ${fmt(total / sr).replace(':', 'm')}s).${blob.type === 'audio/wav' ? 'wav' : 'mp3'}`; document.body.appendChild(a); a.click(); a.remove();
     msg.textContent = `Done: ${fmt(total / sr)} long`; sfx('success');
   } catch (e) { msg.textContent = 'Could not make it: ' + e.message; sfx('error'); }
   go.disabled = false;

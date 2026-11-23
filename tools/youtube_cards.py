@@ -148,6 +148,9 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ('Easy Pace', '160 BPM · jogging cadence', ('#0b2a1a', '#2a8f5a', '#e0ffe7', '#05150d', '#ffffff')),
     ('Fourier Rise', '110 BPM · built from sine waves', ('#0b0b2a', '#2a2a8f', '#9fffff', '#05051a', '#ffffff')),
     ('Spelled in Notes', '120 BPM · made from words', ('#1a0b2a', '#6f2ae0', '#ffd23f', '#0d051a', '#ffffff')),
+    ('Match Point', '118 BPM · tennis disco-funk', ('#0b2a0b', '#c4e01f', '#ffffff', '#051505', '#ffffff')),
+    ('Sunday Stroll', '112 BPM · walking ukulele pop', ('#2a1f0b', '#e0b37f', '#ffffff', '#150f05', '#2a8f5a')),
+    ('Collatz Climb', '128 BPM · math: the 3n+1 problem', ('#0b1a2a', '#1f8fe0', '#ffffff', '#050d15', '#ffd23f')),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 

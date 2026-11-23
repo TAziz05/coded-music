@@ -12,6 +12,8 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 
 - search, plus filters for genre, mood, tempo and length, and group chips (Pokémon-style, Sonic-style, Mario-style worlds, BTS eras, breakcore, and more)
 - sorting by newest, title, tempo, length, energy or group, plus **Similar sound together** (songs grouped into sound families by their audio) and **Similar structure together** (songs with the same build-up/drop/energy shape next to each other)
+- **Credit reminders**: every song page has a ready-to-copy credit line, and downloading an MP3, opening a video or making an extended version shows a reminder to give credit (once per song per visit)
+- visitor counts with [GoatCounter](https://www.goatcounter.com/) (no cookies): page views plus play, download and Loop Lab events, on both the site and Loop Lab
 - **Favorites**: tap ☆ on any song, then the ★ Favorites chip (saved in your browser)
 - for every song: other versions (like the breakcore version), songs that sound similar, songs with a similar structure, and more from the same group
 - seamless loop playback with a **loop picker**: the best match, up to three other loop options, or pick your own start and end (snapped to bar lines); your choice is remembered and used for loop playback and extended versions
@@ -26,7 +28,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 | Folder | What it is |
 |---|---|
-| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 143 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
+| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 146 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
 | `videos/` | The same songs as 1080p videos with a title card, ready to upload to YouTube. |
 | `cards/` | The title card images. |
 | `loops/` | One seamless loop of each song (see `loops/music.json` for loop lengths). |
@@ -37,7 +39,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 ## The songs
 
-8 game songs, plus 143 YouTube gameplay tracks (below): 151 songs in all.
+8 game songs, plus 146 YouTube gameplay tracks (below): 154 songs in all.
 
 | Song | Game | Plays during |
 |---|---|---|
@@ -54,7 +56,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 `loop-lab/index.html` is a song maker that runs in the browser: build songs from sections with chords, a melody, drums and sound effects (built-in coded effects or your own uploads), load TAziz322's songs and tweak them, and save songs as code. See [`loop-lab/GUIDE.md`](loop-lab/GUIDE.md) for how to use it. `loop-lab/tools/make_presets.py` rebuilds the page from `template.html` with the built-in songs.
 
-## YouTube gameplay tracks (143 songs)
+## YouTube gameplay tracks (146 songs)
 
 Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3). They run from 1 to about 2½ minutes; most are around 1½ minutes. These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments, and the songs live in the other files in `code/python/` (see the commands below). Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
 
@@ -203,6 +205,9 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Easy Pace | 160 BPM | Light acoustic pop at a jogging pace, a footstep on every beat | Chill movement clips |
 | Fourier Rise | 110 BPM | The lead is built from sine waves, adding harmonics until it is a square wave, then taking them away | Building, smart plays |
 | Spelled in Notes | 120 BPM | Words turned into melodies, one note per letter (CODED MUSIC, TAZIZ322, GG, VICTORY ROYALE) | Intros, channel moments |
+| Match Point | 118 BPM | Bright funk with ball hits bouncing left and right; ends on a final point and applause | Rallies, chill highlights |
+| Sunday Stroll | 112 BPM | Easygoing ukulele pop with soft footsteps on the beat | Relaxed clips, exploring |
+| Collatz Climb | 128 BPM | The melody follows the Collatz sequence from 27 as it climbs and falls; it ends on 4, 2, 1 echoing away | Climbing, building moments |
 
 ```
 pip install numpy scipy
