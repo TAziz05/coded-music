@@ -46,7 +46,9 @@ def end_421(M, t0, st, S, i, n, tones, root):  # every Collatz path ends 4 -> 2 
 # ---------------- Prime Time ----------------
 G = [0]                                      # global 16th-note counter, so the prime cycles run through the whole song
 PLAYERS = [(2, lambda M, t, T: hat(M, t, .18)), (3, lambda M, t, T: celesta(M, 'glock', t, T[0] + 24, .2, .45)),
-           (5, lambda M, t, T: marimba(M, 'keys', t, T[1] + 12, .3, .6, pan=-.4))]   # just the first three primes: 2, 3 and 5
+           (5, lambda M, t, T: marimba(M, 'keys', t, T[1] + 12, .3, .6, pan=-.4))]   # 2, 3 and 5 count in 8th notes
+SLOW = [(7, lambda M, t, T: conga(M, t, 50, .55, pan=-.3)), (11, lambda M, t, T: woodblock(M, t, False, .35)),
+        (13, lambda M, t, T: cowbell(M, t, T[2] + 12, .2, .22))]   # 7, 11 and 13 count in quarter notes, so they always land on a beat
 def prime_drums(layers):
     def f(M, t0, st, S, i, n, fill):
         for s in (0, 8): kick(M, t0 + S(s), .8)
@@ -55,11 +57,16 @@ def prime_drums(layers):
             g = G[0] % 16 + k
             for p, fn in PLAYERS[:layers]:
                 if g % p == 0: fn(M, t0 + S(2 * k), PT[0])
+        if layers > 3:   # every 4 bars (16 beats) all the slow cycles start together on the downbeat
+            for q in range(4):
+                g = (G[0] // 2) % 16 + q
+                for p, fn in SLOW:
+                    if g % p == 0: fn(M, t0 + S(4 * q), PT[0])
         G[0] += 8
     return f
 PT = [[57, 60, 64]]
 def keep_tones(M, t0, st, S, i, n, tones, root): PT[0] = tones
-for L in (2, 3): EXTRA_DRUMS[f'primes{L}'] = prime_drums(L)
+for L in (2, 3, 6): EXTRA_DRUMS[f'primes{L}'] = prime_drums(L)
 def gap_melody(bars, start=0):               # prime gaps (1, 2, 2, 4, 2, 4, ...) become note lengths and steps up the scale
     pr = [p for p in range(2, 2000) if all(p % q for q in range(2, int(p ** .5) + 1))]
     gaps = [b - a for a, b in zip(pr, pr[1:])][start:]
@@ -69,13 +76,12 @@ def gap_melody(bars, start=0):               # prime gaps (1, 2, 2, 4, 2, 4, ...
         out += [deg(idx, 69)] + [-1] * (L - 1)
         if len(out) >= bars * 8: break
     return rows_from(out[:bars * 8])
-def end_primes(M, t0, st, S, i, n, tones, root):   # each prime player hits once in order, then all of them land together
+def end_primes(M, t0, st, S, i, n, tones, root):   # a natural ending: the pad holds the last chord while the 2-3-5 players thin out and stop
     if i: return
-    for k, (p, fn) in enumerate(PLAYERS): fn(M, t0 + k * st, tones)
-    te = t0 + 8 * st
-    for p, fn in PLAYERS: fn(M, te, tones)
-    kick(M, te, 1.); crash(M, te, .6)
-    for c in tones[:3]: supersaw(M, 'keys', te, c + 12, 2., .05, cut=3000, a=.003, r=.9, voices=4)
+    for c in tones[:3]: supersaw(M, 'pad', t0, c + 12, 32 * st, .03, cut=1500, a=.05, r=2.5, voices=3)
+    for k in range(16):
+        for j, (p, fn) in enumerate(PLAYERS):
+            if k % p == 0 and k < 16 - 4 * j: fn(M, t0 + S(k), tones)
 
 # ---------------- Sierpinski ----------------
 def pascal_row(r): return [comb(r, k) % 2 if k <= r else 0 for k in range(16)]
@@ -131,8 +137,8 @@ SONGS = {
  'primes': dict(file='Prime_Time', title='Prime Time', bpm=120, chorus_keys=True, cont_tol=0., sections={
    'intro': sec(4, ['Dm', 'Bb', 'F', 'C'], keys=['pad'], drums='primes2', extra=keep_tones),
    'verse': sec(8, ['Dm', 'Bb', 'F', 'C'], keys=['pad'], drums='primes3', bass='long', lead='plastic', mel=gap_melody(8), extra=keep_tones, kind='verse'),
-   'chorus': sec(8, ['Bb', 'C', 'Dm', 'Dm'], keys=['pad', 'pluck'], drums='primes3', bass='octave', lead='sqbright+plastic', mel=gap_melody(8, 40), extra=keep_tones, impact=True, kind='chorus'),
-   'end': sec(1, ['Dm'], extra=end_primes, kind='outro')},
+   'chorus': sec(8, ['Bb', 'C', 'Dm', 'Dm'], keys=['pad', 'pluck'], drums='primes6', bass='octave', lead='sqbright+plastic', mel=gap_melody(8, 40), extra=keep_tones, impact=True, kind='chorus'),
+   'end': sec(2, ['Dm'], extra=end_primes, kind='outro')},
    order=['intro', 'verse', 'chorus', 'verse', 'chorus', 'end'], levels={'glock': .9}),
  'sierpinski': dict(file='Sierpinski_Steps', title='Sierpinski Steps', bpm=136, chorus_keys=True, cont_tol=0., sections={
    'intro': sec(4, ['Em', 'C', 'G', 'D'], keys=['celesta']),
@@ -151,6 +157,7 @@ SONGS = {
 }
 
 SONGS['collatz']['gain_like'] = {'verse': 'intro', 'chorus': 'intro', 'end': 'intro'}   # one level for the whole song, so nothing drops when the drums come in
+SONGS['primes']['fadeout'] = 3.   # the last bars fade out naturally
 SONGS['sierpinski']['targets'] = {'outro': -22.}         # a softer last hit
 
 if __name__ == '__main__':

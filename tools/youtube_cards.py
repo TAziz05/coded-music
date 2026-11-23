@@ -151,6 +151,8 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ('Match Point', '118 BPM · tennis disco-funk', ('#0b2a0b', '#c4e01f', '#ffffff', '#051505', '#ffffff')),
     ('Sunday Stroll', '112 BPM · walking ukulele pop', ('#2a1f0b', '#e0b37f', '#ffffff', '#150f05', '#2a8f5a')),
     ('Collatz Climb', '128 BPM · math: the 3n+1 problem', ('#0b1a2a', '#1f8fe0', '#ffffff', '#050d15', '#ffd23f')),
+    ('Sierpinski Steps', "136 BPM · math: Pascal's triangle", ('#1a0b2a', '#8f1fe0', '#ffffff', '#0d051a', '#ffd23f')),
+    ('Rainbow Spectrum', '116 BPM · made from colors', ('#2a0b0b', '#e01f3a', '#ffd23f', '#150505', '#1fae2a')),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 

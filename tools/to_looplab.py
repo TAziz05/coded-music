@@ -141,5 +141,7 @@ html = open(os.path.join(ROOT, 'loop-lab', 'index.html'), encoding='utf-8').read
 for p in json.loads(html[i:html.index(';\n', i)]):
     sid = slug(p['name'])
     if sid not in index: json.dump(p, open(os.path.join(OUT, sid + '.json'), 'w'), separators=(',', ':')); index[sid] = dict(file=f'site/looplab/{sid}.json', src=None, key=None)
-json.dump(index, open(os.path.join(OUT, 'index.json'), 'w'), indent=0)
+old = os.path.join(OUT, 'index.json')   # keep the songs tools/transcribe.py added
+if os.path.exists(old): index = {**json.load(open(old)), **index}
+json.dump(index, open(old, 'w'), indent=0)
 print(len(index), 'songs converted for Loop Lab')
