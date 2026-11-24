@@ -144,5 +144,11 @@ for p in json.loads(html[i:html.index(';\n', i)]):
     if sid not in index: json.dump(p, open(os.path.join(OUT, sid + '.json'), 'w'), separators=(',', ':')); index[sid] = dict(file=f'site/looplab/{sid}.json', src=None, key=None)
 old = os.path.join(OUT, 'index.json')   # keep the songs tools/transcribe.py added
 if os.path.exists(old): index = {**json.load(open(old)), **index}
+# only publish Loop Lab versions of songs that are released (have an MP3 in songs/); unreleased ones stay private
+released = {slug(os.path.splitext(f)[0]) for d, _, fs in os.walk(os.path.join(ROOT, 'songs')) for f in fs if f.endswith('.mp3')}
+for sid in list(index):
+    if sid not in released and index[sid].get('src'):
+        index.pop(sid); f = os.path.join(OUT, sid + '.json')
+        if os.path.exists(f): os.remove(f)
 json.dump(index, open(old, 'w'), indent=0)
 print(len(index), 'songs converted for Loop Lab')

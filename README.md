@@ -29,7 +29,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 | Folder | What it is |
 |---|---|
-| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 188 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
+| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 185 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
 | `videos/` | The same songs as 1080p videos with a title card, ready to upload to YouTube. |
 | `cards/` | The title card images. |
 | `loops/` | One seamless loop of each song (see `loops/music.json` for loop lengths). |
@@ -40,7 +40,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 ## The songs
 
-8 game songs, plus 188 YouTube gameplay tracks (below): 196 songs in all.
+8 game songs, plus 185 YouTube gameplay tracks (below): 193 songs in all.
 
 | Song | Game | Plays during |
 |---|---|---|
@@ -57,7 +57,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 `loop-lab/index.html` is a song maker that runs in the browser: build songs from sections with chords, a melody, drums and sound effects (built-in coded effects or your own uploads), load TAziz322's songs and tweak them, and save songs as code. See [`loop-lab/GUIDE.md`](loop-lab/GUIDE.md) for how to use it. `loop-lab/tools/make_presets.py` rebuilds the page from `template.html` with the built-in songs.
 
-## YouTube gameplay tracks (188 songs)
+## YouTube gameplay tracks (185 songs)
 
 Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3). They run from 1 to about 2½ minutes; most are around 1½ minutes. These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments, and the songs live in the other files in `code/python/` (see the commands below). Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
 
@@ -230,9 +230,6 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Sparkler Letters | 72 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (G minor) | Calm clips, montages |
 | Mirror Lake | 88 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major) | Calm clips, montages |
 | Red Light Rain | 78 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (C minor) | Calm clips, montages |
-| Sun on the Water | 75 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (G major) | Calm clips, montages |
-| TA 322 in Blue Flame | 79 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major) | Calm clips, montages |
-| TA 322 and the Shadow | 84 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (C# minor) | Calm clips, montages |
 | Outside the Lines | 98 BPM | Minimal hip-hop with a whistle hook and group chants | Hype intros, highlights |
 | Green Light Crew | 146 BPM | Synth-heavy trap with brass hits and a heavy 808 | Big plays, hype |
 | First Crown | 118 BPM | Bright synth-pop with sparkly plucks | Upbeat clips |

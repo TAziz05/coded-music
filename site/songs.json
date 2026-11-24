@@ -1,5 +1,5 @@
 {
-"count": 196,
+"count": 193,
 "songs": [
 {
 "id": "drop-in-daily-lobby",
@@ -73,7 +73,7 @@
 0.99,
 0.59
 ],
-"sound_rank": 68,
+"sound_rank": 172,
 "family": "Chiptune & retro · Hype",
 "shape_rank": 34,
 "looplab": "site/looplab/drop-in-daily-lobby.json",
@@ -151,7 +151,7 @@
 0.97,
 0.63
 ],
-"sound_rank": 71,
+"sound_rank": 175,
 "family": "Chiptune & retro · Hype",
 "shape_rank": 36,
 "looplab": "site/looplab/drop-in-daily-match.json",
@@ -229,7 +229,7 @@
 0.99,
 0.61
 ],
-"sound_rank": 72,
+"sound_rank": 176,
 "family": "Chiptune & retro · Hype",
 "shape_rank": 37,
 "looplab": "site/looplab/drop-in-daily-mythic-match-og-style.json",
@@ -307,7 +307,7 @@
 1.0,
 0.47
 ],
-"sound_rank": 67,
+"sound_rank": 171,
 "family": "Chiptune & retro · Hype",
 "shape_rank": 31,
 "looplab": "site/looplab/drop-in-daily-endless-summary-og-lobby-style.json",
@@ -385,7 +385,7 @@
 0.99,
 0.61
 ],
-"sound_rank": 66,
+"sound_rank": 170,
 "family": "Chiptune & retro · Hype",
 "shape_rank": 39,
 "looplab": "site/looplab/daily-poke-catch-route.json",
@@ -463,7 +463,7 @@
 1.0,
 0.62
 ],
-"sound_rank": 70,
+"sound_rank": 174,
 "family": "Chiptune & retro · Hype",
 "shape_rank": 40,
 "looplab": "site/looplab/daily-poke-catch-battle.json",
@@ -541,7 +541,7 @@
 0.98,
 0.62
 ],
-"sound_rank": 74,
+"sound_rank": 178,
 "family": "Chiptune & retro · Hype",
 "shape_rank": 38,
 "looplab": "site/looplab/daily-poke-catch-mythic-battle.json",
@@ -589,8 +589,8 @@
 "drop-in-daily-endless-summary-og-lobby-style",
 "daily-poke-catch-route",
 "daily-poke-catch-battle",
-"ta-322-in-blue-flame",
-"blooming-away"
+"blooming-away",
+"neverland-rush"
 ],
 "shape": [
 "daily-poke-catch-mythic-battle",
@@ -619,7 +619,7 @@
 0.95,
 0.57
 ],
-"sound_rank": 69,
+"sound_rank": 173,
 "family": "Chiptune & retro · Hype",
 "shape_rank": 33,
 "looplab": "site/looplab/daily-poke-catch-town.json",
@@ -708,8 +708,8 @@
 0.89,
 0.06
 ],
-"sound_rank": 91,
-"family": "Pop · Happy",
+"sound_rank": 142,
+"family": "Rock & metal · Happy",
 "shape_rank": 64,
 "looplab": "site/looplab/victory-rush.json",
 "src": null
@@ -796,8 +796,8 @@
 0.76,
 0.04
 ],
-"sound_rank": 97,
-"family": "Electronic & dance · Hype",
+"sound_rank": 186,
+"family": "Hip-hop & trap · Hype",
 "shape_rank": 65,
 "looplab": "site/looplab/storm-closing.json",
 "src": null
@@ -887,7 +887,7 @@
 0.88,
 0.36
 ],
-"sound_rank": 177,
+"sound_rank": 65,
 "family": "Hip-hop & trap · Chill",
 "shape_rank": 42,
 "looplab": "site/looplab/lobby-loop.json",
@@ -975,8 +975,8 @@
 0.81,
 0.24
 ],
-"sound_rank": 95,
-"family": "Electronic & dance · Hype",
+"sound_rank": 187,
+"family": "Hip-hop & trap · Hype",
 "shape_rank": 5,
 "looplab": "site/looplab/overclocked.json",
 "src": "code/python/songs.py"
@@ -1066,7 +1066,7 @@
 0.69,
 0.33
 ],
-"sound_rank": 188,
+"sound_rank": 76,
 "family": "Breakcore · Emotional",
 "shape_rank": 6,
 "looplab": "site/looplab/nobody-s-looking.json",
@@ -1158,8 +1158,8 @@
 0.86,
 0.05
 ],
-"sound_rank": 75,
-"family": "Rock & metal · Emotional",
+"sound_rank": 143,
+"family": "Rock & metal · Happy",
 "shape_rank": 71,
 "looplab": "site/looplab/static-weather.json",
 "src": null
@@ -1249,9 +1249,9 @@
 0.39,
 0.04
 ],
-"sound_rank": 76,
-"family": "Rock & metal · Emotional",
-"shape_rank": 163,
+"sound_rank": 144,
+"family": "Rock & metal · Happy",
+"shape_rank": 160,
 "looplab": "site/looplab/lantern-theory.json",
 "src": "code/python/songs2.py"
 },
@@ -1344,8 +1344,8 @@
 0.89,
 0.45
 ],
-"sound_rank": 8,
-"family": "World & folk · Chill",
+"sound_rank": 92,
+"family": "World & folk · Epic",
 "shape_rank": 43,
 "looplab": "site/looplab/channel-plaza.json",
 "src": null
@@ -1436,9 +1436,9 @@
 0.56,
 0.18
 ],
-"sound_rank": 143,
-"family": "Rock & metal · Happy",
-"shape_rank": 164,
+"sound_rank": 118,
+"family": "Rock & metal · Hype",
+"shape_rank": 161,
 "looplab": "site/looplab/frosty-podium.json",
 "src": null
 },
@@ -1527,8 +1527,8 @@
 0.93,
 0.38
 ],
-"sound_rank": 149,
-"family": "Rock & metal · Happy",
+"sound_rank": 102,
+"family": "Rock & metal · Hype",
 "shape_rank": 35,
 "looplab": "site/looplab/coastal-route.json",
 "src": null
@@ -1615,9 +1615,9 @@
 0.46,
 0.19
 ],
-"sound_rank": 112,
-"family": "Rock & metal · Happy",
-"shape_rank": 172,
+"sound_rank": 86,
+"family": "World & folk · Epic",
+"shape_rank": 169,
 "looplab": "site/looplab/homebase-rising.json",
 "src": "code/python/songs3.py"
 },
@@ -1675,8 +1675,8 @@
 "breeze-in-the-alley",
 "last-light",
 "riverbank-evening",
-"padma-to-kyoto",
 "morning-over-the-valley",
+"padma-to-kyoto",
 "breeze-breaks"
 ],
 "shape": [
@@ -1684,8 +1684,8 @@
 "blooming-away",
 "nuton-audor",
 "red-light-rain",
-"ta-322-and-the-shadow",
-"drop-in-daily-match"
+"drop-in-daily-match",
+"harbor-moon"
 ],
 "versions": [],
 "arc": [
@@ -1706,7 +1706,7 @@
 0.88,
 0.66
 ],
-"sound_rank": 157,
+"sound_rank": 39,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 32,
 "looplab": "site/looplab/determined-steps.json",
@@ -1761,8 +1761,8 @@
 "thumb": "site/thumbs/ringworld-vigil.jpg",
 "similar": [
 "final-zone-countdown",
-"shellfire-castle",
 "comeback-rising",
+"shellfire-castle",
 "homebase-rising",
 "shattered-overture",
 "infinite-series-breaks"
@@ -1772,8 +1772,8 @@
 "blooming-away",
 "field-at-sunset",
 "amar-chok-ar-maata",
-"ta-322-in-blue-flame",
-"fourier-rise"
+"fourier-rise",
+"nuton-audor"
 ],
 "versions": [],
 "arc": [
@@ -1794,7 +1794,7 @@
 0.51,
 0.1
 ],
-"sound_rank": 183,
+"sound_rank": 71,
 "family": "Breakcore · Emotional",
 "shape_rank": 139,
 "looplab": "site/looplab/ringworld-vigil.json",
@@ -1878,8 +1878,8 @@
 0.91,
 0.32
 ],
-"sound_rank": 135,
-"family": "Rock & metal · Happy",
+"sound_rank": 126,
+"family": "Rock & metal · Hype",
 "shape_rank": 44,
 "looplab": "site/looplab/boundless-run.json",
 "src": "code/python/songs4.py"
@@ -1940,7 +1940,7 @@
 "padma-to-kyoto",
 "shattered-overture",
 "determined-steps",
-"boulevard-cafe"
+"life-goes-slow"
 ],
 "shape": [
 "ringworld-vigil",
@@ -1969,7 +1969,7 @@
 0.43,
 0.17
 ],
-"sound_rank": 160,
+"sound_rank": 42,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 140,
 "looplab": "site/looplab/morning-over-the-valley.json",
@@ -2029,7 +2029,7 @@
 "sky-piercing-breaks",
 "comeback-rising",
 "infinite-series-breaks",
-"sugar-cloud-breaks"
+"indigo-fields"
 ],
 "shape": [
 "padma-to-kyoto-breaks",
@@ -2058,7 +2058,7 @@
 0.44,
 0.12
 ],
-"sound_rank": 187,
+"sound_rank": 75,
 "family": "Breakcore · Emotional",
 "shape_rank": 7,
 "looplab": "site/looplab/shattered-overture.json",
@@ -2148,9 +2148,9 @@
 0.49,
 0.25
 ],
-"sound_rank": 51,
+"sound_rank": 151,
 "family": "Breakcore · Happy",
-"shape_rank": 194,
+"shape_rank": 191,
 "looplab": "site/looplab/paper-sky.json",
 "src": "code/python/songs7.py"
 },
@@ -2239,7 +2239,7 @@
 0.49,
 0.15
 ],
-"sound_rank": 194,
+"sound_rank": 82,
 "family": "Breakcore · Emotional",
 "shape_rank": 26,
 "looplab": "site/looplab/last-light.json",
@@ -2332,7 +2332,7 @@
 0.44,
 0.48
 ],
-"sound_rank": 54,
+"sound_rank": 154,
 "family": "Breakcore · Happy",
 "shape_rank": 12,
 "looplab": "site/looplab/first-bloom.json",
@@ -2424,8 +2424,8 @@
 0.41,
 0.12
 ],
-"sound_rank": 127,
-"family": "Rock & metal · Happy",
+"sound_rank": 148,
+"family": "Breakcore · Happy",
 "shape_rank": 24,
 "looplab": "site/looplab/heatwave-arcade.json",
 "src": "code/python/seasons.py"
@@ -2518,7 +2518,7 @@
 0.41,
 0.26
 ],
-"sound_rank": 180,
+"sound_rank": 68,
 "family": "Breakcore · Emotional",
 "shape_rank": 14,
 "looplab": "site/looplab/amber-leaves.json",
@@ -2576,8 +2576,8 @@
 "kite-season",
 "paper-sky",
 "first-bloom",
-"golden-hour-breaks",
 "lanterns-and-thunder-drums",
+"golden-hour-breaks",
 "lightning-over-the-city"
 ],
 "shape": [
@@ -2607,7 +2607,7 @@
 0.46,
 0.07
 ],
-"sound_rank": 56,
+"sound_rank": 156,
 "family": "Breakcore · Happy",
 "shape_rank": 21,
 "looplab": "site/looplab/frostline.json",
@@ -2700,7 +2700,7 @@
 0.42,
 0.16
 ],
-"sound_rank": 181,
+"sound_rank": 69,
 "family": "Breakcore · Emotional",
 "shape_rank": 22,
 "looplab": "site/looplab/window-seat.json",
@@ -2791,8 +2791,8 @@
 0.41,
 0.12
 ],
-"sound_rank": 128,
-"family": "Rock & metal · Happy",
+"sound_rank": 149,
+"family": "Breakcore · Happy",
 "shape_rank": 25,
 "looplab": "site/looplab/lightning-over-the-city.json",
 "src": "code/python/seasons.py"
@@ -2884,7 +2884,7 @@
 0.38,
 0.1
 ],
-"sound_rank": 182,
+"sound_rank": 70,
 "family": "Breakcore · Emotional",
 "shape_rank": 19,
 "looplab": "site/looplab/lantern-in-the-fog.json",
@@ -2944,8 +2944,8 @@
 "lanterns-and-thunder-drums",
 "first-bloom",
 "golden-hour-breaks",
-"holler-hoedown",
-"snowcap-slide"
+"snowcap-slide",
+"holler-hoedown"
 ],
 "shape": [
 "amber-leaves",
@@ -2974,7 +2974,7 @@
 0.51,
 0.37
 ],
-"sound_rank": 57,
+"sound_rank": 157,
 "family": "Breakcore · Happy",
 "shape_rank": 15,
 "looplab": "site/looplab/kite-season.json",
@@ -3029,8 +3029,8 @@
 "first-crown",
 "lime-green-afterparty",
 "light-up-the-persona",
-"double-helix",
 "storm-closing",
+"double-helix",
 "red-40-sugar-rush"
 ],
 "shape": [
@@ -3062,7 +3062,7 @@
 0.97,
 0.57
 ],
-"sound_rank": 92,
+"sound_rank": 133,
 "family": "Pop · Happy",
 "shape_rank": 41,
 "looplab": "site/looplab/golden-hour-groove.json",
@@ -3155,9 +3155,9 @@
 0.55,
 0.1
 ],
-"sound_rank": 123,
-"family": "Rock & metal · Happy",
-"shape_rank": 160,
+"sound_rank": 120,
+"family": "Rock & metal · Hype",
+"shape_rank": 157,
 "looplab": "site/looplab/blue-spark-runaway.json",
 "src": "code/python/songs9.py"
 },
@@ -3213,9 +3213,9 @@
 "similar": [
 "green-light-crew",
 "daily-poke-catch-battle",
-"final-circle",
-"royal-procession",
 "outside-the-lines",
+"royal-procession",
+"final-circle",
 "overclocked"
 ],
 "shape": [
@@ -3247,7 +3247,7 @@
 0.95,
 0.42
 ],
-"sound_rank": 81,
+"sound_rank": 183,
 "family": "Hip-hop & trap · Hype",
 "shape_rank": 4,
 "looplab": "site/looplab/off-the-lines.json",
@@ -3343,9 +3343,9 @@
 0.61,
 0.46
 ],
-"sound_rank": 158,
+"sound_rank": 40,
 "family": "Jazz, funk & soul · Chill",
-"shape_rank": 161,
+"shape_rank": 158,
 "looplab": "site/looplab/breeze-in-the-alley.json",
 "src": "code/python/songs10.py"
 },
@@ -3437,7 +3437,7 @@
 0.49,
 0.66
 ],
-"sound_rank": 53,
+"sound_rank": 153,
 "family": "Breakcore · Happy",
 "shape_rank": 9,
 "looplab": "site/looplab/golden-hour-breaks.json",
@@ -3531,8 +3531,8 @@
 0.51,
 0.61
 ],
-"sound_rank": 125,
-"family": "Rock & metal · Happy",
+"sound_rank": 146,
+"family": "Breakcore · Happy",
 "shape_rank": 10,
 "looplab": "site/looplab/blue-spark-breaks.json",
 "src": "code/python/styles_breakcore.py"
@@ -3624,8 +3624,8 @@
 0.45,
 0.84
 ],
-"sound_rank": 129,
-"family": "Rock & metal · Happy",
+"sound_rank": 150,
+"family": "Breakcore · Happy",
 "shape_rank": 8,
 "looplab": "site/looplab/off-the-lines-breaks.json",
 "src": "code/python/styles_breakcore.py"
@@ -3716,7 +3716,7 @@
 0.43,
 0.45
 ],
-"sound_rank": 55,
+"sound_rank": 155,
 "family": "Breakcore · Happy",
 "shape_rank": 13,
 "looplab": "site/looplab/lanterns-and-thunder-drums.json",
@@ -3809,7 +3809,7 @@
 0.48,
 0.24
 ],
-"sound_rank": 195,
+"sound_rank": 83,
 "family": "Breakcore · Emotional",
 "shape_rank": 28,
 "looplab": "site/looplab/breeze-breaks.json",
@@ -3866,8 +3866,8 @@
 "energy": 0.815,
 "thumb": "site/thumbs/schoolyard-riot.jpg",
 "similar": [
-"full-court-press",
 "treasure-hunt-flow",
+"full-court-press",
 "dark-and-wild-run",
 "royal-procession",
 "street-neuron",
@@ -3900,7 +3900,7 @@
 0.87,
 0.32
 ],
-"sound_rank": 171,
+"sound_rank": 59,
 "family": "Hip-hop & trap · Chill",
 "shape_rank": 103,
 "looplab": "site/looplab/schoolyard-riot.json",
@@ -3992,8 +3992,8 @@
 0.96,
 0.31
 ],
-"sound_rank": 136,
-"family": "Rock & metal · Happy",
+"sound_rank": 127,
+"family": "Rock & metal · Hype",
 "shape_rank": 60,
 "looplab": "site/looplab/dark-and-wild-run.json",
 "src": "code/python/bts_albums.py"
@@ -4053,9 +4053,9 @@
 "comeback-rising",
 "breeze-in-the-alley",
 "last-light",
-"nobody-s-looking",
 "grassland-hop",
-"breeze-breaks"
+"nobody-s-looking",
+"lobby-loop"
 ],
 "shape": [
 "comeback-rising",
@@ -4084,7 +4084,7 @@
 0.69,
 0.29
 ],
-"sound_rank": 185,
+"sound_rank": 73,
 "family": "Breakcore · Emotional",
 "shape_rank": 104,
 "looplab": "site/looplab/youth-in-bloom.json",
@@ -4174,7 +4174,7 @@
 0.9,
 0.27
 ],
-"sound_rank": 11,
+"sound_rank": 4,
 "family": "World & folk · Chill",
 "shape_rank": 135,
 "looplab": "site/looplab/velvet-wings.json",
@@ -4265,8 +4265,8 @@
 0.97,
 0.28
 ],
-"sound_rank": 145,
-"family": "Rock & metal · Happy",
+"sound_rank": 105,
+"family": "Rock & metal · Hype",
 "shape_rank": 137,
 "looplab": "site/looplab/double-helix.json",
 "src": "code/python/bts_albums.py"
@@ -4327,7 +4327,7 @@
 "indigo-fields",
 "midnight-drift",
 "padma-to-kyoto",
-"schoolyard-riot"
+"the-good-ol-days"
 ],
 "shape": [
 "treasure-hunt-flow",
@@ -4356,7 +4356,7 @@
 0.89,
 0.29
 ],
-"sound_rank": 173,
+"sound_rank": 61,
 "family": "Hip-hop & trap · Chill",
 "shape_rank": 98,
 "looplab": "site/looplab/fragile-mask.json",
@@ -4419,8 +4419,8 @@
 "time-warp-zone",
 "beach-spike",
 "cliffside-climb",
-"squeak-sprint",
-"coastal-route"
+"coastal-route",
+"squeak-sprint"
 ],
 "shape": [
 "seventh-inning-swing",
@@ -4449,8 +4449,8 @@
 0.81,
 0.18
 ],
-"sound_rank": 115,
-"family": "Rock & metal · Happy",
+"sound_rank": 89,
+"family": "World & folk · Epic",
 "shape_rank": 124,
 "looplab": "site/looplab/eolssu-groove.json",
 "src": "code/python/bts_albums.py"
@@ -4541,7 +4541,7 @@
 0.88,
 0.28
 ],
-"sound_rank": 155,
+"sound_rank": 49,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 100,
 "looplab": "site/looplab/light-up-the-persona.json",
@@ -4604,8 +4604,8 @@
 "homebase-rising",
 "magma-fortress",
 "shellfire-castle",
-"eolssu-groove",
-"royal-procession"
+"royal-procession",
+"eolssu-groove"
 ],
 "shape": [
 "velvet-wings",
@@ -4634,8 +4634,8 @@
 0.84,
 0.27
 ],
-"sound_rank": 113,
-"family": "Rock & metal · Happy",
+"sound_rank": 87,
+"family": "World & folk · Epic",
 "shape_rank": 136,
 "looplab": "site/looplab/march-of-seven.json",
 "src": "code/python/bts_albums.py"
@@ -4726,9 +4726,9 @@
 0.53,
 0.33
 ],
-"sound_rank": 166,
+"sound_rank": 56,
 "family": "Jazz, funk & soul · Chill",
-"shape_rank": 187,
+"shape_rank": 184,
 "looplab": "site/looplab/life-goes-slow.json",
 "src": "code/python/bts_albums.py"
 },
@@ -4819,7 +4819,7 @@
 0.95,
 0.21
 ],
-"sound_rank": 178,
+"sound_rank": 66,
 "family": "Hip-hop & trap · Chill",
 "shape_rank": 89,
 "looplab": "site/looplab/yet-to-bloom.json",
@@ -4868,12 +4868,12 @@
 "energy": 0.772,
 "thumb": "site/thumbs/arirang-dawn.jpg",
 "similar": [
-"royal-procession",
 "the-good-ol-days",
+"royal-procession",
 "fragile-mask",
 "rainbow-spectrum",
-"oops-again",
-"sierpinski-steps"
+"sierpinski-steps",
+"oops-again"
 ],
 "shape": [
 "shred-line",
@@ -4902,9 +4902,9 @@
 0.57,
 0.11
 ],
-"sound_rank": 40,
-"family": "Other · Happy",
-"shape_rank": 177,
+"sound_rank": 166,
+"family": "Other · Spooky & sneaky",
+"shape_rank": 174,
 "looplab": "site/looplab/arirang-dawn.json",
 "src": "code/python/bts_albums.py"
 },
@@ -4993,9 +4993,9 @@
 0.78,
 0.32
 ],
-"sound_rank": 161,
+"sound_rank": 43,
 "family": "Jazz, funk & soul · Chill",
-"shape_rank": 191,
+"shape_rank": 188,
 "looplab": "site/looplab/riverbank-evening.json",
 "src": "code/python/southasia.py"
 },
@@ -5053,8 +5053,8 @@
 "similar": [
 "padma-to-kyoto-breaks",
 "heatwave-arcade",
-"aqua-tomorrow-breaks",
 "rush-hour-boost",
+"aqua-tomorrow-breaks",
 "stadium-highlands",
 "grassland-hop"
 ],
@@ -5085,8 +5085,8 @@
 0.53,
 0.16
 ],
-"sound_rank": 121,
-"family": "Rock & metal · Happy",
+"sound_rank": 110,
+"family": "Rock & metal · Hype",
 "shape_rank": 27,
 "looplab": "site/looplab/monsoon-breaks.json",
 "src": "code/python/southasia.py"
@@ -5178,8 +5178,8 @@
 0.98,
 0.29
 ],
-"sound_rank": 133,
-"family": "Rock & metal · Happy",
+"sound_rank": 124,
+"family": "Rock & metal · Hype",
 "shape_rank": 57,
 "looplab": "site/looplab/sky-piercing-promise.json",
 "src": "code/python/batch_a.py"
@@ -5269,7 +5269,7 @@
 0.51,
 0.22
 ],
-"sound_rank": 190,
+"sound_rank": 78,
 "family": "Breakcore · Emotional",
 "shape_rank": 29,
 "looplab": "site/looplab/sky-piercing-breaks.json",
@@ -5362,8 +5362,8 @@
 0.92,
 0.3
 ],
-"sound_rank": 138,
-"family": "Rock & metal · Happy",
+"sound_rank": 129,
+"family": "Rock & metal · Hype",
 "shape_rank": 62,
 "looplab": "site/looplab/arcade-heartbreak-2005.json",
 "src": "code/python/batch_a.py"
@@ -5420,8 +5420,8 @@
 "frozen-clock",
 "sky-piercing-promise",
 "titan-undefeated",
-"boundless-run",
-"dark-and-wild-run"
+"dark-and-wild-run",
+"boundless-run"
 ],
 "shape": [
 "final-circle",
@@ -5452,8 +5452,8 @@
 0.96,
 0.28
 ],
-"sound_rank": 131,
-"family": "Rock & metal · Happy",
+"sound_rank": 122,
+"family": "Rock & metal · Hype",
 "shape_rank": 50,
 "looplab": "site/looplab/iron-storm-rising.json",
 "src": "code/python/batch_a.py"
@@ -5545,8 +5545,8 @@
 0.47,
 0.21
 ],
-"sound_rank": 130,
-"family": "Rock & metal · Happy",
+"sound_rank": 121,
+"family": "Rock & metal · Hype",
 "shape_rank": 30,
 "looplab": "site/looplab/iron-storm-breaks.json",
 "src": "code/python/batch_a.py"
@@ -5637,7 +5637,7 @@
 0.91,
 0.27
 ],
-"sound_rank": 179,
+"sound_rank": 67,
 "family": "Hip-hop & trap · Chill",
 "shape_rank": 99,
 "looplab": "site/looplab/respawn-lounge.json",
@@ -5728,8 +5728,8 @@
 0.95,
 0.18
 ],
-"sound_rank": 101,
-"family": "Electronic & dance · Hype",
+"sound_rank": 191,
+"family": "Hip-hop & trap · Hype",
 "shape_rank": 55,
 "looplab": "site/looplab/final-circle.json",
 "src": "code/python/bgm.py"
@@ -5790,7 +5790,7 @@
 "easy-pace",
 "snowpoint-trail",
 "frosty-podium",
-"checkerboard-skank"
+"daily-poke-catch-route"
 ],
 "shape": [
 "johto-morning",
@@ -5819,8 +5819,8 @@
 0.98,
 0.47
 ],
-"sound_rank": 147,
-"family": "Rock & metal · Happy",
+"sound_rank": 103,
+"family": "Rock & metal · Hype",
 "shape_rank": 76,
 "looplab": "site/looplab/pallet-path.json",
 "src": "code/python/pokemon_gens.py"
@@ -5911,8 +5911,8 @@
 0.99,
 0.49
 ],
-"sound_rank": 148,
-"family": "Rock & metal · Happy",
+"sound_rank": 104,
+"family": "Rock & metal · Hype",
 "shape_rank": 77,
 "looplab": "site/looplab/johto-morning.json",
 "src": "code/python/pokemon_gens.py"
@@ -6002,8 +6002,8 @@
 0.83,
 0.17
 ],
-"sound_rank": 150,
-"family": "Rock & metal · Happy",
+"sound_rank": 113,
+"family": "Rock & metal · Hype",
 "shape_rank": 127,
 "looplab": "site/looplab/snowpoint-trail.json",
 "src": "code/python/pokemon_gens.py"
@@ -6062,8 +6062,8 @@
 "similar": [
 "island-time",
 "match-point",
-"coconut-cove",
 "boulevard-cafe",
+"coconut-cove",
 "log-drum-sunset",
 "padma-to-kyoto"
 ],
@@ -6094,7 +6094,7 @@
 0.81,
 0.18
 ],
-"sound_rank": 168,
+"sound_rank": 54,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 130,
 "looplab": "site/looplab/island-breeze.json",
@@ -6186,8 +6186,8 @@
 0.76,
 0.18
 ],
-"sound_rank": 114,
-"family": "Rock & metal · Happy",
+"sound_rank": 88,
+"family": "World & folk · Epic",
 "shape_rank": 120,
 "looplab": "site/looplab/stadium-highlands.json",
 "src": "code/python/pokemon_gens.py"
@@ -6278,8 +6278,8 @@
 0.8,
 0.23
 ],
-"sound_rank": 117,
-"family": "Rock & metal · Happy",
+"sound_rank": 107,
+"family": "Rock & metal · Hype",
 "shape_rank": 132,
 "looplab": "site/looplab/sunlit-plaza.json",
 "src": "code/python/pokemon_gens.py"
@@ -6369,7 +6369,7 @@
 1.0,
 0.32
 ],
-"sound_rank": 73,
+"sound_rank": 177,
 "family": "Chiptune & retro · Hype",
 "shape_rank": 53,
 "looplab": "site/looplab/emerald-shore-zone.json",
@@ -6458,8 +6458,8 @@
 0.83,
 0.27
 ],
-"sound_rank": 103,
-"family": "Electronic & dance · Hype",
+"sound_rank": 95,
+"family": "Rock & metal · Hype",
 "shape_rank": 134,
 "looplab": "site/looplab/time-warp-zone.json",
 "src": "code/python/sonic_styles.py"
@@ -6549,7 +6549,7 @@
 0.91,
 0.34
 ],
-"sound_rank": 170,
+"sound_rank": 60,
 "family": "Hip-hop & trap · Chill",
 "shape_rank": 101,
 "looplab": "site/looplab/treasure-hunt-flow.json",
@@ -6611,8 +6611,8 @@
 "see-you-next-drop",
 "highway-escape",
 "heatwave-arcade",
-"light-up-the-persona",
-"arcade-heartbreak-2005"
+"arcade-heartbreak-2005",
+"ice-time"
 ],
 "shape": [
 "emerald-shore-zone",
@@ -6641,8 +6641,8 @@
 0.99,
 0.29
 ],
-"sound_rank": 141,
-"family": "Rock & metal · Happy",
+"sound_rank": 116,
+"family": "Rock & metal · Hype",
 "shape_rank": 54,
 "looplab": "site/looplab/rush-hour-boost.json",
 "src": "code/python/sonic_styles.py"
@@ -6703,7 +6703,7 @@
 "golden-hour-breaks",
 "checkerboard-skank",
 "tiptoe-heist",
-"see-you-next-drop"
+"haunted-manor"
 ],
 "shape": [
 "emerald-shore-zone",
@@ -6732,7 +6732,7 @@
 1.0,
 0.29
 ],
-"sound_rank": 164,
+"sound_rank": 52,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 52,
 "looplab": "site/looplab/moonlit-night-stage.json",
@@ -6825,7 +6825,7 @@
 0.82,
 0.25
 ],
-"sound_rank": 85,
+"sound_rank": 138,
 "family": "Pop · Happy",
 "shape_rank": 80,
 "looplab": "site/looplab/starlight-carnival-run.json",
@@ -6916,8 +6916,8 @@
 0.97,
 0.33
 ],
-"sound_rank": 102,
-"family": "Electronic & dance · Hype",
+"sound_rank": 192,
+"family": "Hip-hop & trap · Hype",
 "shape_rank": 59,
 "looplab": "site/looplab/lime-green-afterparty.json",
 "src": "code/python/batch_c.py"
@@ -7012,8 +7012,8 @@
 0.93,
 0.16
 ],
-"sound_rank": 86,
-"family": "Pop · Happy",
+"sound_rank": 185,
+"family": "Hip-hop & trap · Hype",
 "shape_rank": 61,
 "looplab": "site/looplab/red-40-sugar-rush.json",
 "src": "code/python/batch_d.py"
@@ -7105,7 +7105,7 @@
 0.91,
 0.23
 ],
-"sound_rank": 162,
+"sound_rank": 44,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 110,
 "looplab": "site/looplab/padma-to-kyoto.json",
@@ -7166,8 +7166,8 @@
 "red-40-breaks",
 "frozen-clock",
 "iron-storm-breaks",
-"sky-piercing-promise",
 "off-the-lines-breaks",
+"sky-piercing-promise",
 "blue-spark-runaway"
 ],
 "shape": [
@@ -7199,7 +7199,7 @@
 0.95,
 0.78
 ],
-"sound_rank": 83,
+"sound_rank": 131,
 "family": "Pop · Happy",
 "shape_rank": 2,
 "looplab": "site/looplab/arcade-heartbreak-breaks.json",
@@ -7292,7 +7292,7 @@
 0.85,
 0.2
 ],
-"sound_rank": 165,
+"sound_rank": 53,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 131,
 "looplab": "site/looplab/boulevard-cafe.json",
@@ -7383,8 +7383,8 @@
 0.91,
 0.3
 ],
-"sound_rank": 132,
-"family": "Rock & metal · Happy",
+"sound_rank": 123,
+"family": "Rock & metal · Hype",
 "shape_rank": 56,
 "looplab": "site/looplab/highway-escape.json",
 "src": "code/python/sonic_styles.py"
@@ -7476,8 +7476,8 @@
 0.95,
 0.3
 ],
-"sound_rank": 134,
-"family": "Rock & metal · Happy",
+"sound_rank": 125,
+"family": "Rock & metal · Hype",
 "shape_rank": 51,
 "looplab": "site/looplab/titan-undefeated.json",
 "src": "code/python/sonic_styles.py"
@@ -7553,7 +7553,7 @@
 1.0,
 0.69
 ],
-"sound_rank": 14,
+"sound_rank": 7,
 "family": "World & folk · Chill",
 "shape_rank": 0,
 "looplab": "site/looplab/winds-of-the-world.json",
@@ -7643,8 +7643,8 @@
 0.9,
 0.21
 ],
-"sound_rank": 89,
-"family": "Pop · Happy",
+"sound_rank": 180,
+"family": "Electronic & dance · Happy",
 "shape_rank": 97,
 "looplab": "site/looplab/sugar-cloud-smile.json",
 "src": "code/python/batch_c.py"
@@ -7733,9 +7733,9 @@
 0.55,
 0.09
 ],
-"sound_rank": 189,
+"sound_rank": 77,
 "family": "Breakcore · Emotional",
-"shape_rank": 195,
+"shape_rank": 192,
 "looplab": "site/looplab/sugar-cloud-breaks.json",
 "src": "code/python/batch_c.py"
 },
@@ -7822,9 +7822,9 @@
 0.61,
 0.21
 ],
-"sound_rank": 126,
-"family": "Rock & metal · Happy",
-"shape_rank": 192,
+"sound_rank": 147,
+"family": "Breakcore · Happy",
+"shape_rank": 189,
 "looplab": "site/looplab/lime-green-breaks.json",
 "src": "code/python/batch_c.py"
 },
@@ -7916,8 +7916,8 @@
 0.58,
 0.09
 ],
-"sound_rank": 122,
-"family": "Rock & metal · Happy",
+"sound_rank": 111,
+"family": "Rock & metal · Hype",
 "shape_rank": 17,
 "looplab": "site/looplab/padma-to-kyoto-breaks.json",
 "src": "code/python/batch_d.py"
@@ -8008,8 +8008,8 @@
 0.94,
 0.1
 ],
-"sound_rank": 120,
-"family": "Rock & metal · Happy",
+"sound_rank": 109,
+"family": "Rock & metal · Hype",
 "shape_rank": 112,
 "looplab": "site/looplab/grassland-hop.json",
 "src": "code/python/mario_worlds.py"
@@ -8099,7 +8099,7 @@
 0.93,
 0.21
 ],
-"sound_rank": 13,
+"sound_rank": 6,
 "family": "World & folk · Chill",
 "shape_rank": 108,
 "looplab": "site/looplab/desert-dunes.json",
@@ -8158,8 +8158,8 @@
 "kite-season",
 "cloudtop-athletic",
 "winds-of-the-world",
-"line-of-light",
-"neverland-rush"
+"neverland-rush",
+"line-of-light"
 ],
 "shape": [
 "mushroom-woods",
@@ -8188,8 +8188,8 @@
 0.89,
 0.2
 ],
-"sound_rank": 3,
-"family": "World & folk · Happy",
+"sound_rank": 0,
+"family": "World & folk",
 "shape_rank": 107,
 "looplab": "site/looplab/snowcap-slide.json",
 "src": "code/python/mario_worlds.py"
@@ -8279,8 +8279,8 @@
 0.82,
 0.22
 ],
-"sound_rank": 9,
-"family": "World & folk · Chill",
+"sound_rank": 93,
+"family": "World & folk · Epic",
 "shape_rank": 105,
 "looplab": "site/looplab/coconut-cove.json",
 "src": "code/python/mario_worlds.py"
@@ -8343,7 +8343,7 @@
 "oops-again",
 "cloudtop-athletic",
 "match-point",
-"starry-road"
+"tiptoe-heist"
 ],
 "shape": [
 "desert-dunes",
@@ -8372,7 +8372,7 @@
 0.94,
 0.23
 ],
-"sound_rank": 5,
+"sound_rank": 2,
 "family": "World & folk · Happy",
 "shape_rank": 109,
 "looplab": "site/looplab/mushroom-woods.json",
@@ -8430,8 +8430,8 @@
 "energy": 0.792,
 "thumb": "site/thumbs/cliffside-climb.jpg",
 "similar": [
-"homebase-rising",
 "stadium-highlands",
+"homebase-rising",
 "eolssu-groove",
 "sunlit-plaza",
 "snowpoint-trail",
@@ -8464,8 +8464,8 @@
 0.96,
 0.19
 ],
-"sound_rank": 116,
-"family": "Rock & metal · Happy",
+"sound_rank": 90,
+"family": "World & folk · Epic",
 "shape_rank": 116,
 "looplab": "site/looplab/cliffside-climb.json",
 "src": "code/python/mario_worlds.py"
@@ -8553,8 +8553,8 @@
 0.83,
 0.05
 ],
-"sound_rank": 4,
-"family": "World & folk · Happy",
+"sound_rank": 1,
+"family": "World & folk",
 "shape_rank": 129,
 "looplab": "site/looplab/cloudtop-athletic.json",
 "src": "code/python/mario_worlds.py"
@@ -8647,8 +8647,8 @@
 0.92,
 0.18
 ],
-"sound_rank": 110,
-"family": "Rock & metal · Happy",
+"sound_rank": 84,
+"family": "World & folk · Epic",
 "shape_rank": 115,
 "looplab": "site/looplab/magma-fortress.json",
 "src": "code/python/mario_worlds.py"
@@ -8707,9 +8707,9 @@
 "sunlit-plaza",
 "boundless-run",
 "see-you-next-drop",
-"grassland-hop",
 "arcade-heartbreak-2005",
-"cloudtop-athletic"
+"cloudtop-athletic",
+"holler-hoedown"
 ],
 "shape": [
 "grassland-hop",
@@ -8738,8 +8738,8 @@
 0.95,
 0.11
 ],
-"sound_rank": 118,
-"family": "Rock & metal · Happy",
+"sound_rank": 108,
+"family": "Rock & metal · Hype",
 "shape_rank": 113,
 "looplab": "site/looplab/starry-road.json",
 "src": "code/python/mario_worlds.py"
@@ -8829,7 +8829,7 @@
 0.98,
 0.17
 ],
-"sound_rank": 1,
+"sound_rank": 168,
 "family": "Other · Spooky & sneaky",
 "shape_rank": 114,
 "looplab": "site/looplab/pipe-cavern.json",
@@ -8893,7 +8893,7 @@
 "island-breeze",
 "easy-pace",
 "island-time",
-"morning-over-the-valley"
+"menu-drift"
 ],
 "shape": [
 "lantern-theory",
@@ -8922,9 +8922,9 @@
 0.76,
 0.47
 ],
-"sound_rank": 58,
+"sound_rank": 158,
 "family": "Pop · Chill",
-"shape_rank": 159,
+"shape_rank": 156,
 "looplab": "site/looplab/coral-waltz.json",
 "src": "code/python/mario_worlds.py"
 },
@@ -8984,8 +8984,8 @@
 "similar": [
 "rolling-away",
 "harbor-moon",
-"sparkler-letters",
 "what-s-next",
+"sparkler-letters",
 "red-light-rain",
 "holler-hoedown"
 ],
@@ -9016,7 +9016,7 @@
 0.8,
 0.29
 ],
-"sound_rank": 38,
+"sound_rank": 18,
 "family": "Other · Happy",
 "shape_rank": 102,
 "looplab": "site/looplab/haunted-manor.json",
@@ -9109,8 +9109,8 @@
 0.96,
 0.18
 ],
-"sound_rank": 111,
-"family": "Rock & metal · Happy",
+"sound_rank": 85,
+"family": "World & folk · Epic",
 "shape_rank": 117,
 "looplab": "site/looplab/shellfire-castle.json",
 "src": "code/python/mario_worlds.py"
@@ -9170,8 +9170,8 @@
 "energy": 0.792,
 "thumb": "site/thumbs/glitter-overload.jpg",
 "similar": [
-"red-40-sugar-rush",
 "starlight-carnival-run",
+"red-40-sugar-rush",
 "moonward",
 "pixel-heart-dnb",
 "sierpinski-steps",
@@ -9204,7 +9204,7 @@
 1.0,
 0.43
 ],
-"sound_rank": 87,
+"sound_rank": 139,
 "family": "Pop · Happy",
 "shape_rank": 45,
 "looplab": "site/looplab/glitter-overload.json",
@@ -9293,7 +9293,7 @@
 0.99,
 0.34
 ],
-"sound_rank": 64,
+"sound_rank": 164,
 "family": "Pop · Chill",
 "shape_rank": 47,
 "looplab": "site/looplab/bitcrushed-daydream.json",
@@ -9354,8 +9354,8 @@
 "aqua-tomorrow",
 "blue-spark-runaway",
 "pixel-heart-dnb",
-"blue-hour-disco",
-"sunday-stroll"
+"sunday-stroll",
+"the-good-ol-days"
 ],
 "shape": [
 "glitter-overload",
@@ -9384,7 +9384,7 @@
 1.0,
 0.43
 ],
-"sound_rank": 65,
+"sound_rank": 165,
 "family": "Pop · Chill",
 "shape_rank": 46,
 "looplab": "site/looplab/static-tears.json",
@@ -9476,8 +9476,8 @@
 0.97,
 0.3
 ],
-"sound_rank": 108,
-"family": "Electronic & dance · Hype",
+"sound_rank": 100,
+"family": "Rock & metal · Hype",
 "shape_rank": 48,
 "looplab": "site/looplab/nightcore-rush.json",
 "src": "code/python/hyperpop2.py"
@@ -9566,9 +9566,9 @@
 0.59,
 0.29
 ],
-"sound_rank": 167,
+"sound_rank": 57,
 "family": "Jazz, funk & soul · Chill",
-"shape_rank": 173,
+"shape_rank": 170,
 "looplab": "site/looplab/menu-drift.json",
 "src": "code/python/bgm.py"
 },
@@ -9625,8 +9625,8 @@
 "similar": [
 "highway-escape",
 "iron-storm-rising",
-"storm-closing",
 "snowpoint-trail",
+"storm-closing",
 "stride-176",
 "sky-piercing-promise"
 ],
@@ -9657,9 +9657,9 @@
 0.71,
 0.15
 ],
-"sound_rank": 98,
-"family": "Electronic & dance · Hype",
-"shape_rank": 165,
+"sound_rank": 114,
+"family": "Rock & metal · Hype",
+"shape_rank": 162,
 "looplab": "site/looplab/skyscraper-sprint.json",
 "src": "code/python/pokemon_gens.py"
 },
@@ -9754,9 +9754,9 @@
 0.42,
 0.15
 ],
-"sound_rank": 84,
+"sound_rank": 132,
 "family": "Pop · Happy",
-"shape_rank": 193,
+"shape_rank": 190,
 "looplab": "site/looplab/red-40-breaks.json",
 "src": "code/python/batch_d.py"
 },
@@ -9814,7 +9814,7 @@
 "line-of-light",
 "moonward",
 "static-tears",
-"strangers-together"
+"harbor-moon"
 ],
 "shape": [
 "easy-pace",
@@ -9845,9 +9845,9 @@
 0.46,
 0.25
 ],
-"sound_rank": 61,
+"sound_rank": 161,
 "family": "Pop · Chill",
-"shape_rank": 189,
+"shape_rank": 186,
 "looplab": "site/looplab/aqua-tomorrow.json",
 "src": "code/python/batch_d.py"
 },
@@ -9933,7 +9933,7 @@
 0.32,
 0.02
 ],
-"sound_rank": 52,
+"sound_rank": 152,
 "family": "Breakcore · Happy",
 "shape_rank": 16,
 "looplab": "site/looplab/aqua-tomorrow-breaks.json",
@@ -10026,7 +10026,7 @@
 0.93,
 0.29
 ],
-"sound_rank": 63,
+"sound_rank": 163,
 "family": "Pop · Chill",
 "shape_rank": 49,
 "looplab": "site/looplab/pixel-heart-dnb.json",
@@ -10112,7 +10112,7 @@
 0.98,
 0.41
 ],
-"sound_rank": 174,
+"sound_rank": 62,
 "family": "Hip-hop & trap · Chill",
 "shape_rank": 63,
 "looplab": "site/looplab/midnight-drift.json",
@@ -10198,8 +10198,8 @@
 0.97,
 0.34
 ],
-"sound_rank": 104,
-"family": "Electronic & dance · Hype",
+"sound_rank": 96,
+"family": "Rock & metal · Hype",
 "shape_rank": 85,
 "looplab": "site/looplab/neon-horizon.json",
 "src": "code/python/genres.py"
@@ -10254,8 +10254,8 @@
 "similar": [
 "squeak-sprint",
 "powder-run",
-"bass-quake",
 "skyscraper-sprint",
+"bass-quake",
 "iron-storm-rising",
 "stride-176"
 ],
@@ -10286,8 +10286,8 @@
 0.91,
 0.15
 ],
-"sound_rank": 106,
-"family": "Electronic & dance · Hype",
+"sound_rank": 98,
+"family": "Rock & metal · Hype",
 "shape_rank": 111,
 "looplab": "site/looplab/turbo-corner.json",
 "src": "code/python/genres.py"
@@ -10376,8 +10376,8 @@
 0.82,
 0.08
 ],
-"sound_rank": 142,
-"family": "Rock & metal · Happy",
+"sound_rank": 117,
+"family": "Rock & metal · Hype",
 "shape_rank": 122,
 "looplab": "site/looplab/checkerboard-skank.json",
 "src": "code/python/genres.py"
@@ -10467,7 +10467,7 @@
 0.96,
 0.5
 ],
-"sound_rank": 169,
+"sound_rank": 55,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 67,
 "looplab": "site/looplab/island-time.json",
@@ -10559,8 +10559,8 @@
 0.92,
 0.25
 ],
-"sound_rank": 7,
-"family": "World & folk · Chill",
+"sound_rank": 91,
+"family": "World & folk · Epic",
 "shape_rank": 106,
 "looplab": "site/looplab/log-drum-sunset.json",
 "src": "code/python/genres.py"
@@ -10648,7 +10648,7 @@
 0.84,
 0.11
 ],
-"sound_rank": 62,
+"sound_rank": 162,
 "family": "Pop · Chill",
 "shape_rank": 123,
 "looplab": "site/looplab/holler-hoedown.json",
@@ -10709,7 +10709,7 @@
 "starlit-orbit",
 "life-goes-slow",
 "street-neuron",
-"blue-hour-disco"
+"seventh-inning-swing"
 ],
 "shape": [
 "respawn-lounge",
@@ -10738,7 +10738,7 @@
 0.84,
 0.21
 ],
-"sound_rank": 156,
+"sound_rank": 50,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 78,
 "looplab": "site/looplab/tokyo-sunset-drive.json",
@@ -10797,7 +10797,7 @@
 "bass-quake",
 "nightcore-rush",
 "iron-storm-rising",
-"shred-line"
+"lime-green-breaks"
 ],
 "shape": [
 "full-court-press",
@@ -10826,8 +10826,8 @@
 0.97,
 0.19
 ],
-"sound_rank": 107,
-"family": "Electronic & dance · Hype",
+"sound_rank": 99,
+"family": "Rock & metal · Hype",
 "shape_rank": 91,
 "looplab": "site/looplab/squeak-sprint.json",
 "src": "code/python/genres.py"
@@ -10919,9 +10919,9 @@
 0.49,
 0.19
 ],
-"sound_rank": 159,
+"sound_rank": 41,
 "family": "Jazz, funk & soul · Chill",
-"shape_rank": 179,
+"shape_rank": 176,
 "looplab": "site/looplab/indigo-fields.json",
 "src": "code/python/bts_solos.py"
 },
@@ -10983,7 +10983,7 @@
 "aqua-tomorrow",
 "double-helix",
 "static-weather",
-"street-neuron"
+"life-goes-slow"
 ],
 "shape": [
 "breakcore-cubed",
@@ -11012,7 +11012,7 @@
 0.52,
 0.05
 ],
-"sound_rank": 153,
+"sound_rank": 47,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 11,
 "looplab": "site/looplab/starlit-orbit.json",
@@ -11104,7 +11104,7 @@
 0.96,
 0.84
 ],
-"sound_rank": 154,
+"sound_rank": 48,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 3,
 "looplab": "site/looplab/street-neuron.json",
@@ -11196,9 +11196,9 @@
 0.4,
 0.28
 ],
-"sound_rank": 176,
+"sound_rank": 64,
 "family": "Hip-hop & trap · Chill",
-"shape_rank": 178,
+"shape_rank": 175,
 "looplab": "site/looplab/velvet-layover.json",
 "src": "code/python/bts_solos.py"
 },
@@ -11278,7 +11278,7 @@
 0.88,
 0.13
 ],
-"sound_rank": 41,
+"sound_rank": 9,
 "family": "Other · Happy",
 "shape_rank": 58,
 "looplab": "site/looplab/infinite-series.json",
@@ -11339,8 +11339,8 @@
 "double-helix",
 "arcade-heartbreak-2005",
 "turbo-corner",
-"time-warp-zone",
-"starlight-carnival-run"
+"starlight-carnival-run",
+"time-warp-zone"
 ],
 "shape": [
 "sunday-stroll",
@@ -11369,8 +11369,8 @@
 0.87,
 0.31
 ],
-"sound_rank": 146,
-"family": "Rock & metal · Happy",
+"sound_rank": 106,
+"family": "Rock & metal · Hype",
 "shape_rank": 72,
 "looplab": "site/looplab/level-up-rush.json",
 "src": "code/python/bgm.py"
@@ -11427,8 +11427,8 @@
 "energy": 0.744,
 "thumb": "site/thumbs/royal-procession.jpg",
 "similar": [
-"final-circle",
 "full-court-press",
+"final-circle",
 "lime-green-afterparty",
 "schoolyard-riot",
 "daily-poke-catch-mythic-battle",
@@ -11461,9 +11461,9 @@
 0.55,
 0.22
 ],
-"sound_rank": 99,
-"family": "Electronic & dance · Hype",
-"shape_rank": 180,
+"sound_rank": 189,
+"family": "Hip-hop & trap · Hype",
+"shape_rank": 177,
 "looplab": "site/looplab/royal-procession.json",
 "src": "code/python/bts_solos.py"
 },
@@ -11553,9 +11553,9 @@
 0.56,
 0.05
 ],
-"sound_rank": 6,
+"sound_rank": 3,
 "family": "World & folk · Happy",
-"shape_rank": 176,
+"shape_rank": 173,
 "looplab": "site/looplab/oops-again.json",
 "src": "code/python/batch_e.py"
 },
@@ -11611,8 +11611,8 @@
 "similar": [
 "moonlit-night-stage",
 "haunted-manor",
-"pipe-cavern",
 "island-breeze",
+"pipe-cavern",
 "velvet-layover",
 "winds-of-the-world"
 ],
@@ -11643,7 +11643,7 @@
 1.0,
 0.41
 ],
-"sound_rank": 0,
+"sound_rank": 167,
 "family": "Other · Spooky & sneaky",
 "shape_rank": 75,
 "looplab": "site/looplab/tiptoe-heist.json",
@@ -11702,10 +11702,10 @@
 "shape": [
 "the-good-ol-days",
 "blooming-away",
-"ta-322-and-the-shadow",
 "field-at-sunset",
-"sun-on-the-water",
-"red-light-rain"
+"red-light-rain",
+"fourier-rise",
+"hanging-tree"
 ],
 "versions": [],
 "arc": [
@@ -11726,7 +11726,7 @@
 0.57,
 0.11
 ],
-"sound_rank": 184,
+"sound_rank": 72,
 "family": "Breakcore · Emotional",
 "shape_rank": 1,
 "looplab": "site/looplab/final-zone-countdown.json",
@@ -11808,9 +11808,9 @@
 0.08,
 0.0
 ],
-"sound_rank": 140,
-"family": "Rock & metal · Happy",
-"shape_rank": 174,
+"sound_rank": 115,
+"family": "Rock & metal · Hype",
+"shape_rank": 171,
 "looplab": "site/looplab/see-you-next-drop.json",
 "src": "code/python/batch_e.py"
 },
@@ -11899,7 +11899,7 @@
 0.82,
 0.1
 ],
-"sound_rank": 2,
+"sound_rank": 169,
 "family": "Other · Spooky & sneaky",
 "shape_rank": 79,
 "looplab": "site/looplab/midnight-mirage.json",
@@ -11963,8 +11963,8 @@
 "lime-green-afterparty",
 "yet-to-bloom",
 "lobby-loop",
-"red-40-sugar-rush",
-"respawn-lounge"
+"respawn-lounge",
+"red-40-sugar-rush"
 ],
 "shape": [
 "green-light-crew",
@@ -11993,7 +11993,7 @@
 0.96,
 0.29
 ],
-"sound_rank": 175,
+"sound_rank": 63,
 "family": "Hip-hop & trap · Chill",
 "shape_rank": 86,
 "looplab": "site/looplab/gold-rush-garage.json",
@@ -12084,7 +12084,7 @@
 0.41,
 0.1
 ],
-"sound_rank": 192,
+"sound_rank": 80,
 "family": "Breakcore · Emotional",
 "shape_rank": 20,
 "looplab": "site/looplab/breakcore-squared.json",
@@ -12177,7 +12177,7 @@
 0.79,
 0.2
 ],
-"sound_rank": 186,
+"sound_rank": 74,
 "family": "Breakcore · Emotional",
 "shape_rank": 118,
 "looplab": "site/looplab/comeback-rising.json",
@@ -12236,7 +12236,7 @@
 "lime-green-afterparty",
 "final-circle",
 "red-40-sugar-rush",
-"lime-green-breaks"
+"overclocked"
 ],
 "shape": [
 "johto-morning",
@@ -12265,8 +12265,8 @@
 0.94,
 0.5
 ],
-"sound_rank": 100,
-"family": "Electronic & dance · Hype",
+"sound_rank": 190,
+"family": "Hip-hop & trap · Hype",
 "shape_rank": 66,
 "looplab": "site/looplab/bass-quake.json",
 "src": "code/python/genres.py"
@@ -12352,7 +12352,7 @@
 0.47,
 0.19
 ],
-"sound_rank": 191,
+"sound_rank": 79,
 "family": "Breakcore · Emotional",
 "shape_rank": 23,
 "looplab": "site/looplab/infinite-series-breaks.json",
@@ -12442,7 +12442,7 @@
 0.33,
 0.05
 ],
-"sound_rank": 193,
+"sound_rank": 81,
 "family": "Breakcore · Emotional",
 "shape_rank": 18,
 "looplab": "site/looplab/breakcore-cubed.json",
@@ -12532,8 +12532,8 @@
 0.74,
 0.14
 ],
-"sound_rank": 119,
-"family": "Rock & metal · Happy",
+"sound_rank": 112,
+"family": "Rock & metal · Hype",
 "shape_rank": 119,
 "looplab": "site/looplab/golazo-anthem.json",
 "src": "code/python/sports.py"
@@ -12620,7 +12620,7 @@
 0.97,
 0.23
 ],
-"sound_rank": 172,
+"sound_rank": 58,
 "family": "Hip-hop & trap · Chill",
 "shape_rank": 94,
 "looplab": "site/looplab/full-court-press.json",
@@ -12708,7 +12708,7 @@
 0.81,
 0.2
 ],
-"sound_rank": 50,
+"sound_rank": 145,
 "family": "Orchestral & cinematic",
 "shape_rank": 133,
 "looplab": "site/looplab/fourth-and-goal.json",
@@ -12764,12 +12764,12 @@
 "energy": 0.772,
 "thumb": "site/thumbs/seventh-inning-swing.jpg",
 "similar": [
-"moonlit-night-stage",
 "boulevard-cafe",
+"moonlit-night-stage",
 "blue-hour-disco",
 "tokyo-sunset-drive",
-"street-neuron",
-"stillness-in-the-thorns"
+"stillness-in-the-thorns",
+"street-neuron"
 ],
 "shape": [
 "frozen-clock",
@@ -12798,7 +12798,7 @@
 0.81,
 0.12
 ],
-"sound_rank": 163,
+"sound_rank": 51,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 125,
 "looplab": "site/looplab/seventh-inning-swing.json",
@@ -12889,8 +12889,8 @@
 0.85,
 0.17
 ],
-"sound_rank": 137,
-"family": "Rock & metal · Happy",
+"sound_rank": 128,
+"family": "Rock & metal · Hype",
 "shape_rank": 96,
 "looplab": "site/looplab/ice-time.json",
 "src": "code/python/sports.py"
@@ -12949,8 +12949,8 @@
 "coconut-cove",
 "time-warp-zone",
 "channel-plaza",
-"eolssu-groove",
 "platform-nine",
+"eolssu-groove",
 "coastal-route"
 ],
 "shape": [
@@ -12980,8 +12980,8 @@
 0.94,
 0.28
 ],
-"sound_rank": 10,
-"family": "World & folk · Chill",
+"sound_rank": 94,
+"family": "World & folk · Epic",
 "shape_rank": 82,
 "looplab": "site/looplab/beach-spike.json",
 "src": "code/python/sports.py"
@@ -13070,8 +13070,8 @@
 0.79,
 0.09
 ],
-"sound_rank": 105,
-"family": "Electronic & dance · Hype",
+"sound_rank": 97,
+"family": "Rock & metal · Hype",
 "shape_rank": 81,
 "looplab": "site/looplab/powder-run.json",
 "src": "code/python/sports.py"
@@ -13160,7 +13160,7 @@
 0.95,
 0.13
 ],
-"sound_rank": 43,
+"sound_rank": 11,
 "family": "Other · Happy",
 "shape_rank": 90,
 "looplab": "site/looplab/shuttle-rally.json",
@@ -13250,9 +13250,9 @@
 0.64,
 0.03
 ],
-"sound_rank": 144,
-"family": "Rock & metal · Happy",
-"shape_rank": 183,
+"sound_rank": 119,
+"family": "Rock & metal · Hype",
+"shape_rank": 180,
 "looplab": "site/looplab/huck-it.json",
 "src": "code/python/sports.py"
 },
@@ -13340,9 +13340,9 @@
 0.49,
 0.02
 ],
-"sound_rank": 96,
-"family": "Electronic & dance · Hype",
-"shape_rank": 181,
+"sound_rank": 188,
+"family": "Hip-hop & trap · Hype",
+"shape_rank": 178,
 "looplab": "site/looplab/stride-176.json",
 "src": "code/python/sports.py"
 },
@@ -13394,8 +13394,8 @@
 "similar": [
 "sunday-stroll",
 "blue-spark-runaway",
-"sunlit-plaza",
 "coral-waltz",
+"sunlit-plaza",
 "double-helix",
 "pallet-path"
 ],
@@ -13426,9 +13426,9 @@
 0.47,
 0.11
 ],
-"sound_rank": 59,
+"sound_rank": 159,
 "family": "Pop · Chill",
-"shape_rank": 190,
+"shape_rank": 187,
 "looplab": "site/looplab/easy-pace.json",
 "src": "code/python/sports.py"
 },
@@ -13483,9 +13483,9 @@
 "amar-chok-ar-maata",
 "blooming-away",
 "field-at-sunset",
-"ta-322-in-blue-flame",
 "sparkler-letters",
-"harbor-moon"
+"harbor-moon",
+"nuton-audor"
 ],
 "versions": [],
 "arc": [
@@ -13506,9 +13506,9 @@
 0.69,
 0.19
 ],
-"sound_rank": 48,
+"sound_rank": 16,
 "family": "Other · Happy",
-"shape_rank": 146,
+"shape_rank": 144,
 "looplab": "site/looplab/fourier-rise.json",
 "src": "code/python/math2.py"
 },
@@ -13594,7 +13594,7 @@
 0.81,
 0.13
 ],
-"sound_rank": 49,
+"sound_rank": 17,
 "family": "Other · Happy",
 "shape_rank": 128,
 "looplab": "site/looplab/spelled-in-notes.json",
@@ -13686,7 +13686,7 @@
 0.7,
 0.14
 ],
-"sound_rank": 151,
+"sound_rank": 45,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 121,
 "looplab": "site/looplab/match-point.json",
@@ -13746,8 +13746,8 @@
 "winds-of-the-world",
 "match-point",
 "harbor-moon",
-"sparkler-letters",
-"what-s-next"
+"what-s-next",
+"sparkler-letters"
 ],
 "shape": [
 "level-up-rush",
@@ -13776,7 +13776,7 @@
 0.81,
 0.22
 ],
-"sound_rank": 60,
+"sound_rank": 160,
 "family": "Pop · Chill",
 "shape_rank": 73,
 "looplab": "site/looplab/sunday-stroll.json",
@@ -13834,8 +13834,8 @@
 "infinite-series",
 "shuttle-rally",
 "spelled-in-notes",
-"rainbow-spectrum",
-"polygon-party"
+"polygon-party",
+"rainbow-spectrum"
 ],
 "shape": [
 "skyscraper-sprint",
@@ -13864,9 +13864,9 @@
 0.8,
 0.09
 ],
-"sound_rank": 47,
+"sound_rank": 15,
 "family": "Other · Happy",
-"shape_rank": 166,
+"shape_rank": 163,
 "looplab": "site/looplab/collatz-climb.json",
 "src": "code/python/math2.py"
 },
@@ -13952,9 +13952,9 @@
 0.66,
 0.1
 ],
-"sound_rank": 46,
+"sound_rank": 14,
 "family": "Other · Happy",
-"shape_rank": 184,
+"shape_rank": 181,
 "looplab": "site/looplab/sierpinski-steps.json",
 "src": "code/python/math2.py"
 },
@@ -14005,7 +14005,7 @@
 "collatz-climb",
 "fourier-rise",
 "first-crown",
-"ta-322-in-blue-flame"
+"blooming-away"
 ],
 "shape": [
 "homebase-rising",
@@ -14034,9 +14034,9 @@
 0.37,
 0.02
 ],
-"sound_rank": 44,
+"sound_rank": 12,
 "family": "Other · Happy",
-"shape_rank": 162,
+"shape_rank": 159,
 "looplab": "site/looplab/rainbow-spectrum.json",
 "src": "code/python/concepts.py"
 },
@@ -14091,11 +14091,11 @@
 "thumb": "site/thumbs/polygon-party.jpg",
 "similar": [
 "rainbow-spectrum",
-"fourier-rise",
 "blooming-away",
-"ta-322-in-blue-flame",
+"fourier-rise",
 "hanging-tree",
-"shuttle-rally"
+"shuttle-rally",
+"koi-pond"
 ],
 "shape": [
 "line-of-light",
@@ -14124,9 +14124,9 @@
 0.26,
 0.01
 ],
-"sound_rank": 45,
+"sound_rank": 13,
 "family": "Other · Happy",
-"shape_rank": 175,
+"shape_rank": 172,
 "looplab": "site/looplab/polygon-party.json",
 "src": "code/python/concepts.py"
 },
@@ -14181,9 +14181,9 @@
 "line-of-light",
 "sparkler-letters",
 "what-s-next",
-"ta-322-and-the-shadow",
 "red-light-rain",
-"rolling-away"
+"rolling-away",
+"mirror-lake"
 ],
 "shape": [
 "amar-chok-ar-maata",
@@ -14212,9 +14212,9 @@
 0.66,
 0.16
 ],
-"sound_rank": 27,
+"sound_rank": 29,
 "family": "Other · Happy",
-"shape_rank": 150,
+"shape_rank": 147,
 "looplab": "site/looplab/harbor-moon.json",
 "src": "code/python/pictures.py"
 },
@@ -14269,8 +14269,8 @@
 "this-is-what-spring-feels-like",
 "what-it-once-was",
 "mirror-lake",
-"this-is-what-fall-feels-like",
 "koi-pond",
+"this-is-what-fall-feels-like",
 "hanging-tree"
 ],
 "shape": [
@@ -14300,9 +14300,9 @@
 0.58,
 0.08
 ],
-"sound_rank": 18,
+"sound_rank": 22,
 "family": "Other · Happy",
-"shape_rank": 170,
+"shape_rank": 167,
 "looplab": "site/looplab/moon-through-branches.json",
 "src": "code/python/pictures.py"
 },
@@ -14354,16 +14354,16 @@
 "blooming-away",
 "hanging-tree",
 "koi-pond",
-"ta-322-in-blue-flame",
+"frost-crystals",
 "amar-chok-ar-maata"
 ],
 "shape": [
-"ta-322-in-blue-flame",
 "fourier-rise",
 "blooming-away",
 "amar-chok-ar-maata",
 "sparkler-letters",
-"red-light-rain"
+"red-light-rain",
+"the-good-ol-days"
 ],
 "versions": [],
 "arc": [
@@ -14384,9 +14384,9 @@
 0.78,
 0.18
 ],
-"sound_rank": 33,
+"sound_rank": 34,
 "family": "Other · Happy",
-"shape_rank": 144,
+"shape_rank": 143,
 "looplab": "site/looplab/field-at-sunset.json",
 "src": "code/python/pictures.py"
 },
@@ -14436,18 +14436,18 @@
 "similar": [
 "mirror-lake",
 "koi-pond",
-"ta-322-in-blue-flame",
 "frost-crystals",
 "field-at-sunset",
-"red-light-rain"
+"red-light-rain",
+"blooming-away"
 ],
 "shape": [
 "red-light-rain",
 "sparkler-letters",
-"ta-322-and-the-shadow",
 "amar-chok-ar-maata",
 "sugar-cloud-breaks",
-"nuton-audor"
+"nuton-audor",
+"the-good-ol-days"
 ],
 "versions": [],
 "arc": [
@@ -14468,9 +14468,9 @@
 0.61,
 0.11
 ],
-"sound_rank": 36,
+"sound_rank": 37,
 "family": "Other · Happy",
-"shape_rank": 157,
+"shape_rank": 153,
 "looplab": "site/looplab/hanging-tree.json",
 "src": "code/python/pictures.py"
 },
@@ -14528,18 +14528,18 @@
 "similar": [
 "rolling-away",
 "red-light-rain",
-"ta-322-and-the-shadow",
 "sparkler-letters",
 "harbor-moon",
-"line-of-light"
+"line-of-light",
+"blooming-away"
 ],
 "shape": [
 "sparkler-letters",
-"ta-322-and-the-shadow",
 "sugar-cloud-breaks",
 "amar-chok-ar-maata",
 "red-light-rain",
-"rolling-away"
+"rolling-away",
+"hanging-tree"
 ],
 "versions": [],
 "arc": [
@@ -14560,9 +14560,9 @@
 0.72,
 0.2
 ],
-"sound_rank": 25,
+"sound_rank": 27,
 "family": "Other · Happy",
-"shape_rank": 148,
+"shape_rank": 154,
 "looplab": "site/looplab/what-s-next.json",
 "src": "code/python/pictures.py"
 },
@@ -14614,20 +14614,20 @@
 "energy": 0.707,
 "thumb": "site/thumbs/blooming-away.jpg",
 "similar": [
-"ta-322-in-blue-flame",
 "field-at-sunset",
 "koi-pond",
 "mirror-lake",
 "frost-crystals",
-"amar-chok-ar-maata"
+"amar-chok-ar-maata",
+"hanging-tree"
 ],
 "shape": [
 "fourier-rise",
-"ta-322-in-blue-flame",
 "amar-chok-ar-maata",
 "field-at-sunset",
 "nuton-audor",
-"red-light-rain"
+"red-light-rain",
+"sparkler-letters"
 ],
 "versions": [],
 "arc": [
@@ -14648,9 +14648,9 @@
 0.6,
 0.09
 ],
-"sound_rank": 31,
+"sound_rank": 33,
 "family": "Other · Happy",
-"shape_rank": 147,
+"shape_rank": 145,
 "looplab": "site/looplab/blooming-away.json",
 "src": "code/python/pictures.py"
 },
@@ -14708,10 +14708,10 @@
 "similar": [
 "what-it-once-was",
 "moon-through-branches",
-"ta-322-in-blue-flame",
 "hanging-tree",
 "this-is-what-fall-feels-like",
-"mirror-lake"
+"mirror-lake",
+"koi-pond"
 ],
 "shape": [
 "this-is-what-fall-feels-like",
@@ -14740,9 +14740,9 @@
 0.4,
 0.03
 ],
-"sound_rank": 19,
+"sound_rank": 23,
 "family": "Other · Happy",
-"shape_rank": 168,
+"shape_rank": 165,
 "looplab": "site/looplab/this-is-what-spring-feels-like.json",
 "src": "code/python/pictures.py"
 },
@@ -14800,18 +14800,18 @@
 "similar": [
 "what-s-next",
 "red-light-rain",
-"ta-322-and-the-shadow",
 "sparkler-letters",
 "harbor-moon",
-"line-of-light"
+"line-of-light",
+"mirror-lake"
 ],
 "shape": [
 "sparkler-letters",
-"ta-322-and-the-shadow",
 "red-light-rain",
 "amar-chok-ar-maata",
 "harbor-moon",
-"mirror-lake"
+"mirror-lake",
+"nuton-audor"
 ],
 "versions": [],
 "arc": [
@@ -14832,9 +14832,9 @@
 0.64,
 0.22
 ],
-"sound_rank": 26,
+"sound_rank": 28,
 "family": "Other · Happy",
-"shape_rank": 152,
+"shape_rank": 146,
 "looplab": "site/looplab/rolling-away.json",
 "src": "code/python/pictures.py"
 },
@@ -14887,11 +14887,11 @@
 "thumb": "site/thumbs/what-it-once-was.jpg",
 "similar": [
 "this-is-what-spring-feels-like",
-"ta-322-in-blue-flame",
 "this-is-what-fall-feels-like",
 "moon-through-branches",
 "hanging-tree",
-"mirror-lake"
+"mirror-lake",
+"koi-pond"
 ],
 "shape": [
 "this-is-what-spring-feels-like",
@@ -14920,9 +14920,9 @@
 0.47,
 0.06
 ],
-"sound_rank": 20,
+"sound_rank": 24,
 "family": "Other · Happy",
-"shape_rank": 171,
+"shape_rank": 168,
 "looplab": "site/looplab/what-it-once-was.json",
 "src": "code/python/pictures.py"
 },
@@ -14971,11 +14971,11 @@
 "thumb": "site/thumbs/line-of-light.jpg",
 "similar": [
 "harbor-moon",
-"ta-322-and-the-shadow",
 "what-s-next",
 "sparkler-letters",
 "red-light-rain",
-"rolling-away"
+"rolling-away",
+"hanging-tree"
 ],
 "shape": [
 "this-is-what-fall-feels-like",
@@ -15004,9 +15004,9 @@
 0.44,
 0.04
 ],
-"sound_rank": 28,
+"sound_rank": 30,
 "family": "Other · Happy",
-"shape_rank": 167,
+"shape_rank": 164,
 "looplab": "site/looplab/line-of-light.json",
 "src": "code/python/pictures.py"
 },
@@ -15059,7 +15059,7 @@
 "moon-through-branches",
 "this-is-what-spring-feels-like",
 "koi-pond",
-"ta-322-in-blue-flame"
+"frost-crystals"
 ],
 "shape": [
 "this-is-what-spring-feels-like",
@@ -15088,9 +15088,9 @@
 0.49,
 0.06
 ],
-"sound_rank": 17,
+"sound_rank": 21,
 "family": "Other · Happy",
-"shape_rank": 169,
+"shape_rank": 166,
 "looplab": "site/looplab/this-is-what-fall-feels-like.json",
 "src": "code/python/pictures.py"
 },
@@ -15146,16 +15146,16 @@
 "field-at-sunset",
 "blooming-away",
 "frost-crystals",
-"koi-pond",
-"mirror-lake"
+"mirror-lake",
+"koi-pond"
 ],
 "shape": [
 "nuton-audor",
 "harbor-moon",
 "fourier-rise",
 "sparkler-letters",
-"ta-322-and-the-shadow",
-"red-light-rain"
+"red-light-rain",
+"blooming-away"
 ],
 "versions": [],
 "arc": [
@@ -15176,9 +15176,9 @@
 0.6,
 0.1
 ],
-"sound_rank": 29,
+"sound_rank": 31,
 "family": "Other · Happy",
-"shape_rank": 155,
+"shape_rank": 150,
 "looplab": "site/looplab/amar-chok-ar-maata.json",
 "src": "code/python/pictures.py"
 },
@@ -15246,8 +15246,8 @@
 "this-is-what-fall-feels-like",
 "what-it-once-was",
 "harbor-moon",
-"ta-322-and-the-shadow",
-"moon-through-branches"
+"moon-through-branches",
+"this-is-what-spring-feels-like"
 ],
 "versions": [],
 "arc": [
@@ -15268,9 +15268,9 @@
 0.53,
 0.07
 ],
-"sound_rank": 30,
+"sound_rank": 32,
 "family": "Other · Happy",
-"shape_rank": 156,
+"shape_rank": 151,
 "looplab": "site/looplab/nuton-audor.json",
 "src": "code/python/pictures.py"
 },
@@ -15327,7 +15327,7 @@
 "hanging-tree",
 "field-at-sunset",
 "blooming-away",
-"ta-322-in-blue-flame"
+"red-light-rain"
 ],
 "shape": [
 "line-of-light",
@@ -15356,9 +15356,9 @@
 0.56,
 0.08
 ],
-"sound_rank": 34,
+"sound_rank": 35,
 "family": "Other · Happy",
-"shape_rank": 142,
+"shape_rank": 141,
 "looplab": "site/looplab/frost-crystals.json",
 "src": "code/python/pictures.py"
 },
@@ -15413,9 +15413,9 @@
 "hanging-tree",
 "mirror-lake",
 "frost-crystals",
-"ta-322-in-blue-flame",
 "field-at-sunset",
-"blooming-away"
+"blooming-away",
+"red-light-rain"
 ],
 "shape": [
 "harbor-moon",
@@ -15444,9 +15444,9 @@
 0.6,
 0.1
 ],
-"sound_rank": 35,
+"sound_rank": 36,
 "family": "Other · Happy",
-"shape_rank": 143,
+"shape_rank": 142,
 "looplab": "site/looplab/koi-pond.json",
 "src": "code/python/pictures.py"
 },
@@ -15502,16 +15502,16 @@
 "rolling-away",
 "red-light-rain",
 "harbor-moon",
-"ta-322-and-the-shadow",
-"line-of-light"
+"line-of-light",
+"mirror-lake"
 ],
 "shape": [
 "what-s-next",
-"ta-322-and-the-shadow",
 "red-light-rain",
 "amar-chok-ar-maata",
 "rolling-away",
-"fourier-rise"
+"fourier-rise",
+"nuton-audor"
 ],
 "versions": [],
 "arc": [
@@ -15532,9 +15532,9 @@
 0.77,
 0.18
 ],
-"sound_rank": 22,
+"sound_rank": 25,
 "family": "Other · Happy",
-"shape_rank": 149,
+"shape_rank": 155,
 "looplab": "site/looplab/sparkler-letters.json",
 "src": "code/python/pictures.py"
 },
@@ -15588,10 +15588,10 @@
 "similar": [
 "hanging-tree",
 "koi-pond",
-"ta-322-in-blue-flame",
 "field-at-sunset",
 "frost-crystals",
-"blooming-away"
+"blooming-away",
+"red-light-rain"
 ],
 "shape": [
 "harbor-moon",
@@ -15620,9 +15620,9 @@
 0.63,
 0.14
 ],
-"sound_rank": 37,
+"sound_rank": 38,
 "family": "Other · Happy",
-"shape_rank": 151,
+"shape_rank": 148,
 "looplab": "site/looplab/mirror-lake.json",
 "src": "code/python/pictures.py"
 },
@@ -15676,10 +15676,10 @@
 "similar": [
 "rolling-away",
 "what-s-next",
-"ta-322-and-the-shadow",
 "sparkler-letters",
 "harbor-moon",
-"line-of-light"
+"line-of-light",
+"hanging-tree"
 ],
 "shape": [
 "sparkler-letters",
@@ -15710,270 +15710,10 @@
 0.72,
 0.18
 ],
-"sound_rank": 24,
+"sound_rank": 26,
 "family": "Other · Happy",
-"shape_rank": 153,
+"shape_rank": 149,
 "looplab": "site/looplab/red-light-rain.json",
-"src": "code/python/pictures.py"
-},
-{
-"id": "sun-on-the-water",
-"title": "Sun on the Water",
-"file": "songs/youtube/Sun on the Water.mp3",
-"video": "videos/YouTube - Sun on the Water.mp4",
-"card": "cards/YouTube - Sun on the Water.png",
-"tempo": 75,
-"style": "made from pictures",
-"feel": "Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (G major)",
-"good": "Calm clips, montages",
-"colors": [
-"#2f2b24",
-"#fcbc73",
-"#ffffff",
-"#14120f",
-"#b3c6dc"
-],
-"order": 176,
-"groups": [
-"Math & made from things",
-"Made from pictures"
-],
-"genres": [
-"Other"
-],
-"moods": [
-"Chill",
-"Happy"
-],
-"duration": 126.3,
-"loop": [
-44.8,
-99.1999
-],
-"loops": [
-[
-48.0,
-99.2
-],
-[
-16.0,
-67.2
-]
-],
-"bar": 3.2,
-"energy": 0.732,
-"thumb": "site/thumbs/sun-on-the-water.jpg",
-"similar": [
-"field-at-sunset",
-"red-light-rain",
-"rolling-away",
-"mirror-lake",
-"frost-crystals",
-"sparkler-letters"
-],
-"shape": [
-"ta-322-and-the-shadow",
-"nuton-audor",
-"sparkler-letters",
-"amar-chok-ar-maata",
-"fourier-rise",
-"what-it-once-was"
-],
-"versions": [],
-"arc": [
-0.5,
-0.55,
-0.77,
-0.52,
-0.83,
-0.87,
-0.79,
-0.75,
-0.8,
-0.87,
-0.8,
-1.0,
-0.93,
-0.91,
-0.63,
-0.18
-],
-"sound_rank": 21,
-"family": "Other · Happy",
-"shape_rank": 141,
-"looplab": "site/looplab/sun-on-the-water.json",
-"src": "code/python/pictures.py"
-},
-{
-"id": "ta-322-in-blue-flame",
-"title": "TA 322 in Blue Flame",
-"file": "songs/youtube/TA 322 in Blue Flame.mp3",
-"video": "videos/YouTube - TA 322 in Blue Flame.mp4",
-"card": "cards/YouTube - TA 322 in Blue Flame.png",
-"tempo": 79,
-"style": "made from pictures",
-"feel": "Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major)",
-"good": "Calm clips, montages",
-"colors": [
-"#0a384f",
-"#006bff",
-"#ffffff",
-"#041822",
-"#ffdeb2"
-],
-"order": 177,
-"groups": [
-"Math & made from things",
-"Made from pictures"
-],
-"genres": [
-"Other"
-],
-"moods": [
-"Chill",
-"Happy"
-],
-"duration": 120.1,
-"loop": [
-21.2658,
-69.8734
-],
-"loops": [
-[
-48.608,
-97.215
-],
-[
-66.835,
-94.177
-]
-],
-"bar": 3.038,
-"energy": 0.684,
-"thumb": "site/thumbs/ta-322-in-blue-flame.jpg",
-"similar": [
-"mirror-lake",
-"hanging-tree",
-"blooming-away",
-"koi-pond",
-"field-at-sunset",
-"what-it-once-was"
-],
-"shape": [
-"field-at-sunset",
-"blooming-away",
-"fourier-rise",
-"amar-chok-ar-maata",
-"sparkler-letters",
-"mirror-lake"
-],
-"versions": [],
-"arc": [
-0.41,
-0.48,
-0.59,
-0.63,
-0.59,
-0.61,
-0.62,
-0.59,
-0.89,
-0.95,
-1.0,
-0.88,
-1.0,
-0.96,
-0.63,
-0.1
-],
-"sound_rank": 32,
-"family": "Other · Happy",
-"shape_rank": 145,
-"looplab": "site/looplab/ta-322-in-blue-flame.json",
-"src": "code/python/pictures.py"
-},
-{
-"id": "ta-322-and-the-shadow",
-"title": "TA 322 and the Shadow",
-"file": "songs/youtube/TA 322 and the Shadow.mp3",
-"video": "videos/YouTube - TA 322 and the Shadow.mp4",
-"card": "cards/YouTube - TA 322 and the Shadow.png",
-"tempo": 84,
-"style": "made from pictures",
-"feel": "Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (C# minor)",
-"good": "Calm clips, montages",
-"colors": [
-"#0c131e",
-"#006bff",
-"#ffffff",
-"#05080d",
-"#ffdeb2"
-],
-"order": 178,
-"groups": [
-"Math & made from things",
-"Made from pictures"
-],
-"genres": [
-"Other"
-],
-"moods": [
-"Chill",
-"Happy"
-],
-"duration": 113.2,
-"loop": [
-34.2857,
-80.0
-],
-"loops": [
-[
-51.429,
-97.143
-]
-],
-"bar": 2.8571,
-"energy": 0.781,
-"thumb": "site/thumbs/ta-322-and-the-shadow.jpg",
-"similar": [
-"red-light-rain",
-"what-s-next",
-"rolling-away",
-"harbor-moon",
-"sparkler-letters",
-"line-of-light"
-],
-"shape": [
-"sparkler-letters",
-"amar-chok-ar-maata",
-"nuton-audor",
-"rolling-away",
-"what-it-once-was",
-"red-light-rain"
-],
-"versions": [],
-"arc": [
-0.57,
-0.51,
-0.8,
-0.75,
-0.85,
-0.83,
-0.83,
-0.76,
-0.88,
-0.93,
-0.99,
-1.0,
-0.99,
-1.0,
-0.63,
-0.18
-],
-"sound_rank": 23,
-"family": "Other · Happy",
-"shape_rank": 154,
-"looplab": "site/looplab/ta-322-and-the-shadow.json",
 "src": "code/python/pictures.py"
 },
 {
@@ -15993,7 +15733,7 @@
 "#0d051a",
 "#ffd23f"
 ],
-"order": 179,
+"order": 176,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -16060,7 +15800,7 @@
 0.99,
 0.55
 ],
-"sound_rank": 80,
+"sound_rank": 182,
 "family": "Hip-hop & trap · Hype",
 "shape_rank": 68,
 "looplab": "site/looplab/outside-the-lines.json",
@@ -16083,7 +15823,7 @@
 "#05150d",
 "#ff2bd6"
 ],
-"order": 180,
+"order": 177,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -16150,7 +15890,7 @@
 0.94,
 0.27
 ],
-"sound_rank": 82,
+"sound_rank": 184,
 "family": "Hip-hop & trap · Hype",
 "shape_rank": 87,
 "looplab": "site/looplab/green-light-crew.json",
@@ -16173,7 +15913,7 @@
 "#150505",
 "#3fd2ff"
 ],
-"order": 181,
+"order": 178,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -16240,9 +15980,9 @@
 0.65,
 0.02
 ],
-"sound_rank": 93,
+"sound_rank": 134,
 "family": "Pop · Happy",
-"shape_rank": 185,
+"shape_rank": 182,
 "looplab": "site/looplab/first-crown.json",
 "src": "code/python/kpop_albums.py"
 },
@@ -16263,7 +16003,7 @@
 "#0d051a",
 "#ffd23f"
 ],
-"order": 182,
+"order": 179,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -16331,8 +16071,8 @@
 0.98,
 0.25
 ],
-"sound_rank": 90,
-"family": "Pop · Happy",
+"sound_rank": 181,
+"family": "Electronic & dance · Happy",
 "shape_rank": 95,
 "looplab": "site/looplab/platform-nine.json",
 "src": "code/python/kpop_albums.py"
@@ -16354,7 +16094,7 @@
 "#05150d",
 "#ff2bd6"
 ],
-"order": 183,
+"order": 180,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -16391,7 +16131,7 @@
 "winds-of-the-world",
 "neverland-rush",
 "island-time",
-"sun-on-the-water",
+"island-breeze",
 "padma-to-kyoto"
 ],
 "shape": [
@@ -16421,7 +16161,7 @@
 0.99,
 0.23
 ],
-"sound_rank": 12,
+"sound_rank": 5,
 "family": "World & folk · Chill",
 "shape_rank": 93,
 "looplab": "site/looplab/eternity-glass.json",
@@ -16444,7 +16184,7 @@
 "#150505",
 "#3fd2ff"
 ],
-"order": 184,
+"order": 181,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -16514,7 +16254,7 @@
 0.97,
 0.24
 ],
-"sound_rank": 152,
+"sound_rank": 46,
 "family": "Jazz, funk & soul · Chill",
 "shape_rank": 88,
 "looplab": "site/looplab/blue-hour-disco.json",
@@ -16537,7 +16277,7 @@
 "#0d051a",
 "#ffd23f"
 ],
-"order": 185,
+"order": 182,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -16605,8 +16345,8 @@
 0.8,
 0.03
 ],
-"sound_rank": 139,
-"family": "Rock & metal · Happy",
+"sound_rank": 130,
+"family": "Rock & metal · Hype",
 "shape_rank": 126,
 "looplab": "site/looplab/frozen-clock.json",
 "src": "code/python/kpop_albums.py"
@@ -16628,7 +16368,7 @@
 "#05150d",
 "#ff2bd6"
 ],
-"order": 186,
+"order": 183,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -16695,8 +16435,8 @@
 1.0,
 0.51
 ],
-"sound_rank": 78,
-"family": "Rock & metal · Emotional",
+"sound_rank": 140,
+"family": "Rock & metal · Happy",
 "shape_rank": 69,
 "looplab": "site/looplab/escape-route.json",
 "src": "code/python/kpop_albums.py"
@@ -16718,7 +16458,7 @@
 "#150505",
 "#3fd2ff"
 ],
-"order": 187,
+"order": 184,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -16785,8 +16525,8 @@
 0.95,
 0.45
 ],
-"sound_rank": 79,
-"family": "Rock & metal · Emotional",
+"sound_rank": 141,
+"family": "Rock & metal · Happy",
 "shape_rank": 70,
 "looplab": "site/looplab/thursday-s-child.json",
 "src": "code/python/kpop_albums.py"
@@ -16808,7 +16548,7 @@
 "#0d051a",
 "#ffd23f"
 ],
-"order": 188,
+"order": 185,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -16875,7 +16615,7 @@
 0.98,
 0.3
 ],
-"sound_rank": 15,
+"sound_rank": 8,
 "family": "World & folk · Chill",
 "shape_rank": 92,
 "looplab": "site/looplab/neverland-rush.json",
@@ -16898,7 +16638,7 @@
 "#05150d",
 "#ff2bd6"
 ],
-"order": 189,
+"order": 186,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -16965,9 +16705,9 @@
 0.45,
 0.01
 ],
-"sound_rank": 88,
-"family": "Pop · Happy",
-"shape_rank": 182,
+"sound_rank": 179,
+"family": "Electronic & dance · Happy",
+"shape_rank": 179,
 "looplab": "site/looplab/freefall-chase.json",
 "src": "code/python/kpop_albums.py"
 },
@@ -16988,7 +16728,7 @@
 "#150505",
 "#3fd2ff"
 ],
-"order": 190,
+"order": 187,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -17022,12 +16762,12 @@
 "energy": 0.744,
 "thumb": "site/thumbs/tomorrow-again.jpg",
 "similar": [
-"blue-spark-runaway",
 "strangers-together",
+"blue-spark-runaway",
 "huck-it",
 "lantern-theory",
-"frozen-clock",
-"starlight-carnival-run"
+"starlight-carnival-run",
+"frozen-clock"
 ],
 "shape": [
 "respawn-lounge",
@@ -17056,8 +16796,8 @@
 0.91,
 0.08
 ],
-"sound_rank": 124,
-"family": "Rock & metal · Happy",
+"sound_rank": 136,
+"family": "Pop · Happy",
 "shape_rank": 83,
 "looplab": "site/looplab/tomorrow-again.json",
 "src": "code/python/kpop_albums.py"
@@ -17079,7 +16819,7 @@
 "#0d051a",
 "#ffd23f"
 ],
-"order": 191,
+"order": 188,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -17147,9 +16887,9 @@
 0.57,
 0.02
 ],
-"sound_rank": 94,
+"sound_rank": 135,
 "family": "Pop · Happy",
-"shape_rank": 186,
+"shape_rank": 183,
 "looplab": "site/looplab/moonward.json",
 "src": "code/python/kpop_albums.py"
 },
@@ -17170,7 +16910,7 @@
 "#05150d",
 "#ff2bd6"
 ],
-"order": 192,
+"order": 189,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -17207,7 +16947,7 @@
 "moonward",
 "first-crown",
 "starlight-carnival-run",
-"frozen-clock"
+"aqua-tomorrow"
 ],
 "shape": [
 "green-light-crew",
@@ -17236,8 +16976,8 @@
 0.93,
 0.33
 ],
-"sound_rank": 77,
-"family": "Rock & metal · Emotional",
+"sound_rank": 137,
+"family": "Pop · Happy",
 "shape_rank": 84,
 "looplab": "site/looplab/strangers-together.json",
 "src": "code/python/kpop_albums.py"
@@ -17259,7 +16999,7 @@
 "#150505",
 "#3fd2ff"
 ],
-"order": 193,
+"order": 190,
 "groups": [
 "K-pop & J-pop styles"
 ],
@@ -17324,7 +17064,7 @@
 0.99,
 0.04
 ],
-"sound_rank": 39,
+"sound_rank": 19,
 "family": "Other · Happy",
 "shape_rank": 74,
 "looplab": "site/looplab/stillness-in-the-thorns.json",
@@ -17347,7 +17087,7 @@
 "#050d05",
 "#ffd23f"
 ],
-"order": 194,
+"order": 191,
 "groups": [
 "Math & made from things"
 ],
@@ -17412,7 +17152,7 @@
 0.89,
 0.17
 ],
-"sound_rank": 42,
+"sound_rank": 10,
 "family": "Other · Happy",
 "shape_rank": 138,
 "looplab": "site/looplab/morse-code.json",
@@ -17435,7 +17175,7 @@
 "#150f05",
 "#8fd2ff"
 ],
-"order": 195,
+"order": 192,
 "groups": [
 "Math & made from things"
 ],
@@ -17471,9 +17211,9 @@
 "red-light-rain",
 "sparkler-letters",
 "amar-chok-ar-maata",
-"ta-322-and-the-shadow",
 "rolling-away",
-"hanging-tree"
+"hanging-tree",
+"harbor-moon"
 ],
 "versions": [],
 "arc": [
@@ -17494,9 +17234,9 @@
 0.62,
 0.05
 ],
-"sound_rank": 16,
+"sound_rank": 20,
 "family": "Other · Happy",
-"shape_rank": 158,
+"shape_rank": 152,
 "looplab": "site/looplab/the-good-ol-days.json",
 "src": "code/python/words2.py"
 },
@@ -17517,7 +17257,7 @@
 "#050f15",
 "#ff6b2b"
 ],
-"order": 196,
+"order": 193,
 "groups": [
 "Sports & moving"
 ],
@@ -17585,9 +17325,9 @@
 0.37,
 0.05
 ],
-"sound_rank": 109,
-"family": "Electronic & dance · Hype",
-"shape_rank": 188,
+"sound_rank": 101,
+"family": "Rock & metal · Hype",
+"shape_rank": 185,
 "looplab": "site/looplab/shred-line.json",
 "src": "code/python/sports.py"
 }
