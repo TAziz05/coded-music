@@ -241,6 +241,38 @@ SONGS['tennis']['targets'] = {'outro': -21.}      # a quieter ending, so it does
 SONGS['walking']['levels'] = {'keys': 3.5}         # the ukulele up front, so the intro isn't faint
 SONGS['walking']['gain_like'] = {'A': 'intro', 'B': 'intro', 'end': 'intro'}   # one level for the whole song: the band joins the intro instead of the intro being turned down
 
+# ---------------- snowboarding (added later) ----------------
+def carve(M, t, dur, vol=1., heel=True):   # a snowboard carve: deeper and longer than a ski swoosh, edge to edge
+    N = int(dur * SR); tt = tarr(N); w = noise(N); c = 400 + 1600 * np.sin(np.pi * tt / dur)
+    x = lp(w, 900) * (1 - c / 2400) + bp(w, 1200, 3200) * (c / 2400) * .6
+    M.add('fx', t, x * np.sin(np.pi * tt / dur) ** 1.5 * vol * .3, pan=(-.5 if heel else .5))
+def ollie(M, t, vol=1.):                 # tail snap (pop) ... then the landing thud
+    N = int(.05 * SR); tt = tarr(N); M.add('fx', t, bp(noise(N), 800, 3000) * np.exp(-tt / .008) * vol * .5)
+    N = int(.25 * SR); tt = tarr(N); f = 60 * (1 + .8 * np.exp(-tt / .02))
+    M.add('fx', t + .45, (np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt / .07) + lp(noise(N), 2500) * np.exp(-tt / .05) * .4) * vol * .6)
+def grind(M, t, dur, vol=1.):            # board sliding on a rail: metallic scrape
+    N = int(dur * SR); tt = tarr(N); x = bp(noise(N), 2500, 6000) * (1 + .5 * np.sin(2 * np.pi * 31 * tt)) + .2 * np.sin(2 * np.pi * 1870 * tt) * bp(noise(N), 1500, 2500)
+    M.add('fx', t, x * np.minimum(1, np.minimum(tt / .03, (dur - tt) / .1)) * vol * .14, pan=.3)
+def ex_snowboard(M, t0, st, S, i, n, tones, root):
+    if i % 2 == 0: carve(M, t0, 16 * st, .8, heel=(i % 4 == 0))
+    if i % 4 == 3: ollie(M, t0 + S(8), .8)
+def ex_drop(M, t0, st, S, i, n, tones, root):
+    if i % 4 == 1: grind(M, t0 + S(4), 8 * st, .8)
+    if i % 4 == 3: ollie(M, t0 + S(8), .9)
+def end_snowboard(M, t0, st, S, i, n, tones, root):   # the last jump: a riser, a beat of air, then the landing and a spray of snow
+    if i == 0: riser(M, t0, 16 * st, .5); return
+    ollie(M, t0 - .45, 1.); carve(M, t0 + .05, 1.4, 1.2, heel=False); kick(M, t0, .8)
+    for c in tones[:3]: supersaw(M, 'pad', t0, c + 12, 2.5, .04, cut=2000, a=.01, r=1.8, voices=3)
+    crowd(M, t0 + .1, 2.2, .6, swell=False)
+SONGS['snowboard'] = dict(file='Shred_Line', title='Shred Line', bpm=140, chorus_keys=False, cont_tol=0., sections={
+   'intro': sec(4, ['Em', 'C', 'G', 'D'], keys=['pad'], extra=ex_snowboard),
+   'verse': sec(8, ['Em', 'C', 'G', 'D'], keys=['power'], drums='punk', bass='octave', lead='crunch',
+                mel=[[76,-1,79,-1,76,74,-1,71],[72,-1,-1,74,-1,-1,0,0],[74,-1,76,-1,79,-1,81,-1],[78,-1,-1,-1,0,0,0,0]], extra=ex_snowboard, kind='verse'),
+   'drop': sec(8, ['C', 'D', 'Em', 'Em'], keys=['pad'], drums='dubstep', bass='wobble', lead='saw80s',
+                mel=[[83,-1,-1,81,-1,79,-1,-1],[81,-1,79,76,-1,-1,0,0],[79,-1,-1,81,-1,83,-1,86],[83,-1,-1,-1,0,0,0,0]], extra=ex_drop, impact=True, kind='chorus'),
+   'end': sec(2, ['Em'], extra=end_snowboard, fill=False, kind='outro')},
+   order=['intro', 'verse', 'drop', 'verse', 'drop', 'end'], levels={'gtrL': .9, 'gtrR': .9}, gain_like={'end': 'drop'})
+
 if __name__ == '__main__':
     names = list(SONGS) if sys.argv[1] == 'all' else sys.argv[1:]
     for k in names: build(SONGS[k])

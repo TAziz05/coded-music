@@ -13,6 +13,7 @@ Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
 - search, plus filters for genre, mood, tempo and length, and group chips (Pokémon-style, Sonic-style, Mario-style worlds, BTS eras, breakcore, and more)
 - sorting by newest, title, tempo, length, energy or group, plus **Similar sound together** (songs grouped into sound families by their audio) and **Similar structure together** (songs with the same build-up/drop/energy shape next to each other)
 - **Credit reminders**: every song page has a ready-to-copy credit line, and downloading an MP3, opening a video or making an extended version shows a reminder to give credit (once per song per visit)
+- the website streams 160 kbps copies of the songs (built automatically when it publishes, to stay under GitHub Pages' 1 GB limit); the ⬇ MP3 button and the `songs/` folder have the full 320 kbps files
 - visitor counts with [GoatCounter](https://www.goatcounter.com/) (no cookies): page views plus play, download and Loop Lab events, on both the site and Loop Lab
 - **Favorites**: tap ☆ on any song, then the ★ Favorites chip (saved in your browser)
 - for every song: other versions (like the breakcore version), songs that sound similar, songs with a similar structure, and more from the same group
@@ -28,7 +29,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 | Folder | What it is |
 |---|---|
-| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 149 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
+| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 188 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
 | `videos/` | The same songs as 1080p videos with a title card, ready to upload to YouTube. |
 | `cards/` | The title card images. |
 | `loops/` | One seamless loop of each song (see `loops/music.json` for loop lengths). |
@@ -39,7 +40,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 ## The songs
 
-8 game songs, plus 149 YouTube gameplay tracks (below): 157 songs in all.
+8 game songs, plus 188 YouTube gameplay tracks (below): 196 songs in all.
 
 | Song | Game | Plays during |
 |---|---|---|
@@ -56,7 +57,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 `loop-lab/index.html` is a song maker that runs in the browser: build songs from sections with chords, a melody, drums and sound effects (built-in coded effects or your own uploads), load TAziz322's songs and tweak them, and save songs as code. See [`loop-lab/GUIDE.md`](loop-lab/GUIDE.md) for how to use it. `loop-lab/tools/make_presets.py` rebuilds the page from `template.html` with the built-in songs.
 
-## YouTube gameplay tracks (149 songs)
+## YouTube gameplay tracks (188 songs)
 
 Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3). They run from 1 to about 2½ minutes; most are around 1½ minutes. These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments, and the songs live in the other files in `code/python/` (see the commands below). Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
 
@@ -211,6 +212,45 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Sierpinski Steps | 136 BPM | The drums follow Pascal's triangle with the odd numbers marked (a Sierpinski fractal); the melody follows the Thue-Morse sequence | Puzzles, smart plays |
 | Rainbow Spectrum | 116 BPM | Each color of the rainbow is a section in the key of its light frequency (red to violet), gliding from one color into the next | Colorful, upbeat clips |
 | Polygon Party | 112 BPM | Shapes as rhythms: a triangle hits 3 times a bar, a square 4, a pentagon 5, and a star visits every other corner; ends in an echo | Puzzles, fun clips |
+| Harbor Moon | 91 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# minor) | Calm clips, montages |
+| Moon Through Branches | 119 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major) | Calm clips, montages |
+| Field at Sunset | 73 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (Ab minor) | Calm clips, montages |
+| Hanging Tree | 102 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# minor) | Calm clips, montages |
+| What's Next | 73 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (C minor) | Calm clips, montages |
+| Blooming Away | 89 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (C major) | Calm clips, montages |
+| This is What Spring Feels Like | 137 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major) | Calm clips, montages |
+| Rolling Away | 75 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (C minor) | Calm clips, montages |
+| What it Once Was | 130 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major) | Calm clips, montages |
+| Line of Light | 141 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (D minor) | Calm clips, montages |
+| This is What Fall Feels Like | 126 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (G major) | Calm clips, montages |
+| Amar Chok ar Maata | 102 BPM | Made from a drawing by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (B major) | Calm clips, montages |
+| Nuton Audor | 117 BPM | Made from a drawing by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F major) | Calm clips, montages |
+| Frost Crystals | 110 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (C# major) | Calm clips, montages |
+| Koi Pond | 112 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (E minor) | Calm clips, montages |
+| Sparkler Letters | 72 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (G minor) | Calm clips, montages |
+| Mirror Lake | 88 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major) | Calm clips, montages |
+| Red Light Rain | 78 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (C minor) | Calm clips, montages |
+| Sun on the Water | 75 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (G major) | Calm clips, montages |
+| TA 322 in Blue Flame | 79 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major) | Calm clips, montages |
+| TA 322 and the Shadow | 84 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (C# minor) | Calm clips, montages |
+| Outside the Lines | 98 BPM | Minimal hip-hop with a whistle hook and group chants | Hype intros, highlights |
+| Green Light Crew | 146 BPM | Synth-heavy trap with brass hits and a heavy 808 | Big plays, hype |
+| First Crown | 118 BPM | Bright synth-pop with sparkly plucks | Upbeat clips |
+| Platform Nine | 124 BPM | Tropical house with marimba and whistle | Fun, light clips |
+| Eternity Glass | 102 BPM | Moody dembow with nylon guitar and flute | Chill highlights |
+| Blue Hour Disco | 120 BPM | Disco-funk with strings, fades out | Montages, sunset vibes |
+| Frozen Clock | 162 BPM | Pop-punk with power chords | Fast action |
+| Escape Route | 170 BPM | Rock with organ; the band slows to a stop at the end | Chases, clutch moments |
+| Thursday's Child | 112 BPM | Dark rock with heavy guitars | Intense moments |
+| Neverland Rush | 100 BPM | Dreamy dembow with flute and a music-box ending | Chill, dreamy clips |
+| Freefall Chase | 150 BPM | Synthwave with gated drums; ends in an echo | Driving, night clips |
+| Tomorrow Again | 134 BPM | Emotional rock-pop, acoustic into electric | Comebacks, recaps |
+| Moonward | 128 BPM | Bright pop-rock with celesta | Wins, happy moments |
+| Strangers Together | 156 BPM | Pop-punk with ukulele and a group shout | Squad clips |
+| Stillness in the Thorns | 122 BPM | Thumping house with synth-funk bass and vocoder | Hype, dance clips |
+| Morse Code | 120 BPM | Real Morse code rhythms: it sends CQ, CODED MUSIC, GG WP, VICTORY ROYALE, then signs off with SK | Intros, techy clips |
+| The Good Ol' Days | 84 BPM | A poem by TAziz322 set to music, one note per syllable; ends on one ringing note | Reflective, emotional moments |
+| Shred Line | 140 BPM | Punk verses that drop into dubstep, with board carves, ollies and rail grinds; ends on a big jump | Snow maps, tricks, hype |
 
 ```
 pip install numpy scipy

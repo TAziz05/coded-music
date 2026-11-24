@@ -788,5 +788,425 @@
 "file": "site/looplab/daily-poke-catch-town.json",
 "src": "code/songs/pkTown.js",
 "key": "pkTown"
+},
+"shred-line": {
+"file": "site/looplab/shred-line.json",
+"src": "code/python/sports.py",
+"key": "snowboard"
+},
+"gamer-tags": {
+"file": "site/looplab/gamer-tags.json",
+"src": "code/python/words2.py",
+"key": "tags"
+},
+"morse-code": {
+"file": "site/looplab/morse-code.json",
+"src": "code/python/words2.py",
+"key": "morse"
+},
+"the-good-ol-days": {
+"file": "site/looplab/the-good-ol-days.json",
+"src": "code/python/words2.py",
+"key": "poem"
+},
+"dits-royale": {
+"file": "site/looplab/dits-royale.json",
+"src": "code/python/words2.py",
+"key": "mfn"
+},
+"morse-catch": {
+"file": "site/looplab/morse-catch.json",
+"src": "code/python/words2.py",
+"key": "mpk"
+},
+"purple-in-morse": {
+"file": "site/looplab/purple-in-morse.json",
+"src": "code/python/words2.py",
+"key": "mbts"
+},
+"outside-the-lines": {
+"file": "site/looplab/outside-the-lines.json",
+"src": "code/python/kpop_albums.py",
+"key": "cortis1"
+},
+"green-light-crew": {
+"file": "site/looplab/green-light-crew.json",
+"src": "code/python/kpop_albums.py",
+"key": "cortis2"
+},
+"first-crown": {
+"file": "site/looplab/first-crown.json",
+"src": "code/python/kpop_albums.py",
+"key": "star"
+},
+"platform-nine": {
+"file": "site/looplab/platform-nine.json",
+"src": "code/python/kpop_albums.py",
+"key": "magic"
+},
+"eternity-glass": {
+"file": "site/looplab/eternity-glass.json",
+"src": "code/python/kpop_albums.py",
+"key": "eternity"
+},
+"blue-hour-disco": {
+"file": "site/looplab/blue-hour-disco.json",
+"src": "code/python/kpop_albums.py",
+"key": "bluehour"
+},
+"frozen-clock": {
+"file": "site/looplab/frozen-clock.json",
+"src": "code/python/kpop_albums.py",
+"key": "freeze"
+},
+"escape-route": {
+"file": "site/looplab/escape-route.json",
+"src": "code/python/kpop_albums.py",
+"key": "fight"
+},
+"thursday-s-child": {
+"file": "site/looplab/thursday-s-child.json",
+"src": "code/python/kpop_albums.py",
+"key": "thursday"
+},
+"neverland-rush": {
+"file": "site/looplab/neverland-rush.json",
+"src": "code/python/kpop_albums.py",
+"key": "temptation"
+},
+"freefall-chase": {
+"file": "site/looplab/freefall-chase.json",
+"src": "code/python/kpop_albums.py",
+"key": "freefall"
+},
+"tomorrow-again": {
+"file": "site/looplab/tomorrow-again.json",
+"src": "code/python/kpop_albums.py",
+"key": "tomorrow"
+},
+"moonward": {
+"file": "site/looplab/moonward.json",
+"src": "code/python/kpop_albums.py",
+"key": "sanctuary"
+},
+"strangers-together": {
+"file": "site/looplab/strangers-together.json",
+"src": "code/python/kpop_albums.py",
+"key": "together"
+},
+"stillness-in-the-thorns": {
+"file": "site/looplab/stillness-in-the-thorns.json",
+"src": "code/python/kpop_albums.py",
+"key": "thorns"
+},
+"harbor-moon": {
+"file": "site/looplab/harbor-moon.json",
+"src": "code/python/pictures.py",
+"key": "harbor"
+},
+"moon-through-branches": {
+"file": "site/looplab/moon-through-branches.json",
+"src": "code/python/pictures.py",
+"key": "branches"
+},
+"backyard-sun": {
+"file": "site/looplab/backyard-sun.json",
+"src": "code/python/pictures.py",
+"key": "backyard"
+},
+"field-at-sunset": {
+"file": "site/looplab/field-at-sunset.json",
+"src": "code/python/pictures.py",
+"key": "field"
+},
+"hanging-tree": {
+"file": "site/looplab/hanging-tree.json",
+"src": "code/python/pictures.py",
+"key": "hanging"
+},
+"what-s-next": {
+"file": "site/looplab/what-s-next.json",
+"src": "code/python/pictures.py",
+"key": "whatsnext"
+},
+"peacefully-empty": {
+"file": "site/looplab/peacefully-empty.json",
+"src": "code/python/pictures.py",
+"key": "empty"
+},
+"stature": {
+"file": "site/looplab/stature.json",
+"src": "code/python/pictures.py",
+"key": "stature"
+},
+"blooming-away": {
+"file": "site/looplab/blooming-away.json",
+"src": "code/python/pictures.py",
+"key": "blooming"
+},
+"tar-heel-blue": {
+"file": "site/looplab/tar-heel-blue.json",
+"src": "code/python/pictures.py",
+"key": "tarheel"
+},
+"fading-drops": {
+"file": "site/looplab/fading-drops.json",
+"src": "code/python/pictures.py",
+"key": "fading"
+},
+"this-is-what-spring-feels-like": {
+"file": "site/looplab/this-is-what-spring-feels-like.json",
+"src": "code/python/pictures.py",
+"key": "spring"
+},
+"rolling-away": {
+"file": "site/looplab/rolling-away.json",
+"src": "code/python/pictures.py",
+"key": "rolling"
+},
+"what-it-once-was": {
+"file": "site/looplab/what-it-once-was.json",
+"src": "code/python/pictures.py",
+"key": "once"
+},
+"line-of-light": {
+"file": "site/looplab/line-of-light.json",
+"src": "code/python/pictures.py",
+"key": "line"
+},
+"this-is-what-fall-feels-like": {
+"file": "site/looplab/this-is-what-fall-feels-like.json",
+"src": "code/python/pictures.py",
+"key": "fall"
+},
+"dripping": {
+"file": "site/looplab/dripping.json",
+"src": "code/python/pictures.py",
+"key": "dripping"
+},
+"amar-chok-ar-maata": {
+"file": "site/looplab/amar-chok-ar-maata.json",
+"src": "code/python/pictures.py",
+"key": "chok"
+},
+"nuton-audor": {
+"file": "site/looplab/nuton-audor.json",
+"src": "code/python/pictures.py",
+"key": "audor"
+},
+"light-rush": {
+"file": "site/looplab/light-rush.json",
+"src": "code/python/pictures.py",
+"key": "rush"
+},
+"frost-crystals": {
+"file": "site/looplab/frost-crystals.json",
+"src": "code/python/pictures.py",
+"key": "frost"
+},
+"koi-pond": {
+"file": "site/looplab/koi-pond.json",
+"src": "code/python/pictures.py",
+"key": "koi"
+},
+"hibiscus": {
+"file": "site/looplab/hibiscus.json",
+"src": "code/python/pictures.py",
+"key": "hibiscus"
+},
+"neon-skyfall": {
+"file": "site/looplab/neon-skyfall.json",
+"src": "code/python/pictures.py",
+"key": "skyfall"
+},
+"five-rarities": {
+"file": "site/looplab/five-rarities.json",
+"src": "code/python/pictures.py",
+"key": "rarities"
+},
+"sparkler-letters": {
+"file": "site/looplab/sparkler-letters.json",
+"src": "code/python/pictures.py",
+"key": "sparklers"
+},
+"window-to-the-harbor": {
+"file": "site/looplab/window-to-the-harbor.json",
+"src": "code/python/pictures.py",
+"key": "window"
+},
+"mirror-lake": {
+"file": "site/looplab/mirror-lake.json",
+"src": "code/python/pictures.py",
+"key": "mirror"
+},
+"summit-at-sunset": {
+"file": "site/looplab/summit-at-sunset.json",
+"src": "code/python/pictures.py",
+"key": "summit"
+},
+"red-light-rain": {
+"file": "site/looplab/red-light-rain.json",
+"src": "code/python/pictures.py",
+"key": "redlight"
+},
+"flags-at-the-rally": {
+"file": "site/looplab/flags-at-the-rally.json",
+"src": "code/python/pictures.py",
+"key": "flags"
+},
+"hydrangea": {
+"file": "site/looplab/hydrangea.json",
+"src": "code/python/pictures.py",
+"key": "hydrangea"
+},
+"lakeside-from-above": {
+"file": "site/looplab/lakeside-from-above.json",
+"src": "code/python/pictures.py",
+"key": "above"
+},
+"tower-in-the-clouds": {
+"file": "site/looplab/tower-in-the-clouds.json",
+"src": "code/python/pictures.py",
+"key": "tower"
+},
+"daisies-on-the-blue-bench": {
+"file": "site/looplab/daisies-on-the-blue-bench.json",
+"src": "code/python/pictures.py",
+"key": "daisies"
+},
+"heavenly-hummus": {
+"file": "site/looplab/heavenly-hummus.json",
+"src": "code/python/pictures.py",
+"key": "hummus"
+},
+"under-the-lakeside-tree": {
+"file": "site/looplab/under-the-lakeside-tree.json",
+"src": "code/python/pictures.py",
+"key": "undertree"
+},
+"green-valley-dock": {
+"file": "site/looplab/green-valley-dock.json",
+"src": "code/python/pictures.py",
+"key": "dock"
+},
+"mountain-lookout": {
+"file": "site/looplab/mountain-lookout.json",
+"src": "code/python/pictures.py",
+"key": "lookout"
+},
+"sun-on-the-water": {
+"file": "site/looplab/sun-on-the-water.json",
+"src": "code/python/pictures.py",
+"key": "sunwater"
+},
+"ta-322-in-blue-flame": {
+"file": "site/looplab/ta-322-in-blue-flame.json",
+"src": "code/python/pictures.py",
+"key": "hero"
+},
+"ta-322-and-the-shadow": {
+"file": "site/looplab/ta-322-and-the-shadow.json",
+"src": "code/python/pictures.py",
+"key": "duo"
+},
+"sandwhiched": {
+"file": "site/looplab/sandwhiched.json",
+"src": "code/python/pictures.py",
+"key": "sandwiched"
+},
+"mystical-mist": {
+"file": "site/looplab/mystical-mist.json",
+"src": "code/python/pictures.py",
+"key": "mist"
+},
+"an-inside-look": {
+"file": "site/looplab/an-inside-look.json",
+"src": "code/python/pictures.py",
+"key": "inside"
+},
+"downtown": {
+"file": "site/looplab/downtown.json",
+"src": "code/python/pictures.py",
+"key": "downtown"
+},
+"top-of-the-run": {
+"file": "site/looplab/top-of-the-run.json",
+"src": "code/python/pictures.py",
+"key": "toprun"
+},
+"moonlit-window": {
+"file": "site/looplab/moonlit-window.json",
+"src": "code/python/pictures.py",
+"key": "moonwin"
+},
+"moon-through-the-glass": {
+"file": "site/looplab/moon-through-the-glass.json",
+"src": "code/python/pictures.py",
+"key": "moonglass"
+},
+"starfield": {
+"file": "site/looplab/starfield.json",
+"src": "code/python/pictures.py",
+"key": "starfield"
+},
+"twilight-moon": {
+"file": "site/looplab/twilight-moon.json",
+"src": "code/python/pictures.py",
+"key": "twimoon"
+},
+"shadow-on-the-blinds": {
+"file": "site/looplab/shadow-on-the-blinds.json",
+"src": "code/python/pictures.py",
+"key": "blinds"
+},
+"a-helping-hand": {
+"file": "site/looplab/a-helping-hand.json",
+"src": "code/python/pictures.py",
+"key": "helping"
+},
+"cliffside-blooms": {
+"file": "site/looplab/cliffside-blooms.json",
+"src": "code/python/pictures.py",
+"key": "cliff"
+},
+"side-by-side-at-sunset": {
+"file": "site/looplab/side-by-side-at-sunset.json",
+"src": "code/python/pictures.py",
+"key": "sidebyside"
+},
+"under-the-umbrella": {
+"file": "site/looplab/under-the-umbrella.json",
+"src": "code/python/pictures.py",
+"key": "umbrella"
+},
+"flock-in-the-halo": {
+"file": "site/looplab/flock-in-the-halo.json",
+"src": "code/python/pictures.py",
+"key": "flock"
+},
+"palace-road": {
+"file": "site/looplab/palace-road.json",
+"src": "code/python/pictures.py",
+"key": "palace"
+},
+"storm-over-the-peaks": {
+"file": "site/looplab/storm-over-the-peaks.json",
+"src": "code/python/pictures.py",
+"key": "storm"
+},
+"snowfall-on-the-slopes": {
+"file": "site/looplab/snowfall-on-the-slopes.json",
+"src": "code/python/pictures.py",
+"key": "snowfall"
+},
+"city-from-the-hill": {
+"file": "site/looplab/city-from-the-hill.json",
+"src": "code/python/pictures.py",
+"key": "overlook"
+},
+"corner-view-at-sunset": {
+"file": "site/looplab/corner-view-at-sunset.json",
+"src": "code/python/pictures.py",
+"key": "corner"
 }
 }

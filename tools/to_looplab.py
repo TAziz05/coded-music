@@ -120,7 +120,8 @@ def from_breakcore(cfg):
 
 MODS = {'bts_albums': 'SONGS', 'batch_a': 'SONGS', 'bgm': 'SONGS', 'pokemon_gens': 'SONGS', 'sonic_styles': 'SONGS', 'batch_c': 'SONGS', 'batch_d': 'SONGS',
         'mario_worlds': 'SONGS', 'hyperpop2': 'SONGS', 'genres': 'SONGS', 'bts_solos': 'SONGS', 'batch_e': 'BC POP', 'seasons': 'SONGS', 'styles_breakcore': 'SONGS',
-        'sports': 'SONGS', 'math2': 'SONGS', 'concepts': 'SONGS', 'mathsong': 'SONG'}
+        'sports': 'SONGS', 'math2': 'SONGS', 'concepts': 'SONGS', 'mathsong': 'SONG',
+        'words2': 'SONGS', 'kpop_albums': 'SONGS', 'rlradio': 'SONGS', 'dna': 'SONG', 'pictures': 'ALL'}
 index = {}
 for mod, names in MODS.items():
     try: M = importlib.import_module(mod)

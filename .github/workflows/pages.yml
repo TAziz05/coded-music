@@ -22,6 +22,13 @@ jobs:
         run: |
           mkdir _site
           cp -r index.html .nojekyll site songs cards loop-lab sound-test.html _site/
+      - name: Make lighter copies of the songs for the website
+        # GitHub Pages sites can be at most 1 GB. The website plays 160 kbps copies (half the size, still clear);
+        # the full 320 kbps MP3s stay in the repo, and the site's download button links to those.
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+          find _site/songs -name '*.mp3' -print0 | xargs -0 -P 4 -I{} sh -c 'ffmpeg -v error -y -i "$1" -b:a 160k "$1.tmp.mp3" && mv "$1.tmp.mp3" "$1"' _ {}
+          du -sh _site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
