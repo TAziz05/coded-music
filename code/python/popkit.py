@@ -359,7 +359,7 @@ def build(cfg):
     g = ss.filtfilt(*ss.butter(1, 1.2, fs=SR), g); out = out * g
     if cfg.get('ride'):   # gentle gain riding inside sections, for an even, steady level (background music)
         w = int(2 * B * SR); e = np.sqrt(ss.filtfilt(*ss.butter(1, .5, fs=SR), (out ** 2).mean(0)) + 1e-12)
-        ref = np.sqrt(ss.filtfilt(*ss.butter(1, 1 / (8 * B), fs=SR), e ** 2)); gr = np.clip((ref / e) ** cfg['ride'], 10 ** (-3 / 20), 10 ** (3 / 20)); gr[body:] = gr[body - 1]   # smooth out wobble around the local (8-bar) level only
+        ref = np.sqrt(ss.filtfilt(*ss.butter(1, 1 / (8 * B), fs=SR), e ** 2)); rm = cfg.get('ride_max', 3.); gr = np.clip((ref / e) ** cfg['ride'], 10 ** (-rm / 20), 10 ** (rm / 20)); gr[body:] = gr[body - 1]   # smooth out wobble around the local (8-bar) level only
         out = out * ss.filtfilt(*ss.butter(1, .4, fs=SR), gr)
     if cfg.get('echo_out'):   # ending: at the end of the song body, the last stretch echoes away (delay repeats, each darker and softer)
         D_, fb, reps = cfg['echo_out']; D_ = int(D_ * B / 16 * SR) if isinstance(D_, int) else int(D_ * SR)

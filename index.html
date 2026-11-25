@@ -84,6 +84,14 @@ footer{text-align:center;color:var(--mute);font-size:12px;padding:24px 14px}
 .loopopt{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.loopopt .chip.on{background:var(--acc);color:var(--bg);border-color:var(--acc)}
 .custom input[type=range]{width:100%;accent-color:var(--acc)}
 .toast{position:fixed;left:50%;bottom:120px;transform:translateX(-50%);background:var(--acc);color:var(--bg);padding:8px 14px;border-radius:999px;font-weight:700;z-index:50;display:none}
+
+details.fold{margin:10px 0;border:1px solid var(--line);border-radius:12px;padding:0 12px;background:color-mix(in srgb,var(--card,#000) 60%,transparent)}
+details.fold>summary{cursor:pointer;list-style:none;padding:10px 0;font-weight:700;font-size:14px}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:'▾';float:right;opacity:.6}details.fold[open]>summary::after{content:'▴'}
+details.fold[open]{padding-bottom:10px}
+header details.fold{margin:8px 0 6px}header details.fold .filters{margin:0 0 4px}
+@media (max-width:600px){.hide-s{display:none}.song .tags{display:none}.song .th{width:54px;height:54px}.ext{padding:10px}.pbody .row .btn{padding:8px 10px}}
 </style>
 <!-- visitor counts (GoatCounter: no cookies, no personal data) -->
 <script data-goatcounter="https://taziz322.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -92,20 +100,20 @@ footer{text-align:center;color:var(--mute);font-size:12px;padding:24px 14px}
 <header>
   <div class="top">
     <img src="site/icons/coded-music.svg" alt="" width="40" height="40" style="border-radius:10px">
-    <div><div class="logo">Coded Music</div><div class="sub"><span id="total"></span> songs written as code · by TAziz322</div></div>
+    <div><div class="logo">Coded Music</div><div class="sub"><span id="total"></span> songs written as code<span class="hide-s"> · by TAziz322</span></div></div>
     <div class="sp"></div>
-    <a class="btn" href="loop-lab/" title="Make your own songs">🎛️ Loop Lab</a>
+    <a class="btn" href="loop-lab/" title="Make your own songs">🎛️<span class="hide-s"> Loop Lab</span></a>
     <button class="btn" id="themeBtn" title="Change theme">🎨</button>
     <button class="btn" id="sfxBtn" title="Button sounds on/off">🔊</button>
   </div>
   <div class="search"><input id="q" type="search" placeholder="Search songs, styles, instruments, moods…" autocomplete="off"><button class="btn" id="shuffle" title="Play a random song from the list">🔀</button></div>
-  <div class="filters">
+  <details class="fold" id="filterBox"><summary>⚙️ Filters &amp; sort</summary><div class="filters">
     <select id="fGenre"><option value="">All genres</option></select>
     <select id="fMood"><option value="">Any mood</option></select>
     <select id="fTempo"><option value="">Any tempo</option><option value="0-99">Slow (under 100)</option><option value="100-139">Medium (100–139)</option><option value="140-169">Fast (140–169)</option><option value="170-999">Very fast (170+)</option></select>
     <select id="fLen"><option value="">Any length</option><option value="0-75">Under 1¼ min</option><option value="75-105">1¼–1¾ min</option><option value="105-999">Over 1¾ min</option></select>
     <select id="sort"><option value="new">Newest first</option><option value="old">Oldest first</option><option value="az">Title A–Z</option><option value="fast">Fastest first</option><option value="slow">Slowest first</option><option value="long">Longest first</option><option value="short">Shortest first</option><option value="energy">Most energy</option><option value="calm">Calmest</option><option value="group">By group</option><option value="sound">Similar sound together</option><option value="shapesort">Similar structure together</option></select>
-  </div>
+  </div></details>
   <div class="chips" id="groups"></div>
 </header>
 <main>
@@ -188,7 +196,7 @@ function render() {
 function card(s) {
   const tags = [...s.moods.slice(0, 2), ...s.groups.slice(0, 1)].map(t => `<span class="tag">${esc(t)}</span>`).join('');
   return `<div class="song ${cur && cur.id === s.id ? 'playing' : ''}" data-id="${s.id}"><div class="th" style="background-image:url('${s.thumb ? url(s.thumb) : ''}');background-color:${s.colors[1]}"></div>
-  <div class="meta"><div class="t">${esc(s.title)}</div><div class="s">${esc(s.style)} · ${tempoOf(s) ? tempoOf(s) + ' BPM · ' : ''}${fmt(s.duration)}</div><div class="tags">${tags}</div></div>
+  <div class="meta"><div class="t">${esc(s.title)}</div><div class="s">${esc(s.style)} · ${tempoOf(s) ? tempoOf(s) + ' BPM · ' : ''}${fmt(s.duration)}</div></div>
   <button class="fav ${FAVS.has(s.id) ? 'on' : ''}" data-fav="${s.id}" aria-label="Favorite">${FAVS.has(s.id) ? '★' : '☆'}</button>
   <button class="play" data-play="${s.id}" aria-label="Play">${cur && cur.id === s.id && playing() ? '❚❚' : '▶'}</button></div>`;
 }
@@ -251,21 +259,22 @@ function openSong(s) {
   <div class="pbody"><h2>${esc(s.title)}</h2><div class="note">${esc(s.style)}${tempoOf(s) ? ' · ' + tempoOf(s) + ' BPM' : ''} · ${fmt(s.duration)}</div>
   <p>${esc(s.feel)}</p><p class="note"><b>Good for:</b> ${esc(s.good)}</p>
   <div class="kv">${s.groups.map(g => `<span class="chip" data-filter="group|${esc(g)}">${esc(g)}</span>`).join('')}${s.genres.filter(g => !s.groups.includes(g)).map(g => `<span class="chip" data-filter="fGenre|${esc(g)}">${esc(g)}</span>`).join('')}${s.moods.map(g => `<span class="chip" data-filter="fMood|${esc(g)}">${esc(g)}</span>`).join('')}</div>
-  <div class="row"><button class="btn pri" onclick="play(BY['${s.id}'])">▶ Play</button><button class="btn" onclick="play(BY['${s.id}'], true)">🔁 Play on loop</button>
-  <a class="btn" href="${vurl(s.file)}" download onclick="used('${s.id}','download')">⬇ MP3</a><a class="btn" href="${vurl(s.video)}" target="_blank" rel="noopener" onclick="used('${s.id}','video')">🎬 Video</a><button class="btn" onclick="share('${s.id}')">🔗 Share</button><button class="btn" id="sheetFav" onclick="toggleFav('${s.id}')">${FAVS.has(s.id) ? '★ Favorited' : '☆ Favorite'}</button></div>
-  ${s.looplab ? `<div class="row" style="margin-top:0"><a class="btn" href="loop-lab/?song=../${url(s.looplab)}" onclick="sfx('open');track('looplab/' + '${s.id}')">🎛️ Open in Loop Lab</a><button class="btn" onclick="copyCode('${s.id}')">📋 Copy Loop Lab code</button>${s.src ? `<a class="btn" href="https://github.com/TAziz05/coded-music/blob/main/${url(s.src)}" target="_blank" rel="noopener">🐍 Python code</a>` : ''}</div>
+  <div class="row"><button class="btn pri" onclick="play(BY['${s.id}'])">▶ Play</button><button class="btn" onclick="play(BY['${s.id}'], true)">🔁 Loop</button><button class="btn" id="sheetFav" onclick="toggleFav('${s.id}')">${FAVS.has(s.id) ? '★ Favorited' : '☆ Favorite'}</button><button class="btn" onclick="share('${s.id}')">🔗 Share</button><a class="btn" href="${vurl(s.file)}" download onclick="used('${s.id}','download')">⬇ MP3</a></div>
+  <details class="fold"><summary>🎬 Video, Loop Lab and code</summary><div class="row" style="margin:8px 0 0"><a class="btn" href="${vurl(s.video)}" target="_blank" rel="noopener" onclick="used('${s.id}','video')">🎬 Video</a></div>
+  ${s.looplab ? `<div class="row" style="margin:8px 0 0"><a class="btn" href="loop-lab/?song=../${url(s.looplab)}" onclick="sfx('open');track('looplab/' + '${s.id}')">🎛️ Open in Loop Lab</a><button class="btn" onclick="copyCode('${s.id}')">📋 Copy Loop Lab code</button>${s.src ? `<a class="btn" href="https://github.com/TAziz05/coded-music/blob/main/${url(s.src)}" target="_blank" rel="noopener">🐍 Python code</a>` : ''}</div>
   <p class="note" style="margin-top:-4px">Loop Lab gets a simplified version (its own instruments, 8-bar sections) that you can change and export again.</p>` : ''}
-  <div class="ext credit"><b>🙌 Using this song?</b> <span class="note">It's free: just give credit with a link to the site, or the song name and source. Copy this into your description:</span>
+  </details>
+  <div class="ext credit"><b>🙌 Free to use, with credit</b> <span class="note">Put this in your description:</span>
   <code>${esc(creditText(s))}</code><button class="btn" onclick="copyCredit('${s.id}')">📋 Copy credit</button></div>
+  <details class="fold"><summary>🔁 Loop section &amp; extended versions</summary>
   <div class="ext"><b>Loop section</b> <span class="note">which part repeats when you play on loop or make an extended version</span>
   <div class="loopopt" id="loopOpts"></div><div id="customLoop"></div></div>
   <div class="ext"><b>Extended version</b> <span class="note" id="exDesc">plays the start, repeats the loop (${fmt(LP[0])}–${fmt(LP[1])}, ${fmt(L)} long), then the real ending</span>
   <div class="row" style="margin:8px 0 0;align-items:center"><select id="exMin">${[2, 3, 5, 10, 15, 20].map(m => `<option value="${m}" ${m === 5 ? 'selected' : ''}>${m} min</option>`).join('')}</select>
-  <select id="exFmt"><option value="mp3">MP3</option><option value="wav">WAV</option></select><button class="btn pri" id="exGo" onclick="extended('${s.id}')">Make it</button><span class="note" id="exMsg"></span></div></div>
-  <div class="sec"><h3>Energy over time</h3>${arcSVG(s.arc)}</div>
+  <select id="exFmt"><option value="mp3">MP3</option><option value="wav">WAV</option></select><button class="btn pri" id="exGo" onclick="extended('${s.id}')">Make it</button><span class="note" id="exMsg"></span></div></div></details>
   ${s.versions.length ? `<div class="sec"><h3>Other versions</h3>${miniList(s.versions)}</div>` : ''}
   <div class="sec"><h3>Sounds similar</h3>${miniList(s.similar)}</div>
-  <div class="sec"><h3>Similar structure (energy rises and falls the same way)</h3>${miniList(s.shape)}</div>
+  <details class="fold"><summary>📈 Energy over time &amp; similar structure</summary>${arcSVG(s.arc)}${miniList(s.shape)}</details>
   ${sameGroup.length ? `<div class="sec"><h3>More ${esc(s.groups[0])}</h3>${miniList(sameGroup)}</div>` : ''}</div>`;
   loopUI(s); $('#sheet').classList.add('show'); $('#panel').scrollTop = 0;
 }

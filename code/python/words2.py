@@ -20,11 +20,10 @@ def spell_hits(text):   # like spell(), but every letter is one short hit, the l
     for w in text.upper().split():
         out += [(LETTER.get(c) or DIGIT.get(c)) + 12 for c in w if c in LETTER or c in DIGIT] + [0]
     return rows_from(out)
-def end_gg(M, t0, st, S, i, n, tones, root):   # spells G-G, then a pitched-down 'ay'
+def end_gg(M, t0, st, S, i, n, tones, root):   # spells G-G with the same cowbell hits as the melody, and that's the end
     if i: return
-    for k, c in enumerate('GG'): LEADS['cowbell'](M, t0 + S(2 * k), LETTER[c] + 12, st * 1.5, 1.)   # G-G, the same hits as the melody
-    ayy(M, t0 + S(6), .8); kick(M, t0 + S(6), .9)
-    for c in tones[:3]: supersaw(M, 'pad', t0 + S(6), c, 2.5, .03, cut=900, a=.01, r=1.5, voices=3)
+    for k, c in enumerate('GG'): LEADS['cowbell'](M, t0 + S(2 * k), LETTER[c] + 12, st * 1.5, 1.)
+    kick(M, t0, .7)
 
 TAGS = dict(file='Gamer_Tags', title='Gamer Tags', bpm=128, chorus_keys=False, cont_tol=0., sections={
    'intro': sec(4, ['Am', 'F', 'Dm', 'E'], keys=['dark'], lead='fmbell', mel=spell_hits('DSX DSX'), lv=.8),

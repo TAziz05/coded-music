@@ -4,7 +4,7 @@ Original music and sound effects written entirely as code, made for **[Drop-In D
 
 Every note is written out as instructions (which note, which kind of wave, how long) and played by the browser's Web Audio API. No samples, no recordings of anything else, and no AI audio generators: the audio files here are just recordings of that code playing.
 
-Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic
+Made by TAziz322 · Coded with Claude (Opus 5.5) by Anthropic · [How I vibe-coded it](HOW-I-VIBE-CODED.md)
 
 ## Website
 
@@ -29,7 +29,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 | Folder | What it is |
 |---|---|
-| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 185 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
+| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 212 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
 | `videos/` | The same songs as 1080p videos with a title card, ready to upload to YouTube. |
 | `cards/` | The title card images. |
 | `loops/` | One seamless loop of each song (see `loops/music.json` for loop lengths). |
@@ -40,7 +40,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 ## The songs
 
-8 game songs, plus 185 YouTube gameplay tracks (below): 193 songs in all.
+8 game songs, plus 212 YouTube gameplay tracks (below): 220 songs in all.
 
 | Song | Game | Plays during |
 |---|---|---|
@@ -57,7 +57,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 `loop-lab/index.html` is a song maker that runs in the browser: build songs from sections with chords, a melody, drums and sound effects (built-in coded effects or your own uploads), load TAziz322's songs and tweak them, and save songs as code. See [`loop-lab/GUIDE.md`](loop-lab/GUIDE.md) for how to use it. `loop-lab/tools/make_presets.py` rebuilds the page from `template.html` with the built-in songs.
 
-## YouTube gameplay tracks (185 songs)
+## YouTube gameplay tracks (212 songs)
 
 Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3). They run from 1 to about 2½ minutes; most are around 1½ minutes. These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments, and the songs live in the other files in `code/python/` (see the commands below). Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
 
@@ -248,6 +248,33 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Morse Code | 120 BPM | Real Morse code rhythms: it sends CQ, CODED MUSIC, GG WP, VICTORY ROYALE, then signs off with SK | Intros, techy clips |
 | The Good Ol' Days | 84 BPM | A poem by TAziz322 set to music, one note per syllable; ends on one ringing note | Reflective, emotional moments |
 | Shred Line | 140 BPM | Punk verses that drop into dubstep, with board carves, ollies and rail grinds; ends on a big jump | Snow maps, tricks, hype |
+| Backyard Sun | 111 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (D minor) | Calm clips, montages |
+| Peacefully Empty | 80 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major) | Calm clips, montages |
+| Stature | 84 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major) | Calm clips, montages |
+| Tar Heel Blue | 103 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (D minor) | Calm clips, montages |
+| Fading Drops | 89 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (G major) | Calm clips, montages |
+| Dripping | 114 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# minor) | Calm clips, montages |
+| Light Rush | 72 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (G major) | Calm clips, montages |
+| Hibiscus | 90 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F major) | Calm clips, montages |
+| Neon Skyfall | 90 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (C# major) | Calm clips, montages |
+| Five Rarities | 80 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# minor) | Calm clips, montages |
+| Window to the Harbor | 82 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (G minor) | Calm clips, montages |
+| Summit at Sunset | 73 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (C# major) | Calm clips, montages |
+| Flags at the Rally | 98 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major) | Calm clips, montages |
+| Hydrangea | 99 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (D major) | Calm clips, montages |
+| Lakeside From Above | 82 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major) | Calm clips, montages |
+| Tower in the Clouds | 100 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (F# major) | Calm clips, montages |
+| Daisies on the Blue Bench | 118 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (D major) | Calm clips, montages |
+| Heavenly Hummus | 90 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (B major) | Calm clips, montages |
+| Under the Lakeside Tree | 140 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (D major) | Calm clips, montages |
+| Green Valley Dock | 106 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (B major) | Calm clips, montages |
+| Mountain Lookout | 117 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (B major) | Calm clips, montages |
+| Sky Sandwich | 76 BPM | Made from a photo by TAziz322: read left to right, the outlines and bright spots become the melody and the colors become the chords (G major) | Calm clips, montages |
+| DNA (Beta-Globin) | 104 BPM | Plays the real human beta-globin gene: each base is a note, the partner strand circles in stereo, the amino acids pick the chords, and it stops at the stop codon | Science, calm clips |
+| Dits Royale | 140 BPM | Morse code beeps call out DROP, LOOT, STORM, BUS and VICTORY ROYALE; ends on GG | Fortnite intros, hype |
+| Morse Catch | 150 BPM | Game Boy squares sending ROUTE, TRAINER, CATCH, EVOLVE and GYM BADGE in Morse; ends on a level-up jingle | Pokémon clips, retro |
+| Purple in Morse | 112 BPM | The drums play I PURPLE YOU in Morse code while the melody spells ARMY and BORAHAE; ends on seven chimes | Chill, K-pop clips |
+| Silk Rotation | 122 BPM | Grows from a lone piano riff into an emotional house drop, then fades back to the piano | Montages, Rocket League-style clips |
 
 ```
 pip install numpy scipy

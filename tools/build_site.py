@@ -50,8 +50,9 @@ def groups_for(t, style, feel):
     if has(s, 'hyperpop', 'nightcore', 'glitchcore'): g.append('Hyperpop')
     if has(s, 'bengali', 'bangladesh', 'flutes', 'east asian', 'amapiano', 'reggae', 'gugak', 'korean traditional', 'koto', 'tabla'): g.append('World music')
     if has(s, 'orchestral', 'waltz', 'orchestra', 'choir'): g.append('Orchestral & cinematic')
-    if has(s, 'math', 'sine waves', 'made from words', 'shapes', 'colors'): g.append('Math & made from things')
+    if has(s, 'math', 'sine waves', 'made from words', 'shapes', 'colors') and 'made from pictures' not in s: g.append('Math & made from things')
     if 'made from pictures' in s: g.append('Made from pictures')
+    if 'made from dna' in s: g.append('Math & made from things')
     if t in ('Golazo Anthem', 'Full Court Press', 'Fourth and Goal', 'Seventh Inning Swing', 'Ice Time', 'Match Point', 'Beach Spike', 'Powder Run', 'Shuttle Rally', 'Huck It', 'Stride 176', 'Easy Pace', 'Sunday Stroll', 'Shred Line'): g.append('Sports & moving')
     if t in ('Oops Again', 'Tiptoe Heist', 'Final Zone Countdown', 'Comeback Rising', 'See You Next Drop'): g.append('Gameplay moments')
     return g

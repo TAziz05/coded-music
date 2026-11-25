@@ -40,12 +40,12 @@ PICS2 = {   # the second set of photos
 }
 PICS2.update({
  'dock': ('3916808b-image.jpg', 'Green Valley Dock'), 'lookout': ('e0f4e1e9-image.jpg', 'Mountain Lookout'), 'sunwater': ('a7a00e29-image.jpg', 'Sun on the Water'),
- 'hero': ('41381f7b-image.jpg', 'TA 322 in Blue Flame'), 'duo': ('6a779938-image.jpg', 'TA 322 and the Shadow'),
+ 'hero': ('41381f7b-image.jpg', 'Waddle Warrior'), 'duo': ('6a779938-image.jpg', 'Brother in Arms'),
 })
 PICS.update(PICS2)
 
 PICS3 = {   # the third set (more varied shapes from here on)
- 'sandwiched': ('dc7b873e-image.jpg', 'Sandwhiched'), 'mist': ('a7926546-image.jpg', 'Mystical Mist'), 'inside': ('75606773-image.jpg', 'An Inside Look'),
+ 'sandwiched': ('dc7b873e-image.jpg', 'Sky Sandwich'), 'mist': ('a7926546-image.jpg', 'Mystical Mist'), 'inside': ('75606773-image.jpg', 'An Inside Look'),
  'downtown': ('fd9d5800-image.jpg', 'Downtown'), 'toprun': ('5b2e514d-image.jpg', 'Top of the Run'), 'moonwin': ('459c8f24-image.jpg', 'Moonlit Window'),
  'moonglass': ('10408015-image.jpg', 'Moon Through the Glass'), 'starfield': ('0638ef4e-image.jpg', 'Starfield'), 'twimoon': ('af0cab22-image.jpg', 'Twilight Moon'),
  'blinds': ('bdd5f5b1-image.jpg', 'Shadow on the Blinds'), 'helping': ('f90c2d8d-image.jpg', 'A Helping Hand'), 'cliff': ('c7951f25-image.jpg', 'Cliffside Blooms'),
@@ -148,16 +148,16 @@ def picture_song(name, bars=8):
     if P['busy'] > .12 and not drawn: drums = 'fourfloor' if not P['minor'] else 'halfpop'
     ch, rows = P['chords'], P['rows']; half = bars // 2
     lv = .75 if lead == 'flute' else 1.   # the flute sits a little lower
-    s = {'intro': sec(4, ch[:4], keys=keys),   # the same keys as the verses, at the same level
+    s = {'intro': sec(2, ch[:2], keys=keys), 'intro2': sec(2, ch[2:4], keys=keys, drums=drums),   # keys, then the beat joins: the song steps in gently
          'A': sec(half, ch[:half], keys=keys, drums=drums, lead=lead, mel=rows[:half], lv=lv, kind='verse'),
          'B': sec(half, ch[half:], keys=keys, drums=drums, lead=lead, mel=rows[half:], lv=lv, kind='verse', crash=False),
          'A2': sec(half, ch[:half], keys=keys, drums=drums, bass=bass, lead=lead, mel=rows[:half], lv=lv, kind='verse', crash=False),
          'B2': sec(half, ch[half:], keys=keys, drums=drums, bass=bass, lead=lead, mel=rows[half:], lv=lv, kind='verse', crash=False),
          'end': sec(2, [ch[-1]], extra=ending(P['edge'] > .45, P['focus']), kind='outro')}
     file = re.sub(r'[^A-Za-z0-9]+', '_', title).strip('_')
-    cfg = dict(file=file, title=title, bpm=bpm, sections=s, order=['intro', 'A', 'B', 'A2', 'B2', 'end'], chorus_keys=True, cont_tol=0.,
-               gain_like={'intro': 'A', 'B': 'A', 'A2': 'A', 'B2': 'A'}, targets={'outro': -19.}, verb=2.6,
-               levels={'keys': 2.2, 'pad': 2.2, 'glock': 2.2, 'str': 2.})   # the keys stand out more in the verses, so the intro (same keys, same level) isn't faint   # the intro plays at the verses' level, so nothing drops when the melody comes in
+    cfg = dict(file=file, title=title, bpm=bpm, sections=s, order=['intro', 'intro2', 'A', 'B', 'A2', 'B2', 'end'], chorus_keys=True, cont_tol=0.,
+               gain_like={'intro': 'A', 'intro2': 'A', 'B': 'A', 'A2': 'A', 'B2': 'A'}, targets={'outro': -16.}, verb=2.6, ride_max=6.,
+               levels={'keys': 2.2, 'pad': 2.2, 'glock': 2.2, 'str': 2.}, ride=1.)   # the keys stand out more in the verses, so the intro (same keys, same level) isn't faint   # the intro plays at the verses' level, so nothing drops when the melody comes in
     info = f"{title}: {NAMES[P['root']]} {'minor' if P['minor'] else 'major'}, {bpm} BPM, {lead} over {'+'.join(keys)}, {drums} beat | chords {' '.join(ch)}"
     return cfg, info
 
@@ -182,10 +182,20 @@ def picture_song_v2(name, bars=16):
     keys, lead, drums, bass = PALETTES[fam][seed % 3]
     bpm = int(round(70 + 80 * np.clip((P['busy'] - .02) / .15, 0, 1)))
     if drums in ('house', 'fourfloor', 'gated', 'dembow'): bpm = max(bpm, 100)
+    if keys[0] == 'futurebass' and bpm < 100: keys, drums, bass = ['pluck', 'pad'], 'halfpop', 'long'   # slow chord chops and trap pump too much at this tempo; softer parts instead
     shape = SHAPES[(seed // 3) % 4]
     start = 'cold' if P['color'] > .55 and P['busy'] > .1 else 'beat' if P['busy'] > .12 else 'swell' if P['bright'] < .3 else STARTS[(seed // 12) % 4]
     end = 'ring' if P['edge'] > .6 else 'fade' if P['edge'] < .2 else ENDS[(seed // 7) % 6]
     ch, rows = P['chords'], P['rows']; half = bars // 2
+    flat = [n for r in rows for n in r]; last, run = None, 0
+    for k, n in enumerate(flat):   # long empty stretches (plain sky) would leave holes: after half a bar of rest, the last note carries on
+        if n > 0: last, run = n, 0
+        elif n == 0:
+            run += 1
+            if run > 4 and last: flat[k] = -1 if flat[k - 1] != 0 else last
+        else: run = 0
+    rows = [flat[i:i + 8] for i in range(0, len(flat), 8)]
+    if start == 'beat' and bpm < 90: start = 'keys'
     lv = .75 if lead == 'flute' else 1.
     up = [[n + 12 if n > 0 else n for n in r] for r in rows]   # the 'tall' part: the melody an octave higher
     s = {'A': sec(half, ch[:half], keys=keys, drums=drums, lead=lead, mel=rows[:half], lv=lv, kind='verse'),
@@ -200,7 +210,7 @@ def picture_song_v2(name, bars=16):
     order = list(shape)
     if intro: s['intro'] = intro; order = ['intro'] + order
     cfg = dict(file=re.sub(r'[^A-Za-z0-9]+', '_', title).strip('_'), title=title, bpm=bpm, sections=s, order=order, chorus_keys=True, cont_tol=0., verb=2.6,
-               levels={'keys': 2.2, 'pad': 2.2, 'glock': 2.2, 'str': 2.})
+               levels={'keys': 2.2, 'pad': 2.2, 'glock': 2.2, 'str': 2.}, ride=1., ride_max=6., targets={'outro': -16.})
     last = order[-1]
     if end == 'ring': s['end'] = sec(2, [ch[-1]], extra=ending(True, P['focus']), kind='outro'); order.append('end')
     elif end == 'thin': s['end'] = sec(2, [ch[-1]], keys=keys[-1:], lead=lead, mel=rows[-1:] + [[0] * 8], lv=lv, kind='outro'); order.append('end')

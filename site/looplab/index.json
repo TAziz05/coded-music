@@ -764,11 +764,6 @@
 "src": "code/songs/fnOG.js",
 "key": "fnOG"
 },
-"daily-poke-catch-route": {
-"file": "site/looplab/daily-poke-catch-route.json",
-"src": "code/songs/pkMenu.js",
-"key": "pkMenu"
-},
 "daily-poke-catch-battle": {
 "file": "site/looplab/daily-poke-catch-battle.json",
 "src": "code/songs/pk.js",
@@ -778,11 +773,6 @@
 "file": "site/looplab/daily-poke-catch-mythic-battle.json",
 "src": "code/songs/pkB.js",
 "key": "pkB"
-},
-"daily-poke-catch-town": {
-"file": "site/looplab/daily-poke-catch-town.json",
-"src": "code/songs/pkTown.js",
-"key": "pkTown"
 },
 "shred-line": {
 "file": "site/looplab/shred-line.json",
@@ -963,5 +953,140 @@
 "file": "site/looplab/red-light-rain.json",
 "src": "code/python/pictures.py",
 "key": "redlight"
+},
+"dits-royale": {
+"file": "site/looplab/dits-royale.json",
+"src": "code/python/words2.py",
+"key": "mfn"
+},
+"morse-catch": {
+"file": "site/looplab/morse-catch.json",
+"src": "code/python/words2.py",
+"key": "mpk"
+},
+"purple-in-morse": {
+"file": "site/looplab/purple-in-morse.json",
+"src": "code/python/words2.py",
+"key": "mbts"
+},
+"silk-rotation": {
+"file": "site/looplab/silk-rotation.json",
+"src": "code/python/rlradio.py",
+"key": "silk"
+},
+"dna-beta-globin": {
+"file": "site/looplab/dna-beta-globin.json",
+"src": "code/python/dna.py",
+"key": null
+},
+"backyard-sun": {
+"file": "site/looplab/backyard-sun.json",
+"src": "code/python/pictures.py",
+"key": "backyard"
+},
+"peacefully-empty": {
+"file": "site/looplab/peacefully-empty.json",
+"src": "code/python/pictures.py",
+"key": "empty"
+},
+"stature": {
+"file": "site/looplab/stature.json",
+"src": "code/python/pictures.py",
+"key": "stature"
+},
+"tar-heel-blue": {
+"file": "site/looplab/tar-heel-blue.json",
+"src": "code/python/pictures.py",
+"key": "tarheel"
+},
+"fading-drops": {
+"file": "site/looplab/fading-drops.json",
+"src": "code/python/pictures.py",
+"key": "fading"
+},
+"dripping": {
+"file": "site/looplab/dripping.json",
+"src": "code/python/pictures.py",
+"key": "dripping"
+},
+"light-rush": {
+"file": "site/looplab/light-rush.json",
+"src": "code/python/pictures.py",
+"key": "rush"
+},
+"hibiscus": {
+"file": "site/looplab/hibiscus.json",
+"src": "code/python/pictures.py",
+"key": "hibiscus"
+},
+"neon-skyfall": {
+"file": "site/looplab/neon-skyfall.json",
+"src": "code/python/pictures.py",
+"key": "skyfall"
+},
+"five-rarities": {
+"file": "site/looplab/five-rarities.json",
+"src": "code/python/pictures.py",
+"key": "rarities"
+},
+"window-to-the-harbor": {
+"file": "site/looplab/window-to-the-harbor.json",
+"src": "code/python/pictures.py",
+"key": "window"
+},
+"summit-at-sunset": {
+"file": "site/looplab/summit-at-sunset.json",
+"src": "code/python/pictures.py",
+"key": "summit"
+},
+"flags-at-the-rally": {
+"file": "site/looplab/flags-at-the-rally.json",
+"src": "code/python/pictures.py",
+"key": "flags"
+},
+"hydrangea": {
+"file": "site/looplab/hydrangea.json",
+"src": "code/python/pictures.py",
+"key": "hydrangea"
+},
+"lakeside-from-above": {
+"file": "site/looplab/lakeside-from-above.json",
+"src": "code/python/pictures.py",
+"key": "above"
+},
+"tower-in-the-clouds": {
+"file": "site/looplab/tower-in-the-clouds.json",
+"src": "code/python/pictures.py",
+"key": "tower"
+},
+"daisies-on-the-blue-bench": {
+"file": "site/looplab/daisies-on-the-blue-bench.json",
+"src": "code/python/pictures.py",
+"key": "daisies"
+},
+"heavenly-hummus": {
+"file": "site/looplab/heavenly-hummus.json",
+"src": "code/python/pictures.py",
+"key": "hummus"
+},
+"under-the-lakeside-tree": {
+"file": "site/looplab/under-the-lakeside-tree.json",
+"src": "code/python/pictures.py",
+"key": "undertree"
+},
+"green-valley-dock": {
+"file": "site/looplab/green-valley-dock.json",
+"src": "code/python/pictures.py",
+"key": "dock"
+},
+"mountain-lookout": {
+"file": "site/looplab/mountain-lookout.json",
+"src": "code/python/pictures.py",
+"key": "lookout"
+},
+"sky-sandwich": {
+"file": "site/looplab/sky-sandwich.json",
+"src": "code/python/pictures.py",
+"key": "sandwiched"
 }
 }
