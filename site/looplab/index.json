@@ -1088,5 +1088,10 @@
 "file": "site/looplab/sky-sandwich.json",
 "src": "code/python/pictures.py",
 "key": "sandwiched"
+},
+"gamer-tags": {
+"file": "site/looplab/gamer-tags.json",
+"src": "code/python/words2.py",
+"key": "tags"
 }
 }

@@ -29,7 +29,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 | Folder | What it is |
 |---|---|
-| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 212 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
+| `songs/` | Every song as a 320 kbps MP3: the 8 game songs (about 2 minutes each, with a fade-out) and the 213 YouTube tracks in `songs/youtube/` (1 to 2½ minutes each). |
 | `videos/` | The same songs as 1080p videos with a title card, ready to upload to YouTube. |
 | `cards/` | The title card images. |
 | `loops/` | One seamless loop of each song (see `loops/music.json` for loop lengths). |
@@ -40,7 +40,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 ## The songs
 
-8 game songs, plus 212 YouTube gameplay tracks (below): 220 songs in all.
+8 game songs, plus 213 YouTube gameplay tracks (below): 221 songs in all.
 
 | Song | Game | Plays during |
 |---|---|---|
@@ -57,7 +57,7 @@ Every song page also has **Open in Loop Lab** and **Copy Loop Lab code**: `pytho
 
 `loop-lab/index.html` is a song maker that runs in the browser: build songs from sections with chords, a melody, drums and sound effects (built-in coded effects or your own uploads), load TAziz322's songs and tweak them, and save songs as code. See [`loop-lab/GUIDE.md`](loop-lab/GUIDE.md) for how to use it. `loop-lab/tools/make_presets.py` rebuilds the page from `template.html` with the built-in songs.
 
-## YouTube gameplay tracks (212 songs)
+## YouTube gameplay tracks (213 songs)
 
 Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (320 kbps MP3). They run from 1 to about 2½ minutes; most are around 1½ minutes. These are made with a small Python synthesizer instead of the browser: `code/python/engine.py` holds the instruments, and the songs live in the other files in `code/python/` (see the commands below). Each one also has a 1080p video with a title card in `videos/` (`YouTube - <song>.mp4`) and its card in `cards/`, made by `tools/youtube_cards.py`.
 
@@ -275,6 +275,7 @@ Background music for TAziz322's Fortnite gameplay videos, in `songs/youtube/` (3
 | Morse Catch | 150 BPM | Game Boy squares sending ROUTE, TRAINER, CATCH, EVOLVE and GYM BADGE in Morse; ends on a level-up jingle | Pokémon clips, retro |
 | Purple in Morse | 112 BPM | The drums play I PURPLE YOU in Morse code while the melody spells ARMY and BORAHAE; ends on seven chimes | Chill, K-pop clips |
 | Silk Rotation | 122 BPM | Grows from a lone piano riff into an emotional house drop, then fades back to the piano | Montages, Rocket League-style clips |
+| Gamer Tags | 128 BPM | Spells NOSCOPE68, BATTLEBUS12098, TAZIZ322, PKG315 and DSX as a phonk cowbell melody (letters are notes, digits are scale steps); ends on G-G | Fortnite intros, hype |
 
 ```
 pip install numpy scipy

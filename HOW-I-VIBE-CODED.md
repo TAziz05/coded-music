@@ -4,7 +4,7 @@
 
 ## What it is
 
-Coded Music is a library of original songs where **every note is written as code**. There are no samples from other songs and no AI audio generators. I built it with Claude without writing the code myself, starting with the music for my trivia games and growing into **220 songs** for my YouTube videos. It went from a few game songs to over 200 tracks in about a week.
+Coded Music is a library of original songs where **every note is written as code**. There are no samples from other songs and no AI audio generators. I built it with Claude without writing the code myself, starting with the music for my trivia games and growing into **221 songs** for my YouTube videos. It went from a few game songs to over 200 tracks in about a week.
 
 You can listen at [taziz05.github.io/coded-music](https://taziz05.github.io/coded-music/) and make your own songs in [Loop Lab](https://taziz05.github.io/coded-music/loop-lab/).
 

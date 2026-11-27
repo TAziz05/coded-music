@@ -217,6 +217,7 @@ SONGS = [  # file name, tempo/feel line, colours (top, mid, bottom, shadow, acce
     ('Morse Catch', '150 BPM · made from words (Morse code), Pokémon chiptune', ('#0b2a0b', '#e0d01f', '#ffffff', '#051505', '#ff3f3f')),
     ('Purple in Morse', '112 BPM · made from words (Morse code), BTS', ('#1f0b2a', '#b03fff', '#ffffff', '#0f0515', '#ffd2f0')),
     ('Silk Rotation', '122 BPM · melodic progressive house', ('#0b1a2a', '#3fa0ff', '#ffffff', '#050d15', '#ffe3a0')),
+    ('Gamer Tags', '128 BPM · made from words (gamer tags)', ('#0b0b1a', '#ff3fd2', '#ffffff', '#05050d', '#3fffd2')),
 ]
 ONLY = None  # set to a song title to rebuild just that one
 
